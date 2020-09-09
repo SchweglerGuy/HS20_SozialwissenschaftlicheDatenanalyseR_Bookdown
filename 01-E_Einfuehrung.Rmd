@@ -1,16 +1,26 @@
-# Einheit 01 (17.09.)
+# Einheit vom 17.09
 
 ## Sozialwissenschaftliche Datenanalyse
-Realität des statistischen Arbeitens (Seminar im Gegensatz zur Vorlesung)
-Modell
-Import
-Tidy und Transform (mit Fragebogen und Datensatz umgehen/nützlich machen)
-Techniken für einen Überblick über die Daten (gerade speziell bei R)
-Model (Techniken zur Analyse)
-Visualise
-Communicate (Techniken zum Arbeiten/Darstellen/Exportieren (R Markdown)
+Das Seminar "sozialwissenschaftliche Datenanalyse mit R" versucht eine Realität des statistischen Arbeitens zu vermitteln und ergänzt so Vorlesung "Grundlagen der multivariaten Statistik" gleich in zweierlei Hinsicht: Erstens wird eine Auswahl der gelernten statistischen Verfahren konkret angewendet (und so auch nochmals repetiert). Zweitens zeigt sich neben den eigentlichen Verfahren eine weiterer, impliziter Teil der Statistik, nämlich ein Umgang mit Daten, deren Aufbereitung und Verarbeitung sowie all die damit einhergehenden Herausforderungen.
 
-## R als Programm/Programmiersprache
+Hinter dem Seminar steht eine bestimmte Vorstellung der sozialwissenschaftlichen Datenanalyse, die folgende Teile enthält [@WickhamGrolemund2016]:
+```{r echo=FALSE, fig.cap="Modell Datenanalyse"}
+knitr::include_graphics("Bilder/Modell.jpg")
+
+```
+
+Als erster Schritt müssen die Daten eingelesen bzw. **importiert** werden. Die importierten Daten gilt es dann **aufzubereiten** und aufzuräumen. Das bedeutet, dass sie in einer einer konsistenten Form gespeichert sind (z.Bsp. dass jede Zeile einer Person und jede Spalte einer Variable entspricht). Dieser zweite Schritt ist im Rahmen von Sekundärdaten (wie auch wir sei verwenden werden) oft bereits erfolgt. Ein weiterer Schritt ist es dann, die Daten zu **transformieren**. Das heisst, die Fälle und ihre Ausprägungen auf ein bestimmes Interesse eingegrenzt (z.Bsp. auf alle Personen die über ein bestimmtes Einkommen verfügen), neue Variablen werden erstellt (die Funktionen bestehender Variablen sind, etwa Einkommensklassen), und eine Reihe von zusammenfassenden Statistiken werden berechnet (verschiedene univariate Kennwerte). Das Aufbereiten und Transformieren ist ein grosser Teil der statistischen Analyse [es ist ein Kampf mit den Daten, @WickhamGrolemund2016, Kap.1.1]. Ziel dieser Arbeit ist es, die Daten in eine passende Form zu bringen, um optimal mit ihnen arbeiten zu können. 
+
+Wenn die Daten (voerst) in einer optimalen Form vorliegen gibt es zwei Hauptmotoren der Wissensgenerierung [@WickhamGrolemund2016, Kap.1.1]: Visualisierung und Modellierung. Mit **Visualisierungen** lässt sich schnell eine Übersicht gewinnen (z.Bsp. könnte es überhaupt einen Zusammenhang zwischen zwei Variablen geben?). **Modellierungen** wiederum ergänzen diese ersten Einsichten, in dem sie präzise Antworten auf Fragen geben (wie gross ist der Zusammenhang genau?). 
+
+Das Transformieren, Visualisieren und Modellieren der Daten ist dabei keineswegs ein linearer Prozess, sondern es ergeben sich in ihm immer wieder Wechselwirkungen, Rückbezüge und dadurch neue Wege, um an die Daten heranzutreten. Der letzte Schritt der Datenanalyse ist die **Kommunikation**. Es gilt also sowohl das Vorgehen (zumindest teilweise) als inbesondere die Ergebnisse der Analyse anderen mitzuteilen.   
+
+Diese Prozesse der Datenanalyse finden alle in einem bestimmen **Rahmen** statt [vgl. auch @Sauer2019, 3]. Dies ist auf der einen Seite die Idees des Programmierens im Vorgehen selber [vgl. @WickhamGrolemund2016, Kap.1.1]. Auf der anderen Seite bilden aber die Sozialwissenschaften selber auch einen Rahmen um dieses Vorgehen, anhand dessen etwa Datenstrukturen (z.Bsp. dass eine Person ein Fall und damit eine Zeile ist) oder angemessene Ziele der Analyse (ab wann ist ein Zusammenhang etwa "gross"?) vorgegeben werden. 
+
+
+
+## R als Programm
+**muss noch überarbeitet werden**
 1.	State of The Art
 Anfang der 90er Jahre entwickelt an der Universität Auckland in Neuseeland (Gegensatz SPSS, SPSS als Relikt), immer das aktuellste, mehr Möglichkeiten, insbesondere grafische Analysemethoden, aber auch QDA ist möglich, tolle Grafiken/Tabellen, (…)
 Entwicklung im Austausch
@@ -21,22 +31,22 @@ Schnell (Big Data), Flexibel (immer nur das gebraucht, was gebraucht werden muss
 GUIs zeigen -> R Konsole, R Commander, R Studio
 
 ## Ziel des Kurses
-Arbeiten mit R (Einführung in die Struktur und Funktionsweise), Datenanalyse (Anwendung von bestimmten Methoden  grafische Verfahren) und konkrete Analyse (Umgang mit Datensätzen, Ergebnisse produzieren)
-damit eigene Forschungsprojekte durchgeführt werden können
-Anforderungen
-aktives mitmachen, Falllösungen
-und Ablauf Seminar
-Syllabus
-‘sehr sportlich’, wird wohl nicht ganz so durchgeführt werden können
-Vorlesung
-Seminar läuft mehr oder weniger parallel zur Vorlesung, am Anfang Inferenzstatistik, dann Einführung in R und ‘einfachere’ Arbeitsschritte, dann die Methoden der Vorlesung
-Seminar ist keine Übung zur Vorlesung, sondern Anwendung und Veranschaulichung
-Daten
-Eigen(s) generierte Daten und ESS
+Das Seminar verfolgt zwei miteinander verzahnte, übergeordnete Lernziele. Einerseits sollen die Studierenden sich Grundkenntnisse der statistischen Datenanalyse mit R aneignen. Andererseits werden ausgewählte Inhalte der Vorlesung praktisch angewandt und damit auch veranschaulicht.[^1]
+
+Konkret sollen die Studierenden am Ende des Semesters...
+
+* ...einen ersten Einblick in Abläufe und Anforderungen softwaregestützter Datenanalyse haben,
+* ...typische Herausforderungen statistischen Arbeitens eigenständig bewältigen können,
+* ...die allgemeine Funktionsweise und die Struktur von R verstehen,
+* ...die Umsetzung ausgewählter multivariater Verfahren in R beherrschen,
+* ...dabei auch grafische Verfahren als zentrale Bausteine aktueller Datenanalyse einsetzen können
+* ...sowie die Grundlage dafür erworben haben, flexibel eigene Analysestrategien in R um-zusetzen.
+
 
 ## Installation R, Ausblick
-Wer hat alles schon installierte?
+**muss noch überarbeitet werden**Wer hat alles schon installierte?
 Installieren, andere wieder mal reinkommen, auch Kapitel 1+2+3 aus Manderscheids Buch
 Ziel für nächstes Mal: Installiert und auch mit dem ESS vertraut gemacht
 
 
+[^1]: Die zwei miteinander verzahnte Lernziele führen auch dazu, dass das das Seminar allerdings nicht als eigentliche Übung zur Vorlesung funktioniert (und das nicht alle Inhalte der Vorlesung im Seminar behandelt werden können).

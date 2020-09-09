@@ -1,7 +1,7 @@
 --- 
 title: "Sozialwissenschaftliche Datenanalyse mit R"
 author: "Kenneth Horvath & Guy Schwegler"
-date: "`r Sys.Date()`"
+date: "HS 2020"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -9,14 +9,15 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: true
 github-repo: rstudio/bookdown-demo
-description: "Dieses Dokument ist ein Bookdown für das Hauptseminar 'Sozialwissenschaftliche Datenanalyse' im HS20 und dient als Ergebnisicherung im Seminarverlauf."
+description: "Dieses Dokument ist ein Bookdown für das Hauptseminar 'Sozialwissenschaftliche Datenanalyse mit R' im HS20 und dient als Ergebnisicherung im Seminarverlauf."
 ---
 
 # Einführung {-}
 
 Das Seminar "Sozialwissenschaftliche Datenanalyse mit R" bietet eine systematische Einführung in das Statistikpaket R. R ist eine Open Source Software, die sich unter anderem durch Flexibilität und vielfältige Möglichkeiten der grafischen und numerischen Datenanalyse auszeichnet. Das Seminar führt in inhaltlicher Abstimmung mit der Vorlesung „Grundlagen der multivariaten Statistik“ in Aufbau und Funktionsweise des Programms sowie in die Umsetzung wichtiger statistischer Verfahren (etwa lineare Regression und logistische Regression) ein. Anhand dieser Verfahren werden unter anderem Techniken des effizienten Datenmanagements, Möglichkeiten, eigenständig kleine Funktionen zu programmieren, sowie Formen der grafischen Datenanalyse und Ergebnisdarstellung besprochen.
 
-Das vorliegende Dokument ist ein sogennantes Bookdown (@R-bookdown, siehe auch [hier](https://bookdown.org/)) und dient der Ergebnissicherung im Seminarverlauf. Das heisst dass die im Seminar besprochene Themen hiernochmals diskutiert, Lösungen präsentiert und mit Literatur ergäntz werden  (siehe für allgemeine Literatur etwa @DiazBone2019, @Kabacoff2015 oder @Manderscheid2017). Das Bookdown wird laufend aktualisiert.
+Das vorliegende Dokument ist ein sogennantes Bookdown (@R-bookdown, siehe auch [hier](https://bookdown.org/)) und dient der Ergebnissicherung im Seminarverlauf. Das heisst dass die im Seminar besprochene Themen hiernochmals schriftlich festgehalten, diskutiert und allenfalls Literatur ergänzt werden  (siehe für allgemeine Literatur etwa @DiazBone2019, @Kabacoff2015 oder @Manderscheid2017). Das Bookdown wird laufend aktualisiert. Ebenfalls werden in diesem Bookdown die Lösungen für die im Seminar gestellten Aufgaben (Fälle) präsentiert.
+
 
 
 
