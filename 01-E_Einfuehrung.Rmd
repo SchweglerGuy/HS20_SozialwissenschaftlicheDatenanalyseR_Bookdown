@@ -1,0 +1,42 @@
+# Einheit 01 (17.09.)
+
+## Sozialwissenschaftliche Datenanalyse
+Realität des statistischen Arbeitens (Seminar im Gegensatz zur Vorlesung)
+Modell
+Import
+Tidy und Transform (mit Fragebogen und Datensatz umgehen/nützlich machen)
+Techniken für einen Überblick über die Daten (gerade speziell bei R)
+Model (Techniken zur Analyse)
+Visualise
+Communicate (Techniken zum Arbeiten/Darstellen/Exportieren (R Markdown)
+
+## R als Programm/Programmiersprache
+1.	State of The Art
+Anfang der 90er Jahre entwickelt an der Universität Auckland in Neuseeland (Gegensatz SPSS, SPSS als Relikt), immer das aktuellste, mehr Möglichkeiten, insbesondere grafische Analysemethoden, aber auch QDA ist möglich, tolle Grafiken/Tabellen, (…)
+Entwicklung im Austausch
+Schnell (Big Data), Flexibel (immer nur das gebraucht, was gebraucht werden muss, verschiedene GUI kostenlos
+negativ Punkt: keine ‘fertiges’ Programm
+2.	Open Sourse, riesige Anzahl Package (fast 12'000)
+3.	GUIs
+GUIs zeigen -> R Konsole, R Commander, R Studio
+
+## Ziel des Kurses
+Arbeiten mit R (Einführung in die Struktur und Funktionsweise), Datenanalyse (Anwendung von bestimmten Methoden  grafische Verfahren) und konkrete Analyse (Umgang mit Datensätzen, Ergebnisse produzieren)
+damit eigene Forschungsprojekte durchgeführt werden können
+Anforderungen
+aktives mitmachen, Falllösungen
+und Ablauf Seminar
+Syllabus
+‘sehr sportlich’, wird wohl nicht ganz so durchgeführt werden können
+Vorlesung
+Seminar läuft mehr oder weniger parallel zur Vorlesung, am Anfang Inferenzstatistik, dann Einführung in R und ‘einfachere’ Arbeitsschritte, dann die Methoden der Vorlesung
+Seminar ist keine Übung zur Vorlesung, sondern Anwendung und Veranschaulichung
+Daten
+Eigen(s) generierte Daten und ESS
+
+## Installation R, Ausblick
+Wer hat alles schon installierte?
+Installieren, andere wieder mal reinkommen, auch Kapitel 1+2+3 aus Manderscheids Buch
+Ziel für nächstes Mal: Installiert und auch mit dem ESS vertraut gemacht
+
+
