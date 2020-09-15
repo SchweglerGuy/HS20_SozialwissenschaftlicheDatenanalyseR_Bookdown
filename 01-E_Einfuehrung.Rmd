@@ -2,7 +2,7 @@
 
 ## Sozialwissenschaftliche Datenanalyse
 Das Seminar "sozialwissenschaftliche Datenanalyse mit R" versucht eine Realität des statistischen Arbeitens zu vermitteln und ergänzt so Vorlesung "Grundlagen der multivariaten Statistik" gleich in zweierlei Hinsicht: Erstens wird eine Auswahl der gelernten statistischen Verfahren konkret angewendet (und so auch nochmals repetiert). Zweitens zeigt sich neben den eigentlichen Verfahren eine weiterer, impliziter Teil der Statistik: ein Umgang mit Daten, deren Aufbereitung und Verarbeitung sowie all die damit einhergehenden Herausforderungen.
-
+**LOESCHEN**: Das ist ein Testsatz. Erscheint der?
 Hinter dem Seminar steht eine bestimmte Vorstellung der sozialwissenschaftlichen Datenanalyse, die folgende Teile enthält [@WickhamGrolemund2016]:
 ```{r echo=FALSE, fig.cap="Modell Datenanalyse"}
 knitr::include_graphics("Bilder/Modell.jpg")
