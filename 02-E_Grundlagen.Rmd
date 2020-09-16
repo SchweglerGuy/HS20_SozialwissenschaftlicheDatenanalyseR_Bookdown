@@ -1,14 +1,42 @@
-# Einheit 01 (24.09.)
+# Einheit vom 17.09
 
-## Einführung
-Starten Sie R Studio (als erster Arbeitsauftrag). Falls Sie Probleme bei der Installation und ähnlichem hatten sollten Sie das weiterhin melden.
+Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 2
 
-Insbesondere in der heutigen Einheit, aber auch anschliessend im weiteren Seminarverlauf, geht es um die Vermittlung zwischen **Trivialität** und **Komplexität**: Das heisst es gilt die kleinen Schritte ernstzunehmen, sonst werden die grossen Schritte sehr schnell mühsam.R als Software und als Programmiersprache hat eine steile Lernkurve und viele Probleme werden zu Beginn auftauchen. Mit und durch dise Problemen soll allerdings auch eine eigene Arbeitsweise mit dem Programm gelernt werden.
+## Lernziele
 
-Weiter gilt es im Lernprozess **R als Sprache** aufzufassen: Am Anfangs wird man vieles nicht verstehen, später aber dann immer mehr und mehr, man wird sicher. Aber das wichtigste dabei ist, dass man eine Sprache erst dadurch lernt, wenn man sie immer wieder anwendet.
+In der zweiten Seminarwoche geht es darum die Grundlagen von R und R-Studio zu repetieren und zu erweitern.[^1] Für den weiteren Verlauf des Seminars gilt es **R als Sprache** aufzufassen – sowohl als Programmiersprache als auch als Sprache im eigentlichen Sinn. Wir wollen also ein komplexes System zur Kommunikation kennenlernen. Hierbei gibt Zeichen mit Bedeutungen (ähnliche wie Nomen, Verben,...) und auch Regeln zur Verknüpfung dieser Zeichen (ähnlich wie eine Grammatik). Diese Grundlagen gilt es alle erstmal kennezulernen und zu verstehen. Am Anfang wird vieles schwer fallen bevor man dann im weiteren Verlauf immer sicherer wird. Der zentrale Punkt in dieser Vorstellung von R als Sprache ist dabei folgender: Wir lernen eine Sprache dadurch, dass wir sie immer wieder anwenden.
+
+In dieser beständigen Erweiterung der Grundlage und damit auch im Erlernen der R-Sprache geht es um die Vermittlung zwischen *Trivialität* und *Komplexität*: Es gilt die kleinen Schritte ernstzunehmen, sonst werden die grossen Schritte sehr schnell mühsam. R als Software und als Programmiersprache hat eine steile Lernkurve und viele Probleme werden zu Beginn auftauchen. Im Umgang mit den Problemen soll allerdings auch eine eigene Arbeitsweise mit dem Programm erlernt werden (Fehlermeldungen lesen, Lösungsstrategien im Codieren erlernen, sich selber Hilfe suchen, ...).
+
+Für die zweite Seminarwoche lassen sich folgende Seminarziele festhalten:
+
+* Sie können die verschiedenen Funktionsweisen der vier Fenster in R-Studio erläutern
+* Sie haben R-Markdown als erweitertes Skript und Arbeitsinstrument kennengelernt. 
+* Sie können ein Arbeitsverzeichnis definieren und verwenden.
+* Sie verstehen das erste Grundelemente der Programmiersprache von R: Funktionen & Objekte
+  + Sie wissen, wie Sie Sich Hilfe zu Funktionen holen
+  + Sie wissen, was Argumente einer Funktion sind
+* Sie verstehen das zweite Grundelemente der Programmiersprache von R: Objekte
+  + Sie haben ein das Zusammenspiel von Funktionen und Objekte kennengelernt.
+  + Sie kennen bereits drei verschiedenen Arten von Objekten 
+
+
+# Aufgaben
+
+1. Beschreiben Sie kurz die Funktionen der vier Fenster von R (in einem Texteditor Ihrer Wahl).
+2. Führen sowohl in der Konsole als auch im Skripte einge Rechnungen durch und speichern Sie im Skript die Resultate der  als Kommentare. Die Rechnung könnten etwa folgende sein: folgende:
+```{r results='hide'}
+1+1
+5 + 3 - 4
+(5 + 3 - 4) / 5
+```
+  
+3. Sie möchten nun ihre letzte Rechnung als Objekte 'x' abspeichern. Wie könnten Sie das in der Konsole tun, ohen dass Sie nochmals den Kode der Rechnung ("(5 + 3 - 4) / 5") selber schreiben müssten?
 
 
 ***
+
+
 
 ## Repetition
 Vier Fenster/Bereiche in R Studio:
@@ -229,3 +257,6 @@ Vergleichen Sie Ihr Ergebnis mit jenem der in R eingebauten Funktionen mean() un
 Falls es Abweichungen zwischen Ihrer Lösung und derjenigen von R gibt, woran könnte das liegen?
 
 Halten Sie Ihren R-Code und Ihre Erläuterungen, Fragen, Probleme etc. in einem R-Markdown-Dokument fest. ‘Knitten’ Sie dieses zu einem PDF und laden Sie die Datei via OLAT hoch. Sollten Sie Probleme mit dem Markdown haben können Sie im R-Skript arbeiten, ihre geschriebenen Zeilen rauskopieren und ggfs. in Word (oder ähnlichem) ergänzen.
+
+
+[^1]: Falls Sie noch Probleme bei der Installation von R bzw. R-Studio oder sonstige Schwierigkeiten können Sie diese weiterhin melden.
