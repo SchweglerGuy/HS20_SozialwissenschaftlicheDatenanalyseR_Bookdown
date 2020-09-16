@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Aufgaben | Sozialwissenschaftliche Datenanalyse mit R</title>
+  <meta name="description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Aufgaben | Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Aufgaben | Sozialwissenschaftliche Datenanalyse mit R" />
+  
+  <meta name="twitter:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
+  
+
+<meta name="author" content="Kenneth Horvath &amp; Guy Schwegler" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="einheit-vom-24-09.html"/>
+<link rel="next" href="methods.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SwDaR - HS20</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Einführung</a></li>
+<li class="chapter" data-level="1" data-path="einheit-vom-17-09.html"><a href="einheit-vom-17-09.html"><i class="fa fa-check"></i><b>1</b> Einheit vom 17.09</a><ul>
+<li class="chapter" data-level="1.1" data-path="einheit-vom-17-09.html"><a href="einheit-vom-17-09.html#sozialwissenschaftliche-datenanalyse"><i class="fa fa-check"></i><b>1.1</b> Sozialwissenschaftliche Datenanalyse</a></li>
+<li class="chapter" data-level="1.2" data-path="einheit-vom-17-09.html"><a href="einheit-vom-17-09.html#r-als-programm"><i class="fa fa-check"></i><b>1.2</b> R als Programm</a></li>
+<li class="chapter" data-level="1.3" data-path="einheit-vom-17-09.html"><a href="einheit-vom-17-09.html#ziel-des-kurses"><i class="fa fa-check"></i><b>1.3</b> Ziel des Kurses</a></li>
+<li class="chapter" data-level="1.4" data-path="einheit-vom-17-09.html"><a href="einheit-vom-17-09.html#installation-r-ausblick"><i class="fa fa-check"></i><b>1.4</b> Installation R, Ausblick</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="einheit-vom-24-09.html"><a href="einheit-vom-24-09.html"><i class="fa fa-check"></i><b>2</b> Einheit vom 24.09</a><ul>
+<li class="chapter" data-level="2.1" data-path="einheit-vom-24-09.html"><a href="einheit-vom-24-09.html#lernziele"><i class="fa fa-check"></i><b>2.1</b> Lernziele</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="aufgaben.html"><a href="aufgaben.html"><i class="fa fa-check"></i><b>3</b> Aufgaben</a><ul>
+<li class="chapter" data-level="3.1" data-path="aufgaben.html"><a href="aufgaben.html#repetition"><i class="fa fa-check"></i><b>3.1</b> Repetition</a></li>
+<li class="chapter" data-level="3.2" data-path="aufgaben.html"><a href="aufgaben.html#rmarkdown"><i class="fa fa-check"></i><b>3.2</b> RMarkdown</a></li>
+<li class="chapter" data-level="3.3" data-path="aufgaben.html"><a href="aufgaben.html#funktionen-und-objekte"><i class="fa fa-check"></i><b>3.3</b> Funktionen und Objekte</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="aufgaben.html"><a href="aufgaben.html#funktionen"><i class="fa fa-check"></i><b>3.3.1</b> Funktionen</a></li>
+<li class="chapter" data-level="3.3.2" data-path="aufgaben.html"><a href="aufgaben.html#objekte"><i class="fa fa-check"></i><b>3.3.2</b> Objekte</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="aufgaben.html"><a href="aufgaben.html#arten-von-objekten"><i class="fa fa-check"></i><b>3.4</b> Arten von Objekten</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="aufgaben.html"><a href="aufgaben.html#einzelne-zahlen"><i class="fa fa-check"></i><b>3.4.1</b> einzelne Zahlen</a></li>
+<li class="chapter" data-level="3.4.2" data-path="aufgaben.html"><a href="aufgaben.html#vektoren"><i class="fa fa-check"></i><b>3.4.2</b> Vektoren</a></li>
+<li class="chapter" data-level="3.4.3" data-path="aufgaben.html"><a href="aufgaben.html#matrizen"><i class="fa fa-check"></i><b>3.4.3</b> Matrizen</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="aufgaben.html"><a href="aufgaben.html#arbeitsauftrag"><i class="fa fa-check"></i><b>3.5</b> Arbeitsauftrag</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
+<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a><ul>
+<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Sozialwissenschaftliche Datenanalyse mit R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="aufgaben" class="section level1">
+<h1><span class="header-section-number">3</span> Aufgaben</h1>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie kurz die Funktionen der vier Fenster von R (in einem Texteditor Ihrer Wahl).</li>
+<li>Führen sowohl in der Konsole als auch im Skripte einge Rechnungen durch und speichern Sie im Skript die Resultate der als Kommentare. Die Rechnung könnten etwa folgende sein: folgende:</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="dv">1</span><span class="op">+</span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span></a>
+<a class="sourceLine" id="cb1-3" title="3">(<span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span>) <span class="op">/</span><span class="st"> </span><span class="dv">5</span></a></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Sie möchten nun ihre letzte Rechnung als Objekte ‘x’ abspeichern. Wie könnten Sie das in der Konsole tun, ohen dass Sie nochmals den Kode der Rechnung (“(5 + 3 - 4) / 5”) selber schreiben müssten?</li>
+</ol>
+<hr />
+<div id="repetition" class="section level2">
+<h2><span class="header-section-number">3.1</span> Repetition</h2>
+<p>Vier Fenster/Bereiche in R Studio:</p>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>Console: Konsole=R, ohne grafischen Filter. Befehle werden über die Konsole gespielt, in der Konsole läuft R.</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>R-Skript: Befehle in einem Text schreiben. Das Skript Fenster ist einfach eine Text Datei. Skript als “Arbeitsgedächtnis” – alle Befehle können wieder aufgerufen werden. Und man kann
+kommentieren mittels eines <strong>#</strong>.</li>
+</ol></li>
+</ul>
+<p>–&gt; Taschenrechner in Konsole und Taschenrechner in Skript
+Hinweis auf das Prompt:
+Das <strong>&gt;</strong> heisst, ich bin ready, frag mich was!</p>
+<p>Im Skript oder in der Konsole:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="dv">1</span><span class="op">+</span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span></a>
+<a class="sourceLine" id="cb2-3" title="3">(<span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span>) <span class="op">/</span><span class="st"> </span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb2-4" title="4">x &lt;-<span class="st"> </span>(<span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span>) <span class="op">/</span><span class="st"> </span><span class="dv">5</span> <span class="co">#hier der Hinweis auf die Pfeiltaste</span></a></code></pre></div>
+<p>Mit diesem Zusatz « &lt;- » wird x als Objekt definiert (siehe unten), in der Environment abgespeichert und
+kann verwendet werden.</p>
+<ul>
+<li><ol start="3" style="list-style-type: decimal">
+<li>Environment: Da werden alle Formen von Daten abgespeichert, die Grundlagen für die Befehle sind. Ebenfalls findet man dort eine History seiner Befehle.</li>
+</ol></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">x</a></code></pre></div>
+<pre><code>## [1] 0.8</code></pre>
+<ul>
+<li><ol start="4" style="list-style-type: decimal">
+<li>Was fehlt jetzt noch? Ergebnis! Grafiken, Hilfe, etc. I Fenster unten rechts teilt uns R-Studio etwas mit.</li>
+</ol></li>
+</ul>
+<hr />
+</div>
+<div id="rmarkdown" class="section level2">
+<h2><span class="header-section-number">3.2</span> RMarkdown</h2>
+<p>Man kann entweder mit der Konsole, mit dem Skript oder als dritte Möglichkeit auch mit dem <strong>Markdown</strong> arbeiten. Eine neue Markdown Datei kann via «File&gt;New File&gt;R Markdown» oder dem Button direkt unter dem «File» (oder «Datei») Button geöffnet werden.</p>
+<p>Markdown ist unterteil in einfachen Fliesstext (weisser Hintergrund) oder R Chunk, d.h. heisst Code Stücke (Befehle) für R. Ein R Chunk kann entweder über den «Insert»-Button im Markdown-Fenster eingefügt werden, oder aber über die Tastenkombination «Ctrl + Alt + i» (bzw. «Cmd + Option + I» bei Mac).</p>
+<p>Vorteil am Arbeiten mit Markdown ist
+* 1 eine bessere Übersicht/Struktur und Eingabe,
+* 2. dass via dem «Knit»-Befehle ein Dokument (wie dieses hier) erstellt werden kann und
+* 3. Ergebnisse bei jeden ‘knitten’ neu geladen werden (so sind die ausgegebenen Dokument immer aktuell).</p>
+<blockquote>
+<p>Für die verschiedenen <em>Formatierungsmöglichkeiten</em> siehe R-Markdown References im OLAT-Ordner ‘Literatur/R-Cheatsheets’.</p>
+</blockquote>
+<hr />
+</div>
+<div id="funktionen-und-objekte" class="section level2">
+<h2><span class="header-section-number">3.3</span> Funktionen und Objekte</h2>
+<p>R als Sprache besteht aus zwei Elementen
+* 1. Funktionen
+* 2. Objekte</p>
+<div id="funktionen" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> Funktionen</h3>
+<p>Funktionen sind etwas, das R macht; wir sagen R, es soll etwas machen. Sie legen fest, was passieren soll und sind immer über die beiden Klammern definiert.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">sqrt</span>(x)</a></code></pre></div>
+<pre><code>## [1] 0.8944272</code></pre>
+<p>Funktionen führen etwas aus mit einem <em>Objekt</em>, und spezifizieren wie etwas gemacht wird über <em>Argumente</em>.</p>
+<p>Auch wenn wir uns Hilfe holen möchten, können wir das über eine Hilfe Funktion tun:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">help</span>(<span class="st">&quot;sqrt&quot;</span>) <span class="co">#hier mit Anführungs- und Schlusszeichen</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="co">#oder eine andere Variante:</span></a>
+<a class="sourceLine" id="cb7-3" title="3">?sqrt <span class="co">#ohne Anführungs- und Schlusszeichen</span></a>
+<a class="sourceLine" id="cb7-4" title="4">?mean</a>
+<a class="sourceLine" id="cb7-5" title="5"></a>
+<a class="sourceLine" id="cb7-6" title="6"><span class="kw">help</span>(<span class="st">&quot;help&quot;</span>) </a>
+<a class="sourceLine" id="cb7-7" title="7">?help</a></code></pre></div>
+<p>Diese Funktionen sind in den verschiedensten Paketen organisiert. Auch RStudio und RMarkdown sind eigentlich nichts anderes als Pakate. Pakete werden installiert mit der Funktion install.packages() und dann geladen, wenn nötig, mittels library(). Pakete sind daher wie Bücher, die man sich besorgt hat und die ordentlich in einem Regal sind, bis man sie zum verwenden möchte.</p>
+<p>Mit folgender Funktion können wir etwa betrachten, welche Pakate installiert worden sind:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">installed.packages</span>()</a></code></pre></div>
+</div>
+<div id="objekte" class="section level3">
+<h3><span class="header-section-number">3.3.2</span> Objekte</h3>
+<p>R ist eine Objekt-basierte Programmiersprache. Das heisst wir arbeiten immer mit Objekten, und alles kann eigentlich ein Objekte werden. Wenn wir nach Hilfe suchen mittels:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">help</span>(<span class="st">&quot;help&quot;</span>)</a></code></pre></div>
+<p>Dann wird die Funktion “help” zum Objekte der help-Funktion.</p>
+<p>…oder wir nehmen einfach unser Objekt x von oben und machen nochmals was damit:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1">x <span class="op">+</span><span class="st"> </span><span class="dv">3</span></a></code></pre></div>
+<pre><code>## [1] 3.8</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">x <span class="op">*</span><span class="st"> </span>x</a></code></pre></div>
+<pre><code>## [1] 0.64</code></pre>
+<p>Je nach Zeit: Definition des Arbeitsverzeichnis
+…entweder mittels:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="co">#setwd()</span></a></code></pre></div>
+<p>…das ist aber unglaublich mühsam…
+…und funktioniert nur beschränkt im Markdown-File selber.
+Weiter als Hinweis zu Blackslash und Slash:
+Kopiert man den Pfad des Ordners via Windows erscheinen Backslashes “" anstatt (wie von R verlangt)
+Slashes”/". Dies kann manchmal zu Problemem führen.</p>
+<p>Darum sollten Sie dies als <strong>absolute Ausnahme</strong> via der <em>Menüsteuerung</em> machen:
+<em>Session&gt;Set Working Directory&gt;Choose Directory</em>
+Wählen Sie dann eine Ordner aus… und kopieren Sie die Code Zeile aus der Konsole als Hinweis in ihre Markdown Date hinein.</p>
+<p>Oder geben Sie den Befehl setwd(“PfadzuihremAArbeitsordner”) in der Konsole ein und kopieren Sie diesen.</p>
+<p><em>Hier habe ich die Definition des Arbeitsordners als Hinweis drin</em></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">setwd</span>(<span class="st">&quot;C:/Users/SchweglG/R_Daten/HS19/E2&quot;</span>)</a></code></pre></div>
+<p>Und dann als kleiner Versuch kann man sich mal die Liste seiner Pakete als CSV-Datei ausgeben lassen. CSV (<strong>C</strong>omma <strong>S</strong>eperated <strong>V</strong>alues) ist ein sehr kleines und sehr flexibles Datenformat, dass – wie es der Name bereits sagt – einfach die einzelne Werte mittels Kommas und Zeilen in Datentabellen unterteilt.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1">pakete_liste &lt;-<span class="st"> </span><span class="kw">installed.packages</span>()</a>
+<a class="sourceLine" id="cb16-2" title="2"><span class="kw">ls</span>()</a></code></pre></div>
+<pre><code>## [1] &quot;pakete_liste&quot; &quot;x&quot;</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">write.table</span>(pakete_liste, <span class="dt">file=</span><span class="st">&quot;Paketliste_neu.csv&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;,&quot;</span>) <span class="co">#CSV Comma-Seperated-Value</span></a></code></pre></div>
+<p>Was haben wir hier gemacht? Wir machen unsere Lise mit Paketen als ein Objekt abgespeichert (das Objekt ‘pakete_liset’) und dieses haben wir uns auf CSV-Datei abspeichern lassen. Und da wir keine weiteren Spezifikationen angegeben haben, speichert R die Daten in unser Arbeitsverzeichnis ab.</p>
+</div>
+</div>
+<div id="arten-von-objekten" class="section level2">
+<h2><span class="header-section-number">3.4</span> Arten von Objekten</h2>
+<p>R kennt nun verschiedenste Arten von Objekten, wir bleiben heute mal bei den Zahlen.
+Auch hier gibt es
+* einzelne Zahlen
+* eine Reihe von Zahlen (Vektoren)
+* Matrizen von Zahlen (Matrix)
+sowie
+* Dataframes («Datensätze», werden wir später noch kennenlernen)
+* Listen &amp; Arrays (lassen wir hier mal weg)</p>
+<div id="einzelne-zahlen" class="section level3">
+<h3><span class="header-section-number">3.4.1</span> einzelne Zahlen</h3>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1">x</a></code></pre></div>
+<pre><code>## [1] 0.8</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">rm</span>(x)</a>
+<a class="sourceLine" id="cb21-2" title="2"><span class="kw">ls</span>()</a></code></pre></div>
+<pre><code>## [1] &quot;pakete_liste&quot;</code></pre>
+<p>Vorschlag: Wir lassen uns immer den gesamten Working-Space – das heisst all unsere Objekte in der Environment – automatisch löschen, nachdem wir R beenden. Das hat den Vorteil, das ein Codes gründlich sein muss und nicht etwaige Objekte noch irgendwo “hängen” bleiben.
+<em>Tools&gt;Global Options&gt;General&gt;Workspace&gt;Save Workspace to .Rdate on exit: Never</em></p>
+<p>Zurück zu unserem einzelnen Zahlen</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1">x &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb23-2" title="2"><span class="kw">is.numeric</span>(x) <span class="co">#Hinweis auf Tabulatortaste</span></a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1">v &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb25-2" title="2">w &lt;-<span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb25-3" title="3">y &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb25-4" title="4">z &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb25-5" title="5">v <span class="op">+</span><span class="st"> </span>w <span class="op">+</span><span class="st"> </span>x <span class="op">+</span><span class="st"> </span>y <span class="op">+</span><span class="st"> </span>z</a></code></pre></div>
+<pre><code>## [1] 9</code></pre>
+<p>x, y, z sind jetzt alles einzelne Zahlen. Das ist natürlich nicht sonderlich interessant, dann wir operieren ja meisten mittels mehreren Zahlen…</p>
+</div>
+<div id="vektoren" class="section level3">
+<h3><span class="header-section-number">3.4.2</span> Vektoren</h3>
+<p>Ein Vektor in R bezeichnet eine Menge von Elementen und entspricht nicht dem mathematischen
+Konzept eines Vektors. Vektoren können sowohl eine Menge an Zahlen als auch an Buchstaben bzw. Zeichen enthalten (wir bleiben vorerst bei Zahlen).</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1">v1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">176</span>,<span class="dv">180</span>,<span class="dv">192</span>,<span class="dv">156</span>,<span class="dv">168</span>)</a>
+<a class="sourceLine" id="cb27-2" title="2"><span class="kw">is.vector</span>(v1)</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>Das ähnelt nun schon fast einer Variable - z.Bsp. Körpergrösse mit 7 Fällen. Bennen wir doch daher unseren neuen vektor, der eine Variable sein könnte, auch dementsprechend:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1">koerp_g &lt;-<span class="st"> </span>v1</a>
+<a class="sourceLine" id="cb29-2" title="2">koerp_g</a></code></pre></div>
+<pre><code>## [1] 176 180 192 156 168</code></pre>
+<p>Wir können natürlich auch einzeln Objekte zu einem neuen Vektorhinzufügen:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1">gndr &lt;-<span class="st"> </span><span class="kw">c</span>(v,w,x,y,z)</a>
+<a class="sourceLine" id="cb31-2" title="2">gndr</a></code></pre></div>
+<pre><code>## [1] 2 3 1 2 1</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1"><span class="kw">is.vector</span>(gndr)</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="matrizen" class="section level3">
+<h3><span class="header-section-number">3.4.3</span> Matrizen</h3>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1"><span class="kw">rbind</span>(koerp_g,gndr)</a></code></pre></div>
+<pre><code>##         [,1] [,2] [,3] [,4] [,5]
+## koerp_g  176  180  192  156  168
+## gndr       2    3    1    2    1</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1">data &lt;-<span class="st"> </span><span class="kw">rbind</span>(koerp_g,gndr) <span class="co">#rbind ist eine Funktion, wo wir die Reihen (bzw. Zeilen) aneinanderfügen</span></a>
+<a class="sourceLine" id="cb37-2" title="2"><span class="kw">is.matrix</span>(data)</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>Eine Matrix bzw. Matrize enthalten Zeilen und Spalten. Dabei können sie nur Daten eines Typs, also entweder numerische oder Textdaten, kombinieren…. Trotzdem haben wir so uns einen ersten kleinen Datensatz erstellt, indem (z.Bsp.) Körpergrösse und Geschlecht enthalten ist.</p>
+</div>
+</div>
+<div id="arbeitsauftrag" class="section level2">
+<h2><span class="header-section-number">3.5</span> Arbeitsauftrag</h2>
+<p>Berechnen Sie für den folgenden Vektor in R Mittelwert und Standardabweichung, ohne auf die in R eingebauten Funktionen mean() [berechnet das arithmetische Mittel eines Vektors] und sd() [berechnet die Standardabweichung eines Vektors] zurückzugreifen – also quasi ‘von Hand’.</p>
+<p>Vektor: (1, 3, 7, 9, 22, 2, 8, 14, 20, 3, 7, 9, 11, 13)</p>
+<p>Vergleichen Sie Ihr Ergebnis mit jenem der in R eingebauten Funktionen mean() und sd().</p>
+<p>Falls es Abweichungen zwischen Ihrer Lösung und derjenigen von R gibt, woran könnte das liegen?</p>
+<p>Halten Sie Ihren R-Code und Ihre Erläuterungen, Fragen, Probleme etc. in einem R-Markdown-Dokument fest. ‘Knitten’ Sie dieses zu einem PDF und laden Sie die Datei via OLAT hoch. Sollten Sie Probleme mit dem Markdown haben können Sie im R-Skript arbeiten, ihre geschriebenen Zeilen rauskopieren und ggfs. in Word (oder ähnlichem) ergänzen.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="einheit-vom-24-09.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-E_Grundlagen.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
