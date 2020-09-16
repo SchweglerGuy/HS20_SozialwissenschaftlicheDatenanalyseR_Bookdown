@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Sozialwissenschaftliche Datenanalyse mit R</title>
+  <meta name="description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
+  <meta name="generator" content="bookdown #bookdown:version# and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Sozialwissenschaftliche Datenanalyse mit R" />
+  
+  <meta name="twitter:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
+  
+
+<meta name="author" content="Kenneth Horvath &amp; Guy Schwegler" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<!--bookdown:link_prev-->
+<!--bookdown:link_next-->
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+<!--bookdown:title:start-->
+<div id="header">
+<h1 class="title">Sozialwissenschaftliche Datenanalyse mit R</h1>
+<p class="author"><em>Kenneth Horvath &amp; Guy Schwegler</em></p>
+<p class="date"><em>HS 2020</em></p>
+</div>
+<!--bookdown:title:end-->
+
+<!--bookdown:toc:start-->
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+<!--bookdown:toc2:start-->
+<ul>
+<li><a href="#einführung">Einführung</a></li>
+<li><a href="#einheit-vom-17.09"><span class="toc-section-number">1</span> Einheit vom 17.09</a><ul>
+<li><a href="#sozialwissenschaftliche-datenanalyse"><span class="toc-section-number">1.1</span> Sozialwissenschaftliche Datenanalyse</a></li>
+<li><a href="#r-als-programm"><span class="toc-section-number">1.2</span> R als Programm</a></li>
+<li><a href="#ziel-des-kurses"><span class="toc-section-number">1.3</span> Ziel des Kurses</a></li>
+<li><a href="#installation-r-ausblick"><span class="toc-section-number">1.4</span> Installation R, Ausblick</a></li>
+</ul></li>
+<li><a href="#einheit-vom-17.09"><span class="toc-section-number">2</span> Einheit vom 17.09</a><ul>
+<li><a href="#lernziele"><span class="toc-section-number">2.1</span> Lernziele</a></li>
+</ul></li>
+<li><a href="#aufgaben"><span class="toc-section-number">3</span> Aufgaben</a><ul>
+<li><a href="#repetition"><span class="toc-section-number">3.1</span> Repetition</a></li>
+<li><a href="#rmarkdown"><span class="toc-section-number">3.2</span> RMarkdown</a></li>
+<li><a href="#funktionen-und-objekte"><span class="toc-section-number">3.3</span> Funktionen und Objekte</a><ul>
+<li><a href="#funktionen"><span class="toc-section-number">3.3.1</span> Funktionen</a></li>
+<li><a href="#objekte"><span class="toc-section-number">3.3.2</span> Objekte</a></li>
+</ul></li>
+<li><a href="#arten-von-objekten"><span class="toc-section-number">3.4</span> Arten von Objekten</a><ul>
+<li><a href="#einzelne-zahlen"><span class="toc-section-number">3.4.1</span> einzelne Zahlen</a></li>
+<li><a href="#vektoren"><span class="toc-section-number">3.4.2</span> Vektoren</a></li>
+<li><a href="#matrizen"><span class="toc-section-number">3.4.3</span> Matrizen</a></li>
+</ul></li>
+<li><a href="#arbeitsauftrag"><span class="toc-section-number">3.5</span> Arbeitsauftrag</a></li>
+</ul></li>
+<li><a href="#methods"><span class="toc-section-number">4</span> Methods</a></li>
+<li><a href="#applications"><span class="toc-section-number">5</span> Applications</a><ul>
+<li><a href="#example-one"><span class="toc-section-number">5.1</span> Example one</a></li>
+<li><a href="#example-two"><span class="toc-section-number">5.2</span> Example two</a></li>
+</ul></li>
+<li><a href="#final-words"><span class="toc-section-number">6</span> Final Words</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+<!--bookdown:toc2:end-->
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Sozialwissenschaftliche Datenanalyse mit R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:toc:end-->
+<!--bookdown:body:start-->
+<div id="einführung" class="section level1 unnumbered">
+<h1>Einführung</h1>
+<p>Das Seminar “Sozialwissenschaftliche Datenanalyse mit R” bietet eine systematische Einführung in das Statistikpaket R. R ist eine Open Source Software, die sich unter anderem durch Flexibilität und vielfältige Möglichkeiten der grafischen und numerischen Datenanalyse auszeichnet. Das Seminar führt in inhaltlicher Abstimmung mit der Vorlesung „Grundlagen der multivariaten Statistik“ in Aufbau und Funktionsweise des Programms sowie in die Umsetzung wichtiger statistischer Verfahren (etwa lineare Regression und logistische Regression) ein. Anhand dieser Verfahren werden unter anderem Techniken des effizienten Datenmanagements, Möglichkeiten, eigenständig kleine Funktionen zu programmieren, sowie Formen der grafischen Datenanalyse und Ergebnisdarstellung besprochen.</p>
+<p>Das vorliegende Dokument ist ein sogennantes Bookdown (<span class="citation">Xie (<a href="#ref-R-bookdown" role="doc-biblioref">2020</a>)</span>, siehe auch <a href="https://bookdown.org/">hier</a>) und dient der Ergebnissicherung im Seminarverlauf. Das heisst dass die im Seminar besprochene Themen hiernochmals schriftlich festgehalten, diskutiert und allenfalls Literatur ergänzt werden (siehe für allgemeine Literatur etwa <span class="citation">Diaz-Bone (<a href="#ref-DiazBone2019" role="doc-biblioref">2019</a>)</span>, <span class="citation">Kabacoff (<a href="#ref-Kabacoff2015" role="doc-biblioref">2015</a>)</span> oder <span class="citation">Manderscheid (<a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>)</span>). Das Bookdown wird laufend aktualisiert. Ebenfalls werden in diesem Bookdown die Lösungen für die im Seminar gestellten Aufgaben (Falllösungen) präsentiert.</p>
+<!--chapter:end:index.Rmd-->
+</div>
+<div id="einheit-vom-17.09" class="section level1">
+<h1><span class="header-section-number">1</span> Einheit vom 17.09</h1>
+<div id="sozialwissenschaftliche-datenanalyse" class="section level2">
+<h2><span class="header-section-number">1.1</span> Sozialwissenschaftliche Datenanalyse</h2>
+<p>Das Seminar “sozialwissenschaftliche Datenanalyse mit R” versucht eine Realität des statistischen Arbeitens zu vermitteln und ergänzt so Vorlesung “Grundlagen der multivariaten Statistik” gleich in zweierlei Hinsicht: Erstens wird eine Auswahl der gelernten statistischen Verfahren konkret angewendet (und so auch nochmals repetiert). Zweitens zeigt sich neben den eigentlichen Verfahren eine weiterer, impliziter Teil der Statistik: ein Umgang mit Daten, deren Aufbereitung und Verarbeitung sowie all die damit einhergehenden Herausforderungen.</p>
+Hinter dem Seminar steht eine bestimmte Vorstellung der sozialwissenschaftlichen Datenanalyse, die folgende Teile enthält <span class="citation">(Wickham and Grolemund <a href="#ref-WickhamGrolemund2016" role="doc-biblioref">2016</a>)</span>:
+<div class="figure">
+<img src="Bilder/Modell.jpg" alt="Modell Datenanalyse"  />
+<p class="caption">
+(#fig:unnamed-chunk-1)Modell Datenanalyse
+</p>
+</div>
+<p>Als erster Schritt müssen die Daten eingelesen bzw. <strong>importiert</strong> werden. Die importierten Daten gilt es dann <strong>aufzubereiten</strong> und aufzuräumen. Das bedeutet, dass sie in einer einer konsistenten Form gespeichert sind (z.Bsp. dass jede Zeile einer Person und jede Spalte einer Variable entspricht). Dieser zweite Schritt ist im Rahmen von Sekundärdaten (wie auch wir sei verwenden werden) oft bereits erfolgt. Ein weiterer Schritt ist es dann, die Daten zu <strong>transformieren</strong>. Das heisst, die Fälle und ihre Ausprägungen auf ein bestimmes Interesse eingegrenzt (z.Bsp. auf alle Personen die über ein bestimmtes Einkommen verfügen), neue Variablen werden erstellt (die Funktionen bestehender Variablen sind, etwa Einkommensklassen), und eine Reihe von zusammenfassenden Statistiken werden berechnet (verschiedene univariate Kennwerte). Das Aufbereiten und Transformieren ist ein grosser Teil der statistischen Analyse <span class="citation">(es ist ein Kampf mit den Daten, Wickham and Grolemund <a href="#ref-WickhamGrolemund2016" role="doc-biblioref">2016</a>, Kap.1.1)</span>. Ziel dieser Arbeit ist es, die Daten in eine passende Form zu bringen, um optimal mit ihnen arbeiten zu können.</p>
+<p>Wenn die Daten (voerst) in einer optimalen Form vorliegen gibt es zwei Hauptmotoren der Wissensgenerierung <span class="citation">(Wickham and Grolemund <a href="#ref-WickhamGrolemund2016" role="doc-biblioref">2016</a>, Kap.1.1)</span>: Visualisierung und Modellierung. Mit <strong>Visualisierungen</strong> lässt sich schnell eine Übersicht gewinnen (z.Bsp. könnte es überhaupt einen Zusammenhang zwischen zwei Variablen geben?). <strong>Modellierungen</strong> wiederum ergänzen diese ersten Einsichten, in dem sie präzise Antworten auf Fragen geben (wie gross ist der Zusammenhang genau?).</p>
+<p>Das Transformieren, Visualisieren und Modellieren der Daten ist dabei keineswegs ein linearer Prozess, sondern es ergeben sich in ihm immer wieder Wechselwirkungen, Rückbezüge und dadurch neue Wege, um an die Daten heranzutreten. Der letzte Schritt der Datenanalyse ist die <strong>Kommunikation</strong>. Es gilt also sowohl das Vorgehen (zumindest teilweise) als inbesondere die Ergebnisse der Analyse anderen mitzuteilen.</p>
+<p>Diese Prozesse der Datenanalyse finden alle in einem bestimmen <strong>Rahmen</strong> statt <span class="citation">(vgl. auch Sauer <a href="#ref-Sauer2019" role="doc-biblioref">2019</a>, 3)</span>. Dies ist auf der einen Seite die Idees des Programmierens im Vorgehen selber <span class="citation">(vgl. Wickham and Grolemund <a href="#ref-WickhamGrolemund2016" role="doc-biblioref">2016</a>, Kap.1.1)</span>. Auf der anderen Seite bilden aber die Sozialwissenschaften selber auch einen Rahmen um dieses Vorgehen, anhand dessen etwa Datenstrukturen (z.Bsp. dass eine Person ein Fall und damit eine Zeile ist) oder angemessene Ziele der Analyse (ab wann ist ein Zusammenhang etwa “gross”?) vorgegeben werden.</p>
+</div>
+<div id="r-als-programm" class="section level2">
+<h2><span class="header-section-number">1.2</span> R als Programm</h2>
+<p><strong>muss noch überarbeitet werden</strong>
+1. State of The Art
+Anfang der 90er Jahre entwickelt an der Universität Auckland in Neuseeland (Gegensatz SPSS, SPSS als Relikt), immer das aktuellste, mehr Möglichkeiten, insbesondere grafische Analysemethoden, aber auch QDA ist möglich, tolle Grafiken/Tabellen, (…)
+Entwicklung im Austausch
+Schnell (Big Data), Flexibel (immer nur das gebraucht, was gebraucht werden muss, verschiedene GUI kostenlos
+negativ Punkt: keine ‘fertiges’ Programm
+2. Open Sourse, riesige Anzahl Package (fast 12’000)
+3. GUIs
+GUIs zeigen -&gt; R Konsole, R Commander, R Studio</p>
+</div>
+<div id="ziel-des-kurses" class="section level2">
+<h2><span class="header-section-number">1.3</span> Ziel des Kurses</h2>
+<p>Das Seminar verfolgt zwei miteinander verzahnte, übergeordnete Lernziele. Einerseits sollen die Studierenden sich Grundkenntnisse der statistischen Datenanalyse mit R aneignen. Andererseits werden ausgewählte Inhalte der Vorlesung praktisch angewandt und damit auch veranschaulicht.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>Konkret sollen die Studierenden am Ende des Semesters…</p>
+<ul>
+<li>…einen ersten Einblick in Abläufe und Anforderungen softwaregestützter Datenanalyse haben,</li>
+<li>…typische Herausforderungen statistischen Arbeitens eigenständig bewältigen können,</li>
+<li>…die allgemeine Funktionsweise und die Struktur von R verstehen,</li>
+<li>…die Umsetzung ausgewählter multivariater Verfahren in R beherrschen,</li>
+<li>…dabei auch grafische Verfahren als zentrale Bausteine aktueller Datenanalyse einsetzen können</li>
+<li>…sowie die Grundlage dafür erworben haben, flexibel eigene Analysestrategien in R um-zusetzen.</li>
+</ul>
+</div>
+<div id="installation-r-ausblick" class="section level2">
+<h2><span class="header-section-number">1.4</span> Installation R, Ausblick</h2>
+<p><strong>muss noch überarbeitet werden</strong>Wer hat alles schon installierte?
+Installieren, andere wieder mal reinkommen, auch Kapitel 1+2+3 aus Manderscheids Buch
+Ziel für nächstes Mal: Installiert und auch mit dem ESS vertraut gemacht</p>
+<!--chapter:end:01-E_Einfuehrung.Rmd-->
+</div>
+</div>
+<div id="einheit-vom-17.09" class="section level1">
+<h1><span class="header-section-number">2</span> Einheit vom 17.09</h1>
+<p>Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 2</p>
+<div id="lernziele" class="section level2">
+<h2><span class="header-section-number">2.1</span> Lernziele</h2>
+<p>In der zweiten Seminarwoche geht es darum die Grundlagen von R und R-Studio zu repetieren und zu erweitern.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Für den weiteren Verlauf des Seminars gilt es <strong>R als Sprache</strong> aufzufassen – sowohl als Programmiersprache als auch als Sprache im eigentlichen Sinn. Wir wollen also ein komplexes System zur Kommunikation kennenlernen. Hierbei gibt Zeichen mit Bedeutungen (ähnliche wie Nomen, Verben,…) und auch Regeln zur Verknüpfung dieser Zeichen (ähnlich wie eine Grammatik). Diese Grundlagen gilt es alle erstmal kennezulernen und zu verstehen. Am Anfang wird vieles schwer fallen bevor man dann im weiteren Verlauf immer sicherer wird. Der zentrale Punkt in dieser Vorstellung von R als Sprache ist dabei folgender: Wir lernen eine Sprache dadurch, dass wir sie immer wieder anwenden.</p>
+<p>In dieser beständigen Erweiterung der Grundlage und damit auch im Erlernen der R-Sprache geht es um die Vermittlung zwischen <em>Trivialität</em> und <em>Komplexität</em>: Es gilt die kleinen Schritte ernstzunehmen, sonst werden die grossen Schritte sehr schnell mühsam. R als Software und als Programmiersprache hat eine steile Lernkurve und viele Probleme werden zu Beginn auftauchen. Im Umgang mit den Problemen soll allerdings auch eine eigene Arbeitsweise mit dem Programm erlernt werden (Fehlermeldungen lesen, Lösungsstrategien im Codieren erlernen, sich selber Hilfe suchen, …).</p>
+<p>Für die zweite Seminarwoche lassen sich folgende Seminarziele festhalten:</p>
+<ul>
+<li>Sie können die verschiedenen Funktionsweisen der vier Fenster in R-Studio erläutern</li>
+<li>Sie haben R-Markdown als erweitertes Skript und Arbeitsinstrument kennengelernt.</li>
+<li>Sie können ein Arbeitsverzeichnis definieren und verwenden.</li>
+<li>Sie verstehen das erste Grundelemente der Programmiersprache von R: Funktionen &amp; Objekte
+<ul>
+<li>Sie wissen, wie Sie Sich Hilfe zu Funktionen holen</li>
+<li>Sie wissen, was Argumente einer Funktion sind</li>
+</ul></li>
+<li>Sie verstehen das zweite Grundelemente der Programmiersprache von R: Objekte
+<ul>
+<li>Sie haben ein das Zusammenspiel von Funktionen und Objekte kennengelernt.</li>
+<li>Sie kennen bereits drei verschiedenen Arten von Objekten</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="aufgaben" class="section level1">
+<h1><span class="header-section-number">3</span> Aufgaben</h1>
+<ol style="list-style-type: decimal">
+<li>Beschreiben Sie kurz die Funktionen der vier Fenster von R (in einem Texteditor Ihrer Wahl).</li>
+<li>Führen sowohl in der Konsole als auch im Skripte einge Rechnungen durch und speichern Sie im Skript die Resultate der als Kommentare. Die Rechnung könnten etwa folgende sein: folgende:</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="dv">1</span><span class="op">+</span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span></a>
+<a class="sourceLine" id="cb1-3" title="3">(<span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span>) <span class="op">/</span><span class="st"> </span><span class="dv">5</span></a></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Sie möchten nun ihre letzte Rechnung als Objekte ‘x’ abspeichern. Wie könnten Sie das in der Konsole tun, ohen dass Sie nochmals den Kode der Rechnung (“(5 + 3 - 4) / 5”) selber schreiben müssten?</li>
+</ol>
+<hr />
+<div id="repetition" class="section level2">
+<h2><span class="header-section-number">3.1</span> Repetition</h2>
+<p>Vier Fenster/Bereiche in R Studio:</p>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>Console: Konsole=R, ohne grafischen Filter. Befehle werden über die Konsole gespielt, in der Konsole läuft R.</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>R-Skript: Befehle in einem Text schreiben. Das Skript Fenster ist einfach eine Text Datei. Skript als “Arbeitsgedächtnis” – alle Befehle können wieder aufgerufen werden. Und man kann
+kommentieren mittels eines <strong>#</strong>.</li>
+</ol></li>
+</ul>
+<p>–&gt; Taschenrechner in Konsole und Taschenrechner in Skript
+Hinweis auf das Prompt:
+Das <strong>&gt;</strong> heisst, ich bin ready, frag mich was!</p>
+<p>Im Skript oder in der Konsole:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="dv">1</span><span class="op">+</span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span></a>
+<a class="sourceLine" id="cb2-3" title="3">(<span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span>) <span class="op">/</span><span class="st"> </span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb2-4" title="4">x &lt;-<span class="st"> </span>(<span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span>) <span class="op">/</span><span class="st"> </span><span class="dv">5</span> <span class="co">#hier der Hinweis auf die Pfeiltaste</span></a></code></pre></div>
+<p>Mit diesem Zusatz « &lt;- » wird x als Objekt definiert (siehe unten), in der Environment abgespeichert und
+kann verwendet werden.</p>
+<ul>
+<li><ol start="3" style="list-style-type: decimal">
+<li>Environment: Da werden alle Formen von Daten abgespeichert, die Grundlagen für die Befehle sind. Ebenfalls findet man dort eine History seiner Befehle.</li>
+</ol></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">x</a></code></pre></div>
+<pre><code>## [1] 0.8</code></pre>
+<ul>
+<li><ol start="4" style="list-style-type: decimal">
+<li>Was fehlt jetzt noch? Ergebnis! Grafiken, Hilfe, etc. I Fenster unten rechts teilt uns R-Studio etwas mit.</li>
+</ol></li>
+</ul>
+<hr />
+</div>
+<div id="rmarkdown" class="section level2">
+<h2><span class="header-section-number">3.2</span> RMarkdown</h2>
+<p>Man kann entweder mit der Konsole, mit dem Skript oder als dritte Möglichkeit auch mit dem <strong>Markdown</strong> arbeiten. Eine neue Markdown Datei kann via «File&gt;New File&gt;R Markdown» oder dem Button direkt unter dem «File» (oder «Datei») Button geöffnet werden.</p>
+<p>Markdown ist unterteil in einfachen Fliesstext (weisser Hintergrund) oder R Chunk, d.h. heisst Code Stücke (Befehle) für R. Ein R Chunk kann entweder über den «Insert»-Button im Markdown-Fenster eingefügt werden, oder aber über die Tastenkombination «Ctrl + Alt + i» (bzw. «Cmd + Option + I» bei Mac).</p>
+<p>Vorteil am Arbeiten mit Markdown ist
+* 1 eine bessere Übersicht/Struktur und Eingabe,
+* 2. dass via dem «Knit»-Befehle ein Dokument (wie dieses hier) erstellt werden kann und
+* 3. Ergebnisse bei jeden ‘knitten’ neu geladen werden (so sind die ausgegebenen Dokument immer aktuell).</p>
+<blockquote>
+<p>Für die verschiedenen <em>Formatierungsmöglichkeiten</em> siehe R-Markdown References im OLAT-Ordner ‘Literatur/R-Cheatsheets’.</p>
+</blockquote>
+<hr />
+</div>
+<div id="funktionen-und-objekte" class="section level2">
+<h2><span class="header-section-number">3.3</span> Funktionen und Objekte</h2>
+<p>R als Sprache besteht aus zwei Elementen
+* 1. Funktionen
+* 2. Objekte</p>
+<div id="funktionen" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> Funktionen</h3>
+<p>Funktionen sind etwas, das R macht; wir sagen R, es soll etwas machen. Sie legen fest, was passieren soll und sind immer über die beiden Klammern definiert.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">sqrt</span>(x)</a></code></pre></div>
+<pre><code>## [1] 0.8944272</code></pre>
+<p>Funktionen führen etwas aus mit einem <em>Objekt</em>, und spezifizieren wie etwas gemacht wird über <em>Argumente</em>.</p>
+<p>Auch wenn wir uns Hilfe holen möchten, können wir das über eine Hilfe Funktion tun:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">help</span>(<span class="st">&quot;sqrt&quot;</span>) <span class="co">#hier mit Anführungs- und Schlusszeichen</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="co">#oder eine andere Variante:</span></a>
+<a class="sourceLine" id="cb7-3" title="3">?sqrt <span class="co">#ohne Anführungs- und Schlusszeichen</span></a>
+<a class="sourceLine" id="cb7-4" title="4">?mean</a>
+<a class="sourceLine" id="cb7-5" title="5"></a>
+<a class="sourceLine" id="cb7-6" title="6"><span class="kw">help</span>(<span class="st">&quot;help&quot;</span>) </a>
+<a class="sourceLine" id="cb7-7" title="7">?help</a></code></pre></div>
+<p>Diese Funktionen sind in den verschiedensten Paketen organisiert. Auch RStudio und RMarkdown sind eigentlich nichts anderes als Pakate. Pakete werden installiert mit der Funktion install.packages() und dann geladen, wenn nötig, mittels library(). Pakete sind daher wie Bücher, die man sich besorgt hat und die ordentlich in einem Regal sind, bis man sie zum verwenden möchte.</p>
+<p>Mit folgender Funktion können wir etwa betrachten, welche Pakate installiert worden sind:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">installed.packages</span>()</a></code></pre></div>
+</div>
+<div id="objekte" class="section level3">
+<h3><span class="header-section-number">3.3.2</span> Objekte</h3>
+<p>R ist eine Objekt-basierte Programmiersprache. Das heisst wir arbeiten immer mit Objekten, und alles kann eigentlich ein Objekte werden. Wenn wir nach Hilfe suchen mittels:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">help</span>(<span class="st">&quot;help&quot;</span>)</a></code></pre></div>
+<p>Dann wird die Funktion “help” zum Objekte der help-Funktion.</p>
+<p>…oder wir nehmen einfach unser Objekt x von oben und machen nochmals was damit:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1">x <span class="op">+</span><span class="st"> </span><span class="dv">3</span></a></code></pre></div>
+<pre><code>## [1] 3.8</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">x <span class="op">*</span><span class="st"> </span>x</a></code></pre></div>
+<pre><code>## [1] 0.64</code></pre>
+<p>Je nach Zeit: Definition des Arbeitsverzeichnis
+…entweder mittels:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="co">#setwd()</span></a></code></pre></div>
+<p>…das ist aber unglaublich mühsam…
+…und funktioniert nur beschränkt im Markdown-File selber.
+Weiter als Hinweis zu Blackslash und Slash:
+Kopiert man den Pfad des Ordners via Windows erscheinen Backslashes “" anstatt (wie von R verlangt)
+Slashes”/". Dies kann manchmal zu Problemem führen.</p>
+<p>Darum sollten Sie dies als <strong>absolute Ausnahme</strong> via der <em>Menüsteuerung</em> machen:
+<em>Session&gt;Set Working Directory&gt;Choose Directory</em>
+Wählen Sie dann eine Ordner aus… und kopieren Sie die Code Zeile aus der Konsole als Hinweis in ihre Markdown Date hinein.</p>
+<p>Oder geben Sie den Befehl setwd(“PfadzuihremAArbeitsordner”) in der Konsole ein und kopieren Sie diesen.</p>
+<p><em>Hier habe ich die Definition des Arbeitsordners als Hinweis drin</em></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">setwd</span>(<span class="st">&quot;C:/Users/SchweglG/R_Daten/HS19/E2&quot;</span>)</a></code></pre></div>
+<p>Und dann als kleiner Versuch kann man sich mal die Liste seiner Pakete als CSV-Datei ausgeben lassen. CSV (<strong>C</strong>omma <strong>S</strong>eperated <strong>V</strong>alues) ist ein sehr kleines und sehr flexibles Datenformat, dass – wie es der Name bereits sagt – einfach die einzelne Werte mittels Kommas und Zeilen in Datentabellen unterteilt.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1">pakete_liste &lt;-<span class="st"> </span><span class="kw">installed.packages</span>()</a>
+<a class="sourceLine" id="cb16-2" title="2"><span class="kw">ls</span>()</a></code></pre></div>
+<pre><code>## [1] &quot;pakete_liste&quot; &quot;x&quot;</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">write.table</span>(pakete_liste, <span class="dt">file=</span><span class="st">&quot;Paketliste_neu.csv&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;,&quot;</span>) <span class="co">#CSV Comma-Seperated-Value</span></a></code></pre></div>
+<p>Was haben wir hier gemacht? Wir machen unsere Lise mit Paketen als ein Objekt abgespeichert (das Objekt ‘pakete_liset’) und dieses haben wir uns auf CSV-Datei abspeichern lassen. Und da wir keine weiteren Spezifikationen angegeben haben, speichert R die Daten in unser Arbeitsverzeichnis ab.</p>
+</div>
+</div>
+<div id="arten-von-objekten" class="section level2">
+<h2><span class="header-section-number">3.4</span> Arten von Objekten</h2>
+<p>R kennt nun verschiedenste Arten von Objekten, wir bleiben heute mal bei den Zahlen.
+Auch hier gibt es
+* einzelne Zahlen
+* eine Reihe von Zahlen (Vektoren)
+* Matrizen von Zahlen (Matrix)
+sowie
+* Dataframes («Datensätze», werden wir später noch kennenlernen)
+* Listen &amp; Arrays (lassen wir hier mal weg)</p>
+<div id="einzelne-zahlen" class="section level3">
+<h3><span class="header-section-number">3.4.1</span> einzelne Zahlen</h3>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1">x</a></code></pre></div>
+<pre><code>## [1] 0.8</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">rm</span>(x)</a>
+<a class="sourceLine" id="cb21-2" title="2"><span class="kw">ls</span>()</a></code></pre></div>
+<pre><code>## [1] &quot;pakete_liste&quot;</code></pre>
+<p>Vorschlag: Wir lassen uns immer den gesamten Working-Space – das heisst all unsere Objekte in der Environment – automatisch löschen, nachdem wir R beenden. Das hat den Vorteil, das ein Codes gründlich sein muss und nicht etwaige Objekte noch irgendwo “hängen” bleiben.
+<em>Tools&gt;Global Options&gt;General&gt;Workspace&gt;Save Workspace to .Rdate on exit: Never</em></p>
+<p>Zurück zu unserem einzelnen Zahlen</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1">x &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb23-2" title="2"><span class="kw">is.numeric</span>(x) <span class="co">#Hinweis auf Tabulatortaste</span></a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1">v &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb25-2" title="2">w &lt;-<span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb25-3" title="3">y &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb25-4" title="4">z &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb25-5" title="5">v <span class="op">+</span><span class="st"> </span>w <span class="op">+</span><span class="st"> </span>x <span class="op">+</span><span class="st"> </span>y <span class="op">+</span><span class="st"> </span>z</a></code></pre></div>
+<pre><code>## [1] 9</code></pre>
+<p>x, y, z sind jetzt alles einzelne Zahlen. Das ist natürlich nicht sonderlich interessant, dann wir operieren ja meisten mittels mehreren Zahlen…</p>
+</div>
+<div id="vektoren" class="section level3">
+<h3><span class="header-section-number">3.4.2</span> Vektoren</h3>
+<p>Ein Vektor in R bezeichnet eine Menge von Elementen und entspricht nicht dem mathematischen
+Konzept eines Vektors. Vektoren können sowohl eine Menge an Zahlen als auch an Buchstaben bzw. Zeichen enthalten (wir bleiben vorerst bei Zahlen).</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1">v1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">176</span>,<span class="dv">180</span>,<span class="dv">192</span>,<span class="dv">156</span>,<span class="dv">168</span>)</a>
+<a class="sourceLine" id="cb27-2" title="2"><span class="kw">is.vector</span>(v1)</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>Das ähnelt nun schon fast einer Variable - z.Bsp. Körpergrösse mit 7 Fällen. Bennen wir doch daher unseren neuen vektor, der eine Variable sein könnte, auch dementsprechend:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1">koerp_g &lt;-<span class="st"> </span>v1</a>
+<a class="sourceLine" id="cb29-2" title="2">koerp_g</a></code></pre></div>
+<pre><code>## [1] 176 180 192 156 168</code></pre>
+<p>Wir können natürlich auch einzeln Objekte zu einem neuen Vektorhinzufügen:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1">gndr &lt;-<span class="st"> </span><span class="kw">c</span>(v,w,x,y,z)</a>
+<a class="sourceLine" id="cb31-2" title="2">gndr</a></code></pre></div>
+<pre><code>## [1] 2 3 1 2 1</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1"><span class="kw">is.vector</span>(gndr)</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="matrizen" class="section level3">
+<h3><span class="header-section-number">3.4.3</span> Matrizen</h3>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1"><span class="kw">rbind</span>(koerp_g,gndr)</a></code></pre></div>
+<pre><code>##         [,1] [,2] [,3] [,4] [,5]
+## koerp_g  176  180  192  156  168
+## gndr       2    3    1    2    1</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1">data &lt;-<span class="st"> </span><span class="kw">rbind</span>(koerp_g,gndr) <span class="co">#rbind ist eine Funktion, wo wir die Reihen (bzw. Zeilen) aneinanderfügen</span></a>
+<a class="sourceLine" id="cb37-2" title="2"><span class="kw">is.matrix</span>(data)</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>Eine Matrix bzw. Matrize enthalten Zeilen und Spalten. Dabei können sie nur Daten eines Typs, also entweder numerische oder Textdaten, kombinieren…. Trotzdem haben wir so uns einen ersten kleinen Datensatz erstellt, indem (z.Bsp.) Körpergrösse und Geschlecht enthalten ist.</p>
+</div>
+</div>
+<div id="arbeitsauftrag" class="section level2">
+<h2><span class="header-section-number">3.5</span> Arbeitsauftrag</h2>
+<p>Berechnen Sie für den folgenden Vektor in R Mittelwert und Standardabweichung, ohne auf die in R eingebauten Funktionen mean() [berechnet das arithmetische Mittel eines Vektors] und sd() [berechnet die Standardabweichung eines Vektors] zurückzugreifen – also quasi ‘von Hand’.</p>
+<p>Vektor: (1, 3, 7, 9, 22, 2, 8, 14, 20, 3, 7, 9, 11, 13)</p>
+<p>Vergleichen Sie Ihr Ergebnis mit jenem der in R eingebauten Funktionen mean() und sd().</p>
+<p>Falls es Abweichungen zwischen Ihrer Lösung und derjenigen von R gibt, woran könnte das liegen?</p>
+<p>Halten Sie Ihren R-Code und Ihre Erläuterungen, Fragen, Probleme etc. in einem R-Markdown-Dokument fest. ‘Knitten’ Sie dieses zu einem PDF und laden Sie die Datei via OLAT hoch. Sollten Sie Probleme mit dem Markdown haben können Sie im R-Skript arbeiten, ihre geschriebenen Zeilen rauskopieren und ggfs. in Word (oder ähnlichem) ergänzen.</p>
+<!--chapter:end:02-E_Grundlagen.Rmd-->
+</div>
+</div>
+<div id="methods" class="section level1">
+<h1><span class="header-section-number">4</span> Methods</h1>
+<p>We describe our methods in this chapter.</p>
+<!--chapter:end:03-method.Rmd-->
+</div>
+<div id="applications" class="section level1">
+<h1><span class="header-section-number">5</span> Applications</h1>
+<p>Some <em>significant</em> applications are demonstrated in this chapter.</p>
+<div id="example-one" class="section level2">
+<h2><span class="header-section-number">5.1</span> Example one</h2>
+</div>
+<div id="example-two" class="section level2">
+<h2><span class="header-section-number">5.2</span> Example two</h2>
+<!--chapter:end:04-application.Rmd-->
+</div>
+</div>
+<div id="final-words" class="section level1">
+<h1><span class="header-section-number">6</span> Final Words</h1>
+<p>We have finished a nice book.</p>
+<!--chapter:end:05-summary.Rmd-->
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+<!--chapter:end:06-references.Rmd-->
+<div id="refs" class="references">
+<div id="ref-DiazBone2019">
+<p>Diaz-Bone, Rainer. 2019. <em>Statistik Für Soziologen</em>. Konstanz: UVK.</p>
+</div>
+<div id="ref-Kabacoff2015">
+<p>Kabacoff, Robert. 2015. <em>R in Action: Data Analysis and Graphics with R</em>. Shelter Island, NY: Manning.</p>
+</div>
+<div id="ref-Manderscheid2017">
+<p>Manderscheid, Katharina. 2017. <em>Sozialwissenschaftliche Datenanalyse Mit R. Eine Einführung</em>. Wiesbaden: Springer VS.</p>
+</div>
+<div id="ref-Sauer2019">
+<p>Sauer, Sebastian. 2019. <em>Moderne Datenanalyse Mit R: Daten Einlesen, Aufbereiten, Visualisieren, Modellieren Und Kommunizieren</em>. Wiesbaden: Springer VS.</p>
+</div>
+<div id="ref-WickhamGrolemund2016">
+<p>Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. Sebastopol, CA: O’Reilly. <a href="https://r4ds.had.co.nz/index.html">https://r4ds.had.co.nz/index.html</a>.</p>
+</div>
+<div id="ref-R-bookdown">
+<p>Xie, Yihui. 2020. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.</p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Die zwei miteinander verzahnte Lernziele führen auch dazu, dass das das Seminar allerdings nicht als eigentliche Übung zur Vorlesung funktioniert (und das nicht alle Inhalte der Vorlesung im Seminar behandelt werden können).<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Falls Sie noch Probleme bei der Installation von R bzw. R-Studio oder sonstige Schwierigkeiten können Sie diese weiterhin melden.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+<!--bookdown:body:end-->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<!--bookdown:link_prev-->
+<!--bookdown:link_next-->
+    </div>
+  </div>
+<!--bookdown:config-->
+
+</body>
+
+</html>
