@@ -1,0 +1,30 @@
+---
+title: "Sozialwissenschaftliche Datenanalyse mit R -- Wochenplan 1"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+# Lernziele 
+
+Die erste Seminarwoche dient dazu, die technischen Voraussetzungen für die gemeinsame Arbeit im Seminar zu prüfen und mit der geplanten Arbeitsweise vertraut zu werden. 
+
+Das Seminar ist insbesondere in den online durchgeführten Teilen als eine Art "flipped classroom" konzipiert. Sie bekommen also von Woche zu Woche konkrete Arbeitsaufträge. Diese sollen Sie eigenständig bewältigen und alle Probleme und Unklarheiten notieren, die sich im Arbeitsprozess ergeben. Die gemeinsamen Sitzungen dienen dann dazu, Lösungswege zu den Aufgaben zu präsentieren, offene Fragen zu klären, Konzepte vertiefend zu erläutern und die nächsten Schritte vorzubereiten. 
+
+Für jede Woche werden Lernziele und Arbeitsaufträge definiert. Für die erste Seminarwoche lassen sich als Lernziele festhalten: 
+
+- Sie wissen, wie Sie die aktuellen Versionen von R und RStudio auf Ihrem Computer installieren
+- Sie wissen, wie man R-Pakete installiert und in R lädt
+- Sie können eine Funktion aufrufen
+- Sie haben einen soliden ersten Eindruck, wie man mit R kommuniziert und einfache Operationen durchführt
+- Sie haben eine erste Orientierung zu Unterstützungsangeboten, die man online findet (auch wenn diese teilweise noch überfordernd wirken)
+
+# Aufgaben 
+
+1) Installieren Sie die aktuellen Versionen von R und RStudio auf Ihrem Endgerät! Sie sollten sich Notizen, wenn es Probleme gibt -- und für das nächste Mal gleich festhalten, wie Sie diese gelöst haben. Da die Details der Installation vom Betriebssystem und den Spezifikationen des Endgeräts abhängen, ist es normal, dass dieser Prozess manchmal erst auf den zweiten Versuch funktioniert. 
+
+2) Installieren Sie das Paket "swirl" und laden Sie es. "swirl" ist eine in R implementierte interaktive Einführung in die Grundlagen von R!
+
+3) Rufen Sie die Funktion swirl() auf und spielen Sie ein wenig damit. Rufen Sie sich in Erinnerung, was Sie aus dem letzten Semester noch über die Arbeit mit R wissen!
+
+4) Verwenden Sie ein wenig Zeit darauf, online nach R Tutorials, Foren etc. zu suchen. Halten Sie die URLs von Seiten und Ressourcen fest, die Ihnen hilfreich und/oder wichtig (aber u.U. noch etwas schwer zu durchschauen) vorkommen!
