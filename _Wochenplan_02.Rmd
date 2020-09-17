@@ -4,18 +4,18 @@ Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 2
 
 ## Lernziele
 
-In der zweiten Seminarwoche geht es darum die Grundlagen von R und R-Studio zu repetieren und zu erweitern.[^1] Für den weiteren Verlauf wollen wir *R als Sprache* auffassen – sowohl als Programmiersprache als auch als Sprache im eigentlichen Sinn. Wir wollen also ein komplexes System zur Kommunikation kennenlernen. Wie bei einer anderen Sprache gibt es auch hier Zeichen mit Bedeutungen (ähnliche wie Nomen, Verben,...) und Regeln zur Verknüpfung dieser Zeichen (ähnlich wie eine Grammatik). Diese Grundlagen gilt es alle erstmal kennenzulernen und zu verstehen. Am Anfang wird vieles schwer fallen bevor man dann im weiteren Verlauf immer sicherer wird. Der zentrale Punkt in dieser Vorstellung von R als Sprache ist dabei folgender: Wir lernen eine Sprache dadurch, dass wir sie immer wieder anwenden.
+In der zweiten Seminarwoche geht es darum, die Grundlagen von R und RStudio zu repetieren und zu erweitern.[^1] Für den weiteren Verlauf wollen wir *R als Sprache* auffassen – sowohl als Programmiersprache als auch als Sprache im eigentlichen Sinn. Wir wollen also ein komplexes System zur Kommunikation kennenlernen. Wie bei einer anderen Sprache gibt es auch hier Zeichen mit Bedeutungen (ähnliche wie Nomen, Verben,...) und Regeln zur Verknüpfung dieser Zeichen (ähnlich wie eine Grammatik). Diese Grundlagen gilt es alle erstmal kennenzulernen und zu verstehen. Am Anfang wird vieles schwer fallen, bevor man dann im weiteren Verlauf immer sicherer wird. Der zentrale Punkt in dieser Vorstellung von R als Sprache ist dabei folgender: Wir lernen eine Sprache dadurch, dass wir sie immer wieder anwenden.
 
-In den folgenden, beständigen Erweiterung der Grundlagen und damit auch im Erlernen der R-Sprache geht es um die Vermittlung zwischen *Trivialität* und *Komplexität*: Es gilt die kleinen Schritte ernstzunehmen, sonst werden die grossen Schritte sehr schnell mühsam. R als Software und als Programmiersprache hat eine steile Lernkurve und viele Probleme werden zu Beginn auftauchen. Im Umgang mit den Problemen soll allerdings auch eine eigene Arbeitsweise mit dem Programm erlernt werden (Fehlermeldungen lesen, Lösungsstrategien im Codieren erlernen, selber Hilfe suchen, ...).
+In den folgenden, beständigen Erweiterung der Grundlagen und damit auch im Erlernen der R-Sprache geht es um die Vermittlung zwischen *Trivialität* und *Komplexität*: Es gilt die kleinen Schritte ernstzunehmen, sonst werden die grossen Schritte sehr schnell mühsam. R als Software und als Programmiersprache hat eine steile Lernkurve und zu Beginn werden viele Probleme auftauchen. Im Umgang mit den Problemen soll allerdings auch eine eigene Arbeitsweise mit dem Programm erlernt werden (Fehlermeldungen lesen, Lösungsstrategien im Codieren erlernen, selber Hilfe suchen, ...).
 
 Für die zweite Seminarwoche lassen sich folgende Seminarziele festhalten:
 
-* Sie können die verschiedenen Funktionsweisen der vier Fenster in R-Studio erläutern
+* Sie können die verschiedenen Funktionsweisen der vier Fenster in RStudio erläutern
 * Sie haben R-Markdown als erweitertes Skript und Arbeitsinstrument kennengelernt. 
-* Sie verstehen das erste Grundelemente der Programmiersprache von R: Funktionen
+* Sie verstehen das erste Grundelement der "Sprache R": Funktionen
   + Sie wissen, wie Sie sich Hilfe zu Funktionen holen
   + Sie wissen, was Argumente in einer Funktion bewirken
-* Sie verstehen das zweite Grundelemente der Programmiersprache von R: Objekte
+* Sie verstehen das zweite Grundelement der "Sprache R": Objekte
   + Sie haben das Zusammenspiel von Funktionen und Objekte kennengelernt
   + Sie kennen bereits drei verschiedenen Arten von Objekten
 
@@ -87,9 +87,9 @@ write.table(pakete_liste, file="Paketliste_neu.csv", sep=",")
 
 
 
-[^1]: Falls Sie noch Probleme bei der Installation von R bzw. R-Studio oder sonstige Schwierigkeiten können Sie diese weiterhin melden.
+[^1]: Falls Sie noch Probleme bei der Installation von R bzw. RStudio oder sonstige technische Schwierigkeiten haben, können Sie diese weiterhin melden.
 
-[^2]: Auch das vorliegende Dokument wurde über R Markdown File erstellt.
+[^2]: Auch das vorliegende Dokument wurde über ein R-Markdown File erstellt.
 
 [^3]: $s=\sqrt{\frac{1}{N}\sum_{i=1}^N(x_i-\bar{x})^2}$
 
