@@ -25,6 +25,8 @@ Für jede Woche werden Lernziele und Arbeitsaufträge definiert. Für die erste 
 
 2) Installieren Sie das Paket "swirl" und laden Sie es. "swirl" ist eine in R implementierte interaktive Einführung in die Grundlagen von R!
 
-3) Rufen Sie die Funktion swirl() auf und spielen Sie ein wenig damit. Rufen Sie sich in Erinnerung, was Sie aus dem letzten Semester noch über die Arbeit mit R wissen!
+3) Rufen Sie die Funktion swirl() auf und spielen Sie ein wenig damit. Rufen Sie sich in Erinnerung, was Sie aus dem letzten Semester noch über die Arbeit mit R wissen! Notieren Sie sich, was Ihnen Sie noch kennen, was Ihnen neu vorkommt, usw. 
 
-4) Verwenden Sie ein wenig Zeit darauf, online nach R Tutorials, Foren etc. zu suchen. Halten Sie die URLs von Seiten und Ressourcen fest, die Ihnen hilfreich und/oder wichtig (aber u.U. noch etwas schwer zu durchschauen) vorkommen!
+4) Verwenden Sie ein wenig Zeit darauf, online nach R Tutorials, Foren, etc. zu suchen. Halten Sie die URLs von Seiten und Ressourcen fest, die Ihnen hilfreich und/oder wichtig (aber u.U. noch etwas schwer zu durchschauen) vorkommen!
+
+Erstellen Sie aus Ihren Notizen ein PDF Dokument, beschriften Sie dieses mit Fallloesung01_NameVorname.pdf und geben das Dokument via OLAT bis Mittwochmittag ab (23.09.2020, 12:00). 
