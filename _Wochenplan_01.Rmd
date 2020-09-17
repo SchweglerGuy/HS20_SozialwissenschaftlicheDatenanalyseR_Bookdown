@@ -1,8 +1,10 @@
 ---
 title: "Sozialwissenschaftliche Datenanalyse mit R -- Wochenplan 1"
 output:
-  pdf_document: default
   html_notebook: default
+  html_document:
+    df_print: paged
+  pdf_document: default
 ---
 
 # Lernziele 
@@ -21,7 +23,7 @@ Für jede Woche werden Lernziele und Arbeitsaufträge definiert. Für die erste 
 
 # Aufgaben 
 
-1) Installieren Sie die aktuellen Versionen von R und RStudio auf Ihrem Endgerät! Sie sollten sich Notizen, wenn es Probleme gibt -- und für das nächste Mal gleich festhalten, wie Sie diese gelöst haben. Da die Details der Installation vom Betriebssystem und den Spezifikationen des Endgeräts abhängen, ist es normal, dass dieser Prozess manchmal erst auf den zweiten Versuch funktioniert. 
+1) Installieren Sie die aktuellen Versionen von R und RStudio auf Ihrem Endgerät! Sie sollten sich Notizen machen, wenn es Probleme gibt -- und für das nächste Mal gleich festhalten, wie Sie diese gelöst haben. Da die Details der Installation vom Betriebssystem und den Spezifikationen des Endgeräts abhängen, ist es normal, dass dieser Prozess manchmal erst beim zweiten Versuch funktioniert. 
 
 2) Installieren Sie das Paket "swirl" und laden Sie es. "swirl" ist eine in R implementierte interaktive Einführung in die Grundlagen von R!
 
