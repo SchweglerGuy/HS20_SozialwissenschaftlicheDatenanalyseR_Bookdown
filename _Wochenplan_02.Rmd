@@ -55,6 +55,12 @@ y <- c(1, 3, 4, 5, 6, 7, NA)
 z <- c(7, 8, 10, 11)
 ```
 
+6. Das Objekt y scheint einen fehlenden Wert zu enthalten. Wie könnten wir trotzdem die Varianz von dem Objekt berechnen? Und falls das geklappt hat: Was sind in Ihrer neuen Kodezeile zur Berechnung der Varianz für Objekte enthalten?
+
+
+Versuchen Sie abschliessend Ihr Markdown Dokument zu 'knitten' und so daraus ein PDF Dokument zu erstellen. ACHTUNG: Damit dies funktioniert, muss ihr Kode fehlerfrei sein... Falls dies nicht klappt sollte notieren Sie bitte wieso und erstellen auf einem anderen Weg ein PDF Ihrer Lösungen. 
+
+Beschriften Sie Ihr Dokument mit Fallloesung02_NameVorname.pdf und geben das Dokument via OLAT bis Mittwochmittag ab (30.09.2020, 12:00).
 
 
 [^1]: Falls Sie noch Probleme bei der Installation von R bzw. RStudio oder sonstige technische Schwierigkeiten haben, können Sie sich gerne weiterhin per E-Mail melden! 
