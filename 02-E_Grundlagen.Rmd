@@ -39,9 +39,9 @@ Für die zweite Seminarwoche lassen sich folgende Seminarziele festhalten:
 2. ... Fortsetzung: 
     + Was ist der Vorteil der Arbeit im Skript gegenüber dem Schreiben von Code direkt in der Konsole?
     + Sie möchten nun das Ergebnis Ihrer letzten Rechnung als Objekt 'x' abspeichern. Wie könnten Sie das in der Konsole tun, ohne dass Sie nochmals den Kode der Rechnung (in unserem Beispiel "(5 + 3 - 4) / 5") selber schreiben müssten? 
-    + Und wo ist 'x' nun hin – wo oder wie können Sie 'x' sehen?
+    + Und wo ist 'x' nun hin – wo oder wie können Sie 'x' sehen?                                  
 
-3. Rekapitulieren Sie noch einmal: Was könnten die Vorteile davon sein, mit R Markdown zu arbeiten? Wann arbeitet man besser mit einem klassischen Skript? Schauen Sie sich auch die Formatierungsmöglichkeiten für Fliesstext in den Cheatsheets zu R Markdown an (siehe [hier](https://rstudio.com/resources/cheatsheets/))!
+3. Rekapitulieren Sie noch einmal: Was könnten die Vorteile davon sein, mit R Markdown zu arbeiten [@R-rmarkdown]? Wann arbeitet man besser mit einem klassischen Skript? Schauen Sie sich auch die Formatierungsmöglichkeiten für Fliesstext in den Cheatsheets zu R Markdown an (siehe [hier](https://rstudio.com/resources/cheatsheets/))!
 
 4. Öffnen Sie eine neue R Markdown Datei. Versuchen Sie Ihre bisherigen Notizen zu den Aufgaben und Ihren Code in dieser Datei unterzubringen. Arbeiten Sie für die folgenden Aufgaben mit dieser Datei weiter.
 
