@@ -41,9 +41,13 @@ Für die zweite Seminarwoche lassen sich folgende Seminarziele festhalten:
     + Sie möchten nun das Ergebnis Ihrer letzten Rechnung als Objekt 'x' abspeichern. Wie könnten Sie das in der Konsole tun, ohne dass Sie nochmals den Kode der Rechnung (in unserem Beispiel "(5 + 3 - 4) / 5") selber schreiben müssten? 
     + Und wo ist 'x' nun hin – wo oder wie können Sie 'x' sehen?
 
+Neben der Konsole und dem Skript existiert eine dritte Möglichkeit in R-Studio zu arbeiten, nämlich **R Markdown** (@R-rmarkdown).[^2] R Markown ist ebenfalls ein Paket und ermöglicht im Sinne eines erweiterten Skripts dynamische Analysedokumente: Sie kombinieren Kode, gerenderte Ausgaben (z. B. Grafiken) und Text. Eine neue R Markdown Datei kann via «File > New File > R Markdown» oder mit dem Button direkt unter dem «File» Button geöffnet werden. Die Datei selber ist unterteilt in einfachen Fliesstext (weisser Hintergrund) oder sogenanten R Chunk (grauer Hintergrund), Kodestücke für R. Ein R Chunk kann entweder über den «Insert»-Button im R Markdown-Fenster eingefügt werden, oder aber über die Tastenkombination «Ctrl + Alt + i» (bzw. «Cmd + Option + i» bei Mac).
+
 3. Rekapitulieren Sie noch einmal: Was könnten die Vorteile davon sein, mit R Markdown zu arbeiten? Wann arbeitet man besser mit einem klassischen Skript? Schauen Sie sich auch die Formatierungsmöglichkeiten für Fliesstext in den Cheatsheets zu R Markdown an (siehe [hier](https://rstudio.com/resources/cheatsheets/))!
 
 4. Öffnen Sie eine neue R Markdown Datei. Versuchen Sie Ihre bisherigen Notizen zu den Aufgaben und Ihren Code in dieser Datei unterzubringen. Arbeiten Sie für die folgenden Aufgaben mit dieser Datei weiter.
+
+Die Grundlagen der Sprache von R sind Funktionen und Objekte [vgl. @Manderscheid2017, 25ff]. Wir wollen uns in den folgenden Aufgaben diesen beiden Grundlagen der Sprache von R widmen.
 
 5. Versuchen Sie allgemein zu beschreiben, was Funktionen und was Objekte sind. Fügen Sie eine kurze Erläuterung in Ihr Markdown-Dokument zur Frage ein, was im folgenden Code jeweils Funktionen und was Objekte (und wenn letzteres, welche Art von Objekt) sind:
 
@@ -58,5 +62,7 @@ z <- c(7, 8, 10, 11)
 
 
 [^1]: Falls Sie noch Probleme bei der Installation von R bzw. RStudio oder sonstige technische Schwierigkeiten haben, können Sie sich gerne weiterhin per E-Mail melden! 
+
+[^2]: Auch das vorliegende Dokument wurde über ein R-Markdown File erstellt.
 
 

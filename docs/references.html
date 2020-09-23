@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="einheit-vom-17-09.html"/>
-
+<link rel="prev" href="einheit-vom-24-09-.html"/>
+<link rel="next" href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-3-01-10-2020.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,12 +49,13 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -63,14 +64,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -79,9 +82,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -131,14 +134,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Einführung</a></li>
-<li class="chapter" data-level="1" data-path="einheit-vom-17-09.html"><a href="einheit-vom-17-09.html"><i class="fa fa-check"></i><b>1</b> Einheit vom 17.09</a><ul>
-<li class="chapter" data-level="1.1" data-path="einheit-vom-17-09.html"><a href="einheit-vom-17-09.html#sozialwissenschaftliche-datenanalyse"><i class="fa fa-check"></i><b>1.1</b> Sozialwissenschaftliche Datenanalyse</a></li>
-<li class="chapter" data-level="1.2" data-path="einheit-vom-17-09.html"><a href="einheit-vom-17-09.html#ziel-des-kurses"><i class="fa fa-check"></i><b>1.2</b> Ziel des Kurses</a></li>
-<li class="chapter" data-level="1.3" data-path="einheit-vom-17-09.html"><a href="einheit-vom-17-09.html#r-als-programm-rstudio"><i class="fa fa-check"></i><b>1.3</b> R als Programm &amp; RStudio</a></li>
-<li class="chapter" data-level="1.4" data-path="einheit-vom-17-09.html"><a href="einheit-vom-17-09.html#lernziele-der-ersten-woche"><i class="fa fa-check"></i><b>1.4</b> Lernziele der ersten Woche</a></li>
-<li class="chapter" data-level="1.5" data-path="einheit-vom-17-09.html"><a href="einheit-vom-17-09.html#aufgaben-der-ersten-woche"><i class="fa fa-check"></i><b>1.5</b> Aufgaben der ersten Woche</a></li>
+<li class="chapter" data-level="1" data-path="einheit-vom-17-09-.html"><a href="einheit-vom-17-09-.html"><i class="fa fa-check"></i><b>1</b> Einheit vom 17.09.</a><ul>
+<li class="chapter" data-level="1.1" data-path="einheit-vom-17-09-.html"><a href="einheit-vom-17-09-.html#sozialwissenschaftliche-datenanalyse"><i class="fa fa-check"></i><b>1.1</b> Sozialwissenschaftliche Datenanalyse</a></li>
+<li class="chapter" data-level="1.2" data-path="einheit-vom-17-09-.html"><a href="einheit-vom-17-09-.html#ziel-des-kurses"><i class="fa fa-check"></i><b>1.2</b> Ziel des Kurses</a></li>
+<li class="chapter" data-level="1.3" data-path="einheit-vom-17-09-.html"><a href="einheit-vom-17-09-.html#r-als-programm-rstudio"><i class="fa fa-check"></i><b>1.3</b> R als Programm &amp; RStudio</a></li>
+<li class="chapter" data-level="1.4" data-path="einheit-vom-17-09-.html"><a href="einheit-vom-17-09-.html#lernziele-der-ersten-woche"><i class="fa fa-check"></i><b>1.4</b> Lernziele der ersten Woche</a></li>
+<li class="chapter" data-level="1.5" data-path="einheit-vom-17-09-.html"><a href="einheit-vom-17-09-.html#aufgaben-der-ersten-woche"><i class="fa fa-check"></i><b>1.5</b> Aufgaben der ersten Woche</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="einheit-vom-24-09-.html"><a href="einheit-vom-24-09-.html"><i class="fa fa-check"></i><b>2</b> Einheit vom 24.09.</a><ul>
+<li class="chapter" data-level="2.1" data-path="einheit-vom-24-09-.html"><a href="einheit-vom-24-09-.html#lernziele-der-zweiten-woche"><i class="fa fa-check"></i><b>2.1</b> Lernziele der zweiten Woche</a></li>
+<li class="chapter" data-level="2.2" data-path="einheit-vom-24-09-.html"><a href="einheit-vom-24-09-.html#aufgaben"><i class="fa fa-check"></i><b>2.2</b> Aufgaben</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="3" data-path="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-3-01-10-2020.html"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-3-01-10-2020.html"><i class="fa fa-check"></i><b>3</b> Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 3 (01.10.2020)</a><ul>
+<li class="chapter" data-level="3.1" data-path="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-3-01-10-2020.html"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-3-01-10-2020.html#lernziele"><i class="fa fa-check"></i><b>3.1</b> Lernziele</a></li>
+<li class="chapter" data-level="3.2" data-path="einheit-vom-24-09-.html"><a href="einheit-vom-24-09-.html#aufgaben"><i class="fa fa-check"></i><b>3.2</b> Aufgaben</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -162,43 +173,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="references" class="section level1 unnumbered">
 <h1>References</h1>
 
-<div id="refs" class="references">
-<div>
-<p>Chang, Winston, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, and Hiroaki Yutani. 2020. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. RStudio. <a href="http://ggplot2.tidyverse.org">http://ggplot2.tidyverse.org</a>.</p>
 </div>
-<div>
-<p>Diaz-Bone, Rainer. 2019. <em>Statistik Für Soziologen</em>. Konstanz: UVK.</p>
-</div>
-<div>
-<p>Kabacoff, Robert. 2015. <em>R in Action: Data Analysis and Graphics with R</em>. Shelter Island, NY: Manning.</p>
-</div>
-<div>
-<p>Manderscheid, Katharina. 2017. <em>Sozialwissenschaftliche Datenanalyse Mit R. Eine Einführung</em>. Wiesbaden: Springer VS.</p>
-</div>
-<div>
-<p>Sauer, Sebastian. 2019. <em>Moderne Datenanalyse Mit R: Daten Einlesen, Aufbereiten, Visualisieren, Modellieren Und Kommunizieren</em>. Wiesbaden: Springer VS.</p>
-</div>
-<div>
-<p>Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. Sebastopol, CA: O’Reilly. <a href="https://r4ds.had.co.nz/index.html">https://r4ds.had.co.nz/index.html</a>.</p>
-</div>
-<div>
-<p>Xie, Yihui. 2020. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.</p>
-</div>
-</div>
-</div>
-
-
-
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="einheit-vom-17-09.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="einheit-vom-24-09-.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-3-01-10-2020.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -248,6 +230,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
