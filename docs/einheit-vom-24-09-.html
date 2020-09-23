@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Sozialwissenschaftliche Datenanalyse mit R</title>
+  <title>2 Einheit vom 24.09. | Sozialwissenschaftliche Datenanalyse mit R</title>
   <meta name="description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta property="og:title" content="2 Einheit vom 24.09. | Sozialwissenschaftliche Datenanalyse mit R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta name="twitter:title" content="2 Einheit vom 24.09. | Sozialwissenschaftliche Datenanalyse mit R" />
   
   <meta name="twitter:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="einheit-vom-17-09-.html"/>
+<link rel="prev" href="einheit-vom-17-09-.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -166,39 +166,75 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Sozialwissenschaftliche Datenanalyse mit R</h1>
-<p class="author"><em>Kenneth Horvath &amp; Guy Schwegler</em></p>
-<p class="date"><em>HS 2020</em></p>
+<div id="einheit-vom-24.09." class="section level1">
+<h1><span class="header-section-number">2</span> Einheit vom 24.09.</h1>
+<div id="lernziele-der-zweiten-woche" class="section level2">
+<h2><span class="header-section-number">2.1</span> Lernziele der zweiten Woche</h2>
+<p>In der zweiten Seminarwoche geht es darum, die Grundlagen von R und RStudio zu repetieren und zu erweitern.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Für den weiteren Verlauf wollen wir <em>R als Sprache</em> auffassen – sowohl als Programmiersprache als auch als Sprache in einem metaphorischen Sinn. Wir wollen also ein komplexes System zur Kommunikation kennenlernen. Wie bei einer anderen Sprache gibt es auch hier Zeichen mit Bedeutungen (ähnliche wie Nomen, Verben, …) und Regeln zur Verknüpfung dieser Zeichen (ähnlich wie eine Grammatik). Diese Grundlagen gilt es alle erstmal kennenzulernen und zu verstehen. Am Anfang wird vieles schwer fallen, mit der Zeit gewinnt man aber Sicherheit.</p>
+<p>Der zentrale Punkt in dieser Vorstellung von R als Sprache ist dabei folgender: Wir lernen eine Sprache dadurch, dass wir sie immer wieder anwenden, Probleme lösen und vor allem auch Fehler machen. R als Software und als Programmiersprache hat eine steile Lernkurve und zu Beginn werden viele Probleme auftauchen. Im Umgang mit den Problemen soll allerdings auch eine eigene Arbeitsweise mit dem Programm erlernt werden (Fehlermeldungen lesen, Lösungsstrategien im Codieren erlernen, selber Hilfe suchen, …). Für die beständige Erweiterung der Grundlagen und das Erlernen der “Sprache R” besteht eine Herausforderung darin, den Weg zwischen scheinbarer <em>Trivialität</em> und überfordernder <em>Komplexität</em> zu finden: Es gilt die kleinen Schritte ernstzunehmen, sonst werden die grossen Schritte sehr schnell mühsam.</p>
+<p>Für die zweite Seminarwoche lassen sich folgende Seminarziele festhalten:</p>
+<ul>
+<li>Sie können die verschiedenen Funktionsweisen der vier Fenster in RStudio erläutern.</li>
+<li>Sie verstehen den Unterschied zwischen der Arbeit in der Konsole und im Skript.</li>
+<li>Sie verstehen, wie und wozu man im Skript kommentiert.</li>
+<li>Sie haben R-Markdown als erweitertes Skript und Arbeitsinstrument kennengelernt.</li>
+<li>Sie wissen, was ein Arbeitsverzeichnis in R ist und wozu es gut ist.</li>
+<li>Sie verstehen das erste Grundelement der “Sprache R”: Funktionen
+<ul>
+<li>Sie wissen, wie Funktionen aufgebaut sind;</li>
+<li>Sie wissen, wie Sie sich Hilfe zu Funktionen holen;</li>
+<li>Sie wissen, was Argumente in einer Funktion bewirken.</li>
+</ul></li>
+<li>Sie verstehen das zweite Grundelement der “Sprache R”: Objekte
+<ul>
+<li>Sie verstehen, was es bedeutet, dass in R “alles ein Objekt ist”;</li>
+<li>Sie wissen, wie man sich die jeweils aktuell verfügbare Objekte anzeigen lässt;</li>
+<li>Sie haben das Zusammenspiel von Funktionen und Objekte kennengelernt;</li>
+<li>Sie kennen bereits drei verschiedenen Arten von Objekten.</li>
+</ul></li>
+</ul>
 </div>
-<div id="einführung" class="section level1 unnumbered">
-<h1>Einführung</h1>
-<p>Das Seminar “Sozialwissenschaftliche Datenanalyse mit R” bietet eine systematische Einführung in das Statistikpaket R. R ist eine Open Source Software, die sich unter anderem durch Flexibilität und vielfältige Möglichkeiten der grafischen und numerischen Datenanalyse auszeichnet. Das Seminar führt in inhaltlicher Abstimmung mit der Vorlesung „Grundlagen der multivariaten Statistik“ in Aufbau und Funktionsweise des Programms sowie in die Umsetzung wichtiger statistischer Verfahren (etwa lineare Regression und logistische Regression) ein. Anhand dieser Verfahren werden unter anderem Techniken des effizienten Datenmanagements, Möglichkeiten, eigenständig kleine Funktionen zu programmieren, sowie Formen der grafischen Datenanalyse und Ergebnisdarstellung besprochen.</p>
-<p>Das vorliegende Dokument ist ein sogennantes Bookdown (<span class="citation">Xie (<a href="#ref-R-bookdown" role="doc-biblioref">2020</a>)</span>, siehe auch <a href="https://bookdown.org/">hier</a>) und dient der Ergebnissicherung im Seminarverlauf. Das heisst dass die im Seminar besprochene Themen hiernochmals schriftlich festgehalten, diskutiert und allenfalls Literatur ergänzt werden (siehe für allgemeine Literatur etwa <span class="citation">Diaz-Bone (<a href="#ref-DiazBone2019" role="doc-biblioref">2019</a>)</span>, <span class="citation">Kabacoff (<a href="#ref-Kabacoff2015" role="doc-biblioref">2015</a>)</span> oder <span class="citation">Manderscheid (<a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>)</span>). Das Bookdown wird laufend aktualisiert. Ebenfalls werden in diesem Bookdown die Lösungen für die im Seminar gestellten Aufgaben (Falllösungen) präsentiert.</p>
+<div id="aufgaben" class="section level2">
+<h2><span class="header-section-number">2.2</span> Aufgaben</h2>
+<ol style="list-style-type: decimal">
+<li><p>Fassen Sie noch einmal für sich und in eigenen Worten die Funktionen der vier Fenster von R zusammen.</p></li>
+<li><p>Führen Sie sowohl in der Konsole als auch im Skript einige Rechnungen durch und speichern Sie im Skript die Resultate als Kommentare. Hier ein paar Beispielrechnung:</p></li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="einheit-vom-24-09-.html#cb2-1"></a><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb2-2"><a href="einheit-vom-24-09-.html#cb2-2"></a><span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span></span>
+<span id="cb2-3"><a href="einheit-vom-24-09-.html#cb2-3"></a>(<span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span>) <span class="op">/</span><span class="st"> </span><span class="dv">5</span></span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li><p>… Fortsetzung:</p>
+<ul>
+<li>Was ist der Vorteil der Arbeit im Skript gegenüber dem Schreiben von Code direkt in der Konsole?</li>
+<li>Sie möchten nun das Ergebnis Ihrer letzten Rechnung als Objekt ‘x’ abspeichern. Wie könnten Sie das in der Konsole tun, ohne dass Sie nochmals den Kode der Rechnung (in unserem Beispiel “(5 + 3 - 4) / 5”) selber schreiben müssten?</li>
+<li>Und wo ist ‘x’ nun hin – wo oder wie können Sie ‘x’ sehen?</li>
+</ul></li>
+<li><p>Rekapitulieren Sie noch einmal: Was könnten die Vorteile davon sein, mit R Markdown zu arbeiten? Wann arbeitet man besser mit einem klassischen Skript? Schauen Sie sich auch die Formatierungsmöglichkeiten für Fliesstext in den Cheatsheets zu R Markdown an (siehe <a href="https://rstudio.com/resources/cheatsheets/">hier</a>)!</p></li>
+<li><p>Öffnen Sie eine neue R Markdown Datei. Versuchen Sie Ihre bisherigen Notizen zu den Aufgaben und Ihren Code in dieser Datei unterzubringen. Arbeiten Sie für die folgenden Aufgaben mit dieser Datei weiter.</p></li>
+<li><p>Versuchen Sie allgemein zu beschreiben, was Funktionen und was Objekte sind. Fügen Sie eine kurze Erläuterung in Ihr Markdown-Dokument zur Frage ein, was im folgenden Code jeweils Funktionen und was Objekte (und wenn letzteres, welche Art von Objekt) sind:</p></li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="einheit-vom-24-09-.html#cb3-1"></a><span class="kw">sqrt</span>(x)</span>
+<span id="cb3-2"><a href="einheit-vom-24-09-.html#cb3-2"></a><span class="kw">help</span>(<span class="st">&quot;sqrt&quot;</span>)</span>
+<span id="cb3-3"><a href="einheit-vom-24-09-.html#cb3-3"></a>?help</span>
+<span id="cb3-4"><a href="einheit-vom-24-09-.html#cb3-4"></a>y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="ot">NA</span>)</span>
+<span id="cb3-5"><a href="einheit-vom-24-09-.html#cb3-5"></a>z &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">11</span>)</span></code></pre></div>
 
 </div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-DiazBone2019">
-<p>Diaz-Bone, Rainer. 2019. <em>Statistik Für Soziologen</em>. Konstanz: UVK.</p>
 </div>
-<div id="ref-Kabacoff2015">
-<p>Kabacoff, Robert. 2015. <em>R in Action: Data Analysis and Graphics with R</em>. Shelter Island, NY: Manning.</p>
-</div>
-<div id="ref-Manderscheid2017">
-<p>Manderscheid, Katharina. 2017. <em>Sozialwissenschaftliche Datenanalyse Mit R. Eine Einführung</em>. Wiesbaden: Springer VS.</p>
-</div>
-<div id="ref-R-bookdown">
-<p>Xie, Yihui. 2020. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.</p>
-</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>Falls Sie noch Probleme bei der Installation von R bzw. RStudio oder sonstige technische Schwierigkeiten haben, können Sie sich gerne weiterhin per E-Mail melden!<a href="einheit-vom-24-09-.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="einheit-vom-17-09-.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="einheit-vom-17-09-.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -229,7 +265,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-E_Grundlagen.Rmd",
 "text": "Edit"
 },
 "history": {
