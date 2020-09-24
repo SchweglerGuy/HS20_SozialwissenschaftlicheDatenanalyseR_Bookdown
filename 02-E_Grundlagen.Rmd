@@ -56,7 +56,9 @@ z <- c(7, 8, 10, 11)
 ```
 
 
-6. Das Objekt y scheint einen fehlenden Wert zu enthalten. Wie könnten wir trotzdem die Varianz von dem Objekt berechnen? Und falls das geklappt hat: Was sind in Ihrer neuen Kodezeile zur Berechnung der Varianz für Objekte enthalten?
+6. Bonusaufgabe: Sehen Sie sich die Hilfeseite der Funktion matrix() an. Wozu dient diese Funktion? Welche Argumente akzeptiert / benötigt sie und wozu dienen diese? Illustrieren Sie die Funktionsweise anhand von ein paar Beispielen. 
+
+Halten Sie Ihren Kode, Ihre Antworten und Ihre Fragen in Ihrem Markdown-Dokument fest. Versuchen Sie abschliessend, dieses in ein PDF Dokument zu 'knitten'. ACHTUNG: Damit dies funktioniert, muss ihr Kode fehlerfrei sein ... Falls dieser Schritt nicht klappen sollte, notieren Sie bitte wieso und erstellen auf einem anderen Weg ein PDF Ihrer Lösungen. 
 
 
 Versuchen Sie abschliessend Ihr Markdown Dokument zu 'knitten' und so daraus ein PDF Dokument zu erstellen. ACHTUNG: Damit dies funktioniert, muss ihr Kode fehlerfrei sein... Falls dies nicht klappt sollte notieren Sie bitte wieso und erstellen auf einem anderen Weg ein PDF Ihrer Lösungen. 
