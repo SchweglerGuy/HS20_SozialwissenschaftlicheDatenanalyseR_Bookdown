@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 2 (24.09.2020)
 
 ## Lernziele
@@ -19,9 +24,9 @@ Für die zweite Seminarwoche lassen sich folgende Seminarziele festhalten:
   + Sie wissen, was Argumente in einer Funktion bewirken.
 * Sie verstehen das zweite Grundelement der "Sprache R": Objekte
   + Sie verstehen, was es bedeutet, dass in R "alles ein Objekt ist";
-  + Sie wissen, wie man sich die jeweils aktuell verfügbare Objekte anzeigen lässt;
-  + Sie haben das Zusammenspiel von Funktionen und Objekte kennengelernt;
-  + Sie kennen bereits drei verschiedenen Arten von Objekten.
+  + Sie wissen, wie man sich die jeweils aktuell verfügbare Objekten anzeigen lässt;
+  + Sie haben das Zusammenspiel von Funktionen und Objekten kennengelernt;
+  + Sie kennen bereits verschiedene Arten von Objekten.
 
 
 ## Aufgaben
@@ -41,11 +46,11 @@ Für die zweite Seminarwoche lassen sich folgende Seminarziele festhalten:
     + Sie möchten nun das Ergebnis Ihrer letzten Rechnung als Objekt 'x' abspeichern. Wie könnten Sie das in der Konsole tun, ohne dass Sie nochmals den Kode der Rechnung (in unserem Beispiel "(5 + 3 - 4) / 5") selber schreiben müssten? 
     + Und wo ist 'x' nun hin – wo oder wie können Sie 'x' sehen?
 
-3. Rekapitulieren Sie noch einmal: Was könnten die Vorteile davon sein, mit R Markdown zu arbeiten? Wann arbeitet man besser mit einem klassischen Skript? Schauen Sie sich auch die Formatierungsmöglichkeiten für Fliesstext in den Cheatsheets zu R Markdown an (siehe [hier](https://rstudio.com/resources/cheatsheets/))!
+3. Rekapitulieren Sie noch einmal: Was könnten die Vorteile davon sein, mit R Markdown zu arbeiten? Wann arbeitet man besser mit einem klassischen Skript? Schauen Sie sich auch die Formatierungsmöglichkeiten für Fliesstext in den Cheatsheets zu R Markdown an (siehe [_hier_](https://rstudio.com/resources/cheatsheets/))!
 
-4. Öffnen Sie eine neue R Markdown Datei. Versuchen Sie Ihre bisherigen Notizen zu den Aufgaben und Ihren Code in dieser Datei unterzubringen. Arbeiten Sie für die folgenden Aufgaben mit dieser Datei weiter.
+4. Öffnen Sie eine neue R Markdown Datei. Versuchen Sie, Ihre bisherigen Notizen zu den Aufgaben und Ihren Code in dieser Datei unterzubringen. Arbeiten Sie auch für die folgenden Aufgaben mit und in dieser Datei weiter.
 
-5. Versuchen Sie allgemein zu beschreiben, was Funktionen und was Objekte sind. Fügen Sie eine kurze Erläuterung in Ihr Markdown-Dokument zur Frage ein, was im folgenden Code jeweils Funktionen und was Objekte (und wenn letzteres, welche Art von Objekt) sind:
+5. Versuchen Sie, allgemein zu beschreiben, was Funktionen und was Objekte in R sind. Fügen Sie eine kurze Erläuterung in Ihr Markdown-Dokument zur Frage ein, was im folgenden Code jeweils "Funktionen" und was "Objekte" sind (und wenn letzteres, welche Art von Objekt vorliegt). 
 
 ```{r eval=FALSE}
 sqrt(x)
@@ -55,12 +60,11 @@ y <- c(1, 3, 4, 5, 6, 7, NA)
 z <- c(7, 8, 10, 11)
 ```
 
-6. Das Objekt y scheint einen fehlenden Wert zu enthalten. Wie könnten wir trotzdem die Varianz von dem Objekt berechnen? Und falls das geklappt hat: Was sind in Ihrer neuen Kodezeile zur Berechnung der Varianz für Objekte enthalten?
+6. Bonusaufgabe: Sehen Sie sich die Hilfeseite der Funktion matrix() an. Wozu dient diese Funktion? Welche Argumente akzeptiert / benötigt sie und wozu dienen diese? Illustrieren Sie die Funktionsweise anhand von ein paar Beispielen. 
 
+Halten Sie Ihren Kode, Ihre Antworten und Ihre Fragen in Ihrem Markdown-Dokument fest. Versuchen Sie abschliessend, dieses in ein PDF Dokument zu 'knitten'. ACHTUNG: Damit dies funktioniert, muss ihr Kode fehlerfrei sein ... Falls dieser Schritt nicht klappen sollte, notieren Sie bitte wieso und erstellen auf einem anderen Weg ein PDF Ihrer Lösungen. 
 
-Versuchen Sie abschliessend Ihr Markdown Dokument zu 'knitten' und so daraus ein PDF Dokument zu erstellen. ACHTUNG: Damit dies funktioniert, muss ihr Kode fehlerfrei sein... Falls dies nicht klappt sollte notieren Sie bitte wieso und erstellen auf einem anderen Weg ein PDF Ihrer Lösungen. 
-
-Beschriften Sie Ihr Dokument mit Fallloesung02_NameVorname.pdf und geben das Dokument via OLAT bis Mittwochmittag ab (30.09.2020, 12:00).
+Benennen Sie Ihr Dokument nach dem Schema Fallloesung02_NameVorname.pdf und laden Sie es  bis Mittwochmittag in OLAT hoch (30.09.2020, 12:00).
 
 
 [^1]: Falls Sie noch Probleme bei der Installation von R bzw. RStudio oder sonstige technische Schwierigkeiten haben, können Sie sich gerne weiterhin per E-Mail melden! 
