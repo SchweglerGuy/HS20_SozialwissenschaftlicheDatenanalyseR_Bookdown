@@ -2,114 +2,35 @@
 
 ## Lernziele
 
-Im Rahmen der dritten Seminarwoche sollen Sie auf die bisherigen Elemente der Programmiersprache R, die Sie bereits kennengelernt haben, weiter vertiefen und in Anwendungen verknüpfen -- d.h. die Grundelemente Funktionen und Objekte, die verschiedenen Arten von Objekten sowie immer auch die "Grammatik" dieser Sprache. Zusätzlich werden in dieser Woche zwei neue Grundlagen eingeführt: Erstens die verschiedenen Datenarten von Nummern, Text und logischen Aussagen. Zweitens die Möglichkeit Vektoren über Funktionen zu definieren. 
+In der dritten Seminarwoche vertiefen wir Elemente der Programmiersprache R, die Sie bereits kennengelernt haben,  und betten sie in neue Zusammenhänge ein. Das Ziel ist es, das Verständnis von Funktionen und Objekten, von den verschiedenen Arten von Objekten in R sowie immer auch von der "Grammatik" dieser Sprache weiter zu schärfen. Zusätzlich werden in dieser Woche zwei neue Grundlagen eingeführt: Erstens die verschiedenen Arten von Daten, mit denen wir in R arbeiten: Zahlen, Text und logische Werte; zweitens einige Möglichkeiten, über bestimmte Funktionen systematisch Vektoren zu definieren. 
 
-Für die dritte Seminarwoche lassen sich folgende Seminarziele festhalten:
+Zusammenfassend lassen sich damit folgende Seminarziele festhalten:
 
-* Sie können mittels Argumenten eine jeweilige Funktion und deren Resultate spezifizieren.
+* Sie können mittels Argumenten eine Funktion spezifizieren und damit Einfluss auf die Details der Berechnung und der Ergebnisdarstellung nehmen.
 * Sie können die drei bisher kennengelernten Objekttypen (einzelne Zahl, Vektor, und Matrix) kombinieren.
-* Sie kennen die drei verschiedenen Datenarten von R und...
-  + ...sie verstehen die Rolle von numerischen Daten,
-  + ...die Rolle von textlichen Daten
-  + ...sowie die Rolle von logischen Daten.
-* Sie können Vektoren mittels den Funktionen
-  + ...seq()
-  + ...sowie rep() definieren
-  + ...und dies für alle drei Arten von Daten.
+* Sie kennen die drei verschiedenen Datenarten von R:
+  + Sie verstehen die Rolle von numerischen Daten,
+  + Sie verstehen die Rolle von textförmigen Daten
+  + Sie verstehen die Rolle von logischen Daten.
+* Sie können Vektoren mittels der Funktionen ...
+  + ... seq()
+  + ... sowie rep() definieren
+  + ... und diese auf alle drei Arten von Daten anwenden.
 
 
 ## Aufgaben
 
-1. Der Vektor v besteht aus folgenden Zahlen: 1, 3, 7, 9, 22, 2, 8, 14, 20, 3, 7, 9, 11, und 13. Berechnen Sie auf drei verschiedenen Arten das arithmetische Mittel dieses Vektors.
+1. Der Vektor **v** besteht aus folgenden Zahlen: 1, 3, 7, 9, 22, 2, 8, 14, 20, 3, 7, 9, 11, und 13. Berechnen Sie auf drei verschiedenen Arten das arithmetische Mittel dieses Vektors.
 
-> 1) (1+ 3+ 7+ 9+ 22+ 2+ 8+ 14+ 20+ 3+ 7+ 9+ 11+ 13) / 14 Hinweis: Man kann auch einfach die Kommatas mit + suchen/erstzen
-> 2) sum(v)/length(v)
-> 3) mean(v)
+2. Was macht das Argument 'trim' für die Funktion mean()? Wozu könnten Sie dieses Argument in einem sozialwissenschaftlichen Kontext nutzen? Spezifizieren Sie das Argument auf sinnvolle Weise, um das arithmetische Mittel des in Aufgabe 1 erstellten Vektors **v** zu berechnen!
 
-2. Was macht das Argument 'trim' für die Funktion mean()? Wozu könnten Sie dieses Argument in einem sozialwissenschaftlichen Kontext nutzten? Nutzen Sie das Argument auf eine Weise um das arithmetische Mittel des Vektors v zu berechnen!
+3. Erstellen Sie vier verschiedene Vektoren mit je einer Länge von vier und verbinden Sie diese zu einer 4x4-Matrix. Die Funktion apply() erlaubt Ihnen, eine Funktionen wie z.B. mean() oder var() auf diese Matrix anzuwenden. Nur wie genau? Sehen Sie sich die Hilfe zu apply() an, probieren Sie die Funktion aus und versuchen Sie zu verstehen, wie sie genau funktioniert. Erläutern Sie apply() dann in eigenen Worten und mit Hilfe der von Ihnen erzeugten 4x4-Matrix! 
 
-3. Erstellen Sie vier verschiedene Vektoren mit je einer Länge von vier und verbinden Sie diese zu einer 4x4 Matrix. Die Funktion apply() lässt Sie die dann eine andere Funktion auf diese Matrix anwenden, z.Bsp. wiederum die mean()-Funktion oder Sie könne auch die Varianz mittels var() berechnen. Versuchen Sie dies für eine bestimme Kennzahl auf eine Art zu tun (egal ob Mittelwert, Varianz oder...). Wieso können Sie einen solchen Kennwert auf vier verschiedenen Varianten berechnen? Und wieso gibt es trotzdem nur nur zwei verschiedenen Resultate? 
-> Ich würde jetzt in der morgigen Sitzung die rbind()/cbind Funktion vorstellen...
+4. Erstellen Sie je einen Vektor mit numerischen Daten, textförmigen Daten und logischen Daten. Die Funktionen as.numeric(), as.character() und as.logical() lassen Sie eine Datenarten in eine andere "zwingen" bzw. als eine andere Datenart interpretieren. Wann funktioniert dies? Und wo sind die Grenzen dieses "Zwingens"?
 
-```{r}
-#Das als die Idee
-m1 <- c(2,4,7,9)
-m2 <- c(8,9,5,2)
-m3 <- c(3,5,5,5)
-m4 <- c(9,8,7,6)
-ma <- cbind(m1,m2,m3,m4)
-mb <- rbind(m1,m2,m3,m4)
-ma
-mb
-apply(ma, 1, mean)
-apply(ma, 2, mean)
-apply(mb, 1, mean)
-apply(mb, 2, mean)
-```
-
-
-4. Erstellen Sie je einen Vektor mittels numerischen Daten, textlichen Daten und logischen Daten. Die Funktionen as.numeric(), as.character() und as.logical() lassen Sie eine Datenarten in eine andere "zwingen" bzw. als eine andere Datenart interpretieren. Wann funktioniert dies? Und wo sind die Grenzen dieses "zwingens"?
-
-5. Definieren Sie folgende Vektoren mittels den Funktionen seq() und rep():
+5. Definieren Sie folgende Vektoren mittels der Funktionen seq() und rep():
   + Vektor 5a: 1 2 3 4 5 6 7 8 9 10
   + Vektor 5b: 1 1 1 2 2 2 3 3 3
   + Vektor 5c: Die Zahlen des Vektors b als ausgeschriebene Wörter
   + Vektor 5d: 1 4 7 10 13
   + Vektor 5e: 1 1 1 1 2 3 4 5
-
-
-
-> Ende des Arbeitsblattes
-
-> Notizen & Ergänzungen von WP2
-
-```{r eval=FALSE}
-sqrt(x)
-help("sqrt")
-?help
-y <- c(1,3,4,5,6,7,NA)
-z <- c(7,8,10,11)
-```
-
-6. Argumente erweitern nochmals die Funktionen, in dem sie deren Details bestimmen. 
-    + In unser Objekt y scheint ein fehlende Wert vorhanden zu sein. Wie könnten wir trotzdem die Varianz von dem Objekt berechnen? Und falls das geklappt hat: Was sind in Ihrer neuen Kodezeile zur Berechnung der Varianz für Objekte enthalten?
-    + Unser Objekt z scheint hingegen keine solchen fehlenden Wert zu beinhaltet. Trotzdem scheint etwas nicht zu stimmen, wenn Sie das Resultat der Funktion zur Berechnung Standardabweichung 'sd()' mit dem Ergebnis der dazugehörigen Formel vergleichen [vgl. @DiazBone2019, 50f].[^1] Was könnte das Problem sein und wo die Lösung liegen?
-    
-> Würde ich als Teil der Stunde morgen vermitteln
-  
-7. Objekte in R können in verschiedene Kategorien eingeteilt werden (wir bleiben heute mal bei den Zahlen). So gibt es *einzelne Zahlen*, eine Reihe von Zahlen (*Vektoren*) und Matrizen von Zahlen (*Matrix*) sowie *Dataframes* («Datensätze», werden wir später noch kennenlernen).[^2] Versuchen Sie nun für jeden Objekttyp ein Beispiel zu erstellen:
-    + Erstellen Sie verschiedenene Objekt aus einzelnen Zahlen.
-    + Erstellen Sie drei Vektoren derselben Länge, wovon einer auch einzelne Objekte aus der vorherigen Teilaufgabe enthält.
-    + Verbinden Sie die drei Vektoren zu einer Matrix, einmal über den Befehl 'cbind()' und einmal über 'rbind()'.
-    + Welche Ihrer beiden Matrizen macht mehr Sinn? Könnte eine davon einem sozialwissenschaftlichem Datensatz entsprechen?
-    
-> Würde ich als Teil der Stunde morgen vermitteln
-
-
-#### Bonusaufgabe 
-Funktionen sind in den verschiedensten Paketen organisiert, wovon allerdings bereits ein Grossteil im Basispaket von R selber enthalten ist. Mit folgender Funktion können wir etwa betrachten, welche Pakete installiert worden sind:
-```{r results='hide'}
-installed.packages()
-
-```
-
-Wir möchten nun diese von der Funktion generierte Liste exportieren. Definieren Sie sich dazu ein Arbeitsverzeichnis über die Menüsteuerung «Session > Set Working Directory > Choose Directory» oder über den Befehl 'setwd()'. Erstere Variante ist etwas einfacher. Der 'getwd()' Befehl wiederum gibt das aktuell festgelegte Vereichnis aus. Ein Arbeitsverzeichnis ist der Ort, auf den R immer als erstes zugreift und wo Dinge automatisch abgelegt werden. Speichern Sie jeweils Ihr aktuelles Arbeitsverzeichnis als Teil des Markdowns, z.Bsp. so:
-```{r eval=F}
-setwd("C:/Users/SchweglG/R_Daten/HS20/E2")
-```
-
-Machen Sie sich nun eine CSV-Datei (**C**omma **S**eparated **V**alue) aus der Liste der Pakete über folgenden Befehl:
-```{r eval=F}
-write.table(pakete_liste, file="Paketliste_neu.csv", sep=",")
-```
-...und schauen Sie doch mal nach, ob die Datei am richtigen Ort gelandet ist. 
-
-
-> Würde ich als Teil der Stunde morgen vermitteln
-
-
-
-[^1]: $s=\sqrt{\frac{1}{N}\sum_{i=1}^N(x_i-\bar{x})^2}$
-
-[^2]: Ergänzen müsste man an der Stelle noch Listen und Arrays. Diese beiden Objekttypen werden nicht Teil dieses Seminars sein.
-
