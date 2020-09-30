@@ -30,9 +30,9 @@ Für die zweite Seminarwoche lassen sich folgende Seminarziele festhalten:
 
 Oben links findet sich in R-Studio das Skript-Fenster, in dem Befehle eingegeben und kommentiert werden können. Ausgeführt werden diese Befehle erst, wenn Sie *Ctrl* und *Enter* drücken (bzw. *Cmd* & *Enter*). Diese Eingabe von Kodezeilen wird ergänzt durch die direkte Eingabe in der Konsole. In diesem Fenster läuft das eigentliche Programm R (es ist also dieselbe Ansicht wie wenn Sie R ohne grafische Benutzeroberfläche starten würden). Im Gegensatz zum Skript können hier Befehle nur immer einzeln eingegeben und sie müssen dann direkt ausgeführt werden. Dies ermöglicht ein schneller ausprobieren, aber eben kein wirklich speichern, beständiges überarbeiten, kommentieren und eine klare Dokumentation des Ablaufs, wie dies im Skript erfolgen kann.
 
-Die beiden Fenster zur Eingabe von Kode werden vom Environment Fenster ergänzt. Hier finden sich  die abgespeicherten Objekte sowie in den weiteren Reitern die bisher ausgeführten Befehle (*History*), aber auch eine erweitere Netzwerk- bzw. Serverumgebung (*Connections*, *Build*, …), falls Sie z.Bsp. mit weiteren Personen an einem Projekt arbeiten. Im vierten Fenster werden Grafiken, Hilfeseiten, die Vorschau für geknittete Dokumente und auch die Ordnerstruktur angezeigt.
+Die beiden Fenster zur Eingabe von Kode werden vom *Environment*-Fenster ergänzt. Hier finden sich  die abgespeicherten Objekte sowie in den weiteren Reitern die bisher ausgeführten Befehle (*History*), aber auch eine erweitere Netzwerk- bzw. Serverumgebung (*Connections*, *Build*, …), falls Sie z.Bsp. mit weiteren Personen an einem Projekt arbeiten. Im vierten Fenster werden Grafiken, Hilfeseiten, die Vorschau für geknittete Dokumente und auch die Ordnerstruktur angezeigt.
 
-Sie finden diverse Einstellungsoptionen zu den vier Fenster und deren Anordnung unter „Tools > Gobal Options“.
+Sie finden diverse Einstellungsoptionen zu den vier Fenster und deren Anordnung unter „Tools > Gobal Options“. Dort können Sie etwa unter dem Reiter "General" die Option zum "Save Workspace to RData on exit" zu *Never* wechseln. Dies führt dazu, dass Ihre *Environment* beim Verlassen von R immer gelöscht wird. Dies ist nicht etwa ein Nachteil, sondern eine Technik die Sie dazu veranlasst, alle benötigen Schritte in Ihrem Kode unterzubringen. Weiter könne Sie unter dem Reiter "Spelling" auch noch die Rechtschreibefunktion deaktiveren, da das Feature noch nicht wirklich für die deutsche Rechtschreibung zu funktionieren scheint (bzw. die Ergänzung von neuen Wörterbüchern nicht fehlerfrei abläuft). 
 
 Die Ordnerstruktur im Reiter *Files* des vierten Fensters hängt mit Ihrem aktuellen **Arbeitsverzeichnis** zusammen. Ein Arbeitsverzeichnis ist der Ort, auf den R immer als Erstes zugreift und wo Dinge automatisch abgelegt werden. Dieses können über die Menüsteuerung "Session > Set Working Directory > Choose Directory" oder über den Befehl 'setwd()' definieren (erstere Variante ist etwas einfacher). Der 'getwd()' Befehl wiederum gibt das aktuell festgelegte Verzeichnis aus. Speichern Sie jeweils Ihr aktuelles Arbeitsverzeichnis als Teil des Markdowns, z.Bsp. so:
 ```{r eval=F}
@@ -112,7 +112,12 @@ Unser Objekt z scheint hingegen keine solchen fehlenden Wert zu beinhaltet. Trot
 Welche Argumente akzeptiert / benötigt sie und wozu dienen diese? Illustrieren Sie die Funktionsweise
 anhand von ein paar Beispielen.
 
-R kennt verschiedenste Arten von Objekten (fürs Erste bleiben wir hier bei verschiedenen Objekten für Zahlen). Im bisherigen Verlauf haben Sie bereits einzelne Zahlen sowie Vektoren als eine Reihe von Zahlen kennengelernt. Über die Funktion 'matrix()' lässt sich nun ein dritter Objekttyp generieren, nämlich eine Matrix. Matrizen enthalten Zeilen und Spalten des jeweils selben Datentyps.[^4] So lässt sich beispielsweise eine Art sozialwissenschaftlicher Datensatz erstellen:
+R kennt verschiedenste Arten von Objekten (fürs Erste bleiben wir hier bei verschiedenen Objekten für Zahlen). Im bisherigen Verlauf haben Sie bereits einzelne Zahlen sowie Vektoren als eine Reihe von Zahlen kennengelernt. Über die Funktion 'matrix()' lässt sich nun ein dritter Objekttyp generieren, nämlich eine Matrix. Matrizen enthalten Zeilen und Spalten des jeweils selben Datentyps.[^4] 
+```{r}
+matrix(c(1,2,3,4,5,6,7,8,9,10), nrow = 2, ncol = 5)
+```
+
+Auch lässt sich so beispielsweise eine Art sozialwissenschaftlicher Datensatz erstellen:
 ```{r}
 einstell <- c(1,3,5,4,3)
 koerp_g <- c(176,180,192,156,168)

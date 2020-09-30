@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Sozialwissenschaftliche Datenanalyse mit R</title>
+  <title>3 Einheit vom 01.10. | Sozialwissenschaftliche Datenanalyse mit R</title>
   <meta name="description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta property="og:title" content="3 Einheit vom 01.10. | Sozialwissenschaftliche Datenanalyse mit R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta name="twitter:title" content="3 Einheit vom 01.10. | Sozialwissenschaftliche Datenanalyse mit R" />
   
   <meta name="twitter:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="einheit-vom-17-09-.html"/>
+<link rel="prev" href="einheit-vom-24-09-.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -170,30 +170,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Sozialwissenschaftliche Datenanalyse mit R</h1>
-<p class="author"><em>Kenneth Horvath &amp; Guy Schwegler</em></p>
-<p class="date"><em>HS 2020</em></p>
+<div id="einheit-vom-01.10." class="section level1">
+<h1><span class="header-section-number">3</span> Einheit vom 01.10.</h1>
+<div id="lernziele" class="section level2">
+<h2><span class="header-section-number">3.1</span> Lernziele</h2>
+<p>In der dritten Seminarwoche vertiefen wir Elemente der Programmiersprache R, die Sie bereits kennengelernt haben, und betten sie in neue Zusammenhänge ein. Das Ziel ist es, das Verständnis von Funktionen und Objekten, von den verschiedenen Arten von Objekten in R sowie immer auch von der “Grammatik” dieser Sprache weiter zu schärfen. Zusätzlich werden in dieser Woche zwei neue Grundlagen eingeführt: Erstens die verschiedenen Arten von Daten, mit denen wir in R arbeiten: Zahlen, Text und logische Werte; zweitens einige Möglichkeiten, über bestimmte Funktionen systematisch Vektoren zu definieren.</p>
+<p>Zusammenfassend lassen sich damit folgende Seminarziele festhalten:</p>
+<ul>
+<li>Sie können mittels Argumenten eine Funktion spezifizieren und damit Einfluss auf die Details der Berechnung und der Ergebnisdarstellung nehmen.</li>
+<li>Sie können die drei bisher kennengelernten Objekttypen (einzelne Zahl, Vektor, und Matrix) kombinieren.</li>
+<li>Sie kennen die drei verschiedenen Datenarten von R:
+<ul>
+<li>Sie verstehen die Rolle von numerischen Daten,</li>
+<li>Sie verstehen die Rolle von textförmigen Daten</li>
+<li>Sie verstehen die Rolle von logischen Daten.</li>
+</ul></li>
+<li>Sie können Vektoren mittels der Funktionen …
+<ul>
+<li>… seq()</li>
+<li>… sowie rep() definieren</li>
+<li>… und diese auf alle drei Arten von Daten anwenden.</li>
+</ul></li>
+</ul>
 </div>
-<div id="einführung" class="section level1 unnumbered">
-<h1>Einführung</h1>
-<p>Das Seminar “Sozialwissenschaftliche Datenanalyse mit R” bietet eine systematische Einführung in das Statistikpaket R. R ist eine Open Source Software, die sich unter anderem durch Flexibilität und vielfältige Möglichkeiten der grafischen und numerischen Datenanalyse auszeichnet. Das Seminar führt in inhaltlicher Abstimmung mit der Vorlesung „Grundlagen der multivariaten Statistik“ in Aufbau und Funktionsweise des Programms sowie in die Umsetzung wichtiger statistischer Verfahren (etwa lineare Regression und logistische Regression) ein. Anhand dieser Verfahren werden unter anderem Techniken des effizienten Datenmanagements, Möglichkeiten, eigenständig kleine Funktionen zu programmieren, sowie Formen der grafischen Datenanalyse und Ergebnisdarstellung besprochen.</p>
-<p>Das vorliegende Dokument ist ein sogennantes Bookdown (<span class="citation">Xie (<a href="#ref-R-bookdown" role="doc-biblioref">2020</a>)</span>, siehe auch <a href="https://bookdown.org/">hier</a>) und dient der Ergebnissicherung im Seminarverlauf. Das heisst dass die im Seminar besprochene Themen hiernochmals schriftlich festgehalten, diskutiert und allenfalls Literatur ergänzt werden (siehe für allgemeine Literatur etwa <span class="citation">Diaz-Bone (<a href="#ref-DiazBone2019" role="doc-biblioref">2019</a>)</span>, <span class="citation">Kabacoff (<a href="#ref-Kabacoff2015" role="doc-biblioref">2015</a>)</span> oder <span class="citation">Manderscheid (<a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>)</span>). Das Bookdown wird laufend aktualisiert. Ebenfalls werden in diesem Bookdown die Lösungen für die im Seminar gestellten Aufgaben (Falllösungen) präsentiert.</p>
+<div id="aufgaben" class="section level2">
+<h2><span class="header-section-number">3.2</span> Aufgaben</h2>
+<ol style="list-style-type: decimal">
+<li><p>Der Vektor <strong>v</strong> besteht aus folgenden Zahlen: 1, 3, 7, 9, 22, 2, 8, 14, 20, 3, 7, 9, 11, und 13. Berechnen Sie auf drei verschiedenen Arten das arithmetische Mittel dieses Vektors.</p></li>
+<li><p>Was macht das Argument ‘trim’ für die Funktion mean()? Wozu könnten Sie dieses Argument in einem sozialwissenschaftlichen Kontext nutzen? Spezifizieren Sie das Argument auf sinnvolle Weise, um das arithmetische Mittel des in Aufgabe 1 erstellten Vektors <strong>v</strong> zu berechnen!</p></li>
+<li><p>Erstellen Sie vier verschiedene Vektoren mit je einer Länge von vier und verbinden Sie diese zu einer 4x4-Matrix. Die Funktion apply() erlaubt Ihnen, eine Funktionen wie z.B. mean() oder var() auf diese Matrix anzuwenden. Nur wie genau? Sehen Sie sich die Hilfe zu apply() an, probieren Sie die Funktion aus und versuchen Sie zu verstehen, wie sie genau funktioniert. Erläutern Sie apply() dann in eigenen Worten und mit Hilfe der von Ihnen erzeugten 4x4-Matrix!</p></li>
+<li><p>Erstellen Sie je einen Vektor mit numerischen Daten, textförmigen Daten und logischen Daten. Die Funktionen as.numeric(), as.character() und as.logical() lassen Sie eine Datenarten in eine andere “zwingen” bzw. als eine andere Datenart interpretieren. Wann funktioniert dies? Und wo sind die Grenzen dieses “Zwingens”?</p></li>
+<li><p>Definieren Sie folgende Vektoren mittels der Funktionen seq() und rep():</p></li>
+</ol>
+<ul>
+<li>Vektor 5a: 1 2 3 4 5 6 7 8 9 10</li>
+<li>Vektor 5b: 1 1 1 2 2 2 3 3 3</li>
+<li>Vektor 5c: Die Zahlen des Vektors b als ausgeschriebene Wörter</li>
+<li>Vektor 5d: 1 4 7 10 13</li>
+<li>Vektor 5e: 1 1 1 1 2 3 4 5</li>
+</ul>
+<p>Arbeiten Sie für die Falllösung wiederum mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit Fallloesung03_NameVorname.pdf und geben das Dokument via OLAT bis Mittwochmittag ab (07.10.2020, 12:00).</p>
 
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-DiazBone2019">
-<p>Diaz-Bone, Rainer. 2019. <em>Statistik Für Soziologen</em>. Konstanz: UVK.</p>
-</div>
-<div id="ref-Kabacoff2015">
-<p>Kabacoff, Robert. 2015. <em>R in Action: Data Analysis and Graphics with R</em>. Shelter Island, NY: Manning.</p>
-</div>
-<div id="ref-Manderscheid2017">
-<p>Manderscheid, Katharina. 2017. <em>Sozialwissenschaftliche Datenanalyse Mit R. Eine Einführung</em>. Wiesbaden: Springer VS.</p>
-</div>
-<div id="ref-R-bookdown">
-<p>Xie, Yihui. 2020. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.</p>
 </div>
 </div>
             </section>
@@ -201,8 +218,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="einheit-vom-17-09-.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="einheit-vom-24-09-.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -233,7 +250,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-Grundlagen-Teil2.Rmd",
 "text": "Edit"
 },
 "history": {

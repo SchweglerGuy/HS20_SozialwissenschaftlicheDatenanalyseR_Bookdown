@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="einheit-vom-17-09-.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="einheit-vom-01-10-.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -145,6 +145,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="einheit-vom-24-09-.html"><a href="einheit-vom-24-09-.html#lernziele-der-zweiten-woche"><i class="fa fa-check"></i><b>2.1</b> Lernziele der zweiten Woche</a></li>
 <li class="chapter" data-level="2.2" data-path="einheit-vom-24-09-.html"><a href="einheit-vom-24-09-.html#aufgaben"><i class="fa fa-check"></i><b>2.2</b> Aufgaben</a></li>
 </ul></li>
+<li class="chapter" data-level="3" data-path="einheit-vom-01-10-.html"><a href="einheit-vom-01-10-.html"><i class="fa fa-check"></i><b>3</b> Einheit vom 01.10.</a><ul>
+<li class="chapter" data-level="3.1" data-path="einheit-vom-01-10-.html"><a href="einheit-vom-01-10-.html#lernziele"><i class="fa fa-check"></i><b>3.1</b> Lernziele</a></li>
+<li class="chapter" data-level="3.2" data-path="einheit-vom-24-09-.html"><a href="einheit-vom-24-09-.html#aufgaben"><i class="fa fa-check"></i><b>3.2</b> Aufgaben</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -197,34 +201,105 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="aufgaben" class="section level2">
 <h2><span class="header-section-number">2.2</span> Aufgaben</h2>
 <ol style="list-style-type: decimal">
-<li><p>Fassen Sie noch einmal für sich und in eigenen Worten die Funktionen der vier Fenster von R zusammen.</p></li>
-<li><p>Führen Sie sowohl in der Konsole als auch im Skript einige Rechnungen durch und speichern Sie im Skript die Resultate als Kommentare. Hier ein paar Beispielrechnung:</p></li>
+<li>Fassen Sie noch einmal für sich und in eigenen Worten die Funktionen der vier Fenster von R zusammen.</li>
 </ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="einheit-vom-24-09-.html#cb2-1"></a><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
-<span id="cb2-2"><a href="einheit-vom-24-09-.html#cb2-2"></a><span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span></span>
-<span id="cb2-3"><a href="einheit-vom-24-09-.html#cb2-3"></a>(<span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span>) <span class="op">/</span><span class="st"> </span><span class="dv">5</span></span></code></pre></div>
+<p>Oben links findet sich in R-Studio das Skript-Fenster, in dem Befehle eingegeben und kommentiert werden können. Ausgeführt werden diese Befehle erst, wenn Sie <em>Ctrl</em> und <em>Enter</em> drücken (bzw. <em>Cmd</em> &amp; <em>Enter</em>). Diese Eingabe von Kodezeilen wird ergänzt durch die direkte Eingabe in der Konsole. In diesem Fenster läuft das eigentliche Programm R (es ist also dieselbe Ansicht wie wenn Sie R ohne grafische Benutzeroberfläche starten würden). Im Gegensatz zum Skript können hier Befehle nur immer einzeln eingegeben und sie müssen dann direkt ausgeführt werden. Dies ermöglicht ein schneller ausprobieren, aber eben kein wirklich speichern, beständiges überarbeiten, kommentieren und eine klare Dokumentation des Ablaufs, wie dies im Skript erfolgen kann.</p>
+<p>Die beiden Fenster zur Eingabe von Kode werden vom <em>Environment</em>-Fenster ergänzt. Hier finden sich die abgespeicherten Objekte sowie in den weiteren Reitern die bisher ausgeführten Befehle (<em>History</em>), aber auch eine erweitere Netzwerk- bzw. Serverumgebung (<em>Connections</em>, <em>Build</em>, …), falls Sie z.Bsp. mit weiteren Personen an einem Projekt arbeiten. Im vierten Fenster werden Grafiken, Hilfeseiten, die Vorschau für geknittete Dokumente und auch die Ordnerstruktur angezeigt.</p>
+<p>Sie finden diverse Einstellungsoptionen zu den vier Fenster und deren Anordnung unter „Tools &gt; Gobal Options“. Dort können Sie etwa unter dem Reiter”General" die Option zum “Save Workspace to RData on exit” zu <em>Never</em> wechseln. Dies führt dazu, dass Ihre <em>Environment</em> beim Verlassen von R immer gelöscht wird. Dies ist nicht etwa ein Nachteil, sondern eine Technik die Sie dazu veranlasst, alle benötigen Schritte in Ihrem Kode unterzubringen. Weiter könne Sie unter dem Reiter “Spelling” auch noch die Rechtschreibefunktion deaktiveren, da das Feature noch nicht wirklich für die deutsche Rechtschreibung zu funktionieren scheint (bzw. die Ergänzung von neuen Wörterbüchern nicht fehlerfrei abläuft).</p>
+<p>Die Ordnerstruktur im Reiter <em>Files</em> des vierten Fensters hängt mit Ihrem aktuellen <strong>Arbeitsverzeichnis</strong> zusammen. Ein Arbeitsverzeichnis ist der Ort, auf den R immer als Erstes zugreift und wo Dinge automatisch abgelegt werden. Dieses können über die Menüsteuerung “Session &gt; Set Working Directory &gt; Choose Directory” oder über den Befehl ‘setwd()’ definieren (erstere Variante ist etwas einfacher). Der ‘getwd()’ Befehl wiederum gibt das aktuell festgelegte Verzeichnis aus. Speichern Sie jeweils Ihr aktuelles Arbeitsverzeichnis als Teil des Markdowns, z.Bsp. so:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="einheit-vom-24-09-.html#cb2-1"></a><span class="kw">setwd</span>(<span class="st">&quot;C:/Users/SchweglG/R_Daten/HS20/E3&quot;</span>) </span>
+<span id="cb2-2"><a href="einheit-vom-24-09-.html#cb2-2"></a><span class="co">#Dies dient in einem Skript oder einem Markdown als Erinnerung, ... </span></span>
+<span id="cb2-3"><a href="einheit-vom-24-09-.html#cb2-3"></a><span class="co">#...wo Ihr Arbeitsverzeichnis liegt (und damit wo Sie Ihre Daten wiederfinden)</span></span></code></pre></div>
+<p>Wir können uns Beispielsweise eine CSV-Datei (<strong>C</strong>omma <strong>S</strong>eparated <strong>V</strong>alue) aus der Liste unserer installierten Pakete erstellen, und zwar über folgenden Befehl:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="einheit-vom-24-09-.html#cb3-1"></a><span class="kw">write.table</span>(pakete_liste, <span class="dt">file=</span><span class="st">&quot;Paketliste_neu.csv&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;,&quot;</span>)</span></code></pre></div>
+<p>Diese CSV-Datei, welche die Liste enhält, sollte dann in Ihrem aktuellen Arbeitsverzeichnis abgelegt werden.</p>
+<p> </p>
 <ol start="2" style="list-style-type: decimal">
-<li><p>… Fortsetzung:</p>
+<li>Führen Sie sowohl in der Konsole als auch im Skript einige Rechnungen durch und speichern Sie im Skript die Resultate als Kommentare. Hier ein paar Beispielrechnung:</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="einheit-vom-24-09-.html#cb4-1"></a><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb4-2"><a href="einheit-vom-24-09-.html#cb4-2"></a><span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span></span>
+<span id="cb4-3"><a href="einheit-vom-24-09-.html#cb4-3"></a>(<span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span>) <span class="op">/</span><span class="st"> </span><span class="dv">5</span></span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>… Fortsetzung:
 <ul>
 <li>Was ist der Vorteil der Arbeit im Skript gegenüber dem Schreiben von Code direkt in der Konsole?</li>
 <li>Sie möchten nun das Ergebnis Ihrer letzten Rechnung als Objekt ‘x’ abspeichern. Wie könnten Sie das in der Konsole tun, ohne dass Sie nochmals den Kode der Rechnung (in unserem Beispiel “(5 + 3 - 4) / 5”) selber schreiben müssten?</li>
 <li>Und wo ist ‘x’ nun hin – wo oder wie können Sie ‘x’ sehen?</li>
 </ul></li>
-<li><p>Rekapitulieren Sie noch einmal: Was könnten die Vorteile davon sein, mit R Markdown zu arbeiten <span class="citation">(Allaire et al. <a href="#ref-R-rmarkdown" role="doc-biblioref">2020</a>)</span>? Wann arbeitet man besser mit einem klassischen Skript? Schauen Sie sich auch die Formatierungsmöglichkeiten für Fliesstext in den Cheatsheets zu R Markdown an (siehe <a href="https://rstudio.com/resources/cheatsheets/">hier</a>)!</p></li>
-<li><p>Öffnen Sie eine neue R Markdown Datei. Versuchen Sie Ihre bisherigen Notizen zu den Aufgaben und Ihren Code in dieser Datei unterzubringen. Arbeiten Sie für die folgenden Aufgaben mit dieser Datei weiter.</p></li>
-<li><p>Versuchen Sie allgemein zu beschreiben, was Funktionen und was Objekte sind. Fügen Sie eine kurze Erläuterung in Ihr Markdown-Dokument zur Frage ein, was im folgenden Code jeweils Funktionen und was Objekte (und wenn letzteres, welche Art von Objekt) sind:</p></li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="einheit-vom-24-09-.html#cb3-1"></a><span class="kw">sqrt</span>(x)</span>
-<span id="cb3-2"><a href="einheit-vom-24-09-.html#cb3-2"></a><span class="kw">help</span>(<span class="st">&quot;sqrt&quot;</span>)</span>
-<span id="cb3-3"><a href="einheit-vom-24-09-.html#cb3-3"></a>?help</span>
-<span id="cb3-4"><a href="einheit-vom-24-09-.html#cb3-4"></a>y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="ot">NA</span>)</span>
-<span id="cb3-5"><a href="einheit-vom-24-09-.html#cb3-5"></a>z &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">11</span>)</span></code></pre></div>
+<p>Siehe für die Vorteile in der jeweiligen Arbeit die Beschreibungen oben. In der Konsole kann über die beiden Pfeiltasten runter und rauf durch bisher ausgeführte Befehle <em>gescrollt</em> werden. So können Sie die Rechnung erneut aufrufen und dem Objekt ‘x’ zuweisen. Das Objekt taucht dann im <em>Environment</em>-Fenster auf. Es kann dann über die Funktion rm() wieder entfernt werden.</p>
+<p> </p>
+<ol start="3" style="list-style-type: decimal">
+<li>Rekapitulieren Sie noch einmal: Was könnten die Vorteile davon sein, mit R Markdown zu arbeiten <span class="citation">(Allaire et al. <a href="#ref-R-rmarkdown" role="doc-biblioref">2020</a>)</span>? Wann arbeitet man besser mit einem klassischen Skript? Schauen Sie sich auch die Formatierungsmöglichkeiten für Fliesstext in den Cheatsheets zu R Markdown an (siehe <a href="https://rstudio.com/resources/cheatsheets/">hier</a>)!</li>
+</ol>
+<p>Neben der Konsole und dem Skript ist <strong>R Markdown</strong> die dritte Möglichkeit in R-Studio zu arbeiten (<span class="citation">Allaire et al. (<a href="#ref-R-rmarkdown" role="doc-biblioref">2020</a>)</span>).<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> R Markown ist ebenfalls ein Paket und ermöglicht im Sinne eines erweiterten Skripts das Erstellen eines dynamische Analysedokumente: Sie kombinieren Kode, gerenderte Ausgaben (z. B. Grafiken) und Text. Eine neue R Markdown Datei kann via «File &gt; New File &gt; R Markdown» oder mit dem Button direkt unter dem «File» Button geöffnet werden. Die Datei selber ist unterteilt in einfachen Fliesstext (weisser Hintergrund) oder sogenannten R Chunk (grauer Hintergrund), Kodestücke für R. Ein R Chunk kann entweder über den «Insert»-Button im R Markdown-Fenster eingefügt werden, oder aber über die Tastenkombination «Ctrl + Alt + i» (bzw. «Cmd + Option + i» bei Mac).</p>
+<p> </p>
+<ol start="4" style="list-style-type: decimal">
+<li>Öffnen Sie eine neue R Markdown Datei. Versuchen Sie Ihre bisherigen Notizen zu den Aufgaben und Ihren Code in dieser Datei unterzubringen. Arbeiten Sie für die folgenden Aufgaben mit dieser Datei weiter.</li>
+</ol>
+<p>Siehe Anmerkungen bei Aufgabe 3.</p>
+<p> </p>
+<ol start="5" style="list-style-type: decimal">
+<li>Versuchen Sie allgemein zu beschreiben, was Funktionen und was Objekte sind. Fügen Sie eine kurze Erläuterung in Ihr Markdown-Dokument zur Frage ein, was im folgenden Code jeweils Funktionen und was Objekte (und wenn letzteres, welche Art von Objekt) sind:</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="einheit-vom-24-09-.html#cb5-1"></a><span class="kw">sqrt</span>(x)</span>
+<span id="cb5-2"><a href="einheit-vom-24-09-.html#cb5-2"></a><span class="kw">help</span>(<span class="st">&quot;sqrt&quot;</span>)</span>
+<span id="cb5-3"><a href="einheit-vom-24-09-.html#cb5-3"></a>?help</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="einheit-vom-24-09-.html#cb6-1"></a>y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="ot">NA</span>)</span>
+<span id="cb6-2"><a href="einheit-vom-24-09-.html#cb6-2"></a>z &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">11</span>)</span></code></pre></div>
+<p>Die Grundlagen der Sprache von R sind <strong>Funktionen</strong> und <strong>Objekte</strong> <span class="citation">(vgl. Manderscheid <a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>, 25ff)</span>, d.h. Befehle in R bestehen aus diesen beiden Elemente. Die Funktionen bestimmen, was mit einem Objekt passiert. Ein Objekt wiederum kann verschiedenste Formen annehmen, etwa eine Zahl, eine Menge von verschiedenen Werten (z.Bsp. ein Datensatz), das Ergebnis einer Funktion – und selbst eine Funktion selber kann wieder zu einem Objekt werden. Dies zeigt sich etwa bei den beiden Hilfe-Funktionen ‘help()’ und ‘?’. Hier wird die Hilfe aufgerufen für eine andere Funktion.</p>
+<p>Für die weiteren Kodezeilen in der Aufgabe lassen sich jeweils folgende Funktionen und Objekte auflisten:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Funktionen</th>
+<th>Objekte</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>sqrt()</td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>&lt;-, c()</td>
+<td>y, 1, 3, 4, 5, 6, 7, NA</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>Im Objekt y scheint ein fehlender Wert vorhanden zu sein (‘NA’ = Not Available). Möchten man nun etwa die Varianz für dieses Objekt berechnen folgt als Resultat ebenfalls nur “NA”:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="einheit-vom-24-09-.html#cb7-1"></a><span class="kw">var</span>(y)</span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<p>Wie könnten wir trotzdem die Varianz für das Objekt y berechnen? Hier kommen nun <strong>Argumente</strong> ins Spiel. Argumente erweitern nochmals die Funktionen, in dem Sie deren Details bestimmen. Wir können so etwa definieren, dass die Funktion ‘var()’ beim Objekt y die fehlende Werte ignoriert:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="einheit-vom-24-09-.html#cb9-1"></a><span class="kw">var</span>(y, <span class="dt">na.rm =</span> T)</span></code></pre></div>
+<pre><code>## [1] 4.666667</code></pre>
+<p>Unser Objekt z scheint hingegen keine solchen fehlenden Wert zu beinhaltet. Trotzdem scheint etwas nicht zu stimmen, wenn Sie das Resultat der Funktion zur Berechnung Standardabweichung ‘sd()’ mit dem Ergebnis der dazugehörigen Formel vergleichen <span class="citation">(vgl. Diaz-Bone <a href="#ref-DiazBone2019" role="doc-biblioref">2019</a>, 50f)</span>.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> Was könnte das Problem sein und wo die Lösung liegen?</p>
+<p> </p>
 <ol start="6" style="list-style-type: decimal">
 <li>Bonusaufgabe: Sehen Sie sich die Hilfeseite der Funktion matrix() an. Wozu dient diese Funktion? Welche Argumente akzeptiert / benötigt sie und wozu dienen diese? Illustrieren Sie die Funktionsweise anhand von ein paar Beispielen.</li>
 </ol>
-<p>Halten Sie Ihren Kode, Ihre Antworten und Ihre Fragen in Ihrem Markdown-Dokument fest. Versuchen Sie abschliessend, dieses in ein PDF Dokument zu ‘knitten’. ACHTUNG: Damit dies funktioniert, muss ihr Kode fehlerfrei sein … Falls dieser Schritt nicht klappen sollte, notieren Sie bitte wieso und erstellen auf einem anderen Weg ein PDF Ihrer Lösungen.</p>
-<p>Versuchen Sie abschliessend Ihr Markdown Dokument zu ‘knitten’ und so daraus ein PDF Dokument zu erstellen. ACHTUNG: Damit dies funktioniert, muss ihr Kode fehlerfrei sein… Falls dies nicht klappt sollte notieren Sie bitte wieso und erstellen auf einem anderen Weg ein PDF Ihrer Lösungen.</p>
-<p>Beschriften Sie Ihr Dokument mit Fallloesung02_NameVorname.pdf und geben das Dokument via OLAT bis Mittwochmittag ab (30.09.2020, 12:00).</p>
+<p>R kennt verschiedenste Arten von Objekten (fürs Erste bleiben wir hier bei verschiedenen Objekten für Zahlen). Im bisherigen Verlauf haben Sie bereits einzelne Zahlen sowie Vektoren als eine Reihe von Zahlen kennengelernt. Über die Funktion ‘matrix()’ lässt sich nun ein dritter Objekttyp generieren, nämlich eine Matrix. Matrizen enthalten Zeilen und Spalten des jeweils selben Datentyps.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="einheit-vom-24-09-.html#cb11-1"></a><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>), <span class="dt">nrow =</span> <span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    3    5    7    9
+## [2,]    2    4    6    8   10</code></pre>
+<p>Auch lässt sich so beispielsweise eine Art sozialwissenschaftlicher Datensatz erstellen:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="einheit-vom-24-09-.html#cb13-1"></a>einstell &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>)</span>
+<span id="cb13-2"><a href="einheit-vom-24-09-.html#cb13-2"></a>koerp_g &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">176</span>,<span class="dv">180</span>,<span class="dv">192</span>,<span class="dv">156</span>,<span class="dv">168</span>)</span>
+<span id="cb13-3"><a href="einheit-vom-24-09-.html#cb13-3"></a>gndr &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">0</span>)</span>
+<span id="cb13-4"><a href="einheit-vom-24-09-.html#cb13-4"></a>daten &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(einstell, koerp_g, gndr), <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">5</span>, <span class="dt">byrow =</span> T)</span>
+<span id="cb13-5"><a href="einheit-vom-24-09-.html#cb13-5"></a>daten</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    3    5    4    3
+## [2,]  176  180  192  156  168
+## [3,]    1    2    1    2    0</code></pre>
+<p>In der Kodezeilen, wo die Funktion matrix() enthalten ist, sind wiederum Argumente vorhanden, nämlich ‘nrow’, ‘ncol’ und ‘byrow’. Die genaue Funktion der Argument ist ebenfalls auf der Hilfeseite der Funktion ersichtlich.</p>
+<p> </p>
 
 </div>
 </div>
@@ -233,11 +308,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="ref-R-rmarkdown">
 <p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2020. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
 </div>
+<div id="ref-DiazBone2019">
+<p>Diaz-Bone, Rainer. 2019. <em>Statistik Für Soziologen</em>. Konstanz: UVK.</p>
+</div>
+<div id="ref-Manderscheid2017">
+<p>Manderscheid, Katharina. 2017. <em>Sozialwissenschaftliche Datenanalyse Mit R. Eine Einführung</em>. Wiesbaden: Springer VS.</p>
+</div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="2">
 <li id="fn2"><p>Falls Sie noch Probleme bei der Installation von R bzw. RStudio oder sonstige technische Schwierigkeiten haben, können Sie sich gerne weiterhin per E-Mail melden!<a href="einheit-vom-24-09-.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Auch das vorliegende Dokument wurde über ein R-Markdown File erstellt.<a href="einheit-vom-24-09-.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p><span class="math inline">\(s=\sqrt{\frac{1}{N}\sum_{i=1}^N(x_i-\bar{x})^2}\)</span><a href="einheit-vom-24-09-.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Im Gegensatz zu Matrizen können dann Dataframes verschiedenen Datenarten enthalten, also etwa sowohl numerische und textliche Daten <span class="citation">(vgl. Manderscheid <a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>, 40)</span>.<a href="einheit-vom-24-09-.html#fnref5" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -246,7 +330,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="einheit-vom-17-09-.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="einheit-vom-01-10-.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -296,6 +380,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
