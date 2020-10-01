@@ -1,0 +1,76 @@
+# Wocheplan 01
+
+...zur Einheit vom 17.09.2020, Einführung
+
+## Sozialwissenschaftliche Datenanalyse
+Das Seminar "sozialwissenschaftliche Datenanalyse mit R" versucht eine Realität des statistischen Arbeitens zu vermitteln und ergänzt so Vorlesung "Grundlagen der multivariaten Statistik" gleich in zweierlei Hinsicht: Erstens wird eine Auswahl der gelernten statistischen Verfahren konkret angewendet (und so auch nochmals repetiert). Zweitens zeigt sich neben den eigentlichen Verfahren ein weiterer, impliziter Teil der Statistik: ein Umgang mit Daten, deren Aufbereitung und Verarbeitung sowie all die damit einhergehenden Herausforderungen.
+
+Hinter dem Seminar steht eine bestimmte Vorstellung der sozialwissenschaftlichen Datenanalyse, die folgende Teile enthält [@WickhamGrolemund2016]:
+```{r echo=FALSE, fig.cap="Modell Datenanalyse"}
+knitr::include_graphics("Bilder/Modell.jpg")
+
+```
+
+Als erster Schritt müssen die Daten eingelesen bzw. **importiert** werden. Die importierten Daten gilt es dann **aufzubereiten** und aufzuräumen. Das bedeutet, dass sie in einer konsistenten Form gespeichert werden sollen (z.Bsp. dass jede Zeile einer Person und jede Spalte einer Variable entspricht). Dieser zweite Schritt ist im Rahmen von Sekundärdaten (wie auch wir sie verwenden werden) oft bereits erfolgt. Ein weiterer Schritt ist es dann, die Daten zu **transformieren**. Das heisst, die Fälle und ihre Ausprägungen auf ein bestimmes Interesse eingegrenzt (z.Bsp. auf alle Personen die über ein bestimmtes Einkommen verfügen), neue Variablen werden erstellt (die Funktionen bestehender Variablen sind, etwa Einkommensklassen), und eine Reihe von zusammenfassenden Statistiken werden berechnet (verschiedene univariate Kennwerte). Das Aufbereiten und Transformieren ist ein grosser Teil der statistischen Analyse [es ist ein Kampf mit den Daten, @WickhamGrolemund2016, Kap.1.1]. Ziel dieser Arbeit ist es, die Daten in eine passende Form zu bringen, um optimal mit ihnen arbeiten zu können. 
+
+Wenn die Daten (voerst) in einer optimalen Form vorliegen gibt es zwei Hauptmotoren der Wissensgenerierung [@WickhamGrolemund2016, Kap.1.1]: Visualisierung und Modellierung. Mit **Visualisierungen** lässt sich schnell eine Übersicht gewinnen (z.Bsp. könnte es überhaupt einen Zusammenhang zwischen zwei Variablen geben?). **Modellierungen** wiederum ergänzen diese ersten Einsichten, in dem sie präzise Antworten auf Fragen geben (wie gross ist der Zusammenhang genau?). 
+
+Das Transformieren, Visualisieren und Modellieren der Daten ist dabei keineswegs ein linearer Prozess, sondern es ergeben sich in ihm immer wieder Wechselwirkungen, Rückbezüge und dadurch neue Wege, um an die Daten heranzutreten. Der letzte Schritt der Datenanalyse ist die **Kommunikation**. Es gilt also sowohl das Vorgehen (zumindest teilweise) als inbesondere die Ergebnisse der Analyse anderen mitzuteilen. 
+
+Diese Prozesse der Datenanalyse finden alle in einem bestimmen **Rahmen** statt [vgl. auch @Sauer2019, 3]. Dies ist auf der einen Seite die Idees des Programmierens im Vorgehen selber [vgl. @WickhamGrolemund2016, Kap.1.1]. Auf der anderen Seite bilden aber die Sozialwissenschaften selber auch einen Rahmen um dieses Vorgehen, anhand dessen etwa Datenstrukturen (z.Bsp. dass eine Person ein Fall und damit eine Zeile ist) oder angemessene Ziele der Analyse (ab wann ist ein Zusammenhang etwa "gross"?) vorgegeben werden. 
+
+## Ziel des Kurses
+Das Seminar verfolgt zwei miteinander verzahnte, übergeordnete Lernziele. Einerseits sollen die Studierenden sich Grundkenntnisse der statistischen Datenanalyse mit R aneignen. Andererseits werden ausgewählte Inhalte der Vorlesung praktisch angewandt und damit auch veranschaulicht.[^1]
+
+Konkret sollen die Studierenden am Ende des Semesters...
+
+* ...einen ersten Einblick in Abläufe und Anforderungen softwaregestützter Datenanalyse haben,
+* ...typische Herausforderungen statistischen Arbeitens eigenständig bewältigen können,
+* ...die allgemeine Funktionsweise und die Struktur von R verstehen,
+* ...die Umsetzung ausgewählter multivariater Verfahren in R beherrschen,
+* ...dabei auch grafische Verfahren als zentrale Bausteine aktueller Datenanalyse einsetzen können
+* ...sowie die Grundlage dafür erworben haben, flexibel eigene Analysestrategien in R um-zusetzen.
+
+## R als Programm & RStudio
+R als Programmiersprache wurde von Beginn an für die Statistik bzw. für die Statistiklehre entwickelt. Die Anfänge des Programms fanden in den 1990er Jahre an der Universität Auckland in Neuseeland statt, wo R von Ross Ihaka und Robert Gentleman  entwickelt wurde [@Manderscheid2017, 1]. Der Buchstabe "R" als Name geht sowohl auf eine ältere Grundlage zurück -- die Programmiersprache "S" -- als auch auf die Vornamen der beiden Entwickler [ebd., vgl. auch @Sauer2019, 13f]. Das R-Projekt wurde in der Zusammenareit mit weiteren Wissenschaftler_Innen voran getrieben und bald auch unter der General Public Licence ([GNU](https://en.wikipedia.org/wiki/GNU)) veröffentlicht [@Manderscheid2017, 1]. R ist daher frei zugänglich, kostenlos und darf von allen verändert werden. Es ist insbesondere auch diese *Open Source* Idee, die R zu seiner Verbreitung half -- und die sicherstellt, dass die neusten Entwicklungen in und mit der Software stattfinden.
+
+R als Programm ist in Paketen organisiert und präsentiert sich als "Statistikumgebung" [@Manderscheid2017, 1]. Ausgehend von der Basisversion bzw. des Basispaketes kann R beliebig erweitert werden. Unter [https://cran.r-project.org/](https://cran.r-project.org/) findet sich eine beständig wachsende und umfangreiche Sammlung von Paketen, die sowohl Lösungen für allgemeine Verfahren anbieten (etwa Pakete für die multiple Korrespondenzanalyse, siehe 'soc.ca') als auch für spezifische Probleme (etwa für "Atomic Force Microscope Image Analysis" beim Paket 'AFM'). Diese Pakete können installiert werden und es gilt sie dann jeweils noch zu laden, bevor sie verwendet werden können. Nach dem Beenden des Programms werden die verwendeten Pakete wiederum "versort" und es gilt sie beim nächsten mal wieder zu laden (die Pakete beleiben aber installiert). Letzterer Vorgang stellt sicher, dass R "schlank" bleibt, d.h. nur immer die benötigen Dinge auch ausgeführt werden.
+```{r eval=FALSE}
+install.packages("soc.ca") #...installiert das Paket
+library(soc.ca) #...lädt das Paket
+```
+Neben dieser *Open Source* Idee und der daraus folgenden, beständigen Aktualisierung und Erweiterungen des Programms zeichnet R sich weiter durch dessen Stärke im Bereich der Visualisierung aus. Es bieten sich unbegrenzte Möglichkeiten für Grafiken und Diagramme, sowohl bereits in der Basisversion als insbesondere auch mit spezifischen Paketen [siehe @R-ggplot2].
+
+Neben der Basisversion von R und R als eigentlicher Programmiersprache gibt es grafische Benutzeroberflächen (GUIs), um mit der Programmiersprache umzugehen. Im Zentrum unseres Seminars steht **RStudio**, die am weitesten verbreitete grafische Benutzeroberfläche von R. Diese Oberfläche biete einige praktische Zusatzfunktionen und erleichtert so das Arbeiten mit R durch Autovervollständigkeitsfunktionen, automatische Einrückungen, Syntaxhervorhebung, integrierte Hilfsfunktion, Informationen zu Objekten im Workspace, menügestützten Oberflächen und Daten-Viewer [@Manderscheid2017,18]. Die eigentliche Arbeit verrichtet aber weiterhin R selber,
+und R wird automatisch gestartet wird, wenn Sie RStudio starten [@Sauer2019, 21]. Man kann diese Arbeitsteilung mit einem Auto vergleichen: R ist der Motor des Autos, während RStudio das Amaturenbrett ist, vor dem Sie sitzen und das Auto lenken. 
+
+
+
+## Lernziele der ersten Woche
+
+Die erste Seminarwoche dient dazu, die technischen Voraussetzungen für die gemeinsame Arbeit im Seminar zu prüfen und mit der geplanten Arbeitsweise vertraut zu werden. 
+
+Das Seminar ist insbesondere in den online durchgeführten Teilen als eine Art "flipped classroom" konzipiert. Sie bekommen also von Woche zu Woche konkrete Arbeitsaufträge. Diese sollen Sie eigenständig bewältigen und alle Probleme und Unklarheiten notieren, die sich im Arbeitsprozess ergeben. Die gemeinsamen Sitzungen dienen dann dazu, Lösungswege zu den Aufgaben zu präsentieren, offene Fragen zu klären, Konzepte vertiefend zu erläutern und die nächsten Schritte vorzubereiten. 
+
+Für jede Woche werden Lernziele und Arbeitsaufträge definiert. Für die erste Seminarwoche lassen sich als Lernziele festhalten: 
+
+* Sie wissen, wie Sie die aktuellen Versionen von R und RStudio auf Ihrem Computer installieren
+* Sie wissen, wie man R-Pakete installiert und in R lädt
+* Sie können eine Funktion aufrufen
+* Sie haben einen soliden ersten Eindruck, wie man mit R kommuniziert und einfache Operationen durchführt
+* Sie haben eine erste Orientierung zu Unterstützungsangeboten, die man online findet (auch wenn diese teilweise noch überfordernd wirken)
+
+## Aufgaben  der ersten Woche
+
+1) Installieren Sie die aktuellen Versionen von R und RStudio auf Ihrem Endgerät! Sie sollten sich Notizen, wenn es Probleme gibt -- und für das nächste Mal gleich festhalten, wie Sie diese gelöst haben. Da die Details der Installation vom Betriebssystem und den Spezifikationen des Endgeräts abhängen, ist es normal, dass dieser Prozess manchmal erst auf den zweiten Versuch funktioniert. 
+
+2) Installieren Sie das Paket "swirl" und laden Sie es. "swirl" ist eine in R implementierte interaktive Einführung in die Grundlagen von R!
+
+3) Rufen Sie die Funktion swirl() auf und spielen Sie ein wenig damit. Rufen Sie sich in Erinnerung, was Sie aus dem letzten Semester noch über die Arbeit mit R wissen! Notieren Sie sich, was Ihnen Sie noch kennen, was Ihnen neu vorkommt, usw. 
+
+4) Verwenden Sie ein wenig Zeit darauf, online nach R Tutorials, Foren, etc. zu suchen. Halten Sie die URLs von Seiten und Ressourcen fest, die Ihnen hilfreich und/oder wichtig (aber u.U. noch etwas schwer zu durchschauen) vorkommen!
+
+Erstellen Sie aus Ihren Notizen ein PDF Dokument, beschriften Sie dieses mit Fallloesung01_NameVorname.pdf und geben das Dokument via OLAT bis Mittwochmittag ab (23.09.2020, 12:00). 
+
+
+[^1]: Die zwei miteinander verzahnte Lernziele führen auch dazu, dass das das Seminar allerdings nicht als eigentliche Übung zur Vorlesung funktioniert (und das nicht alle Inhalte der Vorlesung im Seminar behandelt werden können).
