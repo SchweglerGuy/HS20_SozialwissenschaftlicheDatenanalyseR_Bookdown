@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Wochenplan 02 | Sozialwissenschaftliche Datenanalyse mit R</title>
+  <meta name="description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Wochenplan 02 | Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Wochenplan 02 | Sozialwissenschaftliche Datenanalyse mit R" />
+  
+  <meta name="twitter:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
+  
+
+<meta name="author" content="Kenneth Horvath &amp; Guy Schwegler" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="wocheplan-01.html"/>
+<link rel="next" href="wochenplan-03.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R - HS20</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Einführung</a></li>
+<li class="chapter" data-level="1" data-path="wocheplan-01.html"><a href="wocheplan-01.html"><i class="fa fa-check"></i><b>1</b> Wocheplan 01</a><ul>
+<li class="chapter" data-level="1.1" data-path="wocheplan-01.html"><a href="wocheplan-01.html#sozialwissenschaftliche-datenanalyse"><i class="fa fa-check"></i><b>1.1</b> Sozialwissenschaftliche Datenanalyse</a></li>
+<li class="chapter" data-level="1.2" data-path="wocheplan-01.html"><a href="wocheplan-01.html#ziel-des-kurses"><i class="fa fa-check"></i><b>1.2</b> Ziel des Kurses</a></li>
+<li class="chapter" data-level="1.3" data-path="wocheplan-01.html"><a href="wocheplan-01.html#r-als-programm-rstudio"><i class="fa fa-check"></i><b>1.3</b> R als Programm &amp; RStudio</a></li>
+<li class="chapter" data-level="1.4" data-path="wocheplan-01.html"><a href="wocheplan-01.html#lernziele-der-ersten-woche"><i class="fa fa-check"></i><b>1.4</b> Lernziele der ersten Woche</a></li>
+<li class="chapter" data-level="1.5" data-path="wocheplan-01.html"><a href="wocheplan-01.html#aufgaben-der-ersten-woche"><i class="fa fa-check"></i><b>1.5</b> Aufgaben der ersten Woche</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="wochenplan-02.html"><a href="wochenplan-02.html"><i class="fa fa-check"></i><b>2</b> Wochenplan 02</a><ul>
+<li class="chapter" data-level="2.1" data-path="wochenplan-02.html"><a href="wochenplan-02.html#lernziele-der-zweiten-woche"><i class="fa fa-check"></i><b>2.1</b> Lernziele der zweiten Woche</a></li>
+<li class="chapter" data-level="2.2" data-path="wochenplan-02.html"><a href="wochenplan-02.html#aufgaben"><i class="fa fa-check"></i><b>2.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="wochenplan-03.html"><a href="wochenplan-03.html"><i class="fa fa-check"></i><b>3</b> Wochenplan 03</a><ul>
+<li class="chapter" data-level="3.1" data-path="wochenplan-03.html"><a href="wochenplan-03.html#lernziele"><i class="fa fa-check"></i><b>3.1</b> Lernziele</a></li>
+<li class="chapter" data-level="3.2" data-path="wochenplan-02.html"><a href="wochenplan-02.html#aufgaben"><i class="fa fa-check"></i><b>3.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Sozialwissenschaftliche Datenanalyse mit R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="wochenplan-02" class="section level1">
+<h1><span class="header-section-number">2</span> Wochenplan 02</h1>
+<p>…zur Einheit vom 24.09. &amp; 01.10.2020, Grundlagen (Teil 1)</p>
+<div id="lernziele-der-zweiten-woche" class="section level2">
+<h2><span class="header-section-number">2.1</span> Lernziele der zweiten Woche</h2>
+<p>In der zweiten Seminarwoche geht es darum, die Grundlagen von R und RStudio zu repetieren und zu erweitern.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Für den weiteren Verlauf wollen wir <em>R als Sprache</em> auffassen – sowohl als Programmiersprache als auch als Sprache in einem metaphorischen Sinn. Wir wollen also ein komplexes System zur Kommunikation kennenlernen. Wie bei einer anderen Sprache gibt es auch hier Zeichen mit Bedeutungen (ähnliche wie Nomen, Verben, …) und Regeln zur Verknüpfung dieser Zeichen (ähnlich wie eine Grammatik). Diese Grundlagen gilt es alle erstmal kennenzulernen und zu verstehen. Am Anfang wird vieles schwer fallen, mit der Zeit gewinnt man aber Sicherheit.</p>
+<p>Der zentrale Punkt in dieser Vorstellung von R als Sprache ist dabei folgender: Wir lernen eine Sprache dadurch, dass wir sie immer wieder anwenden, Probleme lösen und vor allem auch Fehler machen. R als Software und als Programmiersprache hat eine steile Lernkurve und zu Beginn werden viele Probleme auftauchen. Im Umgang mit den Problemen soll allerdings auch eine eigene Arbeitsweise mit dem Programm erlernt werden (Fehlermeldungen lesen, Lösungsstrategien im Codieren erlernen, selber Hilfe suchen, …). Für die beständige Erweiterung der Grundlagen und das Erlernen der “Sprache R” besteht eine Herausforderung darin, den Weg zwischen scheinbarer <em>Trivialität</em> und überfordernder <em>Komplexität</em> zu finden: Es gilt die kleinen Schritte ernstzunehmen, sonst werden die grossen Schritte sehr schnell mühsam.</p>
+<p>Für die zweite Seminarwoche lassen sich folgende Seminarziele festhalten:</p>
+<ul>
+<li>Sie können die verschiedenen Funktionsweisen der vier Fenster in RStudio erläutern.</li>
+<li>Sie verstehen den Unterschied zwischen der Arbeit in der Konsole und im Skript.</li>
+<li>Sie verstehen, wie und wozu man im Skript kommentiert.</li>
+<li>Sie haben R-Markdown als erweitertes Skript und Arbeitsinstrument kennengelernt.</li>
+<li>Sie wissen, was ein Arbeitsverzeichnis in R ist und wozu es gut ist.</li>
+<li>Sie verstehen das erste Grundelement der “Sprache R”: Funktionen
+<ul>
+<li>Sie wissen, wie Funktionen aufgebaut sind;</li>
+<li>Sie wissen, wie Sie sich Hilfe zu Funktionen holen;</li>
+<li>Sie wissen, was Argumente in einer Funktion bewirken.</li>
+</ul></li>
+<li>Sie verstehen das zweite Grundelement der “Sprache R”: Objekte
+<ul>
+<li>Sie verstehen, was es bedeutet, dass in R “alles ein Objekt ist”;</li>
+<li>Sie wissen, wie man sich die jeweils aktuell verfügbare Objekte anzeigen lässt;</li>
+<li>Sie haben das Zusammenspiel von Funktionen und Objekte kennengelernt;</li>
+<li>Sie kennen bereits drei verschiedenen Arten von Objekten.</li>
+</ul></li>
+</ul>
+</div>
+<div id="aufgaben" class="section level2">
+<h2><span class="header-section-number">2.2</span> Aufgaben</h2>
+<ol style="list-style-type: decimal">
+<li>Fassen Sie noch einmal für sich und in eigenen Worten die Funktionen der vier Fenster von R zusammen.</li>
+</ol>
+<p>Oben links findet sich in R-Studio das Skript-Fenster, in dem Befehle eingegeben und kommentiert werden können. Ausgeführt werden diese Befehle erst, wenn Sie <em>Ctrl</em> und <em>Enter</em> drücken (bzw. <em>Cmd</em> &amp; <em>Enter</em>). Diese Eingabe von Kodezeilen wird ergänzt durch die direkte Eingabe in der Konsole. In diesem Fenster läuft das eigentliche Programm R (es ist also dieselbe Ansicht wie wenn Sie R ohne grafische Benutzeroberfläche starten würden). Im Gegensatz zum Skript können hier Befehle nur immer einzeln eingegeben und sie müssen dann direkt ausgeführt werden. Dies ermöglicht ein schneller ausprobieren, aber eben kein wirklich speichern, beständiges überarbeiten, kommentieren und eine klare Dokumentation des Ablaufs, wie dies im Skript erfolgen kann.</p>
+<p>Die beiden Fenster zur Eingabe von Kode werden vom <em>Environment</em>-Fenster ergänzt. Hier finden sich die abgespeicherten Objekte sowie in den weiteren Reitern die bisher ausgeführten Befehle (<em>History</em>), aber auch eine erweitere Netzwerk- bzw. Serverumgebung (<em>Connections</em>, <em>Build</em>, …), falls Sie z.Bsp. mit weiteren Personen an einem Projekt arbeiten. Im vierten Fenster werden Grafiken, Hilfeseiten, die Vorschau für geknittete Dokumente und auch die Ordnerstruktur angezeigt.</p>
+<p>Sie finden diverse Einstellungsoptionen zu den vier Fenster und deren Anordnung unter „Tools &gt; Gobal Options“. Dort können Sie etwa unter dem Reiter”General" die Option zum “Save Workspace to RData on exit” zu <em>Never</em> wechseln. Dies führt dazu, dass Ihre <em>Environment</em> beim Verlassen von R immer gelöscht wird. Dies ist nicht etwa ein Nachteil, sondern eine Technik die Sie dazu veranlasst, alle benötigen Schritte in Ihrem Kode unterzubringen. Weiter könne Sie unter dem Reiter “Spelling” auch noch die Rechtschreibefunktion deaktiveren, da das Feature noch nicht wirklich für die deutsche Rechtschreibung zu funktionieren scheint (bzw. die Ergänzung von neuen Wörterbüchern nicht fehlerfrei abläuft).</p>
+<p>Die Ordnerstruktur im Reiter <em>Files</em> des vierten Fensters hängt mit Ihrem aktuellen <strong>Arbeitsverzeichnis</strong> zusammen. Ein Arbeitsverzeichnis ist der Ort, auf den R immer als Erstes zugreift und wo Dinge automatisch abgelegt werden. Dieses können über die Menüsteuerung “Session &gt; Set Working Directory &gt; Choose Directory” oder über den Befehl ‘setwd()’ definieren (erstere Variante ist etwas einfacher). Der ‘getwd()’ Befehl wiederum gibt das aktuell festgelegte Verzeichnis aus. Speichern Sie jeweils Ihr aktuelles Arbeitsverzeichnis als Teil des Markdowns, z.Bsp. so:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="wochenplan-02.html#cb2-1"></a><span class="kw">setwd</span>(<span class="st">&quot;C:/Users/SchweglG/R_Daten/HS20/E3&quot;</span>) </span>
+<span id="cb2-2"><a href="wochenplan-02.html#cb2-2"></a><span class="co">#Dies dient in einem Skript oder einem Markdown als Erinnerung, ... </span></span>
+<span id="cb2-3"><a href="wochenplan-02.html#cb2-3"></a><span class="co">#...wo Ihr Arbeitsverzeichnis liegt (und damit wo Sie Ihre Daten wiederfinden)</span></span></code></pre></div>
+<p>Wir können uns Beispielsweise eine CSV-Datei (<strong>C</strong>omma <strong>S</strong>eparated <strong>V</strong>alue) aus der Liste unserer installierten Pakete erstellen, und zwar über folgenden Befehl:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="wochenplan-02.html#cb3-1"></a><span class="kw">write.table</span>(pakete_liste, <span class="dt">file=</span><span class="st">&quot;Paketliste_neu.csv&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;,&quot;</span>)</span></code></pre></div>
+<p>Diese CSV-Datei, welche die Liste enhält, sollte dann in Ihrem aktuellen Arbeitsverzeichnis abgelegt werden.</p>
+<p> </p>
+<ol start="2" style="list-style-type: decimal">
+<li>Führen Sie sowohl in der Konsole als auch im Skript einige Rechnungen durch und speichern Sie im Skript die Resultate als Kommentare. Hier ein paar Beispielrechnung:</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="wochenplan-02.html#cb4-1"></a><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb4-2"><a href="wochenplan-02.html#cb4-2"></a><span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span></span>
+<span id="cb4-3"><a href="wochenplan-02.html#cb4-3"></a>(<span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span>) <span class="op">/</span><span class="st"> </span><span class="dv">5</span></span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>… Fortsetzung:
+<ul>
+<li>Was ist der Vorteil der Arbeit im Skript gegenüber dem Schreiben von Code direkt in der Konsole?</li>
+<li>Sie möchten nun das Ergebnis Ihrer letzten Rechnung als Objekt ‘x’ abspeichern. Wie könnten Sie das in der Konsole tun, ohne dass Sie nochmals den Kode der Rechnung (in unserem Beispiel “(5 + 3 - 4) / 5”) selber schreiben müssten?</li>
+<li>Und wo ist ‘x’ nun hin – wo oder wie können Sie ‘x’ sehen?</li>
+</ul></li>
+</ol>
+<p>Siehe für die Vorteile in der jeweiligen Arbeit die Beschreibungen oben. In der Konsole kann über die beiden Pfeiltasten runter und rauf durch bisher ausgeführte Befehle <em>gescrollt</em> werden. So können Sie die Rechnung erneut aufrufen und dem Objekt ‘x’ zuweisen. Das Objekt taucht dann im <em>Environment</em>-Fenster auf. Es kann dann über die Funktion rm() wieder entfernt werden.</p>
+<p> </p>
+<ol start="3" style="list-style-type: decimal">
+<li>Rekapitulieren Sie noch einmal: Was könnten die Vorteile davon sein, mit R Markdown zu arbeiten <span class="citation">(Allaire et al. <a href="#ref-R-rmarkdown" role="doc-biblioref">2020</a>)</span>? Wann arbeitet man besser mit einem klassischen Skript? Schauen Sie sich auch die Formatierungsmöglichkeiten für Fliesstext in den Cheatsheets zu R Markdown an (siehe <a href="https://rstudio.com/resources/cheatsheets/">hier</a>)!</li>
+</ol>
+<p>Neben der Konsole und dem Skript ist <strong>R Markdown</strong> die dritte Möglichkeit in R-Studio zu arbeiten (<span class="citation">Allaire et al. (<a href="#ref-R-rmarkdown" role="doc-biblioref">2020</a>)</span>).<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> R Markown ist ebenfalls ein Paket und ermöglicht im Sinne eines erweiterten Skripts das Erstellen eines dynamische Analysedokumente: Sie kombinieren Kode, gerenderte Ausgaben (z. B. Grafiken) und Text. Eine neue R Markdown Datei kann via «File &gt; New File &gt; R Markdown» oder mit dem Button direkt unter dem «File» Button geöffnet werden. Die Datei selber ist unterteilt in einfachen Fliesstext (weisser Hintergrund) oder sogenannten R Chunk (grauer Hintergrund), Kodestücke für R. Ein R Chunk kann entweder über den «Insert»-Button im R Markdown-Fenster eingefügt werden, oder aber über die Tastenkombination «Ctrl + Alt + i» (bzw. «Cmd + Option + i» bei Mac).</p>
+<p> </p>
+<ol start="4" style="list-style-type: decimal">
+<li>Öffnen Sie eine neue R Markdown Datei. Versuchen Sie Ihre bisherigen Notizen zu den Aufgaben und Ihren Code in dieser Datei unterzubringen. Arbeiten Sie für die folgenden Aufgaben mit dieser Datei weiter.</li>
+</ol>
+<p>Siehe Anmerkungen bei Aufgabe 3.</p>
+<p> </p>
+<ol start="5" style="list-style-type: decimal">
+<li>Versuchen Sie allgemein zu beschreiben, was Funktionen und was Objekte sind. Fügen Sie eine kurze Erläuterung in Ihr Markdown-Dokument zur Frage ein, was im folgenden Code jeweils Funktionen und was Objekte (und wenn letzteres, welche Art von Objekt) sind:</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="wochenplan-02.html#cb5-1"></a><span class="kw">sqrt</span>(x)</span>
+<span id="cb5-2"><a href="wochenplan-02.html#cb5-2"></a><span class="kw">help</span>(<span class="st">&quot;sqrt&quot;</span>)</span>
+<span id="cb5-3"><a href="wochenplan-02.html#cb5-3"></a>?help</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="wochenplan-02.html#cb6-1"></a>y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="ot">NA</span>)</span>
+<span id="cb6-2"><a href="wochenplan-02.html#cb6-2"></a>z &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">11</span>)</span></code></pre></div>
+<p>Die Grundlagen der Sprache von R sind <strong>Funktionen</strong> und <strong>Objekte</strong> <span class="citation">(vgl. Manderscheid <a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>, 25ff)</span>, d.h. Befehle in R bestehen aus diesen beiden Elemente. Die Funktionen bestimmen, was mit einem Objekt passiert. Ein Objekt wiederum kann verschiedenste Formen annehmen, etwa eine Zahl, eine Menge von verschiedenen Werten (z.Bsp. ein Datensatz), das Ergebnis einer Funktion – und selbst eine Funktion selber kann wieder zu einem Objekt werden. Dies zeigt sich etwa bei den beiden Hilfe-Funktionen ‘help()’ und ‘?’. Hier wird die Hilfe aufgerufen für eine andere Funktion.</p>
+<p>Für die weiteren Kodezeilen in der Aufgabe lassen sich jeweils folgende Funktionen und Objekte auflisten:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Funktionen</th>
+<th>Objekte</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>sqrt()</td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>&lt;-, c()</td>
+<td>y, 1, 3, 4, 5, 6, 7, NA</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>Im Objekt y scheint ein fehlender Wert vorhanden zu sein (‘NA’ = Not Available). Möchten man nun etwa die Varianz für dieses Objekt berechnen folgt als Resultat ebenfalls nur “NA”:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="wochenplan-02.html#cb7-1"></a><span class="kw">var</span>(y)</span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<p>Wie könnten wir trotzdem die Varianz für das Objekt y berechnen? Hier kommen nun <strong>Argumente</strong> ins Spiel. Argumente erweitern nochmals die Funktionen, in dem Sie deren Details bestimmen. Wir können so etwa definieren, dass die Funktion ‘var()’ beim Objekt y die fehlende Werte ignoriert:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="wochenplan-02.html#cb9-1"></a><span class="kw">var</span>(y, <span class="dt">na.rm =</span> T)</span></code></pre></div>
+<pre><code>## [1] 4.666667</code></pre>
+<p>Unser Objekt z scheint hingegen keine solchen fehlenden Wert zu beinhaltet. Trotzdem scheint etwas nicht zu stimmen, wenn Sie das Resultat der Funktion zur Berechnung Standardabweichung ‘sd()’ mit dem Ergebnis der dazugehörigen Formel vergleichen <span class="citation">(vgl. Diaz-Bone <a href="#ref-DiazBone2019" role="doc-biblioref">2019</a>, 50f)</span>.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> Was könnte das Problem sein und wo die Lösung liegen?</p>
+<p> </p>
+<ol start="6" style="list-style-type: decimal">
+<li>Bonusaufgabe: Sehen Sie sich die Hilfeseite der Funktion matrix() an. Wozu dient diese Funktion? Welche Argumente akzeptiert / benötigt sie und wozu dienen diese? Illustrieren Sie die Funktionsweise anhand von ein paar Beispielen.</li>
+</ol>
+<p>R kennt verschiedenste Arten von Objekten (fürs Erste bleiben wir hier bei verschiedenen Objekten für Zahlen). Im bisherigen Verlauf haben Sie bereits einzelne Zahlen sowie Vektoren als eine Reihe von Zahlen kennengelernt. Über die Funktion ‘matrix()’ lässt sich nun ein dritter Objekttyp generieren, nämlich eine Matrix. Matrizen enthalten Zeilen und Spalten des jeweils selben Datentyps.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="wochenplan-02.html#cb11-1"></a><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>), <span class="dt">nrow =</span> <span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    3    5    7    9
+## [2,]    2    4    6    8   10</code></pre>
+<p>Auch lässt sich so beispielsweise eine Art sozialwissenschaftlicher Datensatz erstellen:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="wochenplan-02.html#cb13-1"></a>einstell &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>)</span>
+<span id="cb13-2"><a href="wochenplan-02.html#cb13-2"></a>koerp_g &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">176</span>,<span class="dv">180</span>,<span class="dv">192</span>,<span class="dv">156</span>,<span class="dv">168</span>)</span>
+<span id="cb13-3"><a href="wochenplan-02.html#cb13-3"></a>gndr &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">0</span>)</span>
+<span id="cb13-4"><a href="wochenplan-02.html#cb13-4"></a>daten &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(einstell, koerp_g, gndr), <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">byrow =</span> F)</span>
+<span id="cb13-5"><a href="wochenplan-02.html#cb13-5"></a>daten</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1  176    1
+## [2,]    3  180    2
+## [3,]    5  192    1
+## [4,]    4  156    2
+## [5,]    3  168    0</code></pre>
+<p>In der Kodezeilen, wo die Funktion matrix() enthalten ist, sind wiederum Argumente vorhanden, nämlich ‘nrow’, ‘ncol’ und ‘byrow’. Die genaue Funktion der Argument ist ebenfalls auf der Hilfeseite der Funktion ersichtlich.</p>
+<p> </p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-R-rmarkdown">
+<p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2020. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
+</div>
+<div id="ref-DiazBone2019">
+<p>Diaz-Bone, Rainer. 2019. <em>Statistik Für Soziologen</em>. Konstanz: UVK.</p>
+</div>
+<div id="ref-Manderscheid2017">
+<p>Manderscheid, Katharina. 2017. <em>Sozialwissenschaftliche Datenanalyse Mit R. Eine Einführung</em>. Wiesbaden: Springer VS.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>Falls Sie noch Probleme bei der Installation von R bzw. RStudio oder sonstige technische Schwierigkeiten haben, können Sie sich gerne weiterhin per E-Mail melden!<a href="wochenplan-02.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Auch das vorliegende Dokument wurde über ein R-Markdown File erstellt.<a href="wochenplan-02.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p><span class="math inline">\(s=\sqrt{\frac{1}{N}\sum_{i=1}^N(x_i-\bar{x})^2}\)</span><a href="wochenplan-02.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Im Gegensatz zu Matrizen können dann Dataframes verschiedenen Datenarten enthalten, also etwa sowohl numerische und textliche Daten <span class="citation">(vgl. Manderscheid <a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>, 40)</span>.<a href="wochenplan-02.html#fnref5" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="wocheplan-01.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="wochenplan-03.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-WP2_Grundlagen.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
