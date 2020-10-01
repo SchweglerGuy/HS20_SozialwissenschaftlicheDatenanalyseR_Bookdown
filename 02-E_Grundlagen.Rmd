@@ -136,7 +136,7 @@ Auch lässt sich so beispielsweise eine Art sozialwissenschaftlicher Datensatz e
 einstell <- c(1,3,5,4,3)
 koerp_g <- c(176,180,192,156,168)
 gndr <- c(1,2,1,2,0)
-daten <- matrix(c(einstell, koerp_g, gndr), nrow = 3, ncol = 5, byrow = T)
+daten <- matrix(c(einstell, koerp_g, gndr), nrow = 5, ncol = 3, byrow = F)
 daten
 ```
 

@@ -292,12 +292,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="einheit-vom-24-09-.html#cb13-1"></a>einstell &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>)</span>
 <span id="cb13-2"><a href="einheit-vom-24-09-.html#cb13-2"></a>koerp_g &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">176</span>,<span class="dv">180</span>,<span class="dv">192</span>,<span class="dv">156</span>,<span class="dv">168</span>)</span>
 <span id="cb13-3"><a href="einheit-vom-24-09-.html#cb13-3"></a>gndr &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">0</span>)</span>
-<span id="cb13-4"><a href="einheit-vom-24-09-.html#cb13-4"></a>daten &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(einstell, koerp_g, gndr), <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">5</span>, <span class="dt">byrow =</span> T)</span>
+<span id="cb13-4"><a href="einheit-vom-24-09-.html#cb13-4"></a>daten &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(einstell, koerp_g, gndr), <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">byrow =</span> F)</span>
 <span id="cb13-5"><a href="einheit-vom-24-09-.html#cb13-5"></a>daten</span></code></pre></div>
-<pre><code>##      [,1] [,2] [,3] [,4] [,5]
-## [1,]    1    3    5    4    3
-## [2,]  176  180  192  156  168
-## [3,]    1    2    1    2    0</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1  176    1
+## [2,]    3  180    2
+## [3,]    5  192    1
+## [4,]    4  156    2
+## [5,]    3  168    0</code></pre>
 <p>In der Kodezeilen, wo die Funktion matrix() enthalten ist, sind wiederum Argumente vorhanden, nämlich ‘nrow’, ‘ncol’ und ‘byrow’. Die genaue Funktion der Argument ist ebenfalls auf der Hilfeseite der Funktion ersichtlich.</p>
 <p> </p>
 
