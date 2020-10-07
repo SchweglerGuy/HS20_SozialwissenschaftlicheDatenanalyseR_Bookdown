@@ -1,6 +1,4 @@
-# Wochenplan 03
-
-...zur Einheit vom 01. & 08.10.2020, Grundlagen (Teil 2)
+# Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 3 (01.10.2020)
 
 ## Lernziele
 
@@ -27,22 +25,24 @@ Zusammenfassend lassen sich damit folgende Seminarziele festhalten:
 v <- c(1, 3, 7, 9, 22, 2, 8, 14, 20, 3, 7, 9, 11, 13)
 ```
 
-Eine erste Möglichkeit, das arithmetische Mittel zu berechnen, ist das manuelle Aufsummieren und das anschliessende Teilen durch die Anzahl Elemente.
+1: Eine erste Möglichkeit, das arithmetische Mittel zu berechnen, ist das manuelle Aufsummieren und das anschliessende Teilen durch die Anzahl Elemente.
 ```{r}
 (1+ 3+ 7+ 9+ 22+ 2+ 8+ 14+ 20+ 3+ 7+ 9+ 11+ 13)/14
 ```
 Diese manuelle Variante kann etwa über die "Find/Replace" Funktion von R Studio erleichtert werden, indem die Kommata durch Pluszeichen ersetzt werden.
 
-Eine zweite Möglichkeit bietet die Kombination der Funktionen 'sum()' und 'lenght()', welche die oben manuell ausgeführten Schritte umsetzen.
+
+2: Eine zweite Möglichkeit bietet die Kombination der Funktionen 'sum()' und 'lenght()', welche die oben manuell ausgeführten Schritte umsetzen.
 ```{r}
 sum(v)/length(v)
 
 ```
 
-Die dritte Möglichkeit ist natürlich die Funktion für das arithmetische Mittel selber, 'mean()':
+3: Die dritte Möglichkeit ist natürlich die Funktion für das arithmetische Mittel selber, 'mean()':
 ```{r}
 mean(v)
 ```
+
 
 
 2. Was macht das Argument 'trim' für die Funktion mean()? Wozu könnten Sie dieses Argument in einem sozialwissenschaftlichen Kontext nutzen? Spezifizieren Sie das Argument auf sinnvolle Weise, um das arithmetische Mittel des in Aufgabe 1 erstellten Vektors **v** zu berechnen!
@@ -57,7 +57,7 @@ mean(c(2,3,3,7,7,8,9,9,11,13,14,20))
 Damit können sowohl die kleinen wie auch die grossen Extremwerte bei der Berechnung eines Durchschnitts ignoriert werden.
 
 
-3. Erstellen Sie vier verschiedene Vektoren mit je einer Länge von vier und verbinden Sie diese zu einer 4x4-Matrix. Die Funktion apply() erlaubt Ihnen, eine Funktionen wie z.B. mean() oder var() auf diese Matrix anzuwenden. Nur wie genau? Sehen Sie sich die Hilfe zu apply() an, probieren Sie die Funktion aus und versuchen Sie zu verstehen, wie sie genau funktioniert. Erläutern Sie apply() dann in eigenen Worten und mit Hilfe der von Ihnen erzeugten 4x4-Matrix! 
+3. Erstellen Sie vier verschiedene Vektoren mit je einer Länge von vier und verbinden Sie diese zu einer 4x4-Matrix. Die Funktion apply() erlaubt Ihnen, eine Funktionen wie z.B. mean() oder var() auf diese Matrix anzuwenden. Nur wie genau? Sehen Sie sich die Hilfe zu apply() an, probieren Sie die Funktion aus und versuchen Sie zu verstehen, wie sie genau funktioniert. Erläutern Sie apply() dann in eigenen Worten und mit Hilfe der von Ihnen erzeugten 4x4-Matrix!
 ```{r}
 m1 <- c(2,4,7,9)
 m2 <- c(8,9,5,2)
@@ -76,10 +76,12 @@ Nachdem die vier Vektoren erstellt wurden lassen sie sich über die ‚rbind()�
 
 'apply()' als nächster Schritt wendet eine bestimmte Funktion auf ein Objekte an. Bei einem Objekt des Typs Matrix muss allerdings noch spezifiziert werden, ob die Funktion Zeilen- oder Spalte-weise angewendet wird. Zielen oder Spalten werden über die Zahlen 1 bzw. 2 definiert.
 
-So ergeben sich insgesamt vier Möglichkeiten, für die Berechnung der des Durchschnitts – allerdings generieren diese vier Möglichkeiten nur zwei unterschiedliche Ergebnisse.
+So ergeben sich insgesamt vier Möglichkeiten, für die Berechnung der des Durchschnitts – allerdings finden sich nur zwei unterschiedliche Ergebnisse.
+
 
 
 4. Erstellen Sie je einen Vektor mit numerischen Daten, textförmigen Daten und logischen Daten. Die Funktionen as.numeric(), as.character() und as.logical() lassen Sie eine Datenarten in eine andere "zwingen" bzw. als eine andere Datenart interpretieren. Wann funktioniert dies? Und wo sind die Grenzen dieses "Zwingens"?
+
 ```{r}
 a <- c(0, 1, 2)
 b <- c("null", "eins", "zwei") #die Anführungs- und Schlusszeichen beachten
@@ -108,7 +110,6 @@ Die Grenzen dieses "Zwingens" der 'as.-' finden sich auf der einen Seite bei aus
 
 
 5. Definieren Sie folgende Vektoren mittels der Funktionen seq() und rep():
-
 Vektor 5a: 1 2 3 4 5 6 7 8 9 10
 ```{r}
 seq(from = 1, to = 10, by = 1)
@@ -136,3 +137,7 @@ Vektor 5e: 1 1 1 1 2 3 4 5
 ```{r}
 c(rep(1,3), 1:5)
 ```
+
+
+
+Arbeiten Sie für die Falllösung wiederum mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit Fallloesung03_NameVorname.pdf und geben das Dokument via OLAT bis Mittwochmittag ab (07.10.2020, 12:00).
