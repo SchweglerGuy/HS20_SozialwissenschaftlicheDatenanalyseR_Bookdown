@@ -5,12 +5,18 @@
 Nachdem wir uns bereits Grundlagen für die Arbeit mit R und R Studio erarbeitet haben, wollen wir in der vierten Woche nun erste statistische Inhalte bzw. Methoden einführen und diese mit neuen Arbeitstechniken in R Studio ergänzen. Zu ersteren gehören in dieser Woche die bivariaten Zusammenhänge von metrischen Variablen (Korrelation) und verschiedene Zufallsverteilungen. Als Arbeitstechniken wollen wir neu grafische Techniken in R kennenlernen. Der vierte Wochenplan soll uns so nicht zuletzt vorbereiten, das Prinzip der Inferenzstatistik mittels R zu verstehen.
 
 Konkret lassen sich folgende Seminarziele festhalten:
-* Sie verstehen, was eine Korrelation von zwei Variablen bedeutet und können bivariate Zusammenhänge in R berechnen und interpretieren.
-* Sie können zwei Variablen in einem Streudiagramm darstellen und die Darstellungen interpretieren. 
-* Sie kennen den Unterschied von Gleichverteilungen und Normalverteilungen und können in R entsprechend verteilte Zufallsvariablen erstellen.
-* Sie können metrische Verteilungen in Histogrammen darstellen.
-* Sie haben erste Techniken kennenglernt, wie Grafiken erweitert und kombiniert werden können.
-* Sie haben sich in R die Grundlagen für ein Verständnis von Inferenzstatistik allgemein und des Stichprobenfehlers im Besonderen erarbeitet.
+
+- Sie verstehen, was eine Korrelation von zwei Variablen bedeutet und können bivariate Zusammenhänge in R berechnen und interpretieren.
+
+- Sie können zwei Variablen in einem Streudiagramm darstellen und die Darstellungen interpretieren. 
+
+- Sie kennen den Unterschied von Gleichverteilungen und Normalverteilungen und können in R entsprechend verteilte Zufallsvariablen erstellen.
+
+- Sie können metrische Verteilungen in Histogrammen darstellen.
+
+- Sie haben erste Techniken kennenglernt, wie Grafiken erweitert und kombiniert werden können.
+
+- Sie haben sich in R die Grundlagen für ein Verständnis von Inferenzstatistik allgemein  und des Stichprobenfehlers im Besonderen erarbeitet.
 
 
 ## Aufgaben
