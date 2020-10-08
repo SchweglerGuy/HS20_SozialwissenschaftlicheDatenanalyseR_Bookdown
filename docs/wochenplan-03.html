@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="wochenplan-02.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="wochenplan-04.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -149,7 +149,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="wochenplan-03.html"><a href="wochenplan-03.html#lernziele"><i class="fa fa-check"></i><b>3.1</b> Lernziele</a></li>
 <li class="chapter" data-level="3.2" data-path="wochenplan-02.html"><a href="wochenplan-02.html#aufgaben"><i class="fa fa-check"></i><b>3.2</b> Aufgaben</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="wochenplan-04.html"><a href="wochenplan-04.html"><i class="fa fa-check"></i><b>4</b> Wochenplan 04</a><ul>
+<li class="chapter" data-level="4.1" data-path="wochenplan-03.html"><a href="wochenplan-03.html#lernziele"><i class="fa fa-check"></i><b>4.1</b> Lernziele</a></li>
+<li class="chapter" data-level="4.2" data-path="wochenplan-02.html"><a href="wochenplan-02.html#aufgaben"><i class="fa fa-check"></i><b>4.2</b> Aufgaben</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="5" data-path="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-3-01-10-2020.html"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-3-01-10-2020.html"><i class="fa fa-check"></i><b>5</b> Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 3 (01.10.2020)</a><ul>
+<li class="chapter" data-level="5.1" data-path="wochenplan-03.html"><a href="wochenplan-03.html#lernziele"><i class="fa fa-check"></i><b>5.1</b> Lernziele</a></li>
+<li class="chapter" data-level="5.2" data-path="wochenplan-02.html"><a href="wochenplan-02.html#aufgaben"><i class="fa fa-check"></i><b>5.2</b> Aufgaben</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -197,20 +205,121 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="aufgaben" class="section level2">
 <h2><span class="header-section-number">3.2</span> Aufgaben</h2>
 <ol style="list-style-type: decimal">
-<li><p>Der Vektor <strong>v</strong> besteht aus folgenden Zahlen: 1, 3, 7, 9, 22, 2, 8, 14, 20, 3, 7, 9, 11, und 13. Berechnen Sie auf drei verschiedenen Arten das arithmetische Mittel dieses Vektors.</p></li>
-<li><p>Was macht das Argument ‘trim’ für die Funktion mean()? Wozu könnten Sie dieses Argument in einem sozialwissenschaftlichen Kontext nutzen? Spezifizieren Sie das Argument auf sinnvolle Weise, um das arithmetische Mittel des in Aufgabe 1 erstellten Vektors <strong>v</strong> zu berechnen!</p></li>
-<li><p>Erstellen Sie vier verschiedene Vektoren mit je einer Länge von vier und verbinden Sie diese zu einer 4x4-Matrix. Die Funktion apply() erlaubt Ihnen, eine Funktionen wie z.B. mean() oder var() auf diese Matrix anzuwenden. Nur wie genau? Sehen Sie sich die Hilfe zu apply() an, probieren Sie die Funktion aus und versuchen Sie zu verstehen, wie sie genau funktioniert. Erläutern Sie apply() dann in eigenen Worten und mit Hilfe der von Ihnen erzeugten 4x4-Matrix!</p></li>
-<li><p>Erstellen Sie je einen Vektor mit numerischen Daten, textförmigen Daten und logischen Daten. Die Funktionen as.numeric(), as.character() und as.logical() lassen Sie eine Datenarten in eine andere “zwingen” bzw. als eine andere Datenart interpretieren. Wann funktioniert dies? Und wo sind die Grenzen dieses “Zwingens”?</p></li>
-<li><p>Definieren Sie folgende Vektoren mittels der Funktionen seq() und rep():</p></li>
+<li>Der Vektor <strong>v</strong> besteht aus folgenden Zahlen: 1, 3, 7, 9, 22, 2, 8, 14, 20, 3, 7, 9, 11, und 13. Berechnen Sie auf drei verschiedenen Arten das arithmetische Mittel dieses Vektors.</li>
 </ol>
-<ul>
-<li>Vektor 5a: 1 2 3 4 5 6 7 8 9 10</li>
-<li>Vektor 5b: 1 1 1 2 2 2 3 3 3</li>
-<li>Vektor 5c: Die Zahlen des Vektors b als ausgeschriebene Wörter</li>
-<li>Vektor 5d: 1 4 7 10 13</li>
-<li>Vektor 5e: 1 1 1 1 2 3 4 5</li>
-</ul>
-<p>Arbeiten Sie für die Falllösung wiederum mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit Fallloesung03_NameVorname.pdf und geben das Dokument via OLAT bis Mittwochmittag ab (07.10.2020, 12:00).</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="wochenplan-03.html#cb15-1"></a>v &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">22</span>, <span class="dv">2</span>, <span class="dv">8</span>, <span class="dv">14</span>, <span class="dv">20</span>, <span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">13</span>)</span></code></pre></div>
+<p>Eine erste Möglichkeit, das arithmetische Mittel zu berechnen, ist das manuelle Aufsummieren und das anschliessende Teilen durch die Anzahl Elemente.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="wochenplan-03.html#cb16-1"></a>(<span class="dv">1</span><span class="op">+</span><span class="st"> </span><span class="dv">3</span><span class="op">+</span><span class="st"> </span><span class="dv">7</span><span class="op">+</span><span class="st"> </span><span class="dv">9</span><span class="op">+</span><span class="st"> </span><span class="dv">22</span><span class="op">+</span><span class="st"> </span><span class="dv">2</span><span class="op">+</span><span class="st"> </span><span class="dv">8</span><span class="op">+</span><span class="st"> </span><span class="dv">14</span><span class="op">+</span><span class="st"> </span><span class="dv">20</span><span class="op">+</span><span class="st"> </span><span class="dv">3</span><span class="op">+</span><span class="st"> </span><span class="dv">7</span><span class="op">+</span><span class="st"> </span><span class="dv">9</span><span class="op">+</span><span class="st"> </span><span class="dv">11</span><span class="op">+</span><span class="st"> </span><span class="dv">13</span>)<span class="op">/</span><span class="dv">14</span></span></code></pre></div>
+<pre><code>## [1] 9.214286</code></pre>
+<p>Diese manuelle Variante kann etwa über die “Find/Replace” Funktion von R Studio erleichtert werden, indem die Kommata durch Pluszeichen ersetzt werden.</p>
+<p>Eine zweite Möglichkeit bietet die Kombination der Funktionen ‘sum()’ und ‘lenght()’, welche die oben manuell ausgeführten Schritte umsetzen.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="wochenplan-03.html#cb18-1"></a><span class="kw">sum</span>(v)<span class="op">/</span><span class="kw">length</span>(v)</span></code></pre></div>
+<pre><code>## [1] 9.214286</code></pre>
+<p>Die dritte Möglichkeit ist natürlich die Funktion für das arithmetische Mittel selber, ‘mean()’:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="wochenplan-03.html#cb20-1"></a><span class="kw">mean</span>(v)</span></code></pre></div>
+<pre><code>## [1] 9.214286</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Was macht das Argument ‘trim’ für die Funktion mean()? Wozu könnten Sie dieses Argument in einem sozialwissenschaftlichen Kontext nutzen? Spezifizieren Sie das Argument auf sinnvolle Weise, um das arithmetische Mittel des in Aufgabe 1 erstellten Vektors <strong>v</strong> zu berechnen!</li>
+</ol>
+<p>Mittels des Arguments ‘trim’ können Sie Anteile der Elemente eines Vektors für die Berechnung entfernen, also etwa die kleinsten und grössten 10%:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="wochenplan-03.html#cb22-1"></a><span class="kw">mean</span>(v, <span class="dt">trim =</span> <span class="fl">0.1</span>)</span></code></pre></div>
+<pre><code>## [1] 8.833333</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="wochenplan-03.html#cb24-1"></a><span class="kw">sort</span>(v)</span></code></pre></div>
+<pre><code>##  [1]  1  2  3  3  7  7  8  9  9 11 13 14 20 22</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="wochenplan-03.html#cb26-1"></a><span class="kw">mean</span>(<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">11</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">20</span>))</span></code></pre></div>
+<pre><code>## [1] 8.833333</code></pre>
+<p>Damit können sowohl die kleinen wie auch die grossen Extremwerte bei der Berechnung eines Durchschnitts ignoriert werden.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Erstellen Sie vier verschiedene Vektoren mit je einer Länge von vier und verbinden Sie diese zu einer 4x4-Matrix. Die Funktion apply() erlaubt Ihnen, eine Funktionen wie z.B. mean() oder var() auf diese Matrix anzuwenden. Nur wie genau? Sehen Sie sich die Hilfe zu apply() an, probieren Sie die Funktion aus und versuchen Sie zu verstehen, wie sie genau funktioniert. Erläutern Sie apply() dann in eigenen Worten und mit Hilfe der von Ihnen erzeugten 4x4-Matrix!</li>
+</ol>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="wochenplan-03.html#cb28-1"></a>m1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">9</span>)</span>
+<span id="cb28-2"><a href="wochenplan-03.html#cb28-2"></a>m2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">5</span>,<span class="dv">2</span>)</span>
+<span id="cb28-3"><a href="wochenplan-03.html#cb28-3"></a>m3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>)</span>
+<span id="cb28-4"><a href="wochenplan-03.html#cb28-4"></a>m4 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">6</span>)</span>
+<span id="cb28-5"><a href="wochenplan-03.html#cb28-5"></a>ma &lt;-<span class="st"> </span><span class="kw">cbind</span>(m1,m2,m3,m4)</span>
+<span id="cb28-6"><a href="wochenplan-03.html#cb28-6"></a>mb &lt;-<span class="st"> </span><span class="kw">rbind</span>(m1,m2,m3,m4)</span>
+<span id="cb28-7"><a href="wochenplan-03.html#cb28-7"></a>ma</span></code></pre></div>
+<pre><code>##      m1 m2 m3 m4
+## [1,]  2  8  3  9
+## [2,]  4  9  5  8
+## [3,]  7  5  5  7
+## [4,]  9  2  5  6</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="wochenplan-03.html#cb30-1"></a>mb</span></code></pre></div>
+<pre><code>##    [,1] [,2] [,3] [,4]
+## m1    2    4    7    9
+## m2    8    9    5    2
+## m3    3    5    5    5
+## m4    9    8    7    6</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="wochenplan-03.html#cb32-1"></a><span class="kw">apply</span>(ma, <span class="dv">1</span>, mean)</span></code></pre></div>
+<pre><code>## [1] 5.5 6.5 6.0 5.5</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="wochenplan-03.html#cb34-1"></a><span class="kw">apply</span>(ma, <span class="dv">2</span>, mean)</span></code></pre></div>
+<pre><code>##  m1  m2  m3  m4 
+## 5.5 6.0 4.5 7.5</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="wochenplan-03.html#cb36-1"></a><span class="kw">apply</span>(mb, <span class="dv">1</span>, mean)</span></code></pre></div>
+<pre><code>##  m1  m2  m3  m4 
+## 5.5 6.0 4.5 7.5</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="wochenplan-03.html#cb38-1"></a><span class="kw">apply</span>(mb, <span class="dv">2</span>, mean)</span></code></pre></div>
+<pre><code>## [1] 5.5 6.5 6.0 5.5</code></pre>
+<p>Nachdem die vier Vektoren erstellt wurden lassen sie sich über die ‚rbind()‘ und ‚cbind()‘ Funktionen auf zwei verschiedene Weisen zu einer Matrix verbinden, entweder Zeilen- oder Spalte-weise (siehe die Objekte ma und mb).</p>
+<p>‘apply()’ als nächster Schritt wendet eine bestimmte Funktion auf ein Objekte an. Bei einem Objekt des Typs Matrix muss allerdings noch spezifiziert werden, ob die Funktion Zeilen- oder Spalte-weise angewendet wird. Zielen oder Spalten werden über die Zahlen 1 bzw. 2 definiert.</p>
+<p>So ergeben sich insgesamt vier Möglichkeiten, für die Berechnung der des Durchschnitts – allerdings generieren diese vier Möglichkeiten nur zwei unterschiedliche Ergebnisse.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Erstellen Sie je einen Vektor mit numerischen Daten, textförmigen Daten und logischen Daten. Die Funktionen as.numeric(), as.character() und as.logical() lassen Sie eine Datenarten in eine andere “zwingen” bzw. als eine andere Datenart interpretieren. Wann funktioniert dies? Und wo sind die Grenzen dieses “Zwingens”?</li>
+</ol>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="wochenplan-03.html#cb40-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb40-2"><a href="wochenplan-03.html#cb40-2"></a>b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;null&quot;</span>, <span class="st">&quot;eins&quot;</span>, <span class="st">&quot;zwei&quot;</span>) <span class="co">#die Anführungs- und Schlusszeichen beachten</span></span>
+<span id="cb40-3"><a href="wochenplan-03.html#cb40-3"></a>b2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;0&quot;</span>, <span class="st">&quot;1&quot;</span>, <span class="st">&quot;2&quot;</span>)</span>
+<span id="cb40-4"><a href="wochenplan-03.html#cb40-4"></a>c &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, T) <span class="co">#Die logischen Objekte können sowohl ausgeschreiben als auch lediglich als T und F aufgeführt werden</span></span></code></pre></div>
+<p>Nachdem wir die Vektoren definiert haben, können wir deren Typ bestimmen und mit den ‘as.’-Funktionen spielen:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="wochenplan-03.html#cb41-1"></a><span class="kw">is.numeric</span>(a)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="wochenplan-03.html#cb43-1"></a><span class="kw">is.character</span>(b)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="wochenplan-03.html#cb45-1"></a><span class="kw">is.character</span>(b2)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="wochenplan-03.html#cb47-1"></a><span class="kw">is.logical</span>(c)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="wochenplan-03.html#cb49-1"></a><span class="kw">as.numeric</span>(b)</span></code></pre></div>
+<pre><code>## Warning: NAs durch Umwandlung erzeugt</code></pre>
+<pre><code>## [1] NA NA NA</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="wochenplan-03.html#cb52-1"></a><span class="kw">as.numeric</span>(b2)</span></code></pre></div>
+<pre><code>## [1] 0 1 2</code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="wochenplan-03.html#cb54-1"></a><span class="kw">as.numeric</span>(c)</span></code></pre></div>
+<pre><code>## [1] 1 0 1</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="wochenplan-03.html#cb56-1"></a><span class="kw">as.character</span>(a)</span></code></pre></div>
+<pre><code>## [1] &quot;0&quot; &quot;1&quot; &quot;2&quot;</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="wochenplan-03.html#cb58-1"></a><span class="kw">as.character</span>(c)</span></code></pre></div>
+<pre><code>## [1] &quot;TRUE&quot;  &quot;FALSE&quot; &quot;TRUE&quot;</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="wochenplan-03.html#cb60-1"></a><span class="kw">as.logical</span>(a)</span></code></pre></div>
+<pre><code>## [1] FALSE  TRUE  TRUE</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="wochenplan-03.html#cb62-1"></a><span class="kw">as.logical</span>(b)</span></code></pre></div>
+<pre><code>## [1] NA NA NA</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="wochenplan-03.html#cb64-1"></a><span class="kw">as.logical</span>(b2)</span></code></pre></div>
+<pre><code>## [1] NA NA NA</code></pre>
+<p>Die Grenzen dieses “Zwingens” der ’as.-’Funktionen finden sich auf der einen Seite bei ausgeschriebenen Zahlen in einem Charakter-Vektor. Diese ausgeschriebenen Zahlen können von R nicht in numerische oder auch logische Daten umformuliert werden. Anderseits zeigen sich die Grenzen im Zusammenhang zu den logischen Daten: Hier funktioniert das “Zwingen” nur mit numerische Daten – und alles über 1 wird als TRUE interpretiert.</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Definieren Sie folgende Vektoren mittels der Funktionen seq() und rep():</li>
+</ol>
+<p>Vektor 5a: 1 2 3 4 5 6 7 8 9 10</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="wochenplan-03.html#cb66-1"></a><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">1</span>, <span class="dt">to =</span> <span class="dv">10</span>, <span class="dt">by =</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="wochenplan-03.html#cb68-1"></a><span class="kw">seq</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="wochenplan-03.html#cb70-1"></a><span class="co">#oder</span></span>
+<span id="cb70-2"><a href="wochenplan-03.html#cb70-2"></a><span class="dv">1</span><span class="op">:</span><span class="dv">10</span></span></code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<p>Vektor 5b: 1 1 1 2 2 2 3 3 3</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="wochenplan-03.html#cb72-1"></a><span class="kw">c</span>(<span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">3</span>), <span class="kw">rep</span>(<span class="dv">2</span>,<span class="dv">3</span>), <span class="kw">rep</span>(<span class="dv">3</span>,<span class="dv">3</span>))</span></code></pre></div>
+<pre><code>## [1] 1 1 1 2 2 2 3 3 3</code></pre>
+<p>Vektor 5c: Die Zahlen des Vektors b als ausgeschriebene Wörter</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="wochenplan-03.html#cb74-1"></a><span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;eins&quot;</span>,<span class="dv">3</span>), <span class="kw">rep</span>(<span class="st">&quot;zwei&quot;</span>,<span class="dv">3</span>), <span class="kw">rep</span>(<span class="st">&quot;drei&quot;</span>,<span class="dv">3</span>))</span></code></pre></div>
+<pre><code>## [1] &quot;eins&quot; &quot;eins&quot; &quot;eins&quot; &quot;zwei&quot; &quot;zwei&quot; &quot;zwei&quot; &quot;drei&quot; &quot;drei&quot; &quot;drei&quot;</code></pre>
+<p>Vektor 5d: 1 4 7 10 13</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="wochenplan-03.html#cb76-1"></a><span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">13</span>,<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1]  1  4  7 10 13</code></pre>
+<p>Vektor 5e: 1 1 1 1 2 3 4 5</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="wochenplan-03.html#cb78-1"></a><span class="kw">c</span>(<span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">3</span>), <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] 1 1 1 1 2 3 4 5</code></pre>
 
 </div>
 </div>
@@ -220,7 +329,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="wochenplan-02.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="wochenplan-04.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

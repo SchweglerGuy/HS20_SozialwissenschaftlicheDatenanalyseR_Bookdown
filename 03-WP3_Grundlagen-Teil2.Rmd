@@ -104,7 +104,7 @@ as.logical(a)
 as.logical(b)
 as.logical(b2)
 ```
-Die Grenzen dieses "Zwingens" der 'as.-' finden sich auf der einen Seite bei ausgeschriebenen Zahlen in einem Charakter-Vektor. Diese ausgeschriebenen Zahlen können von R nicht in numerische oder auch logische Daten umformuliert werden. Anderseits zeigen sich die Grenzen im Zusammenhang zu den logischen Daten: Hier funktioniert das "Zwingen" nur mit numerische Daten – und alles über 1 wird als TRUE interpretiert.
+Die Grenzen dieses "Zwingens" der 'as.-'Funktionen finden sich auf der einen Seite bei ausgeschriebenen Zahlen in einem Charakter-Vektor. Diese ausgeschriebenen Zahlen können von R nicht in numerische oder auch logische Daten umformuliert werden. Anderseits zeigen sich die Grenzen im Zusammenhang zu den logischen Daten: Hier funktioniert das "Zwingen" nur mit numerische Daten – und alles über 1 wird als TRUE interpretiert.
 
 
 5. Definieren Sie folgende Vektoren mittels der Funktionen seq() und rep():

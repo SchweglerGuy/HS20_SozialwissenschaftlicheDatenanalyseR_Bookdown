@@ -1,0 +1,39 @@
+# Wochenplan 04
+
+...zur Einheit vom 08. & 15.10.2020, Korrelationen, Verteilungen und erstes grafisches Arbeiten (Vorbereitung Inferenzstatistik)
+
+## Lernziele
+
+Nachdem wir uns bereits Grundlagen für die Arbeit mit R und R Studio erarbeitet haben, wollen wir in der vierten Woche nun erste statistische Inhalte bzw. Methoden einführen und diese mit neuen Arbeitstechniken in R Studio ergänzen. Zu ersteren gehören in dieser Woche die bivariaten Zusammenhänge von metrischen Variablen (Korrelation) und verschiedene Zufallsverteilungen. Als Arbeitstechniken wollen wir neu grafische Techniken in R kennenlernen. Der vierte Wochenplan soll uns so nicht zuletzt vorbereiten, das Prinzip der Inferenzstatistik mittels R zu verstehen.
+
+Konkret lassen sich folgende Seminarziele festhalten:
+
+* Sie verstehen, was eine Korrelation von zwei Variablen bedeutet und können bivariate Zusammenhänge in R berechnen und interpretieren.
+* Sie können zwei Variablen in einem Streudiagramm darstellen und die Darstellungen interpretieren. 
+* Sie kennen den Unterschied von Gleichverteilungen und Normalverteilungen und können in R entsprechend verteilte Zufallsvariablen erstellen.
+* Sie können metrische Verteilungen in Histogrammen darstellen.
+* Sie haben erste Techniken kennenglernt, wie Grafiken erweitert und kombiniert werden können.
+* Sie haben sich in R die Grundlagen für ein Verständnis von Inferenzstatistik allgemein und des Stichprobenfehlers im Besonderen erarbeitet.
+
+
+## Aufgaben
+
+1. Sie sollen verschiedene Paare von Vektoren mittels der Funktionen 'c()', 'rep()' und 'seq()' definieren, die jeweils unterschiedlich korrelieren. Diese Vektoren -- d.h. Variablen -- und deren Korrelationen sollen sozialwissenschaftlichen Phänomenen entsprechen. Berechnen Sie jeweils den Korrelationskoeffizienten. 
+  + Ein Paar von Vektoren (mit je einer “Länge” von rund 100) soll eine Korrelation von ca. 0.4 aufweisen.
+  + Ein Paar von Vektoren (mit je einer “Länge” von rund 100) soll eine sehr starke Korrelation aufweisen.
+  + Ein Paar von Vektoren (mit je einer “Länge” von rund 100) soll eine schwache negative Korrelation aufweisen.
+
+2. Nutzten Sie 'plot()' um die Verteilungen Ihrer drei Variablen-Paare darzustellen. Verweisen Sie im Titel und in den Achsenbeschriftungen auf das sozialwissenschaftliche Phänomen, das Sie darstellen.
+
+3. Erstellen Sie je einen Vektor für eine Gleichverteilung mittels 'runif()' und für eine Normalverteilung mittels 'rnorm()'. Diese Vektoren sollen als Variablen Körpergrössen repräsentieren. Erstellen Sie die beiden Vektoren in unterschiedlichen Längen, und zwar...
+  + ...mit je 10,
+  + ...mit je 30
+  + ...und mit je 1000 Fällen.
+
+4. Als nächstes sollen Sie die beiden Verteilungen aus der Aufgabe 4, die 1.000 Fälle aufweisen, grafisch darstellen.
+  + Nutzen Sie die Funktion für Histogramme, um die beiden Verteilungen darzustellen. Die beiden Histogramme sollen dieselbe Spannbreite in der x-Achsen haben und jeweils 10 Klassen aufweisen. Wählen Sie je eine Farbe für die Gleich- und Normalverteilung.
+  + Über die Funktion 'abline()' kann dem aktuellen Plot eine Linie hinzugefügt werden. Fügen Sie jeweils einem Histogramm den Mittelwert der anderen Verteilung als vertikale Linie hinzu (ebenfalls in der entsprechenden Farbe).
+  + Bonusaufgabe: Das Argument 'add = TRUE' lässt Sie eine neue Grafik über die aktuelle Grafik legen. Versuchen Sie, auf diese Art Ihre beiden Histogramme in einer Grafik darzustellen.
+
+
+Arbeiten Sie für die Falllösung wiederum mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit Fallloesung04_NameVorname.pdf und geben das Dokument via OLAT bis Mittwochmittag ab (14.10.2020, 12:00).
