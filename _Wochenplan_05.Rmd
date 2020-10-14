@@ -1,0 +1,30 @@
+# Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 05 (15.– 22.10.2020)
+
+## Lernziele
+
+Ihre zentrale Aufgabe für die vergangene Woche bestand darin, R zu nutzen, um selbstständig "statistisch sinnvolle" Daten zu erzeugen und mit diesen zu arbeiten. Dazu haben wir zusätzlich zu den Funkionen seq() und rep() erstmals mit Zufallsvariablen gearbeitet, mit cor() eine erste bivariate statistische Funktion eingesetzt und erste Grafiken erstellt. 
+
+In der kommenden Arbeitswoche geht es nun darum, zwei neue Aspekte der Arbeit mit R kennenzulernen und einzuüben: das Zugreifen auf einzelne Elemente und Teile von Datenobjekten (Indizieren und Subsetting) und die Kontrolle von längeren Befehlsabläufen. Ausserdem werden wir mit Dataframes eine wichtige Art von Datenstrukturen in R einführen.
+
+Folgende Lernziele lassen sich festhalten:
+
+- Sie verstehen, was ein Dataframe in R ist und können die Unterschiede zu einer Matrix benennen.
+
+- Sie können gezielt auf einzelne Teile eines Datenobjekts zugreifen und kennen verschiedene Wege, das zu tun. 
+
+- Sie verstehen, wie eine For-Schleife funktioniert und können einfache Varianten davon selbst erstellen. 
+
+- Sie beginnen in der Arbeit mit R, gezielt Funktionen zur Abfrage von Attributen von Objekten zu nutzen. 
+
+
+## Aufgaben
+
+1. Erzeugen Sie ein Dataframe, das aus fünf Variablen besteht und 100 Fälle umfasst. Nutzen Sie dazu verschiedene der Funktionen, die wir in den letzten beiden Wochen kennengelernt haben (Zufallsvariablen, rep(), seq() ...). 
+
+2. Wenden Sie die Funktionen dim(), names(), str(), class() und typeof() auf Ihr Dataframe an. Was sagen Ihnen diese Funktionen jeweils? Welcher Output dieser Funktionen leuchtet Ihnen ein, welcher weniger?
+
+3. Schreiben Sie eine For-Schleife, die Ihnen für jede Spalte Ihres Dataframes den Mittelwert berechnet. 
+
+4. Überprüfen Sie Ihre Ergebnisse, indem Sie die Berechnung des Mittelwerts "händisch" für jede Spalte einzeln durchführen (nutzen Sie dazu Indizierung/Subsetting mittels eckiger Klammern).
+
+5. Definieren Sie eine logische Bedingung, die Ihnen erlaubt, Ihr Dataframe in ungefähr zwei Gruppen zu teilen. Berechnen Sie dann noch einmal die Mittelwerte pro Spalte, aber getrennt für diese beiden Gruppen. 
