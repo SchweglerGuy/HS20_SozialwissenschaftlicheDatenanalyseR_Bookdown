@@ -2,7 +2,7 @@
 
 ## Lernziele
 
-Ihre zentrale Aufgabe für die vergangene Woche bestand darin, R zu nutzen, um selbstständig "statistisch sinnvolle" Daten zu erzeugen und mit diesen zu arbeiten. Dazu haben wir zusätzlich zu den Funkionen seq() und rep() erstmals mit Zufallsvariablen gearbeitet, mit cor() eine erste bivariate statistische Funktion eingesetzt und erste Grafiken erstellt. 
+Ihre zentrale Aufgabe für die vergangene Woche bestand darin, R zu nutzen, um selbstständig "statistisch sinnvolle" Daten zu erzeugen und mit diesen zu arbeiten. Dazu haben wir zusätzlich zu den Funkionen seq() und rep() erstmals mit Zufallsvariablen gearbeitet, mit cor() eine erste bivariate statistische Funktion eingesetzt sowie Streudiagramme und Histogramme erstellt. 
 
 In der kommenden Arbeitswoche geht es nun darum, zwei neue Aspekte der Arbeit mit R kennenzulernen und einzuüben: das Zugreifen auf einzelne Elemente und Teile von Datenobjekten (Indizieren und Subsetting) und die Kontrolle von längeren Befehlsabläufen. Ausserdem werden wir mit Dataframes eine wichtige Art von Datenstrukturen in R einführen.
 
