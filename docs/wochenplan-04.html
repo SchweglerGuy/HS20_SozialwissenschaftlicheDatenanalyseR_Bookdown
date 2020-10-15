@@ -264,9 +264,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-29-6.png" width="672" /></p>
 <p><em>Als Ergänzung</em>:‘runif’ und ‘rnorm()’ werden noch von der Funktion ‘rbinom()’ ergänzt, die zufällige binomiale Verteilungen erstellt. Dies sind Verteilungen die Ihnen angeben, ob ein Ereignis bei einer bestimmten Wahrscheinlichkeit eingetreten ist oder nicht. Damit kann zum Beispiel aufgezeigt werden, wie oft Sie bei zehn Münzwürfen Kopf bekommen (Beispiel I), oder auch wie oft Sie bei dreimal würfeln mit zwei Würfeln eine Sechs erzielen (Beispiel II).</p>
 <div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="wochenplan-04.html#cb97-1"></a><span class="kw">rbinom</span>(<span class="dv">10</span>,<span class="dv">1</span>,<span class="fl">0.5</span>) <span class="co">#Beispiel I</span></span></code></pre></div>
-<pre><code>##  [1] 0 0 1 1 0 0 1 0 1 0</code></pre>
+<pre><code>##  [1] 0 0 1 0 1 1 1 0 0 1</code></pre>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="wochenplan-04.html#cb99-1"></a><span class="kw">rbinom</span>(<span class="dv">3</span>,<span class="dv">2</span>, <span class="dv">2</span><span class="op">/</span><span class="dv">6</span>) <span class="co">#Beispiel II</span></span></code></pre></div>
-<pre><code>## [1] 1 0 0</code></pre>
+<pre><code>## [1] 1 2 1</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Als nächstes sollen Sie die beiden Verteilungen aus der Aufgabe 4, die 1.000 Fälle aufweisen, grafisch darstellen.</li>
 </ol>
@@ -291,7 +291,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.3</span> Hinweise für den Wochenplan 05</h2>
 <p>Im Rahmen des Wochenplans 05 und der dazugehörigen Falllösung wird das Zugreifen auf Daten (Indizieren und Subsetting) sowie die sogenannte if-Schlaufe relevant. Der folgende Abschnitt zeigt nochmals kurz die Elemente, die am Ende der Einheit vom 15.10.2020 eingeführt wurden.</p>
 <p>Beim Zugreifen auf Daten – das heisst dem Indizieren – und dem Erstellen von Teildatensätzen – dem Subsetting – werden drei verschiednen Weisen unterscheiden.</p>
-<p><strong>[ ]</strong>: Die erste Art und Weise dies zu tun ist über die Verwendung von eckigen Klammer (vgl. <span class="citation">(Manderscheid <a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>, 57ff)</span>).</p>
+<p><strong>[ ]</strong>: Die erste Art und Weise dies zu tun ist über die Verwendung von eckigen Klammer <span class="citation">(vgl. Manderscheid <a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>, 57ff)</span>.</p>
 <div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="wochenplan-04.html#cb104-1"></a><span class="co">#Auf einzelne Elemente</span></span>
 <span id="cb104-2"><a href="wochenplan-04.html#cb104-2"></a>vektor1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">13</span>,<span class="dv">20</span>)</span>
 <span id="cb104-3"><a href="wochenplan-04.html#cb104-3"></a>vektor1[<span class="dv">4</span>]</span></code></pre></div>
@@ -303,7 +303,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] 20</code></pre>
 <div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="wochenplan-04.html#cb110-1"></a>datensatz[,<span class="dv">0</span>]</span></code></pre></div>
 <pre><code>## data frame with 0 columns and 6 rows</code></pre>
-<p><strong>$</strong>: Die zweite Möglichkeit auf Datenzuzugreifen ist der Dollar-Operator $. Damit wird ein Dataframe als Liste angesprochen und die Funktion gibt einen Vektor (bzw. eine Variable) zurück (vgl. <span class="citation">(Sauer <a href="#ref-Sauer2019" role="doc-biblioref">2019</a>, 59)</span>).</p>
+<p><strong>$</strong>: Die zweite Möglichkeit auf Datenzuzugreifen ist der Dollar-Operator $. Damit wird ein Dataframe als Liste angesprochen und die Funktion gibt einen Vektor (bzw. eine Variable) zurück <span class="citation">(vgl. Sauer <a href="#ref-Sauer2019" role="doc-biblioref">2019</a>, 59)</span>.</p>
 <div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="wochenplan-04.html#cb112-1"></a>datensatz<span class="op">$</span>vektor1</span></code></pre></div>
 <pre><code>## [1]  1  2 10  5 13 20</code></pre>
 <p><strong>which()</strong>: Die dritte Weise um Daten zu indizieren bildet die ‘which()’-Funktion die danach fragt, welche Fälle einer bestimmten Bedingung entsprechen.</p>
@@ -312,7 +312,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Wie bereits bei der ‘which()’-Funktion ersichtlich lassen sich diese drei Varianten natürlich kombinieren. Im folgenden Beispiel wird etwa ein Teildatensatz erstellt, in dem alle Fälle enthalten sind, die beim vektor1 einen Wert von 20 aufweisen (beachten Sie die <em>doppelten</em> Gleich-Zeichen bei der logischen Bedingung).</p>
 <div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="wochenplan-04.html#cb116-1"></a>t_datensatz &lt;-<span class="st"> </span>datensatz[<span class="kw">which</span>(datensatz<span class="op">$</span>vektor1<span class="op">==</span><span class="dv">20</span>),] </span>
 <span id="cb116-2"><a href="wochenplan-04.html#cb116-2"></a>t_datensatz &lt;-<span class="st"> </span>datensatz[datensatz<span class="op">$</span>vektor1<span class="op">==</span><span class="dv">20</span>,] <span class="co">#derselbe Befehl, einfach ohne which() auszuformulieren</span></span></code></pre></div>
-<p>Neben dem Zugreifen auf Daten findet sich auch eine Teilaufgabe in den Falllösungen 05, in der Sie eine eigenen if-Schleife programmieren sollen. Schleifen ermöglichen es, dass bestimme Funktionen (Schleifeninhalt) mehrmals ausgeführt werden können. Die Häufigkeit dieser Ausführung wird in einer Schleife über eine Bedingung definiert (Schleifenkontrolle). Sie für weitere Ergänzugen zu Schleifen auch <span class="citation">Manderscheid (<a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>)</span>, 206f, <a href="https://runge-statistik.de/schleifen-in-r/">hier</a>, und….</p>
+<p> </p>
+<p>Neben dem Zugreifen auf Daten findet sich auch eine Teilaufgabe in den Falllösungen 05, in der Sie eine eigenen if-Schleife programmieren sollen. Schleifen ermöglichen es, dass bestimme Funktionen (Schleifeninhalt) mehrmals ausgeführt werden können. Die Häufigkeit dieser Ausführung wird in einer Schleife über eine Bedingung definiert (Schleifenkontrolle). Sie für weitere Ergänzugen zu Schleifen auch <span class="citation">Manderscheid (<a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>)</span> auf S.206f, <a href="https://runge-statistik.de/schleifen-in-r/">hier</a>, und….</p>
 <div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="wochenplan-04.html#cb117-1"></a><span class="cf">for</span> (variable <span class="cf">in</span> vector) { <span class="co">#Schleifenkontrolle</span></span>
 <span id="cb117-2"><a href="wochenplan-04.html#cb117-2"></a>  funktion; <span class="co">#Schleifeninhalt</span></span>
 <span id="cb117-3"><a href="wochenplan-04.html#cb117-3"></a>}</span></code></pre></div>

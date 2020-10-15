@@ -127,7 +127,7 @@ Im Rahmen des Wochenplans 05 und der dazugehörigen Falllösung wird das Zugreif
 
 Beim Zugreifen auf Daten -- das heisst dem Indizieren -- und dem Erstellen von Teildatensätzen -- dem Subsetting -- werden drei verschiednen Weisen unterscheiden.
 
-**[ ]**: Die erste Art und Weise dies zu tun ist über die Verwendung von eckigen Klammer (vgl. [@Manderscheid2017,57ff]). 
+**[ ]**: Die erste Art und Weise dies zu tun ist über die Verwendung von eckigen Klammer [vgl. @Manderscheid2017,57ff]. 
 ```{r}
 #Auf einzelne Elemente
 vektor1 <- c(1,2,10,5,13,20)
@@ -141,7 +141,7 @@ datensatz[,0]
 
 ```
 
-**$**: Die zweite Möglichkeit auf Datenzuzugreifen ist der Dollar-Operator $. Damit wird ein Dataframe als Liste angesprochen und die Funktion gibt einen Vektor (bzw. eine Variable) zurück (vgl. [@Sauer2019, 59]).
+**$**: Die zweite Möglichkeit auf Datenzuzugreifen ist der Dollar-Operator $. Damit wird ein Dataframe als Liste angesprochen und die Funktion gibt einen Vektor (bzw. eine Variable) zurück [vgl. @Sauer2019, 59].
 ```{r}
 datensatz$vektor1
 ```
@@ -160,7 +160,10 @@ t_datensatz <- datensatz[datensatz$vektor1==20,] #derselbe Befehl, einfach ohne 
 ```
 
 
-Neben dem Zugreifen auf Daten findet sich auch eine Teilaufgabe in den Falllösungen 05, in der Sie eine eigenen if-Schleife programmieren sollen. Schleifen ermöglichen es, dass bestimme Funktionen (Schleifeninhalt) mehrmals ausgeführt werden können. Die Häufigkeit dieser Ausführung wird in einer Schleife über eine Bedingung definiert (Schleifenkontrolle). Sie für weitere Ergänzugen zu Schleifen auch @Manderscheid2017, 206f, [hier](https://runge-statistik.de/schleifen-in-r/), und....
+&nbsp;
+
+
+Neben dem Zugreifen auf Daten findet sich auch eine Teilaufgabe in den Falllösungen 05, in der Sie eine eigenen if-Schleife programmieren sollen. Schleifen ermöglichen es, dass bestimme Funktionen (Schleifeninhalt) mehrmals ausgeführt werden können. Die Häufigkeit dieser Ausführung wird in einer Schleife über eine Bedingung definiert (Schleifenkontrolle). Sie für weitere Ergänzugen zu Schleifen auch @Manderscheid2017 auf S.206f, [hier](https://runge-statistik.de/schleifen-in-r/), und....
 ```{r eval=F}
 
 for (variable in vector) { #Schleifenkontrolle
