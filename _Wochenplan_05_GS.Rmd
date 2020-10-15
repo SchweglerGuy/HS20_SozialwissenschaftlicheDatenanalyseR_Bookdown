@@ -19,7 +19,7 @@ Folgende Lernziele lassen sich festhalten:
 
 ## Aufgaben
 
-1. Erzeugen Sie ein Dataframe, das aus fünf Variablen besteht und 100 Fälle umfasst. Nutzen Sie dazu die verschiedenen Funktionen, die wir in den letzten beiden Wochen kennengelernt haben (Zufallsvariablen, rep(), seq() ...). Probieren Sie ebenfalls, dass eine der Variablen dem Character Datenformat entspricht. Überlegen Sie sich einen sozialwissenschaftlichen Kontext für dieses Dataframe und benennen Sie die Variablen dementsprechend.
+1. Erzeugen Sie ein Dataframe, das aus fünf Variablen besteht und 100 Fälle umfasst. Nutzen Sie dazu die verschiedenen Funktionen, die wir in den letzten beiden Wochen kennengelernt haben (Zufallsvariablen, rep(), seq() ...). Probieren Sie ebenfalls, dass die fünfte Variablen dem Character Datenformat entspricht. Überlegen Sie sich einen sozialwissenschaftlichen Kontext für dieses Dataframe und benennen Sie die Variablen dementsprechend.
 
 2. Wenden Sie die Funktionen dim(), names(), str(), class() und typeof() auf Ihr Dataframe an. Was sagen Ihnen diese Funktionen jeweils? Welcher Output dieser Funktionen leuchtet Ihnen ein, welcher weniger?
 
