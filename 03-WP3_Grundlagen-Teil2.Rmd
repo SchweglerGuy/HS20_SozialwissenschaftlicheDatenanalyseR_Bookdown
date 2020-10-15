@@ -2,7 +2,7 @@
 
 ...zur Einheit vom 01. & 08.10.2020, Grundlagen (Teil 2)
 
-## Lernziele
+## Lernziele WP03
 
 In der dritten Seminarwoche vertiefen wir Elemente der Programmiersprache R, die Sie bereits kennengelernt haben,  und betten sie in neue Zusammenhänge ein. Das Ziel ist es, das Verständnis von Funktionen und Objekten, von den verschiedenen Arten von Objekten in R sowie immer auch von der "Grammatik" dieser Sprache weiter zu schärfen. Zusätzlich werden in dieser Woche zwei neue Grundlagen eingeführt: Erstens die verschiedenen Arten von Daten, mit denen wir in R arbeiten: Zahlen, Text und logische Werte; zweitens einige Möglichkeiten, über bestimmte Funktionen systematisch Vektoren zu definieren. 
 
@@ -20,7 +20,7 @@ Zusammenfassend lassen sich damit folgende Seminarziele festhalten:
   + ... und diese auf alle drei Arten von Daten anwenden.
 
 
-## Aufgaben
+## Aufgaben WP03
 
 1. Der Vektor **v** besteht aus folgenden Zahlen: 1, 3, 7, 9, 22, 2, 8, 14, 20, 3, 7, 9, 11, und 13. Berechnen Sie auf drei verschiedenen Arten das arithmetische Mittel dieses Vektors.
 ```{r}

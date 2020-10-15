@@ -2,7 +2,7 @@
 
 ...zur Einheit vom 24.09. & 01.10.2020, Grundlagen (Teil 1)
 
-## Lernziele der zweiten Woche
+## Lernziele WP02
 
 In der zweiten Seminarwoche geht es darum, die Grundlagen von R und RStudio zu repetieren und zu erweitern.[^1] Für den weiteren Verlauf wollen wir *R als Sprache* auffassen – sowohl als Programmiersprache als auch als Sprache in einem metaphorischen Sinn. Wir wollen also ein komplexes System zur Kommunikation kennenlernen. Wie bei einer anderen Sprache gibt es auch hier Zeichen mit Bedeutungen (ähnliche wie Nomen, Verben, ...) und Regeln zur Verknüpfung dieser Zeichen (ähnlich wie eine Grammatik). Diese Grundlagen gilt es alle erstmal kennenzulernen und zu verstehen. Am Anfang wird vieles schwer fallen, mit der Zeit gewinnt man aber Sicherheit. 
 
@@ -26,7 +26,7 @@ Für die zweite Seminarwoche lassen sich folgende Seminarziele festhalten:
   + Sie kennen bereits drei verschiedenen Arten von Objekten.
 
 
-## Aufgaben
+## Aufgaben WP02
 
 1. Fassen Sie noch einmal für sich und in eigenen Worten die Funktionen der vier Fenster von R zusammen.
 

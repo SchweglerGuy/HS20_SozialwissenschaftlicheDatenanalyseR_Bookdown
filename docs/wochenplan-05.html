@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Sozialwissenschaftliche Datenanalyse mit R</title>
+  <title>5 Wochenplan 05 | Sozialwissenschaftliche Datenanalyse mit R</title>
   <meta name="description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta property="og:title" content="5 Wochenplan 05 | Sozialwissenschaftliche Datenanalyse mit R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta name="twitter:title" content="5 Wochenplan 05 | Sozialwissenschaftliche Datenanalyse mit R" />
   
   <meta name="twitter:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="wocheplan-01.html"/>
+<link rel="prev" href="wochenplan-04.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -179,30 +179,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Sozialwissenschaftliche Datenanalyse mit R</h1>
-<p class="author"><em>Kenneth Horvath &amp; Guy Schwegler</em></p>
-<p class="date"><em>HS 2020</em></p>
+<div id="wochenplan-05" class="section level1">
+<h1><span class="header-section-number">5</span> Wochenplan 05</h1>
+<p>…zur Einheit vom 15. &amp; 22.10.2020, Zugreifen auf Daten (Indizieren und Subsetting) sowie if-Schleifen (Vorbereitung Inferenzstatistik, Teil 2)</p>
+<div id="lernziele-wp05" class="section level2">
+<h2><span class="header-section-number">5.1</span> Lernziele WP05</h2>
+<p>Ihre zentrale Aufgabe für die vergangene Woche bestand darin, R zu nutzen, um selbstständig “statistisch sinnvolle” Daten zu erzeugen und mit diesen zu arbeiten. Dazu haben wir zusätzlich zu den Funktionen ‘seq()’ und ‘rep()’ erstmals mit Zufallsvariablen gearbeitet, mit ‘cor()’ eine erste bivariate statistische Funktion eingesetzt sowie Streudiagramme und Histogramme erstellt.</p>
+<p>In der kommenden Arbeitswoche geht es nun darum, zwei neue Aspekte der Arbeit mit R kennenzulernen und einzuüben: das Zugreifen auf einzelne Elemente und Teile von Datenobjekten (Indizieren und Subsetting) und die Kontrolle von längeren Befehlsabläufen. Ausserdem werden wir mit Dataframes eine wichtige Art von Datenstrukturen in R einführen.</p>
+<p>Folgende Lernziele lassen sich festhalten:</p>
+<ul>
+<li><p>Sie verstehen, was ein Dataframe in R ist und können die Unterschiede zu einer Matrix benennen.</p></li>
+<li><p>Sie können gezielt auf einzelne Teile eines Datenobjekts zugreifen und kennen verschiedene Wege, das zu tun.</p></li>
+<li><p>Sie verstehen, wie eine for-Schleife funktioniert und können einfache Varianten davon selbst erstellen.</p></li>
+<li><p>Sie beginnen in der Arbeit mit R gezielt Funktionen zur Abfrage von Attributen von Objekten zu nutzen.</p></li>
+</ul>
 </div>
-<div id="einführung" class="section level1 unnumbered">
-<h1>Einführung</h1>
-<p>Das Seminar “Sozialwissenschaftliche Datenanalyse mit R” bietet eine systematische Einführung in das Statistikpaket R. R ist eine Open Source Software, die sich unter anderem durch Flexibilität und vielfältige Möglichkeiten der grafischen und numerischen Datenanalyse auszeichnet. Das Seminar führt in inhaltlicher Abstimmung mit der Vorlesung „Grundlagen der multivariaten Statistik“ in Aufbau und Funktionsweise des Programms sowie in die Umsetzung wichtiger statistischer Verfahren (etwa lineare Regression und logistische Regression) ein. Anhand dieser Verfahren werden unter anderem Techniken des effizienten Datenmanagements, Möglichkeiten, eigenständig kleine Funktionen zu programmieren, sowie Formen der grafischen Datenanalyse und Ergebnisdarstellung besprochen.</p>
-<p>Das vorliegende Dokument ist ein sogennantes Bookdown (<span class="citation">Xie (<a href="#ref-R-bookdown" role="doc-biblioref">2020</a>)</span>, siehe auch <a href="https://bookdown.org/">hier</a>) und dient der Ergebnissicherung im Seminarverlauf. Das heisst dass die im Seminar besprochene Themen hiernochmals schriftlich festgehalten, diskutiert und allenfalls Literatur ergänzt werden (siehe für allgemeine Literatur etwa <span class="citation">Diaz-Bone (<a href="#ref-DiazBone2019" role="doc-biblioref">2019</a>)</span>, <span class="citation">Kabacoff (<a href="#ref-Kabacoff2015" role="doc-biblioref">2015</a>)</span> oder <span class="citation">Manderscheid (<a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>)</span>). Das Bookdown wird laufend aktualisiert. Ebenfalls werden in diesem Bookdown die Lösungen für die im Seminar gestellten Aufgaben (Falllösungen) präsentiert.</p>
+<div id="aufgaben-wp05" class="section level2">
+<h2><span class="header-section-number">5.2</span> Aufgaben WP05</h2>
+<ol style="list-style-type: decimal">
+<li><p>Erzeugen Sie ein Dataframe, das aus fünf Variablen besteht und 100 Fälle umfasst. Nutzen Sie dazu die verschiedenen Funktionen, die wir in den letzten beiden Wochen kennengelernt haben (Zufallsvariablen, rep(), seq() …). Probieren Sie ebenfalls, dass die fünfte Variablen dem Character Datenformat entspricht. Überlegen Sie sich einen sozialwissenschaftlichen Kontext für dieses Dataframe und benennen Sie die Variablen dementsprechend.</p></li>
+<li><p>Wenden Sie die Funktionen ‘dim()’, ‘names()’, ‘str()’, ‘class()’ und ‘typeof()’ auf Ihr Dataframe an. Was sagen Ihnen diese Funktionen jeweils? Welcher Output dieser Funktionen leuchtet Ihnen ein, welcher weniger?</p></li>
+<li><p>Schreiben Sie eine for-Schleife, die Ihnen für die vier numerischen Spalte Ihres Dataframes den Mittelwert berechnet.</p></li>
+<li><p>Überprüfen Sie Ihre Ergebnisse, indem Sie die Berechnung des Mittelwerts “händisch” für jede Spalte einzeln durchführen (nutzen Sie dazu Indizierung/Subsetting mittels eckiger Klammern).</p></li>
+<li><p>Definieren Sie als eine erste Variante eine logische Bedingung, die Ihnen erlaubt, Ihr Dataframe anhand der Character-Variable in ungefähr zwei Gruppen zu teilen. Teilen Sie dann als zweite Variante Ihren Datensatz anhand einer anderen logischen Bedingung mit einer Ihrer numerischen Variablen in zwei Gruppen.</p></li>
+<li><p>Berechnen Sie bei einer der beiden Varianten aus Aufgabe 6 dann noch einmal die Mittelwerte pro Spalte, aber getrennt für diese beiden Gruppen.</p></li>
+</ol>
+<p> </p>
+<p>Arbeiten Sie für die Falllösung wiederum mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit Fallloesung05_NameVorname.pdf und geben das Dokument via OLAT bis Mittwochmittag ab (21.10.2020, 12:00).</p>
 
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-DiazBone2019">
-<p>Diaz-Bone, Rainer. 2019. <em>Statistik Für Soziologen</em>. Konstanz: UVK.</p>
-</div>
-<div id="ref-Kabacoff2015">
-<p>Kabacoff, Robert. 2015. <em>R in Action: Data Analysis and Graphics with R</em>. Shelter Island, NY: Manning.</p>
-</div>
-<div id="ref-Manderscheid2017">
-<p>Manderscheid, Katharina. 2017. <em>Sozialwissenschaftliche Datenanalyse Mit R. Eine Einführung</em>. Wiesbaden: Springer VS.</p>
-</div>
-<div id="ref-R-bookdown">
-<p>Xie, Yihui. 2020. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.</p>
 </div>
 </div>
             </section>
@@ -210,8 +214,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="wocheplan-01.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="wochenplan-04.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -242,7 +246,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-WP5_IndizierenSubsetting.Rmd",
 "text": "Edit"
 },
 "history": {
