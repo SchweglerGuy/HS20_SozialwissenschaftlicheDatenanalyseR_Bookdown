@@ -23,12 +23,12 @@ Folgende Lernziele lassen sich festhalten:
 
 1. Erzeugen Sie ein Dataframe, das aus fünf Variablen besteht und 100 Fälle umfasst. Nutzen Sie dazu die verschiedenen Funktionen, die wir in den letzten beiden Wochen kennengelernt haben (Zufallsvariablen, rep(), seq() ...). Probieren Sie ebenfalls, dass die fünfte Variablen dem Character Datenformat entspricht. Überlegen Sie sich einen sozialwissenschaftlichen Kontext für dieses Dataframe und benennen Sie die Variablen dementsprechend.
 
-Für den folgenden Datensatz wurden Beispiel aus der letzten Falllösung genommen (WP04, Aufgabe 1).
+Für den folgenden Datensatz wurden unter anderem Beispiel aus der letzten Falllösung genommen (WP04, Aufgabe 1) und mit Zufallsvariablen ergänzt:
 ```{r}
-Geschlecht <- c(rep(c(1,0),50))
+Geschlecht <- round(runif(100),0)
 Einkommen_CHF <- c(seq(4100,14000,100))
 AnzahlZimmer_H <- c(rep(2, 5), rep(1, 7), rep(4, 18), rep (5, 35), rep(3, 25), rep(6, 10))
-Schulzeit_J <- c(1,1,1,1, rep(seq(from=2, to=9), each=11),10,10,10,10,10,10,10,10)
+Schulzeit_J <- round(rnorm(100,14,2),0)
 Einkommen_Kl <- c(rep("unterd", 19), rep("durchs", 41), rep("ueberd", 40)) #stammt nicht aus einer Lösung
 datensatz <- data.frame(Geschlecht,Einkommen_CHF,AnzahlZimmer_H,Schulzeit_J,Einkommen_Kl)
 
@@ -41,22 +41,22 @@ Die folgenden Funktionen geben Ihnen...
 ```{r}
 dim(datensatz)
 ```
-...die Dimensionen Ihres Datensatzes aus, das heisst die Zeilen- und Spaltenzahl, was der Anzahl Fällen und Variablen entspricht;
+...die Dimensionen Ihres Datensatzes aus, das heisst die Zeilen- und Spaltenzahl, was der Anzahl Fällen und Variablen im Datensatz entspricht;
 
 ```{r}
 names(datensatz)
 ```
-...die Namen Ihrer Vektoren aus, also die Variablennamen;
+...die Namen Ihrer Vektoren aus, also die Variablennamen im Datensatz;
 
 ```{r}
 str(datensatz)
 ```
-...die Struktur Ihres Datensatzes aus, das heisst die Unterobjekte, auf die Sie mittels dem Dollarzeichen zugreifen können.
+...die Struktur Ihres Datensatzes aus, das heisst die Unterobjekte bzw. Variablen im Datensatz, auf die Sie mittels dem Dollarzeichen zugreifen können.
 
 ```{r}
 class(datensatz)
 ```
-...die Klasse Ihres Objektes Datensatzes aus, das heisst die von Ihnen zugewiesene Eigenschaft des Objektes;
+...die Klasse Ihres Objektes 'datensatz' aus, das heisst die von Ihnen zugewiesene Eigenschaft des Objektes;
 
 ```{r}
 typeof(datensatz)
@@ -71,8 +71,7 @@ for (i in 1:(dim(datensatz)[2]-1)) {
   print(mean(datensatz[,i]))
 }
 ```
-Einige Hinweise hierzu:
-Der Zusatz '(dim(datensatz)[2]-1))' generiert lediglich die Zahl 4. Die for-Schleife soll ja den Mittelwerte für die vier numerischen Variablen des Datensatzes berechnen. Dies könnte man auch einfach hinschreiben ('i in 1:4') oder mit verschiedenen weiteren Möglichkeiten erreichen (etwa über '(ncol(datensatz)-1)').
+Einige Hinweise hierzu: Der Zusatz '(dim(datensatz)[2]-1))' generiert lediglich die Zahl 4. Die for-Schleife soll ja den Mittelwerte für die vier numerischen Variablen des Datensatzes berechnen. Dies könnte man auch einfach hinschreiben ('i in 1:4') oder mit verschiedenen weiteren Möglichkeiten erreichen (etwa über '(ncol(datensatz)-1)').
 Innerhalb der geschweiften Klammern wird definiert, was für jedes i wiederholt werden soll. In unserem Beispiel ist dies die Berechnung des Mittelwertes, während mit i unsere vier verschiedenen Variablen bezeichnet werden.
 Die Funktion 'print()' stellt sicher, dass die berechneten Werte auch ausgegeben werden.
 
@@ -98,7 +97,7 @@ datensatz_v21 <- datensatz[datensatz$Einkommen_CHF<9900,]
 datensatz_v22 <- datensatz[datensatz$Einkommen_CHF>10000,]
 
 ```
-Die erste Variante generiert zwei Teildatensätze, wobei in ersterem alle mit durchschnittlichem Einkommen enthalten sind und im zweiten diejenigen, die entweder über ein unter- oder überdurchschnittliches Einkommen verfügen.
+Die erste Variante generiert zwei Teildatensätze, wobei im ersten alle mit durchschnittlichem Einkommen enthalten sind und im zweiten Teildatensatz diejenigen, die entweder über ein unter- oder überdurchschnittliches Einkommen verfügen.
 Die zweite Variante generiert zwei Teildatensätze indem eine Unterscheidung getroffen wird zwischen denjenigen, die entweder mehr oder weniger als 10'000CHF pro Monat verdienen.
 
 
