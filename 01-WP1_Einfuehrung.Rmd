@@ -73,4 +73,4 @@ Für jede Woche werden Lernziele und Arbeitsaufträge definiert. Für die erste 
 Erstellen Sie aus Ihren Notizen ein PDF Dokument, beschriften Sie dieses mit Fallloesung01_NameVorname.pdf und geben das Dokument via OLAT bis Mittwochmittag ab (23.09.2020, 12:00). 
 
 
-[^1]: Die zwei miteinander verzahnte Lernziele führen auch dazu, dass das das Seminar allerdings nicht als eigentliche Übung zur Vorlesung funktioniert (und das nicht alle Inhalte der Vorlesung im Seminar behandelt werden können).
+[^1]: Die zwei miteinander verzahnte Lernziele führen auch dazu, dass das Seminar allerdings nicht als eigentliche Übung zur Vorlesung funktioniert (und das nicht alle Inhalte der Vorlesung im Seminar behandelt werden können).
