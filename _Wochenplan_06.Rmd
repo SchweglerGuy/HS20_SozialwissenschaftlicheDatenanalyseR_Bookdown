@@ -1,0 +1,26 @@
+# Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 06 (22.- 29.10.2020)
+
+## Lernziele
+
+Über die vergangenen Wochen haben wir zahlreiche Aspekte der Arbeit mit R kennengelernt. Die Aufgabe für Woche 6 besteht darin, diese Inhalte noch einmal Revue passieren zu lassen. Der Schwerpunkt liegt diesmal auf der Schulung aktiver Rezeptionsfertigkeiten (sprich: R-Code lesen und verstehen lernen).
+
+Konkret lassen sich folgende Seminarziele festhalten:
+
+- Sie können von einer anderen Person geschriebenen R-Code entziffern und mit Kommentaren versehen. 
+
+- Sie entwickeln dabei ein Gefühl für unterschiedliche Arten, Code lesbar zu gestalten.
+
+- Sie wissen, wie selbstgeschriebene Funktionen in R aussehen und können diese Schritt für Schritt "lesen". 
+
+- Sie entwickeln Ihr Verständnis davon weiter, wie in R Grafiken genutzt und angepasst werden, um statistische Inhalte zu visualisieren. 
+
+- Sie nutzen R, um (beispielsweise) über Konzepte der Inferenzstatistik (wie den Standardfehler) nachzudenken.
+
+
+## Aufgaben
+
+1. Sehen Sie sich die Datei "standardfehler.R" an (in OLAT verfügbar). Gehen Sie den Code Zeile für Zeile durch und versuchen Sie im Detail (!) zu verstehen, was hier vor sich geht. Halten Sie Ihre Einsichten als Kommentare fest. Auch allfällige Fragen und Unklarheiten können Sie einfach als Kommentare notieren. 
+
+2. Führen Sie den Code Schritt für Schritt aus. Konzentrieren Sie sich dann auf den letzten Punkt ("# *Gemeinsame Darstellung* ..."). Was hat dieser Code mit dem Konzept des Standardfehlers / des Stichprobenfehlers zu tun? Spielen Sie ein wenig mit den verschiedenen Parametern - welche Zusammenhänge, die für den Standardfehler wesentlich sind, lassen sich erkennen?
+
+3. Sammeln Sie Punkte, die Ihnen aus den bisherigen Seminareinheiten unklar geblieben sind. Welche Aspekte würden Sie gerne noch einmal wiederholen/erläuert bekommen?
