@@ -62,6 +62,7 @@ return(variable_sample)
 
 stichproben_200 <- meine_samples(variable_population, 30, 200)
 
+
 # Ebene der Stichprobenverteilung
 
 mittelwerte <- apply(stichproben_200, 2, mean)
