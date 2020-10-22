@@ -35,6 +35,8 @@ datensatz <- data.frame(Geschlecht,Einkommen_CHF,AnzahlZimmer_H,Schulzeit_J,Eink
 ```
 
 
+&nbsp;
+
 2. Wenden Sie die Funktionen 'dim()', 'names()', 'str()', 'class()' und 'typeof()' auf Ihr Dataframe an. Was sagen Ihnen diese Funktionen jeweils? Welcher Output dieser Funktionen leuchtet Ihnen ein, welcher weniger?
 
 Die folgenden Funktionen geben Ihnen...
@@ -64,6 +66,8 @@ typeof(datensatz)
 ...und den Typ Ihres Objektes, das heisst die R-interne Art und Weise, das Objekt abzuspeichern [vgl. @Kabacoff2015, 23ff].
 
 
+&nbsp;
+
 3. Schreiben Sie eine for-Schleife, die Ihnen für die vier numerischen Spalte Ihres Dataframes den Mittelwert berechnet.
 
 ```{r}
@@ -71,10 +75,36 @@ for (i in 1:(dim(datensatz)[2]-1)) {
   print(mean(datensatz[,i]))
 }
 ```
-Einige Hinweise hierzu: Der Zusatz '(dim(datensatz)[2]-1))' generiert lediglich die Zahl 4. Die for-Schleife soll ja den Mittelwerte für die vier numerischen Variablen des Datensatzes berechnen. Dies könnte man auch einfach hinschreiben ('i in 1:4') oder mit verschiedenen weiteren Möglichkeiten erreichen (etwa über '(ncol(datensatz)-1)').
+Einige Hinweise hierzu: Der Zusatz '(dim(datensatz)[2]-1))' generiert lediglich die Zahl 4. Die for-Schleife soll ja den Mittelwerte für die vier numerischen Variablen des Datensatzes berechnen. Dies könnte man auch einfach hinschreiben ('i in 1:4') oder mit verschiedenen weiteren Möglichkeiten erreichen (etwa über '(ncol(datensatz)-1)'). Der Vorteil einer so definierten (anstatt hingeschriebenen) Variante ist, dass wir eigentlich gar nicht wissen müssten wieviele Variablen das wären -- und die Anzahl variieren könnte.
+```{r}
+for (i in 1:4) {
+  print(mean(datensatz[,i]))
+}
+#...funktioniert auch...
+```
 Innerhalb der geschweiften Klammern wird definiert, was für jedes i wiederholt werden soll. In unserem Beispiel ist dies die Berechnung des Mittelwertes, während mit i unsere vier verschiedenen Variablen bezeichnet werden.
 Die Funktion 'print()' stellt sicher, dass die berechneten Werte auch ausgegeben werden.
 
+Weitere tolle Lösungsvorschläge:
+```{r eval=F}
+#...von Frau Diethelm
+for(v in datensatz[,1:4]) {
+print(mean(v))
+}
+#...von Herr Ineichen (allerdings mit einem kleinen Problem)
+for(i in seq_along(datensatz)){
+  print(mean(datensatz[,i]))
+  }
+#..von Frau Nguyen mit cleverem Zusatz
+for (i in names(datensatz)) {
+  if(class(datensatz[,i])=='numeric'){
+    print(mean(datensatz[,i]))
+  }
+}
+```
+
+
+&nbsp;
 
 4. Überprüfen Sie Ihre Ergebnisse, indem Sie die Berechnung des Mittelwerts "händisch" für jede Spalte einzeln durchführen (nutzen Sie dazu Indizierung/Subsetting mittels eckiger Klammern).
 ```{r}
@@ -85,7 +115,27 @@ mean(datensatz[,4])
 ```
 
 
+&nbsp;
+
 5. Definieren Sie als eine erste Variante eine logische Bedingung, die Ihnen erlaubt, Ihr Dataframe anhand der Character-Variable in ungefähr zwei Gruppen zu teilen. Teilen Sie dann als zweite Variante Ihren Datensatz anhand einer anderen logischen Bedingung mit einer Ihrer numerischen Variablen in zwei Gruppen.
+
+In diesen logischen Bedingung können wir verschiedene logische Operatoren verwenden [vgl. @Manderscheid2017,26]:  
+
+gleich **==**
+
+ungleich **!=**
+
+größer **>**
+
+größer gleich **>~**
+
+kleiner **<**
+
+kleiner gleich **<~**
+
+und **&**
+
+oder **|**
 
 ```{r}
 #Variante 1
@@ -100,25 +150,42 @@ datensatz_v22 <- datensatz[datensatz$Einkommen_CHF>10000,]
 Die erste Variante generiert zwei Teildatensätze, wobei im ersten alle mit durchschnittlichem Einkommen enthalten sind und im zweiten Teildatensatz diejenigen, die entweder über ein unter- oder überdurchschnittliches Einkommen verfügen.
 Die zweite Variante generiert zwei Teildatensätze indem eine Unterscheidung getroffen wird zwischen denjenigen, die entweder mehr oder weniger als 10'000CHF pro Monat verdienen.
 
+Wieso verwendet man hierfür nun nicht einfach eine Funktion, z.Bsp. 'subset()' (oder auch 'split()')?
+```{r eval=FALSE}
+subset(datensatz, subset = datensatz$Einkommen_Kl=="durchs")
+#das würde auch gehen
+```
+Die Überlegungen, die wir machen, sollen immer einem Objekt gelten, d.h. wir wollen ein Bewusstsein für ein Objekt schaffen – im Beispiel des data.frames hat dieses Objekt eben Zeilen und Spalten und diesen können wir indizieren. Wir brauchen keine spezifischen Funktionen sondern können immer in einem allgemeinen Sinne (gemäss den drei Varianten **[]**, **$**, **which()**) auf Objekte zugreifen. Dieses Zugreifen können wir immer verwenden -- für Funktionen, für Argumente, für Teildatensätze (Subsetting), usw.
+
+Das Erstellen von Teildatensätzen kann nun auch komplexer werden durch verschiedenen Kombinationen. Im Folgenden werden zuerst die unterdurchschnittlichen und die durchschnittlichen Einkommen in einem Datensatz gepackt (Beispiel 1) und dann die Männer (Geschlecht==0), die unterdurchschnittlich viel Geld verdienen (Beispiel 2).
+```{r eval=FALSE}
+# datensatz[datensatz$Einkommen_Kl==c("unterd", "durchs"),] !!! funktionert nicht!!!
+#...die funktionierenden Kombinationen:
+datensatz[datensatz$Einkommen_Kl=="unterd" | datensatz$Einkommen_Kl== "durchs",] #Bsp1
+datensatz[datensatz$Einkommen_Kl=="unterd" & datensatz$Geschlecht==0,] #Bsp2
+```
+
+
+&nbsp;
 
 6. Berechnen Sie bei einer der beiden Varianten aus Aufgabe 6 dann noch einmal die Mittelwerte pro Spalte, aber getrennt für diese beiden Gruppen. 
 
 Hierfür konnte nun einfach die for-Schleife nochmals genutzt werden:
 ```{r}
 #...für den ersten Teildatensatz der ersten Variante
-for (i in 1:(dim(datensatz_v11)[2]-1)) {
+for (i in 1:4) {
   print(mean(datensatz_v11[,i]))
 }
 #...für den zweiten Teildatensatz der ersten Variante
-for (i in 1:(dim(datensatz_v12)[2]-1)) {
+for (i in 1:4) {
   print(mean(datensatz_v12[,i]))
 }
 #...für den ersten Teildatensatz der zweiten Variante
-for (i in 1:(dim(datensatz_v21)[2]-1)) {
+for (i in 1:4) {
   print(mean(datensatz_v21[,i]))
 }
 #...für den zweiten Teildatensatz der zweiten Variante
-for (i in 1:(dim(datensatz_v22)[2]-1)) {
+for (i in 1:4) {
   print(mean(datensatz_v22[,i]))
 }
 ```
