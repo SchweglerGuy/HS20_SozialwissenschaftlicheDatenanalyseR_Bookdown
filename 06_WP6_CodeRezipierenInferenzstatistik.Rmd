@@ -1,5 +1,7 @@
 # Wochenplan 06
 
+...zur Einheit vom 22. & 29.10.2020, aktives Rezipieren von R-Code und Repetion (Beispiel Inferenzstatistik)
+
 ## Lernziele WP06
 
 Über die vergangenen Wochen haben wir zahlreiche grundlegende Aspekte der Arbeit mit R kennengelernt. Als Vorbereitung im Rahmen des Wochenplans 06 sollen Sie diese Inhalte noch einmal Revue passieren zu lassen. Im Rahmen dieser Repetition werden weiter zwei neue Dinge vermittelt werden: Auf der einen Seite   erfolgt die Schulung aktiver Rezeptionsfertigkeiten (sprich: R-Code lesen und verstehen lernen). Auch dies ist eine wichtige Arbeitstechnik in R. Auf der anderen Seite sollen Sie mit dem rezipierten Code das Prinzip der Inferenzstatistik (und der Stichprobenverteilung sowie des Standardfehlers) in R veranschaulicht bekommen.
