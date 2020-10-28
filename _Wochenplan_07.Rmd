@@ -2,9 +2,9 @@
 
 ## Lernziele
 
-In der zweiten Hälfte des Semester möchten wir das statistische Arbeiten mit R anhand des Umgangs mit "echten" Daten kennenlernen. Dazu greifen wir auf die Sekundärdaten des *Europen Social Survey* (ESS) zurück.[^1] Der Beginn des Arbeitens mit Datensätzen markiert immer ein Kennenlernen der Daten, erste Plausibilitätsprüfungen und das Ausrichtung auf die benötigten Informationen. Diese Techniken sollen Sie im Rahmen der des siebten Wochenplans kennenlernen und so die Grundlage schaffen, in den folgenden Wochen statistische Analysen mit dem Datensatz vorzunehmen.
+In der zweiten Hälfte des Semester möchten wir das statistische Arbeiten mit R anhand des Umgangs mit "echten" Daten kennenlernen. Dazu greifen wir auf die Sekundärdaten des *Europen Social Survey* (ESS) zurück.[^1] Der Beginn jeder Arbeit mit einem Datensatz markiert ein Kennenlernen der Daten: Es gilt die Variablen und ihre Ausprägungen zu verstehen, erste Plausibilitätsprüfungen durchzuführen und ein Ausrichtung auf die benötigten Informationen erfolgt. Diese Techniken sollen Sie im Rahmen des siebten Wochenplans kennenlernen und so die Grundlage schaffen, in den folgenden Einheiten statistische Analysen mit dem Datensatz vorzunehmen.
 
-Konkret lassen sich folgende Seminarziele festhalten:
+Konkret lassen sich folgende Seminarziele in dieser Woche festhalten:
 
 - Sie können ein CSV-Datensatz in R Studio laden und kennen die Vor- und Nachteile im Umgang mit diesem Dateiformat.
 
@@ -21,16 +21,22 @@ Konkret lassen sich folgende Seminarziele festhalten:
 
 2. Versuchen Sie nun die Datei "ESS1-8e01.csv" in Microsoft Excel oder einem beliebigen Textbearbeitungsprogramm zu öffnen (z.Bsp. dem Windows Editor oder dem TextEdit auf Mac).
    + Wie hängen die beiden Dateien zusammen (das Dataframe Objekt in R Studio und die im Textbearbeitungsprogramm geöffnete Datei)?
-   + Ersetzen Sie anschliessend im Textbearbeitungsprogramm die Kommas in der "ESS1-8e01.csv" Datei mit Strichpunkten. Gehen Sie zurück zu R Studio und versuchen Sie den Datensatz erneut zu laden. Was müssen Sie ändern, damit dies funktioniert?
-   + Was könnte der Vorteil an der Arbeit mit CSV-Daten sein gegenüber dem Laden eines Datensatz aus dem SPSS Dateiformat (".sav" oder anderen)? Wo sehen Sie hingegen einen Nachteil dieses Dateiformates?
+   + Ersetzen Sie anschliessend im Textbearbeitungsprogramm die Kommas in der "ESS1-8e01.csv" Datei mit Strichpunkten und speichern Sie diese neue Version ab. Gehen Sie zurück zu R Studio und versuchen Sie die neue Version des Datensatzes zu laden. Was müssen Sie ändern, damit dies funktioniert?
+   + Was könnte der Vorteil an der Arbeit mit CSV-Dateien sein gegenüber dem Laden eines Datensatz aus dem SPSS Dateiformat (".sav" oder anderen)? Wo sehen Sie hingegen einen Nachteil dieses Dateiformates?
 
-3. Versuchen Sie mit Funktionen, die Sie bisher kennengelernt haben, den Datensatz zu kurz beschreiben. Angaben zu den enthaltenen Variablen finden Sie weiter im automatisch generierten Codebuch (ebenfalls auf OLAT).
+3. Versuchen Sie mit Funktionen, die Sie bisher kennengelernt haben, den geladenen Datensatz kurz zu beschreiben. Angaben zu den enthaltenen Variablen finden Sie im automatisch generierten Codebuch (ebenfalls auf OLAT).
 
 5. In den Variablen zum Alter der befragten Personen haben sich mindestens zwei Fehler eingeschlichen. Was sind die Fehler? Und welche Fälle betrifft das (Fallnummer)?
 
+  > Ich würde nun 3 Fehler in Altersvariable einbauen:
+  1) einen Offensichtlichen (viel zu alt)
+  2) einen nicht so Offensichtlichen (unter 15 Jahren)
+  3) einen, den man nur über Kreuztabellierungen herbekommt
+  ...und dann auch noch ein oder zwei Fehler bei Bildungsniveau, die man ebenfalls nur über Kreuztabellierungen rausbekommt. Die Kreuztabellierungen würde ich dann in der nächsten Einheit zeigen.
+
 6. *Bonusaufgabe*: In den folgenden Wochen möchten wir nicht mit dem ganzen Datensatz arbeiten, sondern lediglich mit einer zufälligen Auswahl von 200 Fällen. Versuchen Sie diesen zufälligen Teildatensatz zu erstellen und speichern Sie ihn ab als "TD_ESS1-8e01.csv" mittels der Funktion 'write.csv()'.
 
-Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit Fallloesung07_NameVorname.pdf und geben das Dokument via OLAT bis Mittwochmittag ab (04.11.2020, 12:00).
+Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit "Fallloesung07_NameVorname.pdf" und geben das Dokument via OLAT bis Mittwochmittag ab (04.11.2020, 12:00).
 
 [^1]: Der Datensatz sowie das Codebuch wurden mittels des *ESS Cumulative Data Wizard* erstellt: [https://www.europeansocialsurvey.org/downloadwizard/?loggedin](https://www.europeansocialsurvey.org/downloadwizard/?loggedin).
 
