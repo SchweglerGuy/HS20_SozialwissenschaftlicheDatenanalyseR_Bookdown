@@ -1,0 +1,10 @@
+Eingefuegte Fehler
+Alter
+1) IDNO 394: agea 32 -> 320
+2) IDNO 950: agea 40 -> 14
+3) IDNO 3170: yrbrn 1993 -> 1939
+
+Bildung
+1) IDNO 1130: Edulvla 5 -> 1
+2) IDNO 1941: EISCED 88 -> 0
+3) IDNO 3353: eduyrs 9 -> 1
