@@ -225,54 +225,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="wochenplan-06.html#cb160-1"></a>variable_population &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">10000</span>,</span>
 <span id="cb160-2"><a href="wochenplan-06.html#cb160-2"></a>                             <span class="dt">min =</span> <span class="dv">0</span>,</span>
 <span id="cb160-3"><a href="wochenplan-06.html#cb160-3"></a>                             <span class="dt">max =</span> <span class="dv">20</span>)</span>
-<span id="cb160-4"><a href="wochenplan-06.html#cb160-4"></a><span class="kw">mean</span>(variable_population)</span>
-<span id="cb160-5"><a href="wochenplan-06.html#cb160-5"></a><span class="kw">sd</span>(variable_population)</span>
-<span id="cb160-6"><a href="wochenplan-06.html#cb160-6"></a><span class="kw">hist</span>(variable_population,</span>
-<span id="cb160-7"><a href="wochenplan-06.html#cb160-7"></a>     <span class="dt">breaks =</span> <span class="dv">30</span>,</span>
-<span id="cb160-8"><a href="wochenplan-06.html#cb160-8"></a>     <span class="dt">col=</span><span class="st">&quot;orange&quot;</span>,</span>
-<span id="cb160-9"><a href="wochenplan-06.html#cb160-9"></a>     <span class="dt">main=</span><span class="st">&quot;Unsere Grundgesamtheit&quot;</span>,</span>
-<span id="cb160-10"><a href="wochenplan-06.html#cb160-10"></a>     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span>
-<span id="cb160-11"><a href="wochenplan-06.html#cb160-11"></a>     )</span></code></pre></div>
+<span id="cb160-4"><a href="wochenplan-06.html#cb160-4"></a><span class="kw">mean</span>(variable_population)</span></code></pre></div>
+<pre><code>## [1] 9.99796</code></pre>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="wochenplan-06.html#cb162-1"></a><span class="kw">sd</span>(variable_population)</span></code></pre></div>
+<pre><code>## [1] 5.772816</code></pre>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="wochenplan-06.html#cb164-1"></a><span class="kw">hist</span>(variable_population,</span>
+<span id="cb164-2"><a href="wochenplan-06.html#cb164-2"></a>     <span class="dt">breaks =</span> <span class="dv">30</span>,</span>
+<span id="cb164-3"><a href="wochenplan-06.html#cb164-3"></a>     <span class="dt">col=</span><span class="st">&quot;orange&quot;</span>,</span>
+<span id="cb164-4"><a href="wochenplan-06.html#cb164-4"></a>     <span class="dt">main=</span><span class="st">&quot;Unsere Grundgesamtheit&quot;</span>,</span>
+<span id="cb164-5"><a href="wochenplan-06.html#cb164-5"></a>     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span>
+<span id="cb164-6"><a href="wochenplan-06.html#cb164-6"></a>     )</span></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
 </div>
 <div id="ebene-der-einzelnen-stichprobe" class="section level3">
 <h3><span class="header-section-number">6.3.2</span> Ebene der einzelnen Stichprobe</h3>
 <p>Als nächster Schritt wird nun eine Stichprobe gezogen mit der Funktion ‘sample()’, in der zufällig 100 Fälle der Grundgesamtheit landen. Von dieser Stichprobe können wir dann den Mittelwert berechnen und diesen Wert in das Histogramm der Grundgesamtheit einfügen. Der Mittelwert der Stichprobe unterscheidet sich natürlich minimal vom Mittelwert der Grundgesamt.</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="wochenplan-06.html#cb161-1"></a>sample1 &lt;-<span class="st"> </span><span class="kw">sample</span>(variable_population, <span class="dv">100</span>)</span>
-<span id="cb161-2"><a href="wochenplan-06.html#cb161-2"></a><span class="kw">mean</span>(sample1)</span>
-<span id="cb161-3"><a href="wochenplan-06.html#cb161-3"></a><span class="kw">hist</span>(variable_population,</span>
-<span id="cb161-4"><a href="wochenplan-06.html#cb161-4"></a>     <span class="dt">breaks =</span> <span class="dv">30</span>,</span>
-<span id="cb161-5"><a href="wochenplan-06.html#cb161-5"></a>     <span class="dt">col=</span><span class="st">&quot;orange&quot;</span>,</span>
-<span id="cb161-6"><a href="wochenplan-06.html#cb161-6"></a>     <span class="dt">main=</span><span class="st">&quot;Unsere Grundgesamtheit&quot;</span>,</span>
-<span id="cb161-7"><a href="wochenplan-06.html#cb161-7"></a>     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span>
-<span id="cb161-8"><a href="wochenplan-06.html#cb161-8"></a>     )</span>
-<span id="cb161-9"><a href="wochenplan-06.html#cb161-9"></a><span class="kw">points</span>(<span class="kw">rep</span>(<span class="kw">mean</span>(sample1), <span class="dv">2</span>),</span>
-<span id="cb161-10"><a href="wochenplan-06.html#cb161-10"></a>       <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">100</span>),</span>
-<span id="cb161-11"><a href="wochenplan-06.html#cb161-11"></a>       <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>,</span>
-<span id="cb161-12"><a href="wochenplan-06.html#cb161-12"></a>       <span class="dt">col =</span> <span class="st">&quot;black&quot;</span>,</span>
-<span id="cb161-13"><a href="wochenplan-06.html#cb161-13"></a>       <span class="dt">lwd =</span> <span class="dv">8</span>)</span>
-<span id="cb161-14"><a href="wochenplan-06.html#cb161-14"></a></span>
-<span id="cb161-15"><a href="wochenplan-06.html#cb161-15"></a><span class="co">#Hier wird nun auch noch der Mittelwert der Grundgesamtheit eingefügt</span></span>
-<span id="cb161-16"><a href="wochenplan-06.html#cb161-16"></a><span class="co">#...aber mittels der Funktion &#39;abline()&#39;</span></span>
-<span id="cb161-17"><a href="wochenplan-06.html#cb161-17"></a><span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">mean</span>(sample1), <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lwd =</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="wochenplan-06.html#cb165-1"></a>sample1 &lt;-<span class="st"> </span><span class="kw">sample</span>(variable_population, <span class="dv">100</span>)</span>
+<span id="cb165-2"><a href="wochenplan-06.html#cb165-2"></a><span class="kw">mean</span>(sample1)</span></code></pre></div>
+<pre><code>## [1] 10.72098</code></pre>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="wochenplan-06.html#cb167-1"></a><span class="kw">hist</span>(variable_population,</span>
+<span id="cb167-2"><a href="wochenplan-06.html#cb167-2"></a>     <span class="dt">breaks =</span> <span class="dv">30</span>,</span>
+<span id="cb167-3"><a href="wochenplan-06.html#cb167-3"></a>     <span class="dt">col=</span><span class="st">&quot;orange&quot;</span>,</span>
+<span id="cb167-4"><a href="wochenplan-06.html#cb167-4"></a>     <span class="dt">main=</span><span class="st">&quot;Unsere Grundgesamtheit&quot;</span>,</span>
+<span id="cb167-5"><a href="wochenplan-06.html#cb167-5"></a>     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span>
+<span id="cb167-6"><a href="wochenplan-06.html#cb167-6"></a>     )</span>
+<span id="cb167-7"><a href="wochenplan-06.html#cb167-7"></a><span class="kw">points</span>(<span class="kw">rep</span>(<span class="kw">mean</span>(sample1), <span class="dv">2</span>),</span>
+<span id="cb167-8"><a href="wochenplan-06.html#cb167-8"></a>       <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">100</span>),</span>
+<span id="cb167-9"><a href="wochenplan-06.html#cb167-9"></a>       <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>,</span>
+<span id="cb167-10"><a href="wochenplan-06.html#cb167-10"></a>       <span class="dt">col =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb167-11"><a href="wochenplan-06.html#cb167-11"></a>       <span class="dt">lwd =</span> <span class="dv">8</span>)</span>
+<span id="cb167-12"><a href="wochenplan-06.html#cb167-12"></a></span>
+<span id="cb167-13"><a href="wochenplan-06.html#cb167-13"></a><span class="co">#Hier wird nun auch noch der Mittelwert der Grundgesamtheit eingefügt</span></span>
+<span id="cb167-14"><a href="wochenplan-06.html#cb167-14"></a><span class="co">#...aber mittels der Funktion &#39;abline()&#39;</span></span>
+<span id="cb167-15"><a href="wochenplan-06.html#cb167-15"></a><span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">mean</span>(sample1), <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lwd =</span> <span class="dv">3</span>)</span></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
 <p>Da wir nun mit einer fiktiven Grundgesamtheit und in einem Modell arbeiten können wir immer wieder neue Stichproben ziehen. Dies könnten wir realisieren, indem wir den Codechunk von oben immer wieder repetieren. Oder als “elegantere” Variante: Wir schreiben uns den Code für eine <strong>for-Schleife</strong>, die uns eine beliebige Anzahl Stichproben zieht (i), den Mittelwert der Stichprobe berechnet und diesen Mittelwert in das Histogramm der Grundgesamtheit einzeichnet.</p>
 <p>Der folgende Code ruft nun nochmals das Histogramm der Grundgesamtheit auf. Anschliessend zieht die Schleife 100 Stichproben, berechnet deren Mittelwerte und fügt diese als Linie mit verschiedenen Farben in die Grafik ein.</p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="wochenplan-06.html#cb162-1"></a><span class="kw">hist</span>(variable_population,</span>
-<span id="cb162-2"><a href="wochenplan-06.html#cb162-2"></a>     <span class="dt">breaks =</span> <span class="dv">30</span>,</span>
-<span id="cb162-3"><a href="wochenplan-06.html#cb162-3"></a>     <span class="dt">col =</span> <span class="st">&quot;orange&quot;</span>,</span>
-<span id="cb162-4"><a href="wochenplan-06.html#cb162-4"></a>     <span class="dt">main=</span><span class="st">&quot;Unsere Grundgesamtheit&quot;</span>,</span>
-<span id="cb162-5"><a href="wochenplan-06.html#cb162-5"></a>     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span>
-<span id="cb162-6"><a href="wochenplan-06.html#cb162-6"></a>     )</span>
-<span id="cb162-7"><a href="wochenplan-06.html#cb162-7"></a></span>
-<span id="cb162-8"><a href="wochenplan-06.html#cb162-8"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>) {</span>
-<span id="cb162-9"><a href="wochenplan-06.html#cb162-9"></a>sample1 &lt;-<span class="st"> </span><span class="kw">sample</span>(variable_population, <span class="dv">100</span>)</span>
-<span id="cb162-10"><a href="wochenplan-06.html#cb162-10"></a><span class="kw">points</span>(<span class="kw">rep</span>(<span class="kw">mean</span>(sample1), <span class="dv">2</span>),</span>
-<span id="cb162-11"><a href="wochenplan-06.html#cb162-11"></a>       <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">200</span>),</span>
-<span id="cb162-12"><a href="wochenplan-06.html#cb162-12"></a>       <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>,</span>
-<span id="cb162-13"><a href="wochenplan-06.html#cb162-13"></a>       <span class="dt">col =</span> i,</span>
-<span id="cb162-14"><a href="wochenplan-06.html#cb162-14"></a>       <span class="dt">lwd =</span> <span class="dv">1</span>)</span>
-<span id="cb162-15"><a href="wochenplan-06.html#cb162-15"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="wochenplan-06.html#cb168-1"></a><span class="kw">hist</span>(variable_population,</span>
+<span id="cb168-2"><a href="wochenplan-06.html#cb168-2"></a>     <span class="dt">breaks =</span> <span class="dv">30</span>,</span>
+<span id="cb168-3"><a href="wochenplan-06.html#cb168-3"></a>     <span class="dt">col =</span> <span class="st">&quot;orange&quot;</span>,</span>
+<span id="cb168-4"><a href="wochenplan-06.html#cb168-4"></a>     <span class="dt">main=</span><span class="st">&quot;Unsere Grundgesamtheit&quot;</span>,</span>
+<span id="cb168-5"><a href="wochenplan-06.html#cb168-5"></a>     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span>
+<span id="cb168-6"><a href="wochenplan-06.html#cb168-6"></a>     )</span>
+<span id="cb168-7"><a href="wochenplan-06.html#cb168-7"></a></span>
+<span id="cb168-8"><a href="wochenplan-06.html#cb168-8"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>) {</span>
+<span id="cb168-9"><a href="wochenplan-06.html#cb168-9"></a>sample1 &lt;-<span class="st"> </span><span class="kw">sample</span>(variable_population, <span class="dv">100</span>)</span>
+<span id="cb168-10"><a href="wochenplan-06.html#cb168-10"></a><span class="kw">points</span>(<span class="kw">rep</span>(<span class="kw">mean</span>(sample1), <span class="dv">2</span>),</span>
+<span id="cb168-11"><a href="wochenplan-06.html#cb168-11"></a>       <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">200</span>),</span>
+<span id="cb168-12"><a href="wochenplan-06.html#cb168-12"></a>       <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>,</span>
+<span id="cb168-13"><a href="wochenplan-06.html#cb168-13"></a>       <span class="dt">col =</span> i,</span>
+<span id="cb168-14"><a href="wochenplan-06.html#cb168-14"></a>       <span class="dt">lwd =</span> <span class="dv">1</span>)</span>
+<span id="cb168-15"><a href="wochenplan-06.html#cb168-15"></a>}</span></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
 <p>Wir sehen dass mit jeder gezogener Stichprobe der Mittelwert etwas abweicht von demjenigen Wert in der Grundgesamtheit.</p>
 <p>Als nächster Schritt wird nun eine <strong>Funktion</strong> geschrieben, mit der wir eine beliebige Anzahl Stichproben mit einer beliebigen Grösse ziehen können. Die Grundstruktur von Funktionen entspricht folgender Form <span class="citation">(Manderscheid <a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>, 240f)</span>:</p>
@@ -283,89 +286,89 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Alle im Funktionskopf enthaltenen Argumente müssen im Funktionsrumpf, der in geschweiften Klammern {} folgt, als Objekte definiert werden. Der Funktionsrumpf besteht aus einer Reihe von Befehlen. Die in unserem Code definierte Funktion definiert zuerst ein Sample von der Grösse n aus dem Objekt x. Anschliessend hängt eine Schleife die Anzahl trials-1 weitere Sample an das bereits gezogene Sample dran.</p>
 <p>Die einzelnen Schritte, die im Funktionsrumpf festgelegt werden, erscheinen nicht in der Konsole. Nur das Ergebnis der letzten Funktion im Rumpf erscheint abschliessend als Rückgabewert. Da in unserem Beispiel kein Ergebnis erzeugt wurde stellt die Funktion ‘return()’ sicher, dass das Resultat der Funktion (das Objekt ‘variable sample’) ausgegeben wird.</p>
 <p>Im letzten Codestück wird dann vom unsere Grundgesamtheit (x) eine 30er Stichprobe gezogen (n), und zwar 200mal (trials). Das Objekt stichproben_200 ist also eine Matrix mit 30 Zeilen und 200 Spalten.</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="wochenplan-06.html#cb163-1"></a>meine_samples &lt;-<span class="st"> </span><span class="cf">function</span>(x, n, trials) {</span>
-<span id="cb163-2"><a href="wochenplan-06.html#cb163-2"></a>variable_sample &lt;-<span class="st"> </span><span class="kw">sample</span>(x, n)</span>
-<span id="cb163-3"><a href="wochenplan-06.html#cb163-3"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>(trials <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)){</span>
-<span id="cb163-4"><a href="wochenplan-06.html#cb163-4"></a>variable_sample &lt;-<span class="st"> </span><span class="kw">cbind</span>(variable_sample, <span class="kw">sample</span>(x, n))</span>
-<span id="cb163-5"><a href="wochenplan-06.html#cb163-5"></a>}</span>
-<span id="cb163-6"><a href="wochenplan-06.html#cb163-6"></a><span class="kw">return</span>(variable_sample)</span>
-<span id="cb163-7"><a href="wochenplan-06.html#cb163-7"></a>}</span>
-<span id="cb163-8"><a href="wochenplan-06.html#cb163-8"></a></span>
-<span id="cb163-9"><a href="wochenplan-06.html#cb163-9"></a>stichproben_<span class="dv">200</span> &lt;-<span class="st"> </span><span class="kw">meine_samples</span>(variable_population, <span class="dv">30</span>, <span class="dv">200</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="wochenplan-06.html#cb169-1"></a>meine_samples &lt;-<span class="st"> </span><span class="cf">function</span>(x, n, trials) {</span>
+<span id="cb169-2"><a href="wochenplan-06.html#cb169-2"></a>variable_sample &lt;-<span class="st"> </span><span class="kw">sample</span>(x, n)</span>
+<span id="cb169-3"><a href="wochenplan-06.html#cb169-3"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>(trials <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)){</span>
+<span id="cb169-4"><a href="wochenplan-06.html#cb169-4"></a>variable_sample &lt;-<span class="st"> </span><span class="kw">cbind</span>(variable_sample, <span class="kw">sample</span>(x, n))</span>
+<span id="cb169-5"><a href="wochenplan-06.html#cb169-5"></a>}</span>
+<span id="cb169-6"><a href="wochenplan-06.html#cb169-6"></a><span class="kw">return</span>(variable_sample)</span>
+<span id="cb169-7"><a href="wochenplan-06.html#cb169-7"></a>}</span>
+<span id="cb169-8"><a href="wochenplan-06.html#cb169-8"></a></span>
+<span id="cb169-9"><a href="wochenplan-06.html#cb169-9"></a>stichproben_<span class="dv">200</span> &lt;-<span class="st"> </span><span class="kw">meine_samples</span>(variable_population, <span class="dv">30</span>, <span class="dv">200</span>)</span></code></pre></div>
 </div>
 <div id="ebene-der-stichprobenverteilung" class="section level3">
 <h3><span class="header-section-number">6.3.3</span> Ebene der Stichprobenverteilung</h3>
 <p>Bereits in den vorhergehenden beiden Schritten (Stichprobe als Schleife und Stichprobe als Funktion) ging es nicht mehr nur um eine einzelne Stichprobe, sondern um verschiedene Stichproben und deren jeweilige Mittelwerte. Wir gehen also über zu einer Stichprobenverteilung. Im folgenden Code werden zuerst die Stichprobenkennwerte berechnet (d.h. die Mittelwerte der 200 gezogenen Stichproben) und dann als Histogramm dargestellt: Das Histogramm entspricht der Stichprobenverteilung der Stichprobenkennwerte.</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="wochenplan-06.html#cb164-1"></a>stichproben_<span class="dv">200</span> &lt;-<span class="st"> </span><span class="kw">meine_samples</span>(variable_population, <span class="dv">30</span>, <span class="dv">200</span>)</span>
-<span id="cb164-2"><a href="wochenplan-06.html#cb164-2"></a>mittelwerte &lt;-<span class="st"> </span><span class="kw">apply</span>(stichproben_<span class="dv">200</span>, <span class="dv">2</span>, mean)</span>
-<span id="cb164-3"><a href="wochenplan-06.html#cb164-3"></a><span class="kw">hist</span>(mittelwerte,</span>
-<span id="cb164-4"><a href="wochenplan-06.html#cb164-4"></a>     <span class="dt">breaks =</span> <span class="dv">10</span>,</span>
-<span id="cb164-5"><a href="wochenplan-06.html#cb164-5"></a>     <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>,</span>
-<span id="cb164-6"><a href="wochenplan-06.html#cb164-6"></a>     <span class="dt">main =</span> <span class="st">&quot;Unsere Stichprobenmittelwerte&quot;</span>,</span>
-<span id="cb164-7"><a href="wochenplan-06.html#cb164-7"></a>     <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">17</span>)</span>
-<span id="cb164-8"><a href="wochenplan-06.html#cb164-8"></a>     )</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="wochenplan-06.html#cb170-1"></a>stichproben_<span class="dv">200</span> &lt;-<span class="st"> </span><span class="kw">meine_samples</span>(variable_population, <span class="dv">30</span>, <span class="dv">200</span>)</span>
+<span id="cb170-2"><a href="wochenplan-06.html#cb170-2"></a>mittelwerte &lt;-<span class="st"> </span><span class="kw">apply</span>(stichproben_<span class="dv">200</span>, <span class="dv">2</span>, mean)</span>
+<span id="cb170-3"><a href="wochenplan-06.html#cb170-3"></a><span class="kw">hist</span>(mittelwerte,</span>
+<span id="cb170-4"><a href="wochenplan-06.html#cb170-4"></a>     <span class="dt">breaks =</span> <span class="dv">10</span>,</span>
+<span id="cb170-5"><a href="wochenplan-06.html#cb170-5"></a>     <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb170-6"><a href="wochenplan-06.html#cb170-6"></a>     <span class="dt">main =</span> <span class="st">&quot;Unsere Stichprobenmittelwerte&quot;</span>,</span>
+<span id="cb170-7"><a href="wochenplan-06.html#cb170-7"></a>     <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">17</span>)</span>
+<span id="cb170-8"><a href="wochenplan-06.html#cb170-8"></a>     )</span></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
 <p>Hierbei wird nun ersichtlich, dass diese Stichprobenverteilung der Normalverteilung folgt (ab einem Stichprobenumfang von 30). Das heisst eben auch, dass je stärker ein Stichprobenmittelwert vom Mittelwert der Grundgesamtheit abweicht, desto unwahrscheinlicher ist dieser Wert. Oder umgekehrt: Tritt ein sehr stark abweichender Wert auf ist dies mit hoher Wahrscheinlichkeit nicht zufällig.</p>
 <p>In den folgenden Codezeilen wird nun die Stichprobenverteilung in das Histogramm der Grundgesamtheit eingefügt. Die Idee hierbei ist, dass die Stichprobengrösse dank der eigenen Funktion variiert werden kann. Daraus wird ersichtlich, dass je grösser der Stichprobenumfang ist, desto schmaler wird die Stichprobenverteilung (das blaue Histogramm), das heisst: desto kleiner wird der Standardfehler.</p>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="wochenplan-06.html#cb165-1"></a><span class="kw">hist</span>(variable_population,</span>
-<span id="cb165-2"><a href="wochenplan-06.html#cb165-2"></a>     <span class="dt">breaks =</span> <span class="dv">30</span>,</span>
-<span id="cb165-3"><a href="wochenplan-06.html#cb165-3"></a>     <span class="dt">col =</span> <span class="st">&quot;orange&quot;</span>,</span>
-<span id="cb165-4"><a href="wochenplan-06.html#cb165-4"></a>     <span class="dt">main =</span> <span class="st">&quot;Grundgesamtheit mit Stichprobenverteilung&quot;</span>,</span>
-<span id="cb165-5"><a href="wochenplan-06.html#cb165-5"></a>     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">20</span>),</span>
-<span id="cb165-6"><a href="wochenplan-06.html#cb165-6"></a>     )</span>
-<span id="cb165-7"><a href="wochenplan-06.html#cb165-7"></a></span>
-<span id="cb165-8"><a href="wochenplan-06.html#cb165-8"></a>mittelwerte_samples &lt;-<span class="st"> </span><span class="kw">apply</span>(<span class="kw">meine_samples</span>(variable_population,</span>
-<span id="cb165-9"><a href="wochenplan-06.html#cb165-9"></a>                                           <span class="dv">30</span>,</span>
-<span id="cb165-10"><a href="wochenplan-06.html#cb165-10"></a>                                           <span class="dv">1000</span>),</span>
-<span id="cb165-11"><a href="wochenplan-06.html#cb165-11"></a>                             <span class="dv">2</span>,</span>
-<span id="cb165-12"><a href="wochenplan-06.html#cb165-12"></a>                             mean)</span>
-<span id="cb165-13"><a href="wochenplan-06.html#cb165-13"></a></span>
-<span id="cb165-14"><a href="wochenplan-06.html#cb165-14"></a><span class="kw">hist</span>(mittelwerte_samples,</span>
-<span id="cb165-15"><a href="wochenplan-06.html#cb165-15"></a>     <span class="dt">breaks =</span> <span class="dv">10</span>,</span>
-<span id="cb165-16"><a href="wochenplan-06.html#cb165-16"></a>     <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>,</span>
-<span id="cb165-17"><a href="wochenplan-06.html#cb165-17"></a>     <span class="dt">add =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="wochenplan-06.html#cb171-1"></a><span class="kw">hist</span>(variable_population,</span>
+<span id="cb171-2"><a href="wochenplan-06.html#cb171-2"></a>     <span class="dt">breaks =</span> <span class="dv">30</span>,</span>
+<span id="cb171-3"><a href="wochenplan-06.html#cb171-3"></a>     <span class="dt">col =</span> <span class="st">&quot;orange&quot;</span>,</span>
+<span id="cb171-4"><a href="wochenplan-06.html#cb171-4"></a>     <span class="dt">main =</span> <span class="st">&quot;Grundgesamtheit mit Stichprobenverteilung&quot;</span>,</span>
+<span id="cb171-5"><a href="wochenplan-06.html#cb171-5"></a>     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">20</span>),</span>
+<span id="cb171-6"><a href="wochenplan-06.html#cb171-6"></a>     )</span>
+<span id="cb171-7"><a href="wochenplan-06.html#cb171-7"></a></span>
+<span id="cb171-8"><a href="wochenplan-06.html#cb171-8"></a>mittelwerte_samples &lt;-<span class="st"> </span><span class="kw">apply</span>(<span class="kw">meine_samples</span>(variable_population,</span>
+<span id="cb171-9"><a href="wochenplan-06.html#cb171-9"></a>                                           <span class="dv">30</span>,</span>
+<span id="cb171-10"><a href="wochenplan-06.html#cb171-10"></a>                                           <span class="dv">1000</span>),</span>
+<span id="cb171-11"><a href="wochenplan-06.html#cb171-11"></a>                             <span class="dv">2</span>,</span>
+<span id="cb171-12"><a href="wochenplan-06.html#cb171-12"></a>                             mean)</span>
+<span id="cb171-13"><a href="wochenplan-06.html#cb171-13"></a></span>
+<span id="cb171-14"><a href="wochenplan-06.html#cb171-14"></a><span class="kw">hist</span>(mittelwerte_samples,</span>
+<span id="cb171-15"><a href="wochenplan-06.html#cb171-15"></a>     <span class="dt">breaks =</span> <span class="dv">10</span>,</span>
+<span id="cb171-16"><a href="wochenplan-06.html#cb171-16"></a>     <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb171-17"><a href="wochenplan-06.html#cb171-17"></a>     <span class="dt">add =</span> T)</span></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
 <p>Damit können wir uns nochmals die expliziten Parameter der Stichprobenverteilung vergegenwärtigen:
 Auf der einen Seite haben wir das arithmetische Mittel der Stichprobenmittelwerte, das heisst:</p>
 <p><span class="math inline">\(\mu\frac{ }{ x }\)</span></p>
 <p>Dieser Wert entspricht (annährend) dem arithmetischen Mittelwert des metrischen Merkmals in der Grundgesamtheit:</p>
 <p><span class="math inline">\(\mu\frac{ }{ x } = \mu\)</span></p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="wochenplan-06.html#cb166-1"></a><span class="kw">mean</span>(mittelwerte_samples)</span></code></pre></div>
-<pre><code>## [1] 10.06863</code></pre>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="wochenplan-06.html#cb168-1"></a><span class="kw">mean</span>(variable_population)</span></code></pre></div>
-<pre><code>## [1] 10.00674</code></pre>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="wochenplan-06.html#cb172-1"></a><span class="kw">mean</span>(mittelwerte_samples)</span></code></pre></div>
+<pre><code>## [1] 10.01868</code></pre>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="wochenplan-06.html#cb174-1"></a><span class="kw">mean</span>(variable_population)</span></code></pre></div>
+<pre><code>## [1] 9.99796</code></pre>
 <p>Auf der anderen Seite finden wir die Standardabweichung der Stichprobenverteilung, der Standardfehler (oder Stichprobenfehler):</p>
 <p><span class="math inline">\(\sigma\frac{ }{ x } = \frac{ \sigma }{ \sqrt{ n } }\)</span></p>
 <p>Dieser Wert gibt das Ausmass der Streuung der Stichprobenmittelwerte um den Mittelwert an.</p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="wochenplan-06.html#cb170-1"></a><span class="kw">sd</span>(variable_population)<span class="op">/</span><span class="kw">sqrt</span>(<span class="dv">30</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="wochenplan-06.html#cb176-1"></a><span class="kw">sd</span>(variable_population)<span class="op">/</span><span class="kw">sqrt</span>(<span class="dv">30</span>)</span></code></pre></div>
+<pre><code>## [1] 1.053967</code></pre>
 <p>…und entspricht natürlich einfach der Standardabweichung unserer Stichprobenverteilung:</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="wochenplan-06.html#cb171-1"></a><span class="kw">sd</span>(mittelwerte_samples)</span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="wochenplan-06.html#cb178-1"></a><span class="kw">sd</span>(mittelwerte_samples)</span></code></pre></div>
+<pre><code>## [1] 1.051437</code></pre>
 <p>Die Stichprobenmittelwerte streuen umso geringer um den Mittelwert der Stichprobenverteilung (das heisst um den Wert in der Grundgesamtheit), je grösser der Umfang der Stichprobe ist. Das heisst die Stichprobenwerte werden immer “genauer”, da deren zufällige Abweichung verkleinert wird.</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="wochenplan-06.html#cb172-1"></a><span class="kw">hist</span>(variable_population,</span>
-<span id="cb172-2"><a href="wochenplan-06.html#cb172-2"></a>     <span class="dt">breaks =</span> <span class="dv">30</span>,</span>
-<span id="cb172-3"><a href="wochenplan-06.html#cb172-3"></a>     <span class="dt">col =</span> <span class="st">&quot;orange&quot;</span>,</span>
-<span id="cb172-4"><a href="wochenplan-06.html#cb172-4"></a>     <span class="dt">main =</span> <span class="st">&quot;Grundgesamtheit mit Stichprobenverteilung&quot;</span>,</span>
-<span id="cb172-5"><a href="wochenplan-06.html#cb172-5"></a>     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">20</span>),</span>
-<span id="cb172-6"><a href="wochenplan-06.html#cb172-6"></a>     )</span>
-<span id="cb172-7"><a href="wochenplan-06.html#cb172-7"></a></span>
-<span id="cb172-8"><a href="wochenplan-06.html#cb172-8"></a>mittelwerte_samples &lt;-<span class="st"> </span><span class="kw">apply</span>(<span class="kw">meine_samples</span>(variable_population,</span>
-<span id="cb172-9"><a href="wochenplan-06.html#cb172-9"></a>                                           <span class="dv">120</span>,</span>
-<span id="cb172-10"><a href="wochenplan-06.html#cb172-10"></a>                                           <span class="dv">1000</span>),</span>
-<span id="cb172-11"><a href="wochenplan-06.html#cb172-11"></a>                             <span class="dv">2</span>,</span>
-<span id="cb172-12"><a href="wochenplan-06.html#cb172-12"></a>                             mean)</span>
-<span id="cb172-13"><a href="wochenplan-06.html#cb172-13"></a></span>
-<span id="cb172-14"><a href="wochenplan-06.html#cb172-14"></a>mittelwerte_samples &lt;-<span class="st"> </span>mittelwerte_samples<span class="dv">-2</span></span>
-<span id="cb172-15"><a href="wochenplan-06.html#cb172-15"></a></span>
-<span id="cb172-16"><a href="wochenplan-06.html#cb172-16"></a><span class="kw">hist</span>(mittelwerte_samples,</span>
-<span id="cb172-17"><a href="wochenplan-06.html#cb172-17"></a>     <span class="dt">breaks =</span> <span class="dv">10</span>,</span>
-<span id="cb172-18"><a href="wochenplan-06.html#cb172-18"></a>     <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>,</span>
-<span id="cb172-19"><a href="wochenplan-06.html#cb172-19"></a>     <span class="dt">add =</span> T)</span>
-<span id="cb172-20"><a href="wochenplan-06.html#cb172-20"></a></span>
-<span id="cb172-21"><a href="wochenplan-06.html#cb172-21"></a><span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">mean</span>(variable_population), <span class="dt">lwd =</span> <span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="wochenplan-06.html#cb180-1"></a><span class="kw">hist</span>(variable_population,</span>
+<span id="cb180-2"><a href="wochenplan-06.html#cb180-2"></a>     <span class="dt">breaks =</span> <span class="dv">30</span>,</span>
+<span id="cb180-3"><a href="wochenplan-06.html#cb180-3"></a>     <span class="dt">col =</span> <span class="st">&quot;orange&quot;</span>,</span>
+<span id="cb180-4"><a href="wochenplan-06.html#cb180-4"></a>     <span class="dt">main =</span> <span class="st">&quot;Grundgesamtheit mit Stichprobenverteilung&quot;</span>,</span>
+<span id="cb180-5"><a href="wochenplan-06.html#cb180-5"></a>     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">20</span>),</span>
+<span id="cb180-6"><a href="wochenplan-06.html#cb180-6"></a>     )</span>
+<span id="cb180-7"><a href="wochenplan-06.html#cb180-7"></a></span>
+<span id="cb180-8"><a href="wochenplan-06.html#cb180-8"></a>mittelwerte_samples &lt;-<span class="st"> </span><span class="kw">apply</span>(<span class="kw">meine_samples</span>(variable_population,</span>
+<span id="cb180-9"><a href="wochenplan-06.html#cb180-9"></a>                                           <span class="dv">120</span>,</span>
+<span id="cb180-10"><a href="wochenplan-06.html#cb180-10"></a>                                           <span class="dv">1000</span>),</span>
+<span id="cb180-11"><a href="wochenplan-06.html#cb180-11"></a>                             <span class="dv">2</span>,</span>
+<span id="cb180-12"><a href="wochenplan-06.html#cb180-12"></a>                             mean)</span>
+<span id="cb180-13"><a href="wochenplan-06.html#cb180-13"></a></span>
+<span id="cb180-14"><a href="wochenplan-06.html#cb180-14"></a>mittelwerte_samples &lt;-<span class="st"> </span>mittelwerte_samples</span>
+<span id="cb180-15"><a href="wochenplan-06.html#cb180-15"></a></span>
+<span id="cb180-16"><a href="wochenplan-06.html#cb180-16"></a><span class="kw">hist</span>(mittelwerte_samples,</span>
+<span id="cb180-17"><a href="wochenplan-06.html#cb180-17"></a>     <span class="dt">breaks =</span> <span class="dv">10</span>,</span>
+<span id="cb180-18"><a href="wochenplan-06.html#cb180-18"></a>     <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb180-19"><a href="wochenplan-06.html#cb180-19"></a>     <span class="dt">add =</span> T)</span></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-62-1.png" width="672" /></p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="wochenplan-06.html#cb173-1"></a><span class="kw">sd</span>(mittelwerte_samples) </span></code></pre></div>
-<pre><code>## [1] 0.5282599</code></pre>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="wochenplan-06.html#cb175-1"></a><span class="co">#Der Standardfehler wurde halbiert, da die Stichprobengrösse vervierfacht wurde.</span></span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="wochenplan-06.html#cb181-1"></a><span class="kw">sd</span>(mittelwerte_samples) </span></code></pre></div>
+<pre><code>## [1] 0.4993568</code></pre>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="wochenplan-06.html#cb183-1"></a><span class="co">#Der Standardfehler wurde halbiert, da die Stichprobengrösse vervierfacht wurde.</span></span></code></pre></div>
 
 </div>
 </div>

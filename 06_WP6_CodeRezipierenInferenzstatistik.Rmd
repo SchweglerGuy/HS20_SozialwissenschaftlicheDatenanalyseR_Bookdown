@@ -38,7 +38,7 @@ Der Code "standardfehler.R" ist ein Skript zur Simulation des Standardfehlers un
 ### Ebene der Grundgesamtheit
 
 Unsere Grundgesamtheit bilden 1000 Ausprägungen einer beliebigen Variable, die hier nun gleichverteilt ist und sich zwischen 0 und 20 bewegt. Die Verteilung dieser Variable können wir dann in einem Histogramm darstellen.
-```{r results='hide'}
+```{r}
 variable_population <- runif(10000,
                              min = 0,
                              max = 20)
@@ -56,7 +56,7 @@ hist(variable_population,
 ### Ebene der einzelnen Stichprobe
 
 Als nächster Schritt wird nun eine Stichprobe gezogen mit der Funktion 'sample()', in der zufällig 100 Fälle der Grundgesamtheit landen. Von dieser Stichprobe können wir dann den Mittelwert berechnen und diesen Wert in das Histogramm der Grundgesamtheit einfügen. Der Mittelwert der Stichprobe unterscheidet sich natürlich minimal vom Mittelwert der Grundgesamt.  
-```{r results='hide'}
+```{r}
 sample1 <- sample(variable_population, 100)
 mean(sample1)
 hist(variable_population,
@@ -129,7 +129,7 @@ stichproben_200 <- meine_samples(variable_population, 30, 200)
 ### Ebene der Stichprobenverteilung
 
 Bereits in den vorhergehenden beiden Schritten (Stichprobe als Schleife und Stichprobe als Funktion) ging es nicht mehr nur um eine einzelne Stichprobe, sondern um verschiedene Stichproben und deren jeweilige Mittelwerte. Wir gehen also über zu einer Stichprobenverteilung. Im folgenden Code werden zuerst die Stichprobenkennwerte berechnet (d.h. die Mittelwerte der 200 gezogenen Stichproben) und dann als Histogramm dargestellt: Das Histogramm entspricht der Stichprobenverteilung der Stichprobenkennwerte. 
-```{r results='hide'}
+```{r}
 stichproben_200 <- meine_samples(variable_population, 30, 200)
 mittelwerte <- apply(stichproben_200, 2, mean)
 hist(mittelwerte,
@@ -143,7 +143,7 @@ hist(mittelwerte,
 Hierbei wird nun ersichtlich, dass diese Stichprobenverteilung der Normalverteilung folgt (ab einem Stichprobenumfang von 30). Das heisst eben auch, dass je stärker ein Stichprobenmittelwert vom Mittelwert der Grundgesamtheit abweicht, desto unwahrscheinlicher ist dieser Wert. Oder umgekehrt: Tritt ein sehr stark abweichender Wert auf ist dies mit hoher Wahrscheinlichkeit nicht zufällig.
 
 In den folgenden Codezeilen wird nun die Stichprobenverteilung in das Histogramm der Grundgesamtheit eingefügt. Die Idee hierbei ist, dass die Stichprobengrösse dank der eigenen Funktion variiert werden kann. Daraus wird ersichtlich, dass je grösser der Stichprobenumfang ist, desto schmaler wird die Stichprobenverteilung (das blaue Histogramm), das heisst: desto kleiner wird der Standardfehler.
-```{r results='hide'}
+```{r}
 hist(variable_population,
      breaks = 30,
      col = "orange",
@@ -181,12 +181,12 @@ Auf der anderen Seite finden wir die Standardabweichung der Stichprobenverteilun
 $\sigma\frac{  }{ x } = \frac{ \sigma }{ \sqrt{ n } }$
 
 Dieser Wert gibt das Ausmass der Streuung der Stichprobenmittelwerte um den Mittelwert an.
-```{r results='hide'}
+```{r}
 sd(variable_population)/sqrt(30)
 ```
 
 ...und entspricht natürlich einfach der Standardabweichung unserer Stichprobenverteilung:
-```{r results='hide'}
+```{r}
 sd(mittelwerte_samples)
 ```
 
@@ -205,14 +205,12 @@ mittelwerte_samples <- apply(meine_samples(variable_population,
                              2,
                              mean)
 
-mittelwerte_samples <- mittelwerte_samples-2
+mittelwerte_samples <- mittelwerte_samples
 
 hist(mittelwerte_samples,
      breaks = 10,
      col = "blue",
      add = T)
-
-abline(v=mean(variable_population), lwd = 5)
 
 sd(mittelwerte_samples) 
 #Der Standardfehler wurde halbiert, da die Stichprobengrösse vervierfacht wurde.
