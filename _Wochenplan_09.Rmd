@@ -1,0 +1,38 @@
+# Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 09 (12. & 19.11.2020)
+
+## Lernziele
+
+?Faktoren?
+
+
+Nachdem wir uns bereits mit dem ESS Datensatz vertraut gemacht haben widmen wir uns in dieser Woche stärker der Datenanalyse. Gleichzeitig ist der Übergang zwischen Datenaufbereitung und deren Auswertung fliessend: Die ersten Schritte des Kennenlernens von Daten, des Findens von Fehlern und des Ausrichtens auf ein bestimmtes Interesse liefern oft auch bereits erste Ergebnisse im Sinne einer explorativen Datenanalysen – und diese Veranlassen uns womöglich zu einem erneuten Aufbereiten der Daten. Der siebte Wochenplan fokussiert in diesem Prozess auf Kreuztabellen und der Berechnung von Chi-Quadrat Test. Das Vorgehen ist der erste Schritt zur Vorbereitung einer Regressionsanalyse.
+
+Wir können daher folgende Lernziele festhalten:
+
+- Sie kennen eine Möglichkeit, wie schnell auf Variablen in einem Datensatz zugegriffen werden kann, und wann dies angebracht ist (und wann nicht).
+
+- Sie können Kreuztabellen auf verschiedenen Weise darstellen und interpretieren.
+
+- Sie verstehen die umfassenderen Leistungen von gewissen Funktion indem Sie auf deren Ergebnisse als Objekt zugreifen.
+
+- Sie können den Zusammenhang zwischen Kategorialen Variablen interpretieren.
+
+- Sie verstehen, wie aus explorativen Schritten weitere Konsequenzen für das Vorgehen in der Analyse zu ziehen sind.
+
+
+## Aufgaben
+
+1. Laden Sie den Datensatz in RStudio, der 200 zufällige Fälle aus dem ganzen ESS Datensatz enthält („ESS1-8e01_HS20.csv“). 
+
+2. Versuchen Sie die Idee der Funktion 'attach()' zu erläutern. Nutzen Sie anschliessend die Funktion für die folgenden beiden Aufgaben, bevor Sie vor der letzte Aufgabe den umgekehrten 'detach()' Befehl verwenden sollen.
+
+3. Erstellen Sie mittels der Funktion 'table()' eine Kreuztabelle zwischen den Variablen zu Geschlecht und derjenigen zu TV Konsum. Diese Kreuztabelle soll die Prozentwerte in den Zellen ausweisen und die Randsummen angeben. Versuchen Sie in der Darstellung von der Tabelle -- d.h. der Anordnung der Variablen sowie der Wahl der Randsummen -- der üblichen Konvention von abhängiger und unabhängiger Variable zu folgen. Fällt Ihnen in der Tabelle etwas auf?
+
+4. Die Funktion 'CrossTable()' ist Teil des Paketes "gmodels" und ermöglicht auf sehr detaillierte Weise Kreuztabellen zu erstellen. Versuchen Sie mittels der Funktion die Kreuztabelle aus Aufgabe 2 nachzubauen.
+
+5. Mittels 'CrossTable()' lassen sich allerdings nicht nur Tabellen erstellen, sondern auch Chi-Quadrat Tests durchführen. 
+  + Speichern Sie dazu das ganz Ergebnis der Funktion als ein neues Objekt 'CT_Ergebnis'.
+  + Greifen Sie anschliessend auf die darin enthaltenen Angaben zum Chi-Quadrat Test zu und interpretieren Sie diese -– sowohl deskriptiv als auch inferenzstatistisch.
+  
+
+Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit "Fallloesung09_NameVorname.pdf" und geben das Dokument via OLAT bis Mittwochmittag ab (18.11.2020, 12:00).

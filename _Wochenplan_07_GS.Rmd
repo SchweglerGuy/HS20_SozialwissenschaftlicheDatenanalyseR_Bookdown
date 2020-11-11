@@ -1,0 +1,186 @@
+# Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 07 (29.10.- 12.11.2020)
+
+## Lernziele
+
+In der zweiten Hälfte des Semester möchten wir das statistische Arbeiten mit R anhand des Umgangs mit "echten" Daten kennenlernen. Dazu nutzen wir Daten aus dem *European Social Survey* (ESS).[^1] Am Beginn der Arbeit mit einem Datensatz steht das Kennenlernen der Daten: Es gilt die Variablen und ihre Ausprägungen zu verstehen, erste Plausibilitätsprüfungen durchzuführen und Daten für die spätere Analyse aufzubereiten. Diese Techniken sollen Sie im Rahmen des siebten Wochenplans kennenlernen und so die Grundlage schaffen, in den folgenden Einheiten statistische Analysen mit dem Datensatz vorzunehmen.
+
+Konkret lassen sich folgende Lernziele festhalten:
+
+- Sie können einen CSV-Datensatz in R laden und kennen die Vor- und Nachteile dieses Dateiformats.
+
+- Sie können einen geladen Datensatz anhand verschiedener Funktionen und in unterschiedlichem Detailliertheitsgrad beschreiben.
+
+- Sie kennen erste Techniken zur Plausibilitätsprüfung von Datensätzen.
+
+- Sie kennen erste Techniken zur Datenaufbereitung. 
+
+- Sie verstehen, wie und wozu man zufällige Teildatensätze erstellt. 
+
+
+## Aufgaben
+
+1. Laden Sie sich den Datensatz "ESS1-8e01.csv" und ESS-Fragebogen (das Codebook) herunter (via OLAT) und speichern Sie die Dateien in Ihrem Arbeitsverzeichnis. Laden Sie anschliessend den Datensatz in RStudio über die Funktion 'read.csv()'. Betrachten Sie den Datensatz über die Funktion 'View()' oder indem Sie auf Ihr erstelltes Objekt im Tab "Environment" klicken. Vergleichen Sie für einzelne Variablen die Informationen im Datensatz mit den entsprechenden Fragebogenfragen!
+
+```{r include=FALSE}
+daten_ess <- read.csv(file = "Data/ESS1-8e01.csv")
+```
+
+```{r eval=FALSE}
+setwd("C:/IhrDateiPfad/R-Seminar_HS20/IhrArbeitsordner")
+daten_ess <- read.csv(file = "Data/ESS1-8e01.csv")
+View(daten_ess)
+```
+Als erster Schritt gilt es Ihr Arbeitsverzeichnis zu definieren, das heisst der Ort, an dem auch Ihre Daten abgelegt sind (ggfs. sind diese noch in einem weiteren Unterordner). In diesem Arbeitsverzeichnis würden auch allfällige weitere Daten liegen bzw. später automatisch von R abgespeichert.
+
+
+2. Öffnen Sie nun die Datei "ESS1-8e01.csv" in einem Tabellenkalkulations- oder einem Textbearbeitungsprogramm (z.B. Microsoft Excel, dem Windows-Editor oder TextEdit auf Mac). 
+   + Vergleichen Sie die beiden Varianten (Ihr Dataframe in RStudio und die im Textbearbeitungsprogramm geöffnete Datei), um das Dateiformat "CSV" besser zu verstehen.
+   + Ersetzen Sie anschliessend im Tabellenkalkulations- oder Textbearbeitungsprogramm die Kommas in der "ESS1-8e01.csv" Datei mit Strichpunkten und speichern Sie diese neue Version ab. Gehen Sie zurück zu R Studio und versuchen Sie, die neue Version des Datensatzes zu laden. Welchen Paramter müssen Sie anpassen, damit das funktioniert?
+   + Was denken Sie könnten Vorteile des CSV-Formats sein? Welche möglichen Nachteile im Vergleich zu anderen Dateiformaten (Excel, SPSS ...) sind denkbar?
+
+```{r eval=FALSE}
+daten_ess_nv <- read.csv(file = "Data/ESS1-8e01_NeueVersion.csv", sep = ";")
+View(daten_ess_nv)
+```
+Indem die Kommas mit Strichpunkten ersetzt werden ändert sich das Zeichen im CSV-Datensatz, mit dem die Spalten bzw. Variablen getrennt werden (die Fälle werden über den Zeilenumbruch definiert). Das geänderte Zeichen kann dann über das Argument 'sep' in der 'read.csv()' Funktion genauer definiert werden um die geänderte Datei ebenfalls korrekt einzulesen.
+
+Das CSV-Dateiformat hat vor allem zwei Vorteile: Auf der einen Seite -- und wie in der Teilaufgabe oben deutlich wurde -- können über beliebige Texteditoren direkt in diese Daten eingegriffen werden, da im Format lediglich Rohdaten in Textform abgespeichert sind. Bei anderen Dateiformaten für Datensätze wie etwa .sav (von der Statistiksoftware SPSS) ist dies nicht so einfach möglich. Auf der anderen Seite ist das CSV-Dateiformat nicht nur transparent, sondern beansprucht auch nur sehr wenig Speicherplatz. Auch grosse Datensätze können so schnell von RStudio gelesen und bereitgestellt werden. Dem gegenüber steht der Nachteil, dass das Dateiformat keine Möglichkeiten bietet, Informationen auf komplexere Art und Weise abzuspeichern (z.Bsp. Labels für Variablenausprägungen oder ähnliches). CSV bleibt so ein Format für "Rohdaten".
+
+   
+3. Versuchen Sie mit Funktionen, die Sie bisher kennengelernt haben, den geladenen Datensatz kurz zu beschreiben. 
+
+Unser Datensatz umfasst..
+```{r}
+dim(daten_ess)[1]
+```
+Fälle mit jeweils...
+```{r}
+dim(daten_ess)[2]
+```
+Variablen. Die Variablen heissen etwa:
+```{r}
+sort(names(daten_ess))[1:5]
+
+```
+usw. 
+
+Aktuell entsprechen die Werte der Variablen in fast allen Fällen numerische Ausprägungen ('int' bei ganzen Zahlen, 'num' bei Zahlen mit Kommastellen), lediglich die Variable cntry enthält Buchstaben, oder eben Character-Daten. Dies wird über die folgende Funktion ersichtlich:
+```{r}
+str(daten_ess)
+```
+
+
+
+```{r eval=FALSE}
+summary(daten_ess)
+```
+
+Über die 'summary()' wir dann nochmals deutlich, dass hier tatsächlich Rohdaten eingelesen wurden, da beispielsweise fehlende Werte noch als Zahlen gelten (und so etwa jemand im Jahr 7777 geboren wäre).
+```{r}
+summary(daten_ess$yrbrn)
+```
+
+5. In den Variablen zum Alter und den Bildungsabschlüssen der befragten Personen haben sich einige Fehler eingeschlichen. Was sind die Fehler? Und welche Fälle betrifft das (Fallnummer)?
+
+Der oben beschriebene Fall ist nun nicht ein Fehler im Datensatz, sondern vielmehr ein fehlender Wert, was das Codebuch ausweist. Fehlende Werte können wie folgt definiert werden:
+```{r}
+daten_ess$yrbrn[daten_ess$yrbrn==7777 |
+                 daten_ess$yrbrn==8888 |
+                  daten_ess$yrbrn==9999] <- NA
+daten_ess$agea[daten_ess$agea==999] <- NA
+
+#Dieses Definieren von fehlende WErten kann auch für die drei Variablen zu Bildungsabschlüssen auf ähnliche Weise erfolgen:
+daten_ess$edulvla[daten_ess$edulvla>5] <- NA
+daten_ess$eisced[daten_ess$eisced>7] <- NA
+daten_ess$eduyrs[daten_ess$eduyrs>76] <- NA
+```
+
+Anschliessend können erste Plausibilitätstest bei den verschiedenen Variablen durchgeführt werden. Hierbei unterscheiden wir drei verschieden Stufen:
+
+Bei der *ersten Stufe* betrachten wir lediglich die Zahlen selber, wobei uns vor allem Häufigkeitsverteilungen und Extremwerten interessiert:
+```{r}
+summary(daten_ess$yrbrn)
+summary(daten_ess$agea)
+
+summary(daten_ess$eduyrs)
+table(daten_ess$edulvla)
+table(daten_ess$eisced)
+```
+
+Die lässt uns bereits einen ersten Fehler entdecken, nämlich das eine Person angeblich 320 Jahre alt sein soll, und zwar folgener Fall:
+```{r}
+which(daten_ess$agea==320)
+```
+
+Auf der *zweiten Stufe* überprüfen wir nun, ob die Daten auch wirklich Sinn machen, das heisst im Rahmen der erhobenen Daten. Ein Vergleich mit dem Codebuch zeigt dabei, dass auf der einen Seite erst Personen ab dem 15.Lebensjahr befragt wurden. Folgender Fall macht also keinen Sinn:
+```{r}
+which(daten_ess$agea<15)
+```
+Die bei der Variable eisced auftauchende Ausprägung '0' ist durchaus zulässig und entspricht "Not possible to harmonise into ES-ISCED".
+
+Auf der *dritten Stufe* können wir dann mittels Kreuztabellierungen und logischen Überlegungen jeweils (mindestens) zwei Variablen miteinander vergleichen, um so nochmals Fehler zu entdecken. Zuerst können wir ein zusätzliche Variable als Fehlerindikator der Angaben zum Alter berechnen und dann als logische Bedingungen nutzen, um drei fehlerhafte Fälle zu entdecken:
+```{r}
+daten_ess$agea_l <- daten_ess$agea + daten_ess$yrbrn
+daten_ess$agea_l[daten_ess$agea_l!=2016]
+which(daten_ess$agea_l!=2016 & daten_ess$agea_l!=2017)
+#Identifikation der Fälle
+daten_ess[daten_ess$agea_l!=2016 
+          & daten_ess$agea_l!=2017
+          & !is.na(daten_ess$agea_l),c("agea", "yrbrn")]
+```
+
+Bei den Angaben zum Bildungsniveau wieder können wir stärker Kreuztabellen nutzen, um zwei Fehler zu entdecken:
+```{r}
+table(daten_ess$edulvla, daten_ess$eisced)
+table(daten_ess$eduyrs, daten_ess$edulvla)
+table(daten_ess$eduyrs, daten_ess$eisced)
+#Identifikation der Fälle
+which(daten_ess$edulvla==1 & daten_ess$eisced==5)
+which(daten_ess$edulvla==3 & daten_ess$eisced==3 & daten_ess$eduyrs<6)
+```
+
+
+Beim Umgang mit diesen fehlenden Werten haben wir drei Möglichkeiten. Wir können die benötigen Angaben von anderen Werten ableiten, zum Beispiel das Alter vom Geburtsjahr. 
+```{r}
+daten_ess$agea[132] <- 2016 - daten_ess$yrbrn[132]
+
+```
+
+Weiter können wir uns einen Werte berechnen bzw. diesen schätzen:
+```{r}
+daten_ess$eduyrs[1482] <- round(mean(daten_ess$eduyrs[daten_ess$edulvla==3],
+                                     na.rm = T))
+```
+
+Die letzte Option ist dann noch die falschen Angaben als fehlende Werte zu definieren:
+```{r}
+daten_ess$edulvla[443] <- NA
+```
+
+6. *Bonusaufgabe*: In den folgenden Wochen möchten wir nicht mit dem ganzen Datensatz arbeiten, sondern lediglich mit einer zufälligen Auswahl von 200 Fällen. Versuchen Sie einen solchen Teildatensatz randomisiert zu erstellen und speichern Sie ihn mittels der Funktion 'write.csv()' unter dem Namen "TD_ESS1-8e01.csv" ab.
+
+Um den zufälligen Datensatz mit 200 Fällen zu erstellen bieten sich mindestens zwei Möglichkeiten an. Die erste Möglichkeit nutzt die 'sample()' Funktion und wählt zufällig 200 Zahlen einer Variable aus, die von 1 bis 1525 durchläuft. Eine solche Variable ist 'x' im Datensatz -- oder auch einfach die Reihenzahl. Die ausgewählten Zahlen können als Angabe für die Zeilen in die eckige Klammerfunktion eingesetzt werden.
+```{r}
+daten_ess_HS20 <- daten_ess[sample(row.names(daten_ess),200),]
+#oder auch:
+daten_ess_HS20 <- daten_ess[sample(daten_ess,200),]
+
+```
+
+
+Die zweite Möglichkeit berechnet eine Zufallsvariable und sortiert den Datensatz dann nach der Grösse dieser Zufallsvariable. Anschliessend können dann die die -- jetzt völlig zufällig -- ersten 200 Fälle ausgewählt werden.
+```{r}
+daten_ess$zv <- rnorm(1525)
+daten_ess <- daten_ess[order(daten_ess$zv),]
+daten_ess_HS20 <- daten_ess[1:200,]
+```
+
+Dieser zufällige Datensatz kann wiederum als CSV-Datei abgespeichert werden:
+```{r}
+write.csv(daten_ess_HS20, file = "Data/ESS1-8e01_HS20.csv")
+```
+
+
+
+[^1]: Der Datensatz sowie das Codebook wurden mittels des *ESS Cumulative Data Wizard* erstellt: [https://www.europeansocialsurvey.org/downloadwizard/?loggedin](https://www.europeansocialsurvey.org/downloadwizard/?loggedin).
+
