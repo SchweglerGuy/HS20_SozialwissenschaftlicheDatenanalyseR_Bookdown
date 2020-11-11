@@ -35,16 +35,19 @@ Als erster Schritt gilt es Ihr Arbeitsverzeichnis zu definieren, das heisst der 
 
 2. Öffnen Sie nun die Datei "ESS1-8e01.csv" in einem Tabellenkalkulations- oder einem Textbearbeitungsprogramm (z.B. Microsoft Excel, dem Windows-Editor oder TextEdit auf Mac). 
    + Vergleichen Sie die beiden Varianten (Ihr Dataframe in RStudio und die im Textbearbeitungsprogramm geöffnete Datei), um das Dateiformat "CSV" besser zu verstehen.
-   + Ersetzen Sie anschliessend im Tabellenkalkulations- oder Textbearbeitungsprogramm die Kommas in der "ESS1-8e01.csv" Datei mit Strichpunkten und speichern Sie diese neue Version ab. Gehen Sie zurück zu R Studio und versuchen Sie, die neue Version des Datensatzes zu laden. Welchen Paramter müssen Sie anpassen, damit das funktioniert?
+   + Ersetzen Sie anschliessend im Tabellenkalkulations- oder Textbearbeitungsprogramm die Kommas in der "ESS1-8e01.csv" Datei mit Strichpunkten und speichern Sie diese neue Version ab. Gehen Sie zurück zu RStudio und versuchen Sie, die neue Version des Datensatzes zu laden. Welchen Paramter müssen Sie anpassen, damit das funktioniert?
    + Was denken Sie könnten Vorteile des CSV-Formats sein? Welche möglichen Nachteile im Vergleich zu anderen Dateiformaten (Excel, SPSS ...) sind denkbar?
 
 ```{r eval=FALSE}
 daten_ess_nv <- read.csv(file = "Data/ESS1-8e01_NeueVersion.csv", sep = ";")
 View(daten_ess_nv)
 ```
-Indem die Kommas mit Strichpunkten ersetzt werden ändert sich das Zeichen im CSV-Datensatz, mit dem die Spalten bzw. Variablen getrennt werden (die Fälle werden über den Zeilenumbruch definiert). Das geänderte Zeichen kann dann über das Argument 'sep' in der 'read.csv()' Funktion genauer definiert werden um die geänderte Datei ebenfalls korrekt einzulesen.
+Indem die Kommas mit Strichpunkten ersetzt werden ändert im CSV-Datensatz das Zeichen, mit dem die Spalten bzw. Variablen getrennt werden (die Fälle werden über den Zeilenumbruch definiert). Das geänderte Zeichen kann dann über das Argument 'sep' in der 'read.csv()' Funktion genauer definiert werden um die geänderte Datei ebenfalls korrekt einzulesen.
 
-Das CSV-Dateiformat hat vor allem zwei Vorteile: Auf der einen Seite -- und wie in der Teilaufgabe oben deutlich wurde -- können über beliebige Texteditoren direkt in diese Daten eingegriffen werden, da im Format lediglich Rohdaten in Textform abgespeichert sind. Bei anderen Dateiformaten für Datensätze wie etwa .sav (von der Statistiksoftware SPSS) ist dies nicht so einfach möglich. Auf der anderen Seite ist das CSV-Dateiformat nicht nur transparent, sondern beansprucht auch nur sehr wenig Speicherplatz. Auch grosse Datensätze können so schnell von RStudio gelesen und bereitgestellt werden. Dem gegenüber steht der Nachteil, dass das Dateiformat keine Möglichkeiten bietet, Informationen auf komplexere Art und Weise abzuspeichern (z.Bsp. Labels für Variablenausprägungen oder ähnliches). CSV bleibt so ein Format für "Rohdaten".
+Das CSV-Dateiformat hat vor allem zwei Vorteile: 
+Auf der einen Seite -- und wie in der Teilaufgabe oben deutlich wurde -- können über beliebige Texteditoren direkt in diese Daten eingegriffen werden, da im Format lediglich Rohdaten in Textform abgespeichert sind. Bei anderen Dateiformaten für Datensätze wie etwa .sav (von der Statistiksoftware SPSS) ist dies nicht so einfach möglich. Auf der anderen Seite ist das CSV-Dateiformat nicht nur transparent, sondern beansprucht auch nur sehr wenig Speicherplatz. Grosse Datensätze können so schnell von RStudio gelesen und bereitgestellt werden. 
+
+Dem gegenüber steht der Nachteil, dass das Dateiformat keine Möglichkeiten bietet, Informationen auf komplexere Art und Weise abzuspeichern (z.Bsp. Labels für Variablenausprägungen oder ähnliches). CSV bleibt so ein Format für "Rohdaten".
 
    
 3. Versuchen Sie mit Funktionen, die Sie bisher kennengelernt haben, den geladenen Datensatz kurz zu beschreiben. 
@@ -64,32 +67,30 @@ sort(names(daten_ess))[1:5]
 ```
 usw. 
 
-Aktuell entsprechen die Werte der Variablen in fast allen Fällen numerische Ausprägungen ('int' bei ganzen Zahlen, 'num' bei Zahlen mit Kommastellen), lediglich die Variable cntry enthält Buchstaben, oder eben Character-Daten. Dies wird über die folgende Funktion ersichtlich:
+Aktuell entsprechen die Werte der Variablen in fast allen Fällen numerische Ausprägungen ('int' bei ganzen Zahlen, 'num' bei Zahlen mit Kommastellen). Lediglich die Variable cntry enthält Buchstaben, oder eben Character-Daten. Dies wird über die folgende Funktion ersichtlich:
 ```{r}
 str(daten_ess)
 ```
-
-
+Auch eine Variable wie 'gndr' ist daher eine Zahl in dem Datensatz und wird aktuell von RStudio als eine numerische Variable behandelt.
 
 ```{r eval=FALSE}
 summary(daten_ess)
 ```
-
-Über die 'summary()' wir dann nochmals deutlich, dass hier tatsächlich Rohdaten eingelesen wurden, da beispielsweise fehlende Werte noch als Zahlen gelten (und so etwa jemand im Jahr 7777 geboren wäre).
+Über die 'summary()' wir dann nochmals deutlich, dass hier tatsächlich Rohdaten eingelesen wurden: Auch fehlende Werte gelten aktuell noch als gültige Zahlen (...jemand wäre also im Jahr 7777 geboren).
 ```{r}
 summary(daten_ess$yrbrn)
 ```
 
 5. In den Variablen zum Alter und den Bildungsabschlüssen der befragten Personen haben sich einige Fehler eingeschlichen. Was sind die Fehler? Und welche Fälle betrifft das (Fallnummer)?
 
-Der oben beschriebene Fall ist nun nicht ein Fehler im Datensatz, sondern vielmehr ein fehlender Wert, was das Codebuch ausweist. Fehlende Werte können wie folgt definiert werden:
+Der oben beschriebene Fall ist nicht ein Fehler im Datensatz, sondern vielmehr ein fehlender Wert, was das Codebuch ausweist. Fehlende Werte können wie folgt definiert werden:
 ```{r}
 daten_ess$yrbrn[daten_ess$yrbrn==7777 |
                  daten_ess$yrbrn==8888 |
                   daten_ess$yrbrn==9999] <- NA
 daten_ess$agea[daten_ess$agea==999] <- NA
 
-#Dieses Definieren von fehlende WErten kann auch für die drei Variablen zu Bildungsabschlüssen auf ähnliche Weise erfolgen:
+#Dieses Definieren von fehlende Werten kann auch für die drei Variablen zu Bildungsabschluessen auf ähnliche Weise erfolgen:
 daten_ess$edulvla[daten_ess$edulvla>5] <- NA
 daten_ess$eisced[daten_ess$eisced>7] <- NA
 daten_ess$eduyrs[daten_ess$eduyrs>76] <- NA
@@ -112,13 +113,13 @@ Die lässt uns bereits einen ersten Fehler entdecken, nämlich das eine Person a
 which(daten_ess$agea==320)
 ```
 
-Auf der *zweiten Stufe* überprüfen wir nun, ob die Daten auch wirklich Sinn machen, das heisst im Rahmen der erhobenen Daten. Ein Vergleich mit dem Codebuch zeigt dabei, dass auf der einen Seite erst Personen ab dem 15.Lebensjahr befragt wurden. Folgender Fall macht also keinen Sinn:
+Auf der *zweiten Stufe* überprüfen wir nun, ob die Daten auch wirklich Sinn machen, das heisst im Rahmen der Codierungen gemäss Fragebogen. Ein Vergleich mit dem Codebuch zeigt dabei, dass erst Personen ab dem 15.Lebensjahr befragt wurden. Folgender Fall macht also keinen Sinn:
 ```{r}
 which(daten_ess$agea<15)
 ```
-Die bei der Variable eisced auftauchende Ausprägung '0' ist durchaus zulässig und entspricht "Not possible to harmonise into ES-ISCED".
+Hingegen ist die bei der Variable eisced auftauchende Ausprägung '0' ist durchaus zulässig und entspricht "Not possible to harmonise into ES-ISCED".
 
-Auf der *dritten Stufe* können wir dann mittels Kreuztabellierungen und logischen Überlegungen jeweils (mindestens) zwei Variablen miteinander vergleichen, um so nochmals Fehler zu entdecken. Zuerst können wir ein zusätzliche Variable als Fehlerindikator der Angaben zum Alter berechnen und dann als logische Bedingungen nutzen, um drei fehlerhafte Fälle zu entdecken:
+Auf der *dritten Stufe* vergleichen wir dann mittels Kreuztabellierungen und logischen Überlegungen jeweils (mindestens) zwei Variablen miteinander, um so nochmals Fehler zu entdecken. Zuerst können wir dazu eien zusätzliche Variable als Fehlerindikator für die Angaben zum Alter berechnen. Diese zusätzliche Variable nutzen wir dann als logische Bedingung, um drei fehlerhafte Fälle zu entdecken:
 ```{r}
 daten_ess$agea_l <- daten_ess$agea + daten_ess$yrbrn
 daten_ess$agea_l[daten_ess$agea_l!=2016]
@@ -140,26 +141,27 @@ which(daten_ess$edulvla==3 & daten_ess$eisced==3 & daten_ess$eduyrs<6)
 ```
 
 
-Beim Umgang mit diesen fehlenden Werten haben wir drei Möglichkeiten. Wir können die benötigen Angaben von anderen Werten ableiten, zum Beispiel das Alter vom Geburtsjahr. 
+Im Umgang mit diesen fehlenden Werten haben wir drei Möglichkeiten. Wir können die benötigen Angaben von anderen Werten *ableiten* (1), zum Beispiel das Alter vom Geburtsjahr. 
 ```{r}
 daten_ess$agea[132] <- 2016 - daten_ess$yrbrn[132]
-
 ```
 
-Weiter können wir uns einen Werte berechnen bzw. diesen schätzen:
+Weiter können wir uns einen Werte berechnen bzw. diesen *schätzen* (2):
 ```{r}
 daten_ess$eduyrs[1482] <- round(mean(daten_ess$eduyrs[daten_ess$edulvla==3],
                                      na.rm = T))
 ```
 
-Die letzte Option ist dann noch die falschen Angaben als fehlende Werte zu definieren:
+Die letzte Option ist dann noch die falschen Angaben als *fehlende Werte* zu definieren (3):
 ```{r}
 daten_ess$edulvla[443] <- NA
 ```
 
 6. *Bonusaufgabe*: In den folgenden Wochen möchten wir nicht mit dem ganzen Datensatz arbeiten, sondern lediglich mit einer zufälligen Auswahl von 200 Fällen. Versuchen Sie einen solchen Teildatensatz randomisiert zu erstellen und speichern Sie ihn mittels der Funktion 'write.csv()' unter dem Namen "TD_ESS1-8e01.csv" ab.
 
-Um den zufälligen Datensatz mit 200 Fällen zu erstellen bieten sich mindestens zwei Möglichkeiten an. Die erste Möglichkeit nutzt die 'sample()' Funktion und wählt zufällig 200 Zahlen einer Variable aus, die von 1 bis 1525 durchläuft. Eine solche Variable ist 'x' im Datensatz -- oder auch einfach die Reihenzahl. Die ausgewählten Zahlen können als Angabe für die Zeilen in die eckige Klammerfunktion eingesetzt werden.
+Um den zufälligen Datensatz mit 200 Fällen zu erstellen bieten sich mindestens zwei Möglichkeiten an: 
+
+Die erste Möglichkeit nutzt die 'sample()' Funktion und wählt zufällig 200 Zahlen einer Variable aus, die von 1 bis 1525 durchläuft. Eine solche Variable ist 'x' im Datensatz -- oder auch einfach die Reihenzahl. Die zufällig ausgewählten Zahlen dieser Variable können als Angabe für die Zeilen in die eckige Klammerfunktion eingesetzt werden.
 ```{r}
 daten_ess_HS20 <- daten_ess[sample(row.names(daten_ess),200),]
 #oder auch:
@@ -167,8 +169,7 @@ daten_ess_HS20 <- daten_ess[sample(daten_ess,200),]
 
 ```
 
-
-Die zweite Möglichkeit berechnet eine Zufallsvariable und sortiert den Datensatz dann nach der Grösse dieser Zufallsvariable. Anschliessend können dann die die -- jetzt völlig zufällig -- ersten 200 Fälle ausgewählt werden.
+Die zweite Möglichkeit berechnet eine Zufallsvariable und sortiert den Datensatz dann nach der Grösse dieser Zufallsvariable. Anschliessend können dann die -- jetzt völlig zufällig -- ersten 200 Fälle ausgewählt werden.
 ```{r}
 daten_ess$zv <- rnorm(1525)
 daten_ess <- daten_ess[order(daten_ess$zv),]
