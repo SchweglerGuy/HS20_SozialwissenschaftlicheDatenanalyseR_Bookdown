@@ -1,0 +1,34 @@
+# Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 08 (12. & 19.11.2020)
+
+## Lernziele
+
+Nachdem wir uns bereits einen ersten Üblick über den ESS-Datensatz verschafft haben, gehen wir in dieser Woche zur Datenanalyse in R über. Dieser Übergang ist ein fliessender: Die ersten Schritte zum Kennenlernen eines Datensatzes, die Plausibilitätsprüfung und die Suche nach  Fehlern liefern häufig bereits erste Ergebnisse im Sinne einer explorativen Datenanalysen, die umgekehrt dann womöglich neue Schritte zur Aufbereitung des Datensatzes veranlassen. Der Arbeitsplan für die kommende Woche fokussiert die Rolle von Kreuztabellen in diesem Prozess, inklusive der Berechnung von Chi-Quadrat-Tests. Von hier geht es dann in den Folgewochen schrittweise weiter zu Berechnung von Regressionsanalysen.
+
+Wir können daher folgende Lernziele festhalten:
+
+- Sie verstehen den Nutzen (und auch die Gefahren) der Funktion attach().
+
+- Sie können Kreuztabellen auf verschiedene Weisen darstellen und inhaltlich zutreffend interpretieren.
+
+- Sie verstehen, wie man das Ergebnis von Funktionen als Objekt "abspeichert", und wissen, wie man auf die Elemente solcher "Ergebnisobjekte" zugreift.
+
+- Sie entwickeln ein vertieftes Verständnis davon, wie die Phasen der Datenaufbereitung, der Datenexploration und der Datenanalyse zusammenhängen. 
+
+
+## Aufgaben
+
+1. Laden Sie den Datensatz in RStudio, der 200 zufällige Fälle aus dem ganzen ESS Datensatz enthält („ESS1-8e01_HS20.csv“). Erstellen Sie dazu ein eigenes R-Skript (z.B. unter dem Namen "ess_import.R"). Dieses Skript sollte automatisch das richtige Arbeitsverzeichnis definieren, den Datensatz laden und alle notwendigen Datenaufbereitungen vornehmen. Die Idee ist, dass dieses Skript über die kommenden Wochen umfangreicher wird, wenn wir Faktoren definieren, Variablenbezeichnungen ändern, neue Variablen berechnen etc. 
+
+2. Erläutern Sie in eigenen Worten die Idee der Funktion 'attach()'. Nutzen Sie diese Funktion für die Aufgaben 3 und 4. Wenden Sie den 'detach()'-Befehl an, bevor Sie zu Aufgabe 5 übergehen. 
+
+3. Erstellen Sie mittels der Funktion 'table()' eine Kreuztabelle zwischen der Variablen zu Geschlecht und derjenigen zu TV-Konsum. Wie können Sie vorgehen, um eine Kreuztabelle mit Prozentwerten (relative statt absolute Häufigkeiten) zu erstellen, die ausserdem die Randsummen enthält? Suchen Sie eine Darstellung der Tabelle -- d.h. der Anordnung der Variablen in Zeilen und Spalten sowie der Wahl der Randsummen --, die sinnvoll das Verhältnis von abhängiger und unabhängiger Variable wiedergibt. Was fällt Ihnen inhaltlich an der Tabelle auf?
+
+4. Die Funktion 'CrossTable()' ist Teil des Paketes "gmodels" und ermöglicht die flexible und detailreiche Arbeit mit Kreuztabellen. Versuchen Sie, mittels dieser Funktion die Kreuztabelle aus Aufgabe 2 nachzubauen.
+
+5. Mittels 'CrossTable()' lassen sich nicht nur Tabellen erstellen, sondern auch Chi-Quadrat Tests durchführen. 
+  + Speichern Sie dazu das ganz Ergebnis Ihrer Arbeit mit der Funktion in Aufgabe 4 als ein neues Objekt 'CT_Ergebnis'.
+  + 
+  Greifen Sie anschliessend auf die darin enthaltenen Angaben zum Chi-Quadrat Test zu und interpretieren Sie diese -– sowohl deskriptiv als auch inferenzstatistisch.
+  
+
+Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit "Fallloesung09_NameVorname.pdf" und geben das Dokument via OLAT bis Mittwochmittag ab (18.11.2020, 12:00).
