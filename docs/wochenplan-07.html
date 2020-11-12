@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="wochenplan-06.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="wochenplan-08.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -171,6 +171,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="wochenplan-07.html"><a href="wochenplan-07.html#lernziele-wp07"><i class="fa fa-check"></i><b>7.1</b> Lernziele WP07</a></li>
 <li class="chapter" data-level="7.2" data-path="wochenplan-07.html"><a href="wochenplan-07.html#aufgaben-wp07"><i class="fa fa-check"></i><b>7.2</b> Aufgaben WP07</a></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="wochenplan-08.html"><a href="wochenplan-08.html"><i class="fa fa-check"></i><b>8</b> Wochenplan 08</a><ul>
+<li class="chapter" data-level="8.1" data-path="wochenplan-08.html"><a href="wochenplan-08.html#lernziele-wp08"><i class="fa fa-check"></i><b>8.1</b> Lernziele WP08</a></li>
+<li class="chapter" data-level="8.2" data-path="wochenplan-07.html"><a href="wochenplan-07.html#aufgaben-wp07"><i class="fa fa-check"></i><b>8.2</b> Aufgaben WP07</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -194,7 +198,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="wochenplan-07" class="section level1">
 <h1><span class="header-section-number">7</span> Wochenplan 07</h1>
-<p>…zur Einheit vom 29.10. und 12.11.2020, Einführung in die Arbeit mit Daten</p>
+<p>…zu den Einheiten vom 29.10. und 12.11.2020, Einführung in die Arbeit mit Daten</p>
 <div id="lernziele-wp07" class="section level2">
 <h2><span class="header-section-number">7.1</span> Lernziele WP07</h2>
 <p>In der zweiten Hälfte des Semester möchten wir das statistische Arbeiten mit R anhand des Umgangs mit “echten” Daten kennenlernen. Dazu nutzen wir Daten aus dem <em>European Social Survey</em> (ESS).<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> Am Beginn der Arbeit mit einem Datensatz steht das Kennenlernen der Daten: Es gilt die Variablen und ihre Ausprägungen zu verstehen, erste Plausibilitätsprüfungen durchzuführen und Daten für die spätere Analyse aufzubereiten. Diese Techniken sollen Sie im Rahmen des siebten Wochenplans kennenlernen und so die Grundlage schaffen, in den folgenden Einheiten statistische Analysen mit dem Datensatz vorzunehmen.</p>
@@ -210,18 +214,224 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="aufgaben-wp07" class="section level2">
 <h2><span class="header-section-number">7.2</span> Aufgaben WP07</h2>
 <ol style="list-style-type: decimal">
-<li><p>Laden Sie sich den Datensatz “ESS1-8e01.csv” und ESS-Fragebogen (das Codebook) herunter (via OLAT) und speichern Sie die Dateien in Ihrem Arbeitsverzeichnis. Laden Sie anschliessend den Datensatz in RStudio über die Funktion ‘read.csv()’. Betrachten Sie den Datensatz über die Funktion ‘View()’ oder indem Sie auf Ihr erstelltes Objekt im Tab “Environment” klicken. Vergleichen Sie für einzelne Variablen die Informationen im Datensatz mit den entsprechenden Fragebogenfragen!</p></li>
-<li><p>Öffnen Sie nun die Datei “ESS1-8e01.csv” in einem Tabellenkalkulations- oder einem Textbearbeitungsprogramm (z.B. Microsoft Excel, dem Windows-Editor oder TextEdit auf Mac).</p>
+<li>Laden Sie sich den Datensatz “ESS1-8e01.csv” und ESS-Fragebogen (das Codebook) herunter (via OLAT) und speichern Sie die Dateien in Ihrem Arbeitsverzeichnis. Laden Sie anschliessend den Datensatz in RStudio über die Funktion ‘read.csv()’. Betrachten Sie den Datensatz über die Funktion ‘View()’ oder indem Sie auf Ihr erstelltes Objekt im Tab “Environment” klicken. Vergleichen Sie für einzelne Variablen die Informationen im Datensatz mit den entsprechenden Fragebogenfragen!</li>
+</ol>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="wochenplan-07.html#cb184-1"></a><span class="kw">setwd</span>(<span class="st">&quot;C:/IhrDateiPfad/R-Seminar_HS20/IhrArbeitsordner&quot;</span>)</span>
+<span id="cb184-2"><a href="wochenplan-07.html#cb184-2"></a>daten_ess &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;Data/ESS1-8e01.csv&quot;</span>)</span>
+<span id="cb184-3"><a href="wochenplan-07.html#cb184-3"></a><span class="kw">View</span>(daten_ess)</span></code></pre></div>
+<p>Als erster Schritt gilt es Ihr Arbeitsverzeichnis zu definieren, das heisst der Ort, an dem auch Ihre Daten abgelegt sind (ggfs. sind diese noch in einem weiteren Unterordner). In diesem Arbeitsverzeichnis würden auch allfällige weitere Daten liegen bzw. später automatisch von R abgespeichert.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Öffnen Sie nun die Datei “ESS1-8e01.csv” in einem Tabellenkalkulations- oder einem Textbearbeitungsprogramm (z.B. Microsoft Excel, dem Windows-Editor oder TextEdit auf Mac).
 <ul>
 <li>Vergleichen Sie die beiden Varianten (Ihr Dataframe in RStudio und die im Textbearbeitungsprogramm geöffnete Datei), um das Dateiformat “CSV” besser zu verstehen.</li>
-<li>Ersetzen Sie anschliessend im Tabellenkalkulations- oder Textbearbeitungsprogramm die Kommas in der “ESS1-8e01.csv” Datei mit Strichpunkten und speichern Sie diese neue Version ab. Gehen Sie zurück zu R Studio und versuchen Sie, die neue Version des Datensatzes zu laden. Welchen Paramter müssen Sie anpassen, damit das funktioniert?</li>
+<li>Ersetzen Sie anschliessend im Tabellenkalkulations- oder Textbearbeitungsprogramm die Kommas in der “ESS1-8e01.csv” Datei mit Strichpunkten und speichern Sie diese neue Version ab. Gehen Sie zurück zu RStudio und versuchen Sie, die neue Version des Datensatzes zu laden. Welchen Paramter müssen Sie anpassen, damit das funktioniert?</li>
 <li>Was denken Sie könnten Vorteile des CSV-Formats sein? Welche möglichen Nachteile im Vergleich zu anderen Dateiformaten (Excel, SPSS …) sind denkbar?</li>
 </ul></li>
-<li><p>Versuchen Sie mit Funktionen, die Sie bisher kennengelernt haben, den geladenen Datensatz kurz zu beschreiben.</p></li>
-<li><p>In den Variablen zum Alter und den Bildungsabschlüssen der befragten Personen haben sich einige Fehler eingeschlichen. Was sind die Fehler? Und welche Fälle betrifft das (Fallnummer)?</p></li>
-<li><p><em>Bonusaufgabe</em>: In den folgenden Wochen möchten wir nicht mit dem ganzen Datensatz arbeiten, sondern lediglich mit einer zufälligen Auswahl von 200 Fällen. Versuchen Sie, einen solchen Teildatensatz randomisiert zu erstellen und speichern Sie ihn mittels der Funktion ‘write.csv()’ unter dem Namen “TD_ESS1-8e01.csv” ab.</p></li>
 </ol>
-<p>Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit “Fallloesung07_NameVorname.pdf” und geben das Dokument via OLAT bis Mittwochmittag ab (<em>Achtung</em> 11.11.2020, 12:00, da nächste Woche das Seminar aufgrund des Dies Academicus ausfällt).</p>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="wochenplan-07.html#cb185-1"></a>daten_ess_nv &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;Data/ESS1-8e01_NeueVersion.csv&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;;&quot;</span>)</span>
+<span id="cb185-2"><a href="wochenplan-07.html#cb185-2"></a><span class="kw">View</span>(daten_ess_nv)</span></code></pre></div>
+<p>Indem die Kommas mit Strichpunkten ersetzt werden ändert im CSV-Datensatz das Zeichen, mit dem die Spalten bzw. Variablen getrennt werden (die Fälle werden über den Zeilenumbruch definiert). Das geänderte Zeichen kann dann über das Argument ‘sep’ in der ‘read.csv()’ Funktion genauer definiert werden um die geänderte Datei ebenfalls korrekt einzulesen.</p>
+<p>Das CSV-Dateiformat hat vor allem zwei Vorteile:
+Auf der einen Seite – und wie in der Teilaufgabe oben deutlich wurde – können über beliebige Texteditoren direkt in diese Daten eingegriffen werden, da im Format lediglich Rohdaten in Textform abgespeichert sind. Bei anderen Dateiformaten für Datensätze wie etwa .sav (von der Statistiksoftware SPSS) ist dies nicht so einfach möglich. Auf der anderen Seite ist das CSV-Dateiformat nicht nur transparent, sondern beansprucht auch nur sehr wenig Speicherplatz. Grosse Datensätze können so schnell von RStudio gelesen und bereitgestellt werden.</p>
+<p>Dem gegenüber steht der Nachteil, dass das Dateiformat keine Möglichkeiten bietet, Informationen auf komplexere Art und Weise abzuspeichern (z.Bsp. Labels für Variablenausprägungen oder ähnliches). CSV bleibt so ein Format für “Rohdaten”.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Versuchen Sie mit Funktionen, die Sie bisher kennengelernt haben, den geladenen Datensatz kurz zu beschreiben.</li>
+</ol>
+<p>Unser Datensatz umfasst..</p>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="wochenplan-07.html#cb186-1"></a><span class="kw">dim</span>(daten_ess)[<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## [1] 1525</code></pre>
+<p>Fälle mit jeweils…</p>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="wochenplan-07.html#cb188-1"></a><span class="kw">dim</span>(daten_ess)[<span class="dv">2</span>]</span></code></pre></div>
+<pre><code>## [1] 21</code></pre>
+<p>Variablen. Die Variablen heissen etwa:</p>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="wochenplan-07.html#cb190-1"></a><span class="kw">sort</span>(<span class="kw">names</span>(daten_ess))[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;agea&quot;    &quot;chldhm&quot;  &quot;cntry&quot;   &quot;edctn&quot;   &quot;edulvla&quot;</code></pre>
+<p>usw.</p>
+<p>Aktuell entsprechen die Werte der Variablen in fast allen Fällen numerische Ausprägungen (‘int’ bei ganzen Zahlen, ‘num’ bei Zahlen mit Kommastellen). Lediglich die Variable cntry enthält Buchstaben, oder eben Character-Daten. Dies wird über die folgende Funktion ersichtlich:</p>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="wochenplan-07.html#cb192-1"></a><span class="kw">str</span>(daten_ess)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:	1525 obs. of  21 variables:
+##  $ x       : int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ cntry   : chr  &quot;CH&quot; &quot;CH&quot; &quot;CH&quot; &quot;CH&quot; ...
+##  $ essround: int  8 8 8 8 8 8 8 8 8 8 ...
+##  $ idno    : int  1 3 5 6 9 14 21 22 24 27 ...
+##  $ pspwght : num  0.9 1.1 1.02 1.09 1.03 ...
+##  $ pweight : num  0.465 0.465 0.465 0.465 0.465 ...
+##  $ polintr : int  2 2 2 3 2 2 2 3 2 1 ...
+##  $ happy   : int  8 6 8 8 8 5 9 3 8 10 ...
+##  $ gndr    : int  1 2 1 2 1 1 1 2 2 2 ...
+##  $ yrbrn   : int  1960 1953 1987 1949 1963 1948 1961 1955 1980 1941 ...
+##  $ agea    : int  56 63 29 67 53 68 55 61 36 75 ...
+##  $ chldhm  : int  2 2 2 2 2 2 2 2 2 2 ...
+##  $ edulvla : int  3 3 5 2 3 3 3 2 5 4 ...
+##  $ eisced  : int  3 3 7 2 3 3 3 2 6 5 ...
+##  $ eduyrs  : int  9 12 18 9 10 9 9 8 13 16 ...
+##  $ pdwrk   : int  1 1 1 0 0 0 1 0 1 0 ...
+##  $ edctn   : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ wkhtot  : int  60 20 50 37 44 46 45 44 24 55 ...
+##  $ isco08  : int  1200 5419 2210 5223 7112 4220 8300 8100 5223 1120 ...
+##  $ uemp3m  : int  1 1 2 2 1 1 2 2 2 1 ...
+##  $ hinctnta: int  10 1 10 1 77 2 5 77 4 5 ...</code></pre>
+<p>Auch eine Variable wie ‘gndr’ ist daher eine Zahl in dem Datensatz und wird aktuell von RStudio als eine numerische Variable behandelt.</p>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="wochenplan-07.html#cb194-1"></a><span class="kw">summary</span>(daten_ess)</span></code></pre></div>
+<p>Über die ‘summary()’ wir dann nochmals deutlich, dass hier tatsächlich Rohdaten eingelesen wurden: Auch fehlende Werte gelten aktuell noch als gültige Zahlen (…jemand wäre also im Jahr 7777 geboren).</p>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="wochenplan-07.html#cb195-1"></a><span class="kw">summary</span>(daten_ess<span class="op">$</span>yrbrn)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    1922    1954    1968    1991    1984    7777</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>In den Variablen zum Alter und den Bildungsabschlüssen der befragten Personen haben sich einige Fehler eingeschlichen. Was sind die Fehler? Und welche Fälle betrifft das (Fallnummer)?</li>
+</ol>
+<p>Der oben beschriebene Fall ist nicht ein Fehler im Datensatz, sondern vielmehr ein fehlender Wert, was das Codebuch ausweist. Fehlende Werte können wie folgt definiert werden:</p>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="wochenplan-07.html#cb197-1"></a>daten_ess<span class="op">$</span>yrbrn[daten_ess<span class="op">$</span>yrbrn<span class="op">==</span><span class="dv">7777</span> <span class="op">|</span></span>
+<span id="cb197-2"><a href="wochenplan-07.html#cb197-2"></a><span class="st">                 </span>daten_ess<span class="op">$</span>yrbrn<span class="op">==</span><span class="dv">8888</span> <span class="op">|</span></span>
+<span id="cb197-3"><a href="wochenplan-07.html#cb197-3"></a><span class="st">                  </span>daten_ess<span class="op">$</span>yrbrn<span class="op">==</span><span class="dv">9999</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></span>
+<span id="cb197-4"><a href="wochenplan-07.html#cb197-4"></a>daten_ess<span class="op">$</span>agea[daten_ess<span class="op">$</span>agea<span class="op">==</span><span class="dv">999</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></span>
+<span id="cb197-5"><a href="wochenplan-07.html#cb197-5"></a></span>
+<span id="cb197-6"><a href="wochenplan-07.html#cb197-6"></a><span class="co">#Dieses Definieren von fehlende Werten kann auch für die drei Variablen zu Bildungsabschluessen auf ähnliche Weise erfolgen:</span></span>
+<span id="cb197-7"><a href="wochenplan-07.html#cb197-7"></a>daten_ess<span class="op">$</span>edulvla[daten_ess<span class="op">$</span>edulvla<span class="op">&gt;</span><span class="dv">5</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></span>
+<span id="cb197-8"><a href="wochenplan-07.html#cb197-8"></a>daten_ess<span class="op">$</span>eisced[daten_ess<span class="op">$</span>eisced<span class="op">&gt;</span><span class="dv">7</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></span>
+<span id="cb197-9"><a href="wochenplan-07.html#cb197-9"></a>daten_ess<span class="op">$</span>eduyrs[daten_ess<span class="op">$</span>eduyrs<span class="op">&gt;</span><span class="dv">76</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></span></code></pre></div>
+<p>Anschliessend können erste Plausibilitätstest bei den verschiedenen Variablen durchgeführt werden. Hierbei unterscheiden wir drei verschieden Stufen:</p>
+<p>Bei der <em>ersten Stufe</em> betrachten wir lediglich die Zahlen selber, wobei uns vor allem Häufigkeitsverteilungen und Extremwerten interessiert:</p>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="wochenplan-07.html#cb198-1"></a><span class="kw">summary</span>(daten_ess<span class="op">$</span>yrbrn)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##    1922    1954    1968    1968    1984    2001       6</code></pre>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="wochenplan-07.html#cb200-1"></a><span class="kw">summary</span>(daten_ess<span class="op">$</span>agea)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##   14.00   32.00   48.00   48.01   62.00  320.00       6</code></pre>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="wochenplan-07.html#cb202-1"></a><span class="kw">summary</span>(daten_ess<span class="op">$</span>eduyrs)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##    0.00    9.00   10.00   11.29   13.00   26.00       3</code></pre>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="wochenplan-07.html#cb204-1"></a><span class="kw">table</span>(daten_ess<span class="op">$</span>edulvla)</span></code></pre></div>
+<pre><code>## 
+##   1   2   3   4   5 
+##  51 265 665  45 491</code></pre>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="wochenplan-07.html#cb206-1"></a><span class="kw">table</span>(daten_ess<span class="op">$</span>eisced)</span></code></pre></div>
+<pre><code>## 
+##   0   1   2   3   4   5   6   7 
+##   1  50 265 543 122 226 114 197</code></pre>
+<p>Die lässt uns bereits einen ersten Fehler entdecken, nämlich das eine Person angeblich 320 Jahre alt sein soll, und zwar folgener Fall:</p>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="wochenplan-07.html#cb208-1"></a><span class="kw">which</span>(daten_ess<span class="op">$</span>agea<span class="op">==</span><span class="dv">320</span>)</span></code></pre></div>
+<pre><code>## [1] 132</code></pre>
+<p>Auf der <em>zweiten Stufe</em> überprüfen wir nun, ob die Daten auch wirklich Sinn machen, das heisst im Rahmen der Codierungen gemäss Fragebogen. Ein Vergleich mit dem Codebuch zeigt dabei, dass erst Personen ab dem 15.Lebensjahr befragt wurden. Folgender Fall macht also keinen Sinn:</p>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="wochenplan-07.html#cb210-1"></a><span class="kw">which</span>(daten_ess<span class="op">$</span>agea<span class="op">&lt;</span><span class="dv">15</span>)</span></code></pre></div>
+<pre><code>## [1] 352</code></pre>
+<p>Hingegen ist die bei der Variable eisced auftauchende Ausprägung ‘0’ ist durchaus zulässig und entspricht “Not possible to harmonise into ES-ISCED”.</p>
+<p>Auf der <em>dritten Stufe</em> vergleichen wir dann mittels Kreuztabellierungen und logischen Überlegungen jeweils (mindestens) zwei Variablen miteinander, um so nochmals Fehler zu entdecken. Zuerst können wir dazu eien zusätzliche Variable als Fehlerindikator für die Angaben zum Alter berechnen. Diese zusätzliche Variable nutzen wir dann als logische Bedingung, um drei fehlerhafte Fälle zu entdecken:</p>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="wochenplan-07.html#cb212-1"></a>daten_ess<span class="op">$</span>agea_l &lt;-<span class="st"> </span>daten_ess<span class="op">$</span>agea <span class="op">+</span><span class="st"> </span>daten_ess<span class="op">$</span>yrbrn</span>
+<span id="cb212-2"><a href="wochenplan-07.html#cb212-2"></a>daten_ess<span class="op">$</span>agea_l[daten_ess<span class="op">$</span>agea_l<span class="op">!=</span><span class="dv">2016</span>]</span></code></pre></div>
+<pre><code>##  [1] 2017 2017 2017 2017 2017 2017 2017 2017   NA 2017 2304 2017   NA 2017 2017
+## [16] 2017   NA 2017 2017 2017 1990 2017 2017 2017 2017 2017 2017 2017 2017 2017
+## [31] 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017   NA
+## [46] 2017 2017 2017   NA   NA 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017
+## [61] 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017
+## [76] 2017 2017 2017 2017 1962 2017 2017 2017 2017 2017 2017 2017 2017 2017</code></pre>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="wochenplan-07.html#cb214-1"></a><span class="kw">which</span>(daten_ess<span class="op">$</span>agea_l<span class="op">!=</span><span class="dv">2016</span> <span class="op">&amp;</span><span class="st"> </span>daten_ess<span class="op">$</span>agea_l<span class="op">!=</span><span class="dv">2017</span>)</span></code></pre></div>
+<pre><code>## [1]  132  352 1414</code></pre>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="wochenplan-07.html#cb216-1"></a><span class="co">#Identifikation der Fälle</span></span>
+<span id="cb216-2"><a href="wochenplan-07.html#cb216-2"></a>daten_ess[daten_ess<span class="op">$</span>agea_l<span class="op">!=</span><span class="dv">2016</span> </span>
+<span id="cb216-3"><a href="wochenplan-07.html#cb216-3"></a>          <span class="op">&amp;</span><span class="st"> </span>daten_ess<span class="op">$</span>agea_l<span class="op">!=</span><span class="dv">2017</span></span>
+<span id="cb216-4"><a href="wochenplan-07.html#cb216-4"></a>          <span class="op">&amp;</span><span class="st"> </span><span class="op">!</span><span class="kw">is.na</span>(daten_ess<span class="op">$</span>agea_l),<span class="kw">c</span>(<span class="st">&quot;agea&quot;</span>, <span class="st">&quot;yrbrn&quot;</span>)]</span></code></pre></div>
+<pre><code>##      agea yrbrn
+## 132   320  1984
+## 352    14  1976
+## 1414   23  1939</code></pre>
+<p>Bei den Angaben zum Bildungsniveau wieder können wir stärker Kreuztabellen nutzen, um zwei Fehler zu entdecken:</p>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="wochenplan-07.html#cb218-1"></a><span class="kw">table</span>(daten_ess<span class="op">$</span>edulvla, daten_ess<span class="op">$</span>eisced)</span></code></pre></div>
+<pre><code>##    
+##       0   1   2   3   4   5   6   7
+##   1   0  50   0   0   0   1   0   0
+##   2   0   0 265   0   0   0   0   0
+##   3   0   0   0 543 122   0   0   0
+##   4   0   0   0   0   0  45   0   0
+##   5   0   0   0   0   0 180 114 197</code></pre>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="wochenplan-07.html#cb220-1"></a><span class="kw">table</span>(daten_ess<span class="op">$</span>eduyrs, daten_ess<span class="op">$</span>edulvla)</span></code></pre></div>
+<pre><code>##     
+##        1   2   3   4   5
+##   0    2   1   0   0   0
+##   1    1   0   1   0   0
+##   2    1   2   0   0   0
+##   3    1   0   0   0   0
+##   4    4   1   0   0   0
+##   5    2   4   0   0   0
+##   6   12   5   3   0   1
+##   7    5   1   3   0   0
+##   8    5  44  52   2   9
+##   9   13 125 302  24  91
+##   10   1  34  71   6  20
+##   11   1  22  30   1  12
+##   12   3  19  82   1  62
+##   13   0   4  43   2  38
+##   14   0   0  39   2  31
+##   15   0   3  12   3  32
+##   16   0   0  13   3  37
+##   17   0   0   5   1  48
+##   18   0   0   3   0  52
+##   19   0   0   4   0  29
+##   20   0   0   0   0  13
+##   21   0   0   0   0   6
+##   22   0   0   0   0   5
+##   23   0   0   1   0   3
+##   25   0   0   0   0   1
+##   26   0   0   0   0   1</code></pre>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="wochenplan-07.html#cb222-1"></a><span class="kw">table</span>(daten_ess<span class="op">$</span>eduyrs, daten_ess<span class="op">$</span>eisced)</span></code></pre></div>
+<pre><code>##     
+##        0   1   2   3   4   5   6   7
+##   0    0   2   1   0   0   0   0   0
+##   1    0   1   0   1   0   0   0   0
+##   2    0   1   2   0   0   0   0   0
+##   3    0   1   0   0   0   0   0   0
+##   4    0   4   1   0   0   0   0   0
+##   5    0   2   4   0   0   0   0   0
+##   6    0  12   5   3   0   1   0   0
+##   7    0   5   1   3   0   0   0   0
+##   8    0   5  44  49   3   9   0   2
+##   9    0  13 125 287  15  90  12  13
+##   10   0   1  34  67   4  22   3   1
+##   11   0   1  22  20  10  10   2   1
+##   12   1   2  19  55  27  23  15  26
+##   13   0   0   4  23  20  21  10   9
+##   14   0   0   0  18  21  14   8  11
+##   15   0   0   3   5   7  11  15   9
+##   16   0   0   0   6   7  11  15  14
+##   17   0   0   0   1   4   6  15  28
+##   18   0   0   0   1   2   6  13  33
+##   19   0   0   0   2   2   1   4  24
+##   20   0   0   0   0   0   1   1  11
+##   21   0   0   0   0   0   0   0   6
+##   22   0   0   0   0   0   0   1   4
+##   23   0   0   0   1   0   0   0   3
+##   25   0   0   0   0   0   0   0   1
+##   26   0   0   0   0   0   0   0   1</code></pre>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="wochenplan-07.html#cb224-1"></a><span class="co">#Identifikation der Fälle</span></span>
+<span id="cb224-2"><a href="wochenplan-07.html#cb224-2"></a><span class="kw">which</span>(daten_ess<span class="op">$</span>edulvla<span class="op">==</span><span class="dv">1</span> <span class="op">&amp;</span><span class="st"> </span>daten_ess<span class="op">$</span>eisced<span class="op">==</span><span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] 443</code></pre>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="wochenplan-07.html#cb226-1"></a><span class="kw">which</span>(daten_ess<span class="op">$</span>edulvla<span class="op">==</span><span class="dv">3</span> <span class="op">&amp;</span><span class="st"> </span>daten_ess<span class="op">$</span>eisced<span class="op">==</span><span class="dv">3</span> <span class="op">&amp;</span><span class="st"> </span>daten_ess<span class="op">$</span>eduyrs<span class="op">&lt;</span><span class="dv">6</span>)</span></code></pre></div>
+<pre><code>## [1] 1482</code></pre>
+<p>Im Umgang mit diesen fehlenden Werten haben wir drei Möglichkeiten. Wir können die benötigen Angaben von anderen Werten <em>ableiten</em> (1), zum Beispiel das Alter vom Geburtsjahr.</p>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="wochenplan-07.html#cb228-1"></a>daten_ess<span class="op">$</span>agea[<span class="dv">132</span>] &lt;-<span class="st"> </span><span class="dv">2016</span> <span class="op">-</span><span class="st"> </span>daten_ess<span class="op">$</span>yrbrn[<span class="dv">132</span>]</span></code></pre></div>
+<p>Weiter können wir uns einen Werte berechnen bzw. diesen <em>schätzen</em> (2):</p>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="wochenplan-07.html#cb229-1"></a>daten_ess<span class="op">$</span>eduyrs[<span class="dv">1482</span>] &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">mean</span>(daten_ess<span class="op">$</span>eduyrs[daten_ess<span class="op">$</span>edulvla<span class="op">==</span><span class="dv">3</span>],</span>
+<span id="cb229-2"><a href="wochenplan-07.html#cb229-2"></a>                                     <span class="dt">na.rm =</span> T))</span></code></pre></div>
+<p>Die letzte Option ist dann noch die falschen Angaben als <em>fehlende Werte</em> zu definieren (3):</p>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="wochenplan-07.html#cb230-1"></a>daten_ess<span class="op">$</span>edulvla[<span class="dv">443</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></span></code></pre></div>
+<ol start="5" style="list-style-type: decimal">
+<li><em>Bonusaufgabe</em>: In den folgenden Wochen möchten wir nicht mit dem ganzen Datensatz arbeiten, sondern lediglich mit einer zufälligen Auswahl von 200 Fällen. Versuchen Sie einen solchen Teildatensatz randomisiert zu erstellen und speichern Sie ihn mittels der Funktion ‘write.csv()’ unter dem Namen “TD_ESS1-8e01.csv” ab.</li>
+</ol>
+<p>Um den zufälligen Datensatz mit 200 Fällen zu erstellen bieten sich mindestens zwei Möglichkeiten an:</p>
+<p>Die erste Möglichkeit nutzt die ‘sample()’ Funktion und wählt zufällig 200 Zahlen einer Variable aus, die von 1 bis 1525 durchläuft. Eine solche Variable ist ‘x’ im Datensatz – oder auch einfach die Reihenzahl. Die zufällig ausgewählten Zahlen dieser Variable können als Angabe für die Zeilen in die eckige Klammerfunktion eingesetzt werden.</p>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="wochenplan-07.html#cb231-1"></a>daten_ess_HS20 &lt;-<span class="st"> </span>daten_ess[<span class="kw">sample</span>(<span class="kw">row.names</span>(daten_ess),<span class="dv">200</span>),]</span>
+<span id="cb231-2"><a href="wochenplan-07.html#cb231-2"></a><span class="co">#oder auch:</span></span>
+<span id="cb231-3"><a href="wochenplan-07.html#cb231-3"></a>daten_ess_HS20 &lt;-<span class="st"> </span>daten_ess[<span class="kw">sample</span>(daten_ess,<span class="dv">200</span>),]</span></code></pre></div>
+<p>Die zweite Möglichkeit berechnet eine Zufallsvariable und sortiert den Datensatz dann nach der Grösse dieser Zufallsvariable. Anschliessend können dann die – jetzt völlig zufällig – ersten 200 Fälle ausgewählt werden.</p>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="wochenplan-07.html#cb232-1"></a>daten_ess<span class="op">$</span>zv &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1525</span>)</span>
+<span id="cb232-2"><a href="wochenplan-07.html#cb232-2"></a>daten_ess &lt;-<span class="st"> </span>daten_ess[<span class="kw">order</span>(daten_ess<span class="op">$</span>zv),]</span>
+<span id="cb232-3"><a href="wochenplan-07.html#cb232-3"></a>daten_ess_HS20 &lt;-<span class="st"> </span>daten_ess[<span class="dv">1</span><span class="op">:</span><span class="dv">200</span>,]</span></code></pre></div>
+<p>Diverse Seminarteilnehmer*innen haben auch mit der Funktion ‘sample_n()’ des Paketes “dplyr” gearbeitet:<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></p>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="wochenplan-07.html#cb233-1"></a><span class="co">#install.packages(&quot;dplyr&quot;)</span></span>
+<span id="cb233-2"><a href="wochenplan-07.html#cb233-2"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb233-3"><a href="wochenplan-07.html#cb233-3"></a>daten_ess_HS20 &lt;-<span class="st"> </span><span class="kw">sampl_n</span>(daten_ess, <span class="dv">200</span>)</span></code></pre></div>
+<p>Dieser zufällige Datensatz kann wiederum als CSV-Datei abgespeichert werden:</p>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="wochenplan-07.html#cb234-1"></a><span class="kw">write.csv</span>(daten_ess_HS20, <span class="dt">file =</span> <span class="st">&quot;Data/ESS1-8e01_HS20.csv&quot;</span>)</span></code></pre></div>
 
 </div>
 </div>
@@ -229,6 +439,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <hr />
 <ol start="6">
 <li id="fn6"><p>Der Datensatz sowie das Codebook wurden mittels des <em>ESS Cumulative Data Wizard</em> erstellt: <a href="https://www.europeansocialsurvey.org/downloadwizard/?loggedin">https://www.europeansocialsurvey.org/downloadwizard/?loggedin</a>.<a href="wochenplan-07.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>Die Funktion ‘sample_n’ bzw. das Paket “dplyr” ist Teil des sogenannten <em>Tidyverse</em>, einer spezifischen Sammlung von R-Paketen für die Datenwissenschaft (“an opinionated collection (…) for data science”). Allen Paketen liegen eine gemeinsame Designphilosophie, Grammatik und Datenstruktur zugrunde, siehe auch <a href="https://www.tidyverse.org/">hier</a>. Das <em>Tiydverse</em> ist eine leistungsstarke Erweiterung von R, mit der diverse Prozesse verbessert werden.<a href="wochenplan-07.html#fnref7" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -237,7 +448,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="wochenplan-06.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="wochenplan-08.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
