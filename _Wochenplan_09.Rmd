@@ -27,6 +27,6 @@ Die folgenden konkreten Lernziele lassen sich für ein erstes Kennenlernen von F
 
 4. Überprüfen Sie mittels Kreuztabellen, ob Ihre Faktoren sinnvoll und fehlerfrei definiert sind. 
 
-5. Inkludieren Sie die einwandfrei funktionierenden Lösungen zur Faktorendefinitionen in ihr Datenimportskript. Testen Sie danach, ob das Skript funktioniert: Löschen Sie Ihre Environment (und alle Objekte), laden Sie mittels `source()` den Datensatz neu und rufen Sie dann -- als Test -- eine als Faktor definierte Variable auf.
+5. Inkludieren Sie die einwandfrei funktionierenden Lösungen zur Faktorendefinition in Ihr Datenimportskript. Testen Sie danach, ob das Skript funktioniert: Löschen Sie Ihre Environment (und alle Objekte), laden Sie mittels `source()` den Datensatz neu und rufen Sie dann -- als Test -- eine als Faktor definierte Variable auf.
 
 Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit "Fallloesung09_NameVorname.pdf" und geben das Dokument via OLAT bis Mittwochmittag ab (25.11.2020, 12:00).
