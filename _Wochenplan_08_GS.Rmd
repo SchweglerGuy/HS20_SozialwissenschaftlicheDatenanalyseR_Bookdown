@@ -67,7 +67,7 @@ table(gndr)
 ```
 Ohne die `attach()`-Funktion würde die zweite Zeile des Code-Chunks oben zu einer Fehlermeldung führen.
 
-Mit der Funktion zu arbeiten ist vor allem dann sinnvoll, wenn die Arbeit mit nur einem Datensatz im Zentrum steht (ebd.) und wenn keine Änderungen mehr am Datensatz selber vorgenommen werden. Bei der Arbeit mit mehreren Datensatzsätzen könnte die Funktion leicht für Verwirrung Sorgen (gerade auch dann wenn Ihre Codezeilen von jemand anderem interpretiert werden sollen). Und sollten Sie weiterhin Änderungen am Datensatz vornehmen kann die `attach()`-Funktion dazu führen, dass die von Ihnen gemachten Änderungen nicht sichtbar werden (beim Betrachten des Datensatzes) oder auch nicht in die weiteren Schritte/Berechnungen aufgenommen werden. Sobald also Änderungen vorgenommen werden gilt es auch den Datensatz wieder zu „detachen“.
+Mit der Funktion zu arbeiten ist vor allem dann sinnvoll, wenn die Arbeit mit nur einem Datensatz im Zentrum steht (ebd.) und wenn keine Änderungen mehr am Datensatz selber vorgenommen werden. Bei der Arbeit mit mehreren Datensatzsätzen könnte die Funktion leicht für Verwirrung sorgen (gerade auch dann wenn Ihre Codezeilen von jemand anderem interpretiert werden sollen). Und sollten Sie weiterhin Änderungen am Datensatz vornehmen kann die `attach()`-Funktion dazu führen, dass die von Ihnen gemachten Änderungen nicht sichtbar werden (beim Betrachten des Datensatzes) oder auch nicht in die weiteren Schritte/Berechnungen aufgenommen werden. Sobald also Änderungen vorgenommen werden gilt es auch den Datensatz wieder zu „detachen“.
 
 
 3. Erstellen Sie mittels der Funktion `table()` eine Kreuztabelle zwischen der Variable zu Geschlecht und derjenigen zum Interesse an Politik. Wie können Sie vorgehen, um eine Kreuztabelle mit Prozentwerten (relative statt absolute Häufigkeiten) zu erstellen, die ausserdem die Randsummen enthält? Suchen Sie eine Darstellung der Tabelle -- d.h. der Anordnung der Variablen in Zeilen und Spalten sowie der Wahl der Randsummen --, die sinnvoll das Verhältnis von abhängiger und unabhängiger Variable wiedergibt. Was fällt Ihnen inhaltlich an der Tabelle auf?
@@ -138,7 +138,7 @@ CT_Ergebnis <- CrossTable(polintr, gndr, chisq = T)
 
 
 Danach können wir auf die einzelnen Inhalte des Chi-Quadrat Tests zugreifen:
-```{r eval=FALSE}
+```{r}
 str(CT_Ergebnis) #hier sehen wir, was alles in den Objekt enthalten ist.
 CT_Ergebnis$chisq
 ```
