@@ -4,7 +4,7 @@
 
 ## Lernziele WP05
 
-Ihre zentrale Aufgabe für die vergangene Woche bestand darin, R zu nutzen, um selbstständig "statistisch sinnvolle" Daten zu erzeugen und mit diesen zu arbeiten. Dazu haben wir zusätzlich zu den Funktionen 'seq()' und 'rep()' erstmals mit Zufallsvariablen gearbeitet, mit 'cor()' eine erste bivariate statistische Funktion eingesetzt sowie Streudiagramme und Histogramme erstellt. 
+Ihre zentrale Aufgabe für die vergangene Woche bestand darin, R zu nutzen, um selbstständig "statistisch sinnvolle" Daten zu erzeugen und mit diesen zu arbeiten. Dazu haben wir zusätzlich zu den Funktionen `seq()` und `rep()` erstmals mit Zufallsvariablen gearbeitet, mit `cor()` eine erste bivariate statistische Funktion eingesetzt sowie Streudiagramme und Histogramme erstellt. 
 
 In der kommenden Arbeitswoche geht es nun darum, zwei neue Aspekte der Arbeit mit R kennenzulernen und einzuüben: das Zugreifen auf einzelne Elemente und Teile von Datenobjekten (Indizieren und Subsetting) und die Kontrolle von längeren Befehlsabläufen. Ausserdem werden wir mit Dataframes eine wichtige Art von Datenstrukturen in R einführen.
 
@@ -37,7 +37,7 @@ datensatz <- data.frame(Geschlecht,Einkommen_CHF,AnzahlZimmer_H,Schulzeit_J,Eink
 
 &nbsp;
 
-2. Wenden Sie die Funktionen 'dim()', 'names()', 'str()', 'class()' und 'typeof()' auf Ihr Dataframe an. Was sagen Ihnen diese Funktionen jeweils? Welcher Output dieser Funktionen leuchtet Ihnen ein, welcher weniger?
+2. Wenden Sie die Funktionen `dim()`, `names()`, `str()`, `class()` und `typeof()` auf Ihr Dataframe an. Was sagen Ihnen diese Funktionen jeweils? Welcher Output dieser Funktionen leuchtet Ihnen ein, welcher weniger?
 
 Die folgenden Funktionen geben Ihnen...
 ```{r}
@@ -58,7 +58,7 @@ str(datensatz)
 ```{r}
 class(datensatz)
 ```
-...die Klasse Ihres Objektes 'datensatz' aus, das heisst die von Ihnen zugewiesene Eigenschaft des Objektes;
+...die Klasse Ihres Objektes `datensatz` aus, das heisst die von Ihnen zugewiesene Eigenschaft des Objektes;
 
 ```{r}
 typeof(datensatz)
@@ -75,7 +75,7 @@ for (i in 1:(dim(datensatz)[2]-1)) {
   print(mean(datensatz[,i]))
 }
 ```
-Einige Hinweise hierzu: Der Zusatz '(dim(datensatz)[2]-1))' generiert lediglich die Zahl 4. Die for-Schleife soll ja den Mittelwerte für die vier numerischen Variablen des Datensatzes berechnen. Dies könnte man auch einfach hinschreiben ('i in 1:4') oder mit verschiedenen weiteren Möglichkeiten erreichen (etwa über '(ncol(datensatz)-1)'). Der Vorteil einer so definierten (anstatt hingeschriebenen) Variante ist, dass wir eigentlich gar nicht wissen müssten wieviele Variablen das wären -- und die Anzahl variieren könnte.
+Einige Hinweise hierzu: Der Zusatz `(dim(datensatz)[2]-1))` generiert lediglich die Zahl 4. Die for-Schleife soll ja den Mittelwerte für die vier numerischen Variablen des Datensatzes berechnen. Dies könnte man auch einfach hinschreiben (`i in 1:4`) oder mit verschiedenen weiteren Möglichkeiten erreichen (etwa über `(ncol(datensatz)-1)`). Der Vorteil einer so definierten (anstatt hingeschriebenen) Variante ist, dass wir eigentlich gar nicht wissen müssten wieviele Variablen das wären -- und die Anzahl variieren könnte.
 ```{r}
 for (i in 1:4) {
   print(mean(datensatz[,i]))
@@ -83,7 +83,7 @@ for (i in 1:4) {
 #...funktioniert auch...
 ```
 Innerhalb der geschweiften Klammern wird definiert, was für jedes i wiederholt werden soll. In unserem Beispiel ist dies die Berechnung des Mittelwertes, während mit i unsere vier verschiedenen Variablen bezeichnet werden.
-Die Funktion 'print()' stellt sicher, dass die berechneten Werte auch ausgegeben werden.
+Die Funktion `print()` stellt sicher, dass die berechneten Werte auch ausgegeben werden.
 
 Weitere tolle Lösungsvorschläge:
 ```{r eval=F}
@@ -150,7 +150,7 @@ datensatz_v22 <- datensatz[datensatz$Einkommen_CHF>10000,]
 Die erste Variante generiert zwei Teildatensätze, wobei im ersten alle mit durchschnittlichem Einkommen enthalten sind und im zweiten Teildatensatz diejenigen, die entweder über ein unter- oder überdurchschnittliches Einkommen verfügen.
 Die zweite Variante generiert zwei Teildatensätze indem eine Unterscheidung getroffen wird zwischen denjenigen, die entweder mehr oder weniger als 10'000CHF pro Monat verdienen.
 
-Wieso verwendet man hierfür nun nicht einfach eine Funktion, z.Bsp. 'subset()' (oder auch 'split()')?
+Wieso verwendet man hierfür nun nicht einfach eine Funktion, z.Bsp. `subset()` (oder auch `split()`)?
 ```{r eval=FALSE}
 subset(datensatz, subset = datensatz$Einkommen_Kl=="durchs")
 #das würde auch gehen

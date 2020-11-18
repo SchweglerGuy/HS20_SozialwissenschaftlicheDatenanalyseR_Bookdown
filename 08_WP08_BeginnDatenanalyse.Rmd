@@ -8,7 +8,7 @@ Nachdem wir uns bereits einen ersten Überblick über den ESS-Datensatz verschaf
 
 Wir können daher folgende Lernziele festhalten:
 
-- Sie verstehen den Nutzen (und auch die Gefahren) der Funktion 'attach()'.
+- Sie verstehen den Nutzen (und auch die Gefahren) der Funktion `attach()`.
 
 - Sie können Kreuztabellen auf verschiedene Weisen darstellen und inhaltlich zutreffend interpretieren.
 
@@ -21,14 +21,14 @@ Wir können daher folgende Lernziele festhalten:
 
 1. Laden Sie den Datensatz in RStudio, der 200 zufällige Fälle aus dem ganzen ESS Datensatz enthält („ESS1-8e01_HS20.csv“).[^1] Erfassen Sie den hierfür benötigten Code nicht nur im Markdown, sondern erstellen Sie dazu zusätlich ein eigenes R-Skript (z.B. unter dem Namen "ess_import.R"). Dieses Skript sollte automatisch das richtige Arbeitsverzeichnis definieren, den Datensatz laden und alle notwendigen Datenaufbereitungen vornehmen. Die Idee ist, dass dieses Skript über die kommenden Wochen umfangreicher wird, wenn wir Faktoren definieren, Variablenbezeichnungen ändern, neue Variablen berechnen etc.
 
-2. Erläutern Sie in eigenen Worten die Idee der Funktion 'attach()'. Nutzen Sie diese Funktion für die Aufgaben 3 und 4. Wenden Sie den 'detach()'-Befehl an, bevor Sie zu Aufgabe 5 übergehen. 
+2. Erläutern Sie in eigenen Worten die Idee der Funktion `attach()`. Nutzen Sie diese Funktion für die Aufgaben 3 und 4. Wenden Sie den `detach()`-Befehl an, bevor Sie zu Aufgabe 5 übergehen. 
 
-3. Erstellen Sie mittels der Funktion 'table()' eine Kreuztabelle zwischen der Variable zu Geschlecht und derjenigen zum Interesse an Politik. Wie können Sie vorgehen, um eine Kreuztabelle mit Prozentwerten (relative statt absolute Häufigkeiten) zu erstellen, die ausserdem die Randsummen enthält? Suchen Sie eine Darstellung der Tabelle -- d.h. der Anordnung der Variablen in Zeilen und Spalten sowie der Wahl der Randsummen --, die sinnvoll das Verhältnis von abhängiger und unabhängiger Variable wiedergibt. Was fällt Ihnen inhaltlich an der Tabelle auf?
+3. Erstellen Sie mittels der Funktion `table()` eine Kreuztabelle zwischen der Variable zu Geschlecht und derjenigen zum Interesse an Politik. Wie können Sie vorgehen, um eine Kreuztabelle mit Prozentwerten (relative statt absolute Häufigkeiten) zu erstellen, die ausserdem die Randsummen enthält? Suchen Sie eine Darstellung der Tabelle -- d.h. der Anordnung der Variablen in Zeilen und Spalten sowie der Wahl der Randsummen --, die sinnvoll das Verhältnis von abhängiger und unabhängiger Variable wiedergibt. Was fällt Ihnen inhaltlich an der Tabelle auf?
 
-4. Die Funktion 'CrossTable()' ist Teil des Paketes "gmodels" und ermöglicht die flexible und detailreiche Arbeit mit Kreuztabellen. Versuchen Sie mittels dieser Funktion die Kreuztabelle aus Aufgabe 2 nachzubauen.
+4. Die Funktion `CrossTable()` ist Teil des Paketes "gmodels" und ermöglicht die flexible und detailreiche Arbeit mit Kreuztabellen. Versuchen Sie mittels dieser Funktion die Kreuztabelle aus Aufgabe 2 nachzubauen.
 
-5. Mittels 'CrossTable()' lassen sich nicht nur Tabellen erstellen, sondern auch Chi-Quadrat Tests durchführen. 
-  + Speichern Sie dazu das ganz Ergebnis Ihrer Arbeit mit der Funktion in Aufgabe 4 als ein neues Objekt 'CT_Ergebnis'.
+5. Mittels `CrossTable()` lassen sich nicht nur Tabellen erstellen, sondern auch Chi-Quadrat Tests durchführen. 
+  + Speichern Sie dazu das ganz Ergebnis Ihrer Arbeit mit der Funktion in Aufgabe 4 als ein neues Objekt `CT_Ergebnis`.
   + Greifen Sie anschliessend auf die darin enthaltenen Angaben zum Chi-Quadrat Test zu und interpretieren Sie diese -– sowohl deskriptiv als auch inferenzstatistisch.
   
 

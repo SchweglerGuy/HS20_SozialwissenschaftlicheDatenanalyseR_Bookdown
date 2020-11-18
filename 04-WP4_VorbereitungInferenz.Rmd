@@ -18,7 +18,7 @@ Konkret lassen sich folgende Seminarziele festhalten:
 
 ## Aufgaben WP04
 
-1. Sie sollen verschiedene Paare von Vektoren mittels der Funktionen 'c()', 'rep()' und 'seq()' definieren, die jeweils unterschiedlich korrelieren. Diese Vektoren -- d.h. Variablen -- und deren Korrelationen sollen sozialwissenschaftlichen Phänomenen entsprechen. Berechnen Sie jeweils den Korrelationskoeffizienten. 
+1. Sie sollen verschiedene Paare von Vektoren mittels der Funktionen `c()`, `rep()` und `seq()` definieren, die jeweils unterschiedlich korrelieren. Diese Vektoren -- d.h. Variablen -- und deren Korrelationen sollen sozialwissenschaftlichen Phänomenen entsprechen. Berechnen Sie jeweils den Korrelationskoeffizienten. 
 
 Ein Paar von Vektoren (mit je einer “Länge” von rund 100) soll eine Korrelation von ca. 0.4 aufweisen (...ein Beispiel von Frau Kurmann).
 ```{r}
@@ -49,9 +49,9 @@ cor(x3, y3)
 ```
 
 
-2. Nutzten Sie 'plot()' um die Verteilungen Ihrer drei Variablen-Paare darzustellen. Verweisen Sie im Titel und in den Achsenbeschriftungen auf das sozialwissenschaftliche Phänomen, das Sie darstellen.
+2. Nutzten Sie `plot()` um die Verteilungen Ihrer drei Variablen-Paare darzustellen. Verweisen Sie im Titel und in den Achsenbeschriftungen auf das sozialwissenschaftliche Phänomen, das Sie darstellen.
 
-Im Folgenden werden die drei Plots der Korrelationen dargestellt. Die zweite Grafik wird noch über eine Linie ergänzt, mit der die Korrelation etwas visualisiert wird. ACHTUNG: Der b0-Wert dieser Linie ist lediglich *geschätzt* (und ebenfalls müssen die Grössenordnungen der beiden Variablen ähnlich sein, damit dies hier funktioniert). Die dritte Grafik wurde über die Funktion 'jitter()' ergänzt. Sie visuliert die einzelne Fälle in einem Plot über eine leichte, künstliche Streuung der Werte.
+Im Folgenden werden die drei Plots der Korrelationen dargestellt. Die zweite Grafik wird noch über eine Linie ergänzt, mit der die Korrelation etwas visualisiert wird. ACHTUNG: Der b0-Wert dieser Linie ist lediglich *geschätzt* (und ebenfalls müssen die Grössenordnungen der beiden Variablen ähnlich sein, damit dies hier funktioniert). Die dritte Grafik wurde über die Funktion `jitter()` ergänzt. Sie visuliert die einzelne Fälle in einem Plot über eine leichte, künstliche Streuung der Werte.
 ```{r}
 #Plot der ersten beiden Vektoren
 plot(x1/1000, y1,
@@ -71,7 +71,7 @@ plot(jitter(x3), jitter(y3), main = "Korrelation Geschlecht und Einkommen", xlab
 ```
 
 
-3. Erstellen Sie je einen Vektor für eine Gleichverteilung mittels 'runif()' und für eine Normalverteilung mittels 'rnorm()'. Diese Vektoren sollen als Variablen Körpergrössen repräsentieren. Erstellen Sie die beiden Vektoren in unterschiedlichen Längen, und zwar...
+3. Erstellen Sie je einen Vektor für eine Gleichverteilung mittels `runif()` und für eine Normalverteilung mittels `rnorm()`. Diese Vektoren sollen als Variablen Körpergrössen repräsentieren. Erstellen Sie die beiden Vektoren in unterschiedlichen Längen, und zwar...
   + ...mit je 10,
   + ...mit je 30
   + ...und mit je 1000 Fällen.
@@ -80,7 +80,7 @@ Im Folgenden werden die in der Aufgabe verlangten Verteilungen als Histogramme d
 
 Bei der Gleichverteilung hat jede Ausprägung dieselbe Auftrittswahrscheinlichkeit. Das heisst, dass jede Körpergrösse zwischen Minimal- und Maximalwert mit derselben Häufigkeit vorkommt. Dies entspricht aber nicht der empirischen Realität von Körpergrössen.
 
-Bei der Normalverteilung gruppieren sich die meisten Werte um den Mittelwert von 170cm, während kleine und grosse Werte mit zunehmender Abweichung immer weniger häufig auftreten. Dies wiederum entspricht stärker der tatsächlichen, empirischen Verteilungen von Körpergrössen. Unterschieden werden die Normalverteilungen auch in der Funktion 'rnorm()' über die beiden expliziten Parameter des arithmetischen Mittels und der Standardabweichung [@DiazBone2019, 140f].
+Bei der Normalverteilung gruppieren sich die meisten Werte um den Mittelwert von 170cm, während kleine und grosse Werte mit zunehmender Abweichung immer weniger häufig auftreten. Dies wiederum entspricht stärker der tatsächlichen, empirischen Verteilungen von Körpergrössen. Unterschieden werden die Normalverteilungen auch in der Funktion `rnorm()` über die beiden expliziten Parameter des arithmetischen Mittels und der Standardabweichung [@DiazBone2019, 140f].
 
 ```{r}
 hist(runif(10,150,210))
@@ -93,7 +93,7 @@ hist(rnorm(1000, 170,10))
 
 ```
 
-*Als Ergänzung*:'runif' und 'rnorm()' werden noch von der Funktion 'rbinom()' ergänzt, die zufällige binomiale Verteilungen erstellt. Dies sind Verteilungen die Ihnen angeben, ob ein Ereignis bei einer bestimmten Wahrscheinlichkeit eingetreten ist oder nicht. Damit kann zum Beispiel aufgezeigt werden, wie oft Sie bei zehn Münzwürfen Kopf bekommen (Beispiel I), oder auch wie oft Sie bei dreimal würfeln mit zwei Würfeln eine Sechs erzielen (Beispiel II).
+*Als Ergänzung*:`runif` und `rnorm()` werden noch von der Funktion `rbinom()` ergänzt, die zufällige binomiale Verteilungen erstellt. Dies sind Verteilungen die Ihnen angeben, ob ein Ereignis bei einer bestimmten Wahrscheinlichkeit eingetreten ist oder nicht. Damit kann zum Beispiel aufgezeigt werden, wie oft Sie bei zehn Münzwürfen Kopf bekommen (Beispiel I), oder auch wie oft Sie bei dreimal würfeln mit zwei Würfeln eine Sechs erzielen (Beispiel II).
 ```{r}
 rbinom(10,1,0.5) #Beispiel I
 rbinom(3,2, 2/6) #Beispiel II
@@ -102,10 +102,10 @@ rbinom(3,2, 2/6) #Beispiel II
 
 4. Als nächstes sollen Sie die beiden Verteilungen aus der Aufgabe 4, die 1.000 Fälle aufweisen, grafisch darstellen.
   + Nutzen Sie die Funktion für Histogramme, um die beiden Verteilungen darzustellen. Die beiden Histogramme sollen dieselbe Spannbreite in der x-Achsen haben und jeweils 10 Klassen aufweisen. Wählen Sie je eine Farbe für die Gleich- und Normalverteilung.
-  + Über die Funktion 'abline()' kann dem aktuellen Plot eine Linie hinzugefügt werden. Fügen Sie jeweils einem Histogramm den Mittelwert der anderen Verteilung als vertikale Linie hinzu (ebenfalls in der entsprechenden Farbe).
-  + Bonusaufgabe: Das Argument 'add = TRUE' lässt Sie eine neue Grafik über die aktuelle Grafik legen. Versuchen Sie, auf diese Art Ihre beiden Histogramme in einer Grafik darzustellen.
+  + Über die Funktion `abline()` kann dem aktuellen Plot eine Linie hinzugefügt werden. Fügen Sie jeweils einem Histogramm den Mittelwert der anderen Verteilung als vertikale Linie hinzu (ebenfalls in der entsprechenden Farbe).
+  + Bonusaufgabe: Das Argument `add = TRUE` lässt Sie eine neue Grafik über die aktuelle Grafik legen. Versuchen Sie, auf diese Art Ihre beiden Histogramme in einer Grafik darzustellen.
 
-Die folgenden Histogramme zeigen die beiden Verteilungen, inklusive den Mittelwerten der jeweils anderen Verteilung als horizontale Linie. Um diese Linie besser ersichtlich zu machen wurde sie mittels des Arguments 'lwd' breiter gemacht.
+Die folgenden Histogramme zeigen die beiden Verteilungen, inklusive den Mittelwerten der jeweils anderen Verteilung als horizontale Linie. Um diese Linie besser ersichtlich zu machen wurde sie mittels des Arguments `lwd` breiter gemacht.
 ```{r}
 hist(runif(1000,150,210), breaks = 10 , xlim = c(140,220), col = "blue", main = "Körpergrösse, gleichverteilt")
 abline(v = mean(rnorm(1000, 170,10)), col = "green", lwd = 5)
@@ -113,7 +113,7 @@ hist(rnorm(1000, 170,10), breaks = 10 , xlim = c(140,220), col = "green", main =
 abline(v = mean(runif(1000,150,210)), col = "blue", lwd = 5)
 ```
 
-Der nachfolgende Code generiert nun die sich überlagernden Histogramme über das Argument 'add = T' in der zweiten Grafik. Zusätzlich muss noch bei der Darstellung der Gleichverteilung die y-Achse angepasst werden, da die Normalverteilung Klassen mit höheren Häufigkeiten aufweist. Weiter wurde über die 'rgb()' Funktion die Farbei "grün" transparent gemacht (vgl. auch [hier](https://www.dataanalytics.org.uk/make-transparent-colors-in-r/)).
+Der nachfolgende Code generiert nun die sich überlagernden Histogramme über das Argument `add = T` in der zweiten Grafik. Zusätzlich muss noch bei der Darstellung der Gleichverteilung die y-Achse angepasst werden, da die Normalverteilung Klassen mit höheren Häufigkeiten aufweist. Weiter wurde über die `rgb()` Funktion die Farbei "grün" transparent gemacht (vgl. auch [hier](https://www.dataanalytics.org.uk/make-transparent-colors-in-r/)).
 ```{r}
 hist(runif(1000,150,210), breaks = 10 , xlim = c(140,220), ylim = c(0,200), col = "blue", main = "Körpergrösse, gleichverteilt und normalverteil")
 hist(rnorm(1000, 170,10), breaks = 10 ,  col=rgb(0,255,0, max = 255, alpha = 125), add = T)
@@ -146,13 +146,13 @@ datensatz[,0]
 datensatz$vektor1
 ```
 
-**which()**: Die dritte Weise um Daten zu indizieren bildet die 'which()'-Funktion die danach fragt, welche Fälle einer bestimmten Bedingung entsprechen.
+**which()**: Die dritte Weise um Daten zu indizieren bildet die `which()`-Funktion die danach fragt, welche Fälle einer bestimmten Bedingung entsprechen.
 ```{r}
 which(datensatz$vektor1==20)
 ```
 
 
-Wie bereits bei der 'which()'-Funktion ersichtlich lassen sich diese drei Varianten natürlich kombinieren. Im folgenden Beispiel wird etwa ein Teildatensatz erstellt, in dem alle Fälle enthalten sind, die beim vektor1 einen Wert von 20 aufweisen (beachten Sie die *doppelten* Gleich-Zeichen bei der logischen Bedingung).
+Wie bereits bei der `which()`-Funktion ersichtlich lassen sich diese drei Varianten natürlich kombinieren. Im folgenden Beispiel wird etwa ein Teildatensatz erstellt, in dem alle Fälle enthalten sind, die beim vektor1 einen Wert von 20 aufweisen (beachten Sie die *doppelten* Gleich-Zeichen bei der logischen Bedingung).
 ```{r}
 t_datensatz <- datensatz[which(datensatz$vektor1==20),] 
 t_datensatz <- datensatz[datensatz$vektor1==20,] #derselbe Befehl, einfach ohne which() auszuformulieren

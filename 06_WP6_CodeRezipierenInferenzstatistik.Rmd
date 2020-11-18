@@ -23,7 +23,7 @@ Konkret lassen sich folgende Seminarziele festhalten:
 
 1. Öffnen Sie die Datei "standardfehler.R" in RStudio (auf OLAT verfügbar). Gehen Sie den Code Zeile für Zeile durch und versuchen Sie im Detail (!) zu verstehen, was hier vor sich geht. Halten Sie Ihre Einsichten als Kommentare fest. Auch allfällige Fragen und Unklarheiten können Sie einfach als Kommentare notieren.
 
-2. Fügen Sie anschliessend die von Ihnen gesammelten Fragen und die dazugehörigen Codezeilen in ein Markdown-Dokument ein. Die Codezeilen sollen als R Chunk im Markdown aufgeführt sein, aber mit der Ergänzung 'eval = FALSE' versehen. Im Fliesstext des Markdowns können Sie Ihre Frage erläutern.
+2. Fügen Sie anschliessend die von Ihnen gesammelten Fragen und die dazugehörigen Codezeilen in ein Markdown-Dokument ein. Die Codezeilen sollen als R Chunk im Markdown aufgeführt sein, aber mit der Ergänzung `eval = FALSE` versehen. Im Fliesstext des Markdowns können Sie Ihre Frage erläutern.
 
 3. Führen Sie den Code Schritt für Schritt aus. Konzentrieren Sie sich dann auf den letzten Punkt ("# *Gemeinsame Darstellung* ..."). Was hat dieser Code mit dem Konzept des Standardfehlers / des Stichprobenfehlers zu tun? Spielen Sie ein wenig mit den verschiedenen Parametern - welche Zusammenhänge, die für den Standardfehler wesentlich sind, lassen sich erkennen?
 
@@ -55,7 +55,7 @@ hist(variable_population,
 
 ### Ebene der einzelnen Stichprobe
 
-Als nächster Schritt wird nun eine Stichprobe gezogen mit der Funktion 'sample()', in der zufällig 100 Fälle der Grundgesamtheit landen. Von dieser Stichprobe können wir dann den Mittelwert berechnen und diesen Wert in das Histogramm der Grundgesamtheit einfügen. Der Mittelwert der Stichprobe unterscheidet sich natürlich minimal vom Mittelwert der Grundgesamt.  
+Als nächster Schritt wird nun eine Stichprobe gezogen mit der Funktion `sample()`, in der zufällig 100 Fälle der Grundgesamtheit landen. Von dieser Stichprobe können wir dann den Mittelwert berechnen und diesen Wert in das Histogramm der Grundgesamtheit einfügen. Der Mittelwert der Stichprobe unterscheidet sich natürlich minimal vom Mittelwert der Grundgesamt.  
 ```{r}
 sample1 <- sample(variable_population, 100)
 mean(sample1)
@@ -110,7 +110,7 @@ Im Funktionskopf innerhalb der runden Klammern, die auf *function* folgen, werde
 
 Alle im Funktionskopf enthaltenen Argumente müssen im Funktionsrumpf, der in geschweiften Klammern {} folgt, als Objekte definiert werden. Der Funktionsrumpf besteht aus einer Reihe von Befehlen. Die in unserem Code definierte Funktion definiert zuerst ein Sample von der Grösse n aus dem Objekt x. Anschliessend hängt eine Schleife die Anzahl trials-1 weitere Sample an das bereits gezogene Sample dran.
 
-Die einzelnen Schritte, die im Funktionsrumpf festgelegt werden, erscheinen nicht in der Konsole. Nur das Ergebnis der letzten Funktion im Rumpf erscheint abschliessend als Rückgabewert. Da in unserem Beispiel kein Ergebnis erzeugt wurde stellt die Funktion 'return()' sicher, dass das Resultat der Funktion (das Objekt 'variable sample') ausgegeben wird.
+Die einzelnen Schritte, die im Funktionsrumpf festgelegt werden, erscheinen nicht in der Konsole. Nur das Ergebnis der letzten Funktion im Rumpf erscheint abschliessend als Rückgabewert. Da in unserem Beispiel kein Ergebnis erzeugt wurde stellt die Funktion `return()` sicher, dass das Resultat der Funktion (das Objekt `variable sample`) ausgegeben wird.
 
 Im letzten Codestück wird dann vom unsere Grundgesamtheit (x) eine 30er Stichprobe gezogen (n), und zwar 200mal (trials). Das Objekt stichproben_200 ist also eine Matrix mit 30 Zeilen und 200 Spalten.
 ```{r}

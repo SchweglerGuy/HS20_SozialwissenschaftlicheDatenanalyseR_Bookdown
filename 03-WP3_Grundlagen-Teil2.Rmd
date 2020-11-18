@@ -33,21 +33,21 @@ Eine erste Möglichkeit, das arithmetische Mittel zu berechnen, ist das manuelle
 ```
 Diese manuelle Variante kann etwa über die "Find/Replace" Funktion von R Studio erleichtert werden, indem die Kommata durch Pluszeichen ersetzt werden.
 
-Eine zweite Möglichkeit bietet die Kombination der Funktionen 'sum()' und 'lenght()', welche die oben manuell ausgeführten Schritte umsetzen.
+Eine zweite Möglichkeit bietet die Kombination der Funktionen `sum()` und `lenght()`, welche die oben manuell ausgeführten Schritte umsetzen.
 ```{r}
 sum(v)/length(v)
 
 ```
 
-Die dritte Möglichkeit ist natürlich die Funktion für das arithmetische Mittel selber, 'mean()':
+Die dritte Möglichkeit ist natürlich die Funktion für das arithmetische Mittel selber, `mean()`:
 ```{r}
 mean(v)
 ```
 
 
-2. Was macht das Argument 'trim' für die Funktion mean()? Wozu könnten Sie dieses Argument in einem sozialwissenschaftlichen Kontext nutzen? Spezifizieren Sie das Argument auf sinnvolle Weise, um das arithmetische Mittel des in Aufgabe 1 erstellten Vektors **v** zu berechnen!
+2. Was macht das Argument `trim` für die Funktion mean()? Wozu könnten Sie dieses Argument in einem sozialwissenschaftlichen Kontext nutzen? Spezifizieren Sie das Argument auf sinnvolle Weise, um das arithmetische Mittel des in Aufgabe 1 erstellten Vektors **v** zu berechnen!
 
-Mittels des Arguments 'trim' können Sie Anteile der Elemente eines Vektors für die Berechnung entfernen, also etwa die kleinsten und grössten 10%:
+Mittels des Arguments `trim` können Sie Anteile der Elemente eines Vektors für die Berechnung entfernen, also etwa die kleinsten und grössten 10%:
 ```{r}
 mean(v, trim = 0.1)
 sort(v)
@@ -74,7 +74,7 @@ apply(mb, 2, mean)
 ```
 Nachdem die vier Vektoren erstellt wurden lassen sie sich über die ‚rbind()‘ und ‚cbind()‘ Funktionen auf zwei verschiedene Weisen zu einer Matrix verbinden, entweder Zeilen- oder Spalte-weise (siehe die Objekte ma und mb).
 
-'apply()' als nächster Schritt wendet eine bestimmte Funktion auf ein Objekte an. Bei einem Objekt des Typs Matrix muss allerdings noch spezifiziert werden, ob die Funktion Zeilen- oder Spalte-weise angewendet wird. Zielen oder Spalten werden über die Zahlen 1 bzw. 2 definiert.
+`apply()` als nächster Schritt wendet eine bestimmte Funktion auf ein Objekte an. Bei einem Objekt des Typs Matrix muss allerdings noch spezifiziert werden, ob die Funktion Zeilen- oder Spalte-weise angewendet wird. Zielen oder Spalten werden über die Zahlen 1 bzw. 2 definiert.
 
 So ergeben sich insgesamt vier Möglichkeiten, für die Berechnung der des Durchschnitts – allerdings generieren diese vier Möglichkeiten nur zwei unterschiedliche Ergebnisse.
 
@@ -86,7 +86,7 @@ b <- c("null", "eins", "zwei") #die Anführungs- und Schlusszeichen beachten
 b2 <- c("0", "1", "2")
 c <- c(TRUE, FALSE, T) #Die logischen Objekte können sowohl ausgeschreiben als auch lediglich als T und F aufgeführt werden
 ```
-Nachdem wir die Vektoren definiert haben, können wir deren Typ bestimmen und mit den 'as.'-Funktionen spielen:
+Nachdem wir die Vektoren definiert haben, können wir deren Typ bestimmen und mit den `as.`-Funktionen spielen:
 ```{r}
 is.numeric(a)
 is.character(b)
@@ -104,7 +104,7 @@ as.logical(a)
 as.logical(b)
 as.logical(b2)
 ```
-Die Grenzen dieses "Zwingens" der 'as.-'Funktionen finden sich auf der einen Seite bei ausgeschriebenen Zahlen in einem Charakter-Vektor. Diese ausgeschriebenen Zahlen können von R nicht in numerische oder auch logische Daten umformuliert werden. Anderseits zeigen sich die Grenzen im Zusammenhang zu den logischen Daten: Hier funktioniert das "Zwingen" nur mit numerische Daten – und alles über 1 wird als TRUE interpretiert.
+Die Grenzen dieses "Zwingens" der `as.-`Funktionen finden sich auf der einen Seite bei ausgeschriebenen Zahlen in einem Charakter-Vektor. Diese ausgeschriebenen Zahlen können von R nicht in numerische oder auch logische Daten umformuliert werden. Anderseits zeigen sich die Grenzen im Zusammenhang zu den logischen Daten: Hier funktioniert das "Zwingen" nur mit numerische Daten – und alles über 1 wird als TRUE interpretiert.
 
 
 5. Definieren Sie folgende Vektoren mittels der Funktionen seq() und rep():

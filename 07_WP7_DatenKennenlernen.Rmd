@@ -21,7 +21,7 @@ Konkret lassen sich folgende Lernziele festhalten:
 
 ## Aufgaben WP07
 
-1. Laden Sie sich den Datensatz "ESS1-8e01.csv" und ESS-Fragebogen (das Codebook) herunter (via OLAT) und speichern Sie die Dateien in Ihrem Arbeitsverzeichnis. Laden Sie anschliessend den Datensatz in RStudio über die Funktion 'read.csv()'. Betrachten Sie den Datensatz über die Funktion 'View()' oder indem Sie auf Ihr erstelltes Objekt im Tab "Environment" klicken. Vergleichen Sie für einzelne Variablen die Informationen im Datensatz mit den entsprechenden Fragebogenfragen!
+1. Laden Sie sich den Datensatz "ESS1-8e01.csv" und ESS-Fragebogen (das Codebook) herunter (via OLAT) und speichern Sie die Dateien in Ihrem Arbeitsverzeichnis. Laden Sie anschliessend den Datensatz in RStudio über die Funktion `read.csv()`. Betrachten Sie den Datensatz über die Funktion `View()` oder indem Sie auf Ihr erstelltes Objekt im Tab "Environment" klicken. Vergleichen Sie für einzelne Variablen die Informationen im Datensatz mit den entsprechenden Fragebogenfragen!
 
 ```{r include=FALSE}
 daten_ess <- read.csv(file = "Data/ESS1-8e01.csv")
@@ -44,7 +44,7 @@ Als erster Schritt gilt es Ihr Arbeitsverzeichnis zu definieren, das heisst der 
 daten_ess_nv <- read.csv(file = "Data/ESS1-8e01_NeueVersion.csv", sep = ";")
 View(daten_ess_nv)
 ```
-Indem die Kommas mit Strichpunkten ersetzt werden ändert im CSV-Datensatz das Zeichen, mit dem die Spalten bzw. Variablen getrennt werden (die Fälle werden über den Zeilenumbruch definiert). Das geänderte Zeichen kann dann über das Argument 'sep' in der 'read.csv()' Funktion genauer definiert werden um die geänderte Datei ebenfalls korrekt einzulesen.
+Indem die Kommas mit Strichpunkten ersetzt werden ändert im CSV-Datensatz das Zeichen, mit dem die Spalten bzw. Variablen getrennt werden (die Fälle werden über den Zeilenumbruch definiert). Das geänderte Zeichen kann dann über das Argument `sep` in der `read.csv()` Funktion genauer definiert werden um die geänderte Datei ebenfalls korrekt einzulesen.
 
 Das CSV-Dateiformat hat vor allem zwei Vorteile: 
 Auf der einen Seite -- und wie in der Teilaufgabe oben deutlich wurde -- können über beliebige Texteditoren direkt in diese Daten eingegriffen werden, da im Format lediglich Rohdaten in Textform abgespeichert sind. Bei anderen Dateiformaten für Datensätze wie etwa .sav (von der Statistiksoftware SPSS) ist dies nicht so einfach möglich. Auf der anderen Seite ist das CSV-Dateiformat nicht nur transparent, sondern beansprucht auch nur sehr wenig Speicherplatz. Grosse Datensätze können so schnell von RStudio gelesen und bereitgestellt werden. 
@@ -69,16 +69,16 @@ sort(names(daten_ess))[1:5]
 ```
 usw. 
 
-Aktuell entsprechen die Werte der Variablen in fast allen Fällen numerische Ausprägungen ('int' bei ganzen Zahlen, 'num' bei Zahlen mit Kommastellen). Lediglich die Variable cntry enthält Buchstaben, oder eben Character-Daten. Dies wird über die folgende Funktion ersichtlich:
+Aktuell entsprechen die Werte der Variablen in fast allen Fällen numerische Ausprägungen (`int` bei ganzen Zahlen, `num` bei Zahlen mit Kommastellen). Lediglich die Variable cntry enthält Buchstaben, oder eben Character-Daten. Dies wird über die folgende Funktion ersichtlich:
 ```{r}
 str(daten_ess)
 ```
-Auch eine Variable wie 'gndr' ist daher eine Zahl in dem Datensatz und wird aktuell von RStudio als eine numerische Variable behandelt.
+Auch eine Variable wie `gndr` ist daher eine Zahl in dem Datensatz und wird aktuell von RStudio als eine numerische Variable behandelt.
 
 ```{r eval=FALSE}
 summary(daten_ess)
 ```
-Über die 'summary()' wir dann nochmals deutlich, dass hier tatsächlich Rohdaten eingelesen wurden: Auch fehlende Werte gelten aktuell noch als gültige Zahlen (...jemand wäre also im Jahr 7777 geboren).
+Über die `summary()` wir dann nochmals deutlich, dass hier tatsächlich Rohdaten eingelesen wurden: Auch fehlende Werte gelten aktuell noch als gültige Zahlen (...jemand wäre also im Jahr 7777 geboren).
 ```{r}
 summary(daten_ess$yrbrn)
 ```
@@ -119,7 +119,7 @@ Auf der *zweiten Stufe* überprüfen wir nun, ob die Daten auch wirklich Sinn ma
 ```{r}
 which(daten_ess$agea<15)
 ```
-Hingegen ist die bei der Variable eisced auftauchende Ausprägung '0' ist durchaus zulässig und entspricht "Not possible to harmonise into ES-ISCED".
+Hingegen ist die bei der Variable eisced auftauchende Ausprägung `0` ist durchaus zulässig und entspricht "Not possible to harmonise into ES-ISCED".
 
 Auf der *dritten Stufe* vergleichen wir dann mittels Kreuztabellierungen und logischen Überlegungen jeweils (mindestens) zwei Variablen miteinander, um so nochmals Fehler zu entdecken. Zuerst können wir dazu eien zusätzliche Variable als Fehlerindikator für die Angaben zum Alter berechnen. Diese zusätzliche Variable nutzen wir dann als logische Bedingung, um drei fehlerhafte Fälle zu entdecken:
 ```{r}
@@ -159,11 +159,11 @@ Die letzte Option ist dann noch die falschen Angaben als *fehlende Werte* zu def
 daten_ess$edulvla[443] <- NA
 ```
 
-5. *Bonusaufgabe*: In den folgenden Wochen möchten wir nicht mit dem ganzen Datensatz arbeiten, sondern lediglich mit einer zufälligen Auswahl von 200 Fällen. Versuchen Sie einen solchen Teildatensatz randomisiert zu erstellen und speichern Sie ihn mittels der Funktion 'write.csv()' unter dem Namen "TD_ESS1-8e01.csv" ab.
+5. *Bonusaufgabe*: In den folgenden Wochen möchten wir nicht mit dem ganzen Datensatz arbeiten, sondern lediglich mit einer zufälligen Auswahl von 200 Fällen. Versuchen Sie einen solchen Teildatensatz randomisiert zu erstellen und speichern Sie ihn mittels der Funktion `write.csv()` unter dem Namen "TD_ESS1-8e01.csv" ab.
 
 Um den zufälligen Datensatz mit 200 Fällen zu erstellen bieten sich mindestens zwei Möglichkeiten an: 
 
-Die erste Möglichkeit nutzt die 'sample()' Funktion und wählt zufällig 200 Zahlen einer Variable aus, die von 1 bis 1525 durchläuft. Eine solche Variable ist 'x' im Datensatz -- oder auch einfach die Reihenzahl. Die zufällig ausgewählten Zahlen dieser Variable können als Angabe für die Zeilen in die eckige Klammerfunktion eingesetzt werden.
+Die erste Möglichkeit nutzt die `sample()` Funktion und wählt zufällig 200 Zahlen einer Variable aus, die von 1 bis 1525 durchläuft. Eine solche Variable ist `x` im Datensatz -- oder auch einfach die Reihenzahl. Die zufällig ausgewählten Zahlen dieser Variable können als Angabe für die Zeilen in die eckige Klammerfunktion eingesetzt werden.
 ```{r eval=FALSE}
 daten_ess_HS20 <- daten_ess[sample(row.names(daten_ess),200),]
 #oder auch:
@@ -178,7 +178,7 @@ daten_ess <- daten_ess[order(daten_ess$zv),]
 daten_ess_HS20 <- daten_ess[1:200,]
 ```
 
-Diverse Seminarteilnehmer*innen haben auch mit der Funktion 'sample_n()' des Paketes "dplyr" gearbeitet:[^2]
+Diverse Seminarteilnehmer*innen haben auch mit der Funktion `sample_n()` des Paketes "dplyr" gearbeitet:[^2]
 ```{r eval=FALSE}
 #install.packages("dplyr")
 library(dplyr)
@@ -193,4 +193,4 @@ write.csv(daten_ess_HS20, file = "Data/ESS1-8e01_HS20.csv")
 
 
 [^1]: Der Datensatz sowie das Codebook wurden mittels des *ESS Cumulative Data Wizard* erstellt: [https://www.europeansocialsurvey.org/downloadwizard/?loggedin](https://www.europeansocialsurvey.org/downloadwizard/?loggedin).
-[^2]: Die Funktion 'sample_n' bzw. das Paket "dplyr" ist Teil des sogenannten *Tidyverse*, einer spezifischen Sammlung von R-Paketen für die Datenwissenschaft ("an opinionated collection (...) for data science"). Allen Paketen liegen eine gemeinsame Designphilosophie, Grammatik und Datenstruktur zugrunde, siehe auch [hier](https://www.tidyverse.org/). Das *Tiydverse* ist eine leistungsstarke Erweiterung von R, mit der diverse Prozesse verbessert werden.   
+[^2]: Die Funktion `sample_n()` bzw. das Paket "dplyr" ist Teil des sogenannten *Tidyverse*, einer spezifischen Sammlung von R-Paketen für die Datenwissenschaft ("an opinionated collection (...) for data science"). Allen Paketen liegen eine gemeinsame Designphilosophie, Grammatik und Datenstruktur zugrunde, siehe auch [hier](https://www.tidyverse.org/). Das *Tiydverse* ist eine leistungsstarke Erweiterung von R, mit der diverse Prozesse verbessert werden.   
