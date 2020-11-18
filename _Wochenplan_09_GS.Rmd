@@ -2,7 +2,7 @@
 
 ## Lernziele
 
-Aufbauend auf unserer bisherigen Arbeit mit Kreuztabellen besteht das Lernziel für diese Woche darin, dass Sie sich mit einem für die tägliche Arbeit mit R wichtigen Datenformat vertraut machen: Faktoren. Faktoren sind eine geeigente Art, kategoriale -- d.h. nominale und ordinale -- Daten in R zu repräsentieren. Der Umgang mit dieser Art von Daten ist allerdings nicht ganz leicht und erfordert ein wenig Übung. 
+Aufbauend auf unserer bisherigen Arbeit mit Kreuztabellen besteht das Lernziel für diese Woche darin, dass Sie sich mit einem für die tägliche Arbeit mit R wichtigen Datenformat vertraut machen: Faktoren. Faktoren sind eine geeignete Art, kategoriale -- d.h. nominale und ordinale -- Daten in R zu repräsentieren. Der Umgang mit dieser Art von Daten ist allerdings nicht ganz leicht und erfordert ein wenig Übung. 
 
 Die folgenden konkreten Lernziele lassen sich für ein erstes Kennenlernen von Faktoren formulieren:
 
@@ -19,14 +19,14 @@ Die folgenden konkreten Lernziele lassen sich für ein erstes Kennenlernen von F
 
 ## Aufgaben
 
-1. Laden Sie Ihr Datenimport-Skript und fügen Sie einen Abschnitt zur Definition und Aufbereitung einzelner Variablen als Faktoren ein. Arbeiten Sie anschliessend in einem R-Markdown weiter.
+1. Laden Sie Ihr Datenimport-Skript und fügen Sie einen Abschnitt zur Definition und Aufbereitung einzelner Variablen als Faktoren ein. Arbeiten Sie anschliessend in einem R Markdown weiter.
 
 2. Gehen Sie unseren Übungsdatensatz konzentriert durch und überlegen Sie, welche Variablen als geordnete oder ungeordnete Faktoren gespeichert werden sollten. 
 
-3. Definieren Sie nun jede dieser Variablen als Faktor aus. Überlegen Sie, ob es sich um eine geordnete Faktorstruktur handelt und legen Sie eine 
+3. Definieren Sie nun jede dieser Variablen als Faktor (die einzige Ausnahme soll die Variable "isco08" sein).
 
 4. Überprüfen Sie mittels Kreuztabellen, ob Ihre Faktoren sinnvoll und fehlerfrei definiert sind. 
 
-5. Sobald eine einwandfreie Lösung gefunden ist, inkludieren Sie Ihre Faktorendefinitionen in ihr Datenimportskript. Testen Sie mittels source(), ob dieses ohne Probleme funktioniert. 
+5. Inkludieren Sie die einwandfrei funktionierenden Lösungen zur Faktorendefinitionen in ihr Datenimportskript. Testen Sie danach, ob das Skript funktioniert: Löschen Sie Ihre Environment (und alle Objekte), laden Sie mittels 'source()' den Datensatz neu und rufen Sie dann eine als Faktor definierte Variable auf.
 
 Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit "Fallloesung09_NameVorname.pdf" und geben das Dokument via OLAT bis Mittwochmittag ab (25.11.2020, 12:00).

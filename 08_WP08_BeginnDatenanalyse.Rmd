@@ -19,7 +19,7 @@ Wir können daher folgende Lernziele festhalten:
 
 ## Aufgaben WP08
 
-1. Laden Sie den Datensatz in RStudio, der 200 zufällige Fälle aus dem ganzen ESS Datensatz enthält („ESS1-8e01_HS20.csv“).[^1] Erfassen Sie den hierfür benötigten Code nicht nur im Markdown, sondern erstellen Sie dazu zusätlich ein eigenes R-Skript (z.B. unter dem Namen "ess_import.R"). Dieses Skript sollte automatisch das richtige Arbeitsverzeichnis definieren, den Datensatz laden und alle notwendigen Datenaufbereitungen vornehmen. Die Idee ist, dass dieses Skript über die kommenden Wochen umfangreicher wird, wenn wir Faktoren definieren, Variablenbezeichnungen ändern, neue Variablen berechnen etc. 
+1. Laden Sie den Datensatz in RStudio, der 200 zufällige Fälle aus dem ganzen ESS Datensatz enthält („ESS1-8e01_HS20.csv“).[^1] Erfassen Sie den hierfür benötigten Code nicht nur im Markdown, sondern erstellen Sie dazu zusätlich ein eigenes R-Skript (z.B. unter dem Namen "ess_import.R"). Dieses Skript sollte automatisch das richtige Arbeitsverzeichnis definieren, den Datensatz laden und alle notwendigen Datenaufbereitungen vornehmen. Die Idee ist, dass dieses Skript über die kommenden Wochen umfangreicher wird, wenn wir Faktoren definieren, Variablenbezeichnungen ändern, neue Variablen berechnen etc.
 
 2. Erläutern Sie in eigenen Worten die Idee der Funktion 'attach()'. Nutzen Sie diese Funktion für die Aufgaben 3 und 4. Wenden Sie den 'detach()'-Befehl an, bevor Sie zu Aufgabe 5 übergehen. 
 
