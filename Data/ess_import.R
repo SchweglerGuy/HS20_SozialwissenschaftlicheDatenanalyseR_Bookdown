@@ -2,6 +2,7 @@
 daten_ess <- read.csv(file = "Data/ESS1-8e01_HS20.csv")
 daten_ess$zv <- rm()
 daten_ess$agea_l <- rm()
+daten_ess$x <- rm()
 
 
 #Definieren von fehlenden Werten
