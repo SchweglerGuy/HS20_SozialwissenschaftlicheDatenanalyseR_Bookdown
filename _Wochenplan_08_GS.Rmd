@@ -125,7 +125,7 @@ detach(daten_ess)
 
 5. Mittels `CrossTable()` lassen sich nicht nur Tabellen erstellen, sondern auch Chi-Quadrat Tests durchführen. 
   + Speichern Sie dazu das ganz Ergebnis Ihrer Arbeit mit der Funktion in Aufgabe 4 als ein neues Objekt `CT_Ergebnis`.
-  + Greifen Sie anschliessend auf die darin enthaltenen Angaben zum Chi-Quadrat Test zu und interpretieren Sie diese -– sowohl deskriptiv als auch inferenzstatistisch.
+  + Greifen Sie anschliessend auf die darin enthaltenen Angaben zum Chi-Quadrat Test zu und interpretieren Sie diese -– sowohl deskriptiv- als auch inferenzstatistisch.
 
 Zuerst weisen wir *alle* Ergebnisse der Funktion einem neuen Objekt zu:  
 ```{r eval=FALSE}

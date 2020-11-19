@@ -175,6 +175,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1" data-path="wochenplan-08.html"><a href="wochenplan-08.html#lernziele-wp08"><i class="fa fa-check"></i><b>8.1</b> Lernziele WP08</a></li>
 <li class="chapter" data-level="8.2" data-path="wochenplan-08.html"><a href="wochenplan-08.html#aufgaben-wp08"><i class="fa fa-check"></i><b>8.2</b> Aufgaben WP08</a></li>
 </ul></li>
+<li class="chapter" data-level="9" data-path="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><i class="fa fa-check"></i><b>9</b> Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 09 (19. &amp; 26.11.2020)</a><ul>
+<li class="chapter" data-level="9.1" data-path="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#lernziele-wp09"><i class="fa fa-check"></i><b>9.1</b> Lernziele WP09</a></li>
+<li class="chapter" data-level="9.2" data-path="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#aufgaben-wp09"><i class="fa fa-check"></i><b>9.2</b> Aufgaben WP09</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -214,7 +218,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="aufgaben-wp07" class="section level2">
 <h2><span class="header-section-number">7.2</span> Aufgaben WP07</h2>
 <ol style="list-style-type: decimal">
-<li>Laden Sie sich den Datensatz “ESS1-8e01.csv” und ESS-Fragebogen (das Codebook) herunter (via OLAT) und speichern Sie die Dateien in Ihrem Arbeitsverzeichnis. Laden Sie anschliessend den Datensatz in RStudio über die Funktion ‘read.csv()’. Betrachten Sie den Datensatz über die Funktion ‘View()’ oder indem Sie auf Ihr erstelltes Objekt im Tab “Environment” klicken. Vergleichen Sie für einzelne Variablen die Informationen im Datensatz mit den entsprechenden Fragebogenfragen!</li>
+<li>Laden Sie sich den Datensatz “ESS1-8e01.csv” und ESS-Fragebogen (das Codebook) herunter (via OLAT) und speichern Sie die Dateien in Ihrem Arbeitsverzeichnis. Laden Sie anschliessend den Datensatz in RStudio über die Funktion <code>read.csv()</code>. Betrachten Sie den Datensatz über die Funktion <code>View()</code> oder indem Sie auf Ihr erstelltes Objekt im Tab “Environment” klicken. Vergleichen Sie für einzelne Variablen die Informationen im Datensatz mit den entsprechenden Fragebogenfragen!</li>
 </ol>
 <div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="wochenplan-07.html#cb184-1"></a><span class="kw">setwd</span>(<span class="st">&quot;C:/IhrDateiPfad/R-Seminar_HS20/IhrArbeitsordner&quot;</span>)</span>
 <span id="cb184-2"><a href="wochenplan-07.html#cb184-2"></a>daten_ess &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;Data/ESS1-8e01.csv&quot;</span>)</span>
@@ -230,7 +234,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="wochenplan-07.html#cb185-1"></a>daten_ess_nv &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;Data/ESS1-8e01_NeueVersion.csv&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;;&quot;</span>)</span>
 <span id="cb185-2"><a href="wochenplan-07.html#cb185-2"></a><span class="kw">View</span>(daten_ess_nv)</span></code></pre></div>
-<p>Indem die Kommas mit Strichpunkten ersetzt werden ändert im CSV-Datensatz das Zeichen, mit dem die Spalten bzw. Variablen getrennt werden (die Fälle werden über den Zeilenumbruch definiert). Das geänderte Zeichen kann dann über das Argument ‘sep’ in der ‘read.csv()’ Funktion genauer definiert werden um die geänderte Datei ebenfalls korrekt einzulesen.</p>
+<p>Indem die Kommas mit Strichpunkten ersetzt werden ändert im CSV-Datensatz das Zeichen, mit dem die Spalten bzw. Variablen getrennt werden (die Fälle werden über den Zeilenumbruch definiert). Das geänderte Zeichen kann dann über das Argument <code>sep</code> in der <code>read.csv()</code> Funktion genauer definiert werden um die geänderte Datei ebenfalls korrekt einzulesen.</p>
 <p>Das CSV-Dateiformat hat vor allem zwei Vorteile:
 Auf der einen Seite – und wie in der Teilaufgabe oben deutlich wurde – können über beliebige Texteditoren direkt in diese Daten eingegriffen werden, da im Format lediglich Rohdaten in Textform abgespeichert sind. Bei anderen Dateiformaten für Datensätze wie etwa .sav (von der Statistiksoftware SPSS) ist dies nicht so einfach möglich. Auf der anderen Seite ist das CSV-Dateiformat nicht nur transparent, sondern beansprucht auch nur sehr wenig Speicherplatz. Grosse Datensätze können so schnell von RStudio gelesen und bereitgestellt werden.</p>
 <p>Dem gegenüber steht der Nachteil, dass das Dateiformat keine Möglichkeiten bietet, Informationen auf komplexere Art und Weise abzuspeichern (z.Bsp. Labels für Variablenausprägungen oder ähnliches). CSV bleibt so ein Format für “Rohdaten”.</p>
@@ -247,7 +251,7 @@ Auf der einen Seite – und wie in der Teilaufgabe oben deutlich wurde – könn
 <div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="wochenplan-07.html#cb190-1"></a><span class="kw">sort</span>(<span class="kw">names</span>(daten_ess))[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;agea&quot;    &quot;chldhm&quot;  &quot;cntry&quot;   &quot;edctn&quot;   &quot;edulvla&quot;</code></pre>
 <p>usw.</p>
-<p>Aktuell entsprechen die Werte der Variablen in fast allen Fällen numerische Ausprägungen (‘int’ bei ganzen Zahlen, ‘num’ bei Zahlen mit Kommastellen). Lediglich die Variable cntry enthält Buchstaben, oder eben Character-Daten. Dies wird über die folgende Funktion ersichtlich:</p>
+<p>Aktuell entsprechen die Werte der Variablen in fast allen Fällen numerische Ausprägungen (<code>int</code> bei ganzen Zahlen, <code>num</code> bei Zahlen mit Kommastellen). Lediglich die Variable cntry enthält Buchstaben, oder eben Character-Daten. Dies wird über die folgende Funktion ersichtlich:</p>
 <div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="wochenplan-07.html#cb192-1"></a><span class="kw">str</span>(daten_ess)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:	1525 obs. of  21 variables:
 ##  $ x       : int  1 2 3 4 5 6 7 8 9 10 ...
@@ -271,9 +275,9 @@ Auf der einen Seite – und wie in der Teilaufgabe oben deutlich wurde – könn
 ##  $ isco08  : int  1200 5419 2210 5223 7112 4220 8300 8100 5223 1120 ...
 ##  $ uemp3m  : int  1 1 2 2 1 1 2 2 2 1 ...
 ##  $ hinctnta: int  10 1 10 1 77 2 5 77 4 5 ...</code></pre>
-<p>Auch eine Variable wie ‘gndr’ ist daher eine Zahl in dem Datensatz und wird aktuell von RStudio als eine numerische Variable behandelt.</p>
+<p>Auch eine Variable wie <code>gndr</code> ist daher eine Zahl in dem Datensatz und wird aktuell von RStudio als eine numerische Variable behandelt.</p>
 <div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="wochenplan-07.html#cb194-1"></a><span class="kw">summary</span>(daten_ess)</span></code></pre></div>
-<p>Über die ‘summary()’ wir dann nochmals deutlich, dass hier tatsächlich Rohdaten eingelesen wurden: Auch fehlende Werte gelten aktuell noch als gültige Zahlen (…jemand wäre also im Jahr 7777 geboren).</p>
+<p>Über die <code>summary()</code> wir dann nochmals deutlich, dass hier tatsächlich Rohdaten eingelesen wurden: Auch fehlende Werte gelten aktuell noch als gültige Zahlen (…jemand wäre also im Jahr 7777 geboren).</p>
 <div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="wochenplan-07.html#cb195-1"></a><span class="kw">summary</span>(daten_ess<span class="op">$</span>yrbrn)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##    1922    1954    1968    1991    1984    7777</code></pre>
@@ -315,7 +319,7 @@ Auf der einen Seite – und wie in der Teilaufgabe oben deutlich wurde – könn
 <p>Auf der <em>zweiten Stufe</em> überprüfen wir nun, ob die Daten auch wirklich Sinn machen, das heisst im Rahmen der Codierungen gemäss Fragebogen. Ein Vergleich mit dem Codebuch zeigt dabei, dass erst Personen ab dem 15.Lebensjahr befragt wurden. Folgender Fall macht also keinen Sinn:</p>
 <div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="wochenplan-07.html#cb210-1"></a><span class="kw">which</span>(daten_ess<span class="op">$</span>agea<span class="op">&lt;</span><span class="dv">15</span>)</span></code></pre></div>
 <pre><code>## [1] 352</code></pre>
-<p>Hingegen ist die bei der Variable eisced auftauchende Ausprägung ‘0’ ist durchaus zulässig und entspricht “Not possible to harmonise into ES-ISCED”.</p>
+<p>Hingegen ist die bei der Variable eisced auftauchende Ausprägung <code>0</code> ist durchaus zulässig und entspricht “Not possible to harmonise into ES-ISCED”.</p>
 <p>Auf der <em>dritten Stufe</em> vergleichen wir dann mittels Kreuztabellierungen und logischen Überlegungen jeweils (mindestens) zwei Variablen miteinander, um so nochmals Fehler zu entdecken. Zuerst können wir dazu eien zusätzliche Variable als Fehlerindikator für die Angaben zum Alter berechnen. Diese zusätzliche Variable nutzen wir dann als logische Bedingung, um drei fehlerhafte Fälle zu entdecken:</p>
 <div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="wochenplan-07.html#cb212-1"></a>daten_ess<span class="op">$</span>agea_l &lt;-<span class="st"> </span>daten_ess<span class="op">$</span>agea <span class="op">+</span><span class="st"> </span>daten_ess<span class="op">$</span>yrbrn</span>
 <span id="cb212-2"><a href="wochenplan-07.html#cb212-2"></a>daten_ess<span class="op">$</span>agea_l[daten_ess<span class="op">$</span>agea_l<span class="op">!=</span><span class="dv">2016</span>]</span></code></pre></div>
@@ -415,10 +419,10 @@ Auf der einen Seite – und wie in der Teilaufgabe oben deutlich wurde – könn
 <p>Die letzte Option ist dann noch die falschen Angaben als <em>fehlende Werte</em> zu definieren (3):</p>
 <div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="wochenplan-07.html#cb230-1"></a>daten_ess<span class="op">$</span>edulvla[<span class="dv">443</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></span></code></pre></div>
 <ol start="5" style="list-style-type: decimal">
-<li><em>Bonusaufgabe</em>: In den folgenden Wochen möchten wir nicht mit dem ganzen Datensatz arbeiten, sondern lediglich mit einer zufälligen Auswahl von 200 Fällen. Versuchen Sie einen solchen Teildatensatz randomisiert zu erstellen und speichern Sie ihn mittels der Funktion ‘write.csv()’ unter dem Namen “TD_ESS1-8e01.csv” ab.</li>
+<li><em>Bonusaufgabe</em>: In den folgenden Wochen möchten wir nicht mit dem ganzen Datensatz arbeiten, sondern lediglich mit einer zufälligen Auswahl von 200 Fällen. Versuchen Sie einen solchen Teildatensatz randomisiert zu erstellen und speichern Sie ihn mittels der Funktion <code>write.csv()</code> unter dem Namen “TD_ESS1-8e01.csv” ab.</li>
 </ol>
 <p>Um den zufälligen Datensatz mit 200 Fällen zu erstellen bieten sich mindestens zwei Möglichkeiten an:</p>
-<p>Die erste Möglichkeit nutzt die ‘sample()’ Funktion und wählt zufällig 200 Zahlen einer Variable aus, die von 1 bis 1525 durchläuft. Eine solche Variable ist ‘x’ im Datensatz – oder auch einfach die Reihenzahl. Die zufällig ausgewählten Zahlen dieser Variable können als Angabe für die Zeilen in die eckige Klammerfunktion eingesetzt werden.</p>
+<p>Die erste Möglichkeit nutzt die <code>sample()</code> Funktion und wählt zufällig 200 Zahlen einer Variable aus, die von 1 bis 1525 durchläuft. Eine solche Variable ist <code>x</code> im Datensatz – oder auch einfach die Reihenzahl. Die zufällig ausgewählten Zahlen dieser Variable können als Angabe für die Zeilen in die eckige Klammerfunktion eingesetzt werden.</p>
 <div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="wochenplan-07.html#cb231-1"></a>daten_ess_HS20 &lt;-<span class="st"> </span>daten_ess[<span class="kw">sample</span>(<span class="kw">row.names</span>(daten_ess),<span class="dv">200</span>),]</span>
 <span id="cb231-2"><a href="wochenplan-07.html#cb231-2"></a><span class="co">#oder auch:</span></span>
 <span id="cb231-3"><a href="wochenplan-07.html#cb231-3"></a>daten_ess_HS20 &lt;-<span class="st"> </span>daten_ess[<span class="kw">sample</span>(daten_ess,<span class="dv">200</span>),]</span></code></pre></div>
@@ -426,7 +430,7 @@ Auf der einen Seite – und wie in der Teilaufgabe oben deutlich wurde – könn
 <div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="wochenplan-07.html#cb232-1"></a>daten_ess<span class="op">$</span>zv &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1525</span>)</span>
 <span id="cb232-2"><a href="wochenplan-07.html#cb232-2"></a>daten_ess &lt;-<span class="st"> </span>daten_ess[<span class="kw">order</span>(daten_ess<span class="op">$</span>zv),]</span>
 <span id="cb232-3"><a href="wochenplan-07.html#cb232-3"></a>daten_ess_HS20 &lt;-<span class="st"> </span>daten_ess[<span class="dv">1</span><span class="op">:</span><span class="dv">200</span>,]</span></code></pre></div>
-<p>Diverse Seminarteilnehmer*innen haben auch mit der Funktion ‘sample_n()’ des Paketes “dplyr” gearbeitet:<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></p>
+<p>Diverse Seminarteilnehmer*innen haben auch mit der Funktion <code>sample_n()</code> des Paketes “dplyr” gearbeitet:<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></p>
 <div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="wochenplan-07.html#cb233-1"></a><span class="co">#install.packages(&quot;dplyr&quot;)</span></span>
 <span id="cb233-2"><a href="wochenplan-07.html#cb233-2"></a><span class="kw">library</span>(dplyr)</span>
 <span id="cb233-3"><a href="wochenplan-07.html#cb233-3"></a>daten_ess_HS20 &lt;-<span class="st"> </span><span class="kw">sampl_n</span>(daten_ess, <span class="dv">200</span>)</span></code></pre></div>
@@ -439,7 +443,7 @@ Auf der einen Seite – und wie in der Teilaufgabe oben deutlich wurde – könn
 <hr />
 <ol start="6">
 <li id="fn6"><p>Der Datensatz sowie das Codebook wurden mittels des <em>ESS Cumulative Data Wizard</em> erstellt: <a href="https://www.europeansocialsurvey.org/downloadwizard/?loggedin">https://www.europeansocialsurvey.org/downloadwizard/?loggedin</a>.<a href="wochenplan-07.html#fnref6" class="footnote-back">↩︎</a></p></li>
-<li id="fn7"><p>Die Funktion ‘sample_n’ bzw. das Paket “dplyr” ist Teil des sogenannten <em>Tidyverse</em>, einer spezifischen Sammlung von R-Paketen für die Datenwissenschaft (“an opinionated collection (…) for data science”). Allen Paketen liegen eine gemeinsame Designphilosophie, Grammatik und Datenstruktur zugrunde, siehe auch <a href="https://www.tidyverse.org/">hier</a>. Das <em>Tiydverse</em> ist eine leistungsstarke Erweiterung von R, mit der diverse Prozesse verbessert werden.<a href="wochenplan-07.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>Die Funktion <code>sample_n()</code> bzw. das Paket “dplyr” ist Teil des sogenannten <em>Tidyverse</em>, einer spezifischen Sammlung von R-Paketen für die Datenwissenschaft (“an opinionated collection (…) for data science”). Allen Paketen liegen eine gemeinsame Designphilosophie, Grammatik und Datenstruktur zugrunde, siehe auch <a href="https://www.tidyverse.org/">hier</a>. Das <em>Tiydverse</em> ist eine leistungsstarke Erweiterung von R, mit der diverse Prozesse verbessert werden.<a href="wochenplan-07.html#fnref7" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

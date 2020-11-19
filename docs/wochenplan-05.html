@@ -175,6 +175,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1" data-path="wochenplan-08.html"><a href="wochenplan-08.html#lernziele-wp08"><i class="fa fa-check"></i><b>8.1</b> Lernziele WP08</a></li>
 <li class="chapter" data-level="8.2" data-path="wochenplan-08.html"><a href="wochenplan-08.html#aufgaben-wp08"><i class="fa fa-check"></i><b>8.2</b> Aufgaben WP08</a></li>
 </ul></li>
+<li class="chapter" data-level="9" data-path="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><i class="fa fa-check"></i><b>9</b> Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 09 (19. &amp; 26.11.2020)</a><ul>
+<li class="chapter" data-level="9.1" data-path="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#lernziele-wp09"><i class="fa fa-check"></i><b>9.1</b> Lernziele WP09</a></li>
+<li class="chapter" data-level="9.2" data-path="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#aufgaben-wp09"><i class="fa fa-check"></i><b>9.2</b> Aufgaben WP09</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -201,7 +205,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>…zur Einheit vom 15. &amp; 22.10.2020, Zugreifen auf Daten (Indizieren und Subsetting) sowie if-Schleifen (Vorbereitung Inferenzstatistik, Teil 2)</p>
 <div id="lernziele-wp05" class="section level2">
 <h2><span class="header-section-number">5.1</span> Lernziele WP05</h2>
-<p>Ihre zentrale Aufgabe für die vergangene Woche bestand darin, R zu nutzen, um selbstständig “statistisch sinnvolle” Daten zu erzeugen und mit diesen zu arbeiten. Dazu haben wir zusätzlich zu den Funktionen ‘seq()’ und ‘rep()’ erstmals mit Zufallsvariablen gearbeitet, mit ‘cor()’ eine erste bivariate statistische Funktion eingesetzt sowie Streudiagramme und Histogramme erstellt.</p>
+<p>Ihre zentrale Aufgabe für die vergangene Woche bestand darin, R zu nutzen, um selbstständig “statistisch sinnvolle” Daten zu erzeugen und mit diesen zu arbeiten. Dazu haben wir zusätzlich zu den Funktionen <code>seq()</code> und <code>rep()</code> erstmals mit Zufallsvariablen gearbeitet, mit <code>cor()</code> eine erste bivariate statistische Funktion eingesetzt sowie Streudiagramme und Histogramme erstellt.</p>
 <p>In der kommenden Arbeitswoche geht es nun darum, zwei neue Aspekte der Arbeit mit R kennenzulernen und einzuüben: das Zugreifen auf einzelne Elemente und Teile von Datenobjekten (Indizieren und Subsetting) und die Kontrolle von längeren Befehlsabläufen. Ausserdem werden wir mit Dataframes eine wichtige Art von Datenstrukturen in R einführen.</p>
 <p>Folgende Lernziele lassen sich festhalten:</p>
 <ul>
@@ -225,7 +229,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb124-6"><a href="wochenplan-05.html#cb124-6"></a>datensatz &lt;-<span class="st"> </span><span class="kw">data.frame</span>(Geschlecht,Einkommen_CHF,AnzahlZimmer_H,Schulzeit_J,Einkommen_Kl)</span></code></pre></div>
 <p> </p>
 <ol start="2" style="list-style-type: decimal">
-<li>Wenden Sie die Funktionen ‘dim()’, ‘names()’, ‘str()’, ‘class()’ und ‘typeof()’ auf Ihr Dataframe an. Was sagen Ihnen diese Funktionen jeweils? Welcher Output dieser Funktionen leuchtet Ihnen ein, welcher weniger?</li>
+<li>Wenden Sie die Funktionen <code>dim()</code>, <code>names()</code>, <code>str()</code>, <code>class()</code> und <code>typeof()</code> auf Ihr Dataframe an. Was sagen Ihnen diese Funktionen jeweils? Welcher Output dieser Funktionen leuchtet Ihnen ein, welcher weniger?</li>
 </ol>
 <p>Die folgenden Funktionen geben Ihnen…</p>
 <div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="wochenplan-05.html#cb125-1"></a><span class="kw">dim</span>(datensatz)</span></code></pre></div>
@@ -237,15 +241,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>…die Namen Ihrer Vektoren aus, also die Variablennamen im Datensatz;</p>
 <div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="wochenplan-05.html#cb129-1"></a><span class="kw">str</span>(datensatz)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:	100 obs. of  5 variables:
-##  $ Geschlecht    : num  0 0 0 0 1 1 1 1 0 1 ...
+##  $ Geschlecht    : num  1 1 1 1 0 0 1 0 0 0 ...
 ##  $ Einkommen_CHF : num  4100 4200 4300 4400 4500 4600 4700 4800 4900 5000 ...
 ##  $ AnzahlZimmer_H: num  2 2 2 2 2 1 1 1 1 1 ...
-##  $ Schulzeit_J   : num  14 11 16 13 12 14 10 13 9 18 ...
+##  $ Schulzeit_J   : num  11 14 13 16 17 14 16 15 13 10 ...
 ##  $ Einkommen_Kl  : chr  &quot;unterd&quot; &quot;unterd&quot; &quot;unterd&quot; &quot;unterd&quot; ...</code></pre>
 <p>…die Struktur Ihres Datensatzes aus, das heisst die Unterobjekte bzw. Variablen im Datensatz, auf die Sie mittels dem Dollarzeichen zugreifen können.</p>
 <div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="wochenplan-05.html#cb131-1"></a><span class="kw">class</span>(datensatz)</span></code></pre></div>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
-<p>…die Klasse Ihres Objektes ‘datensatz’ aus, das heisst die von Ihnen zugewiesene Eigenschaft des Objektes;</p>
+<p>…die Klasse Ihres Objektes <code>datensatz</code> aus, das heisst die von Ihnen zugewiesene Eigenschaft des Objektes;</p>
 <div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="wochenplan-05.html#cb133-1"></a><span class="kw">typeof</span>(datensatz)</span></code></pre></div>
 <pre><code>## [1] &quot;list&quot;</code></pre>
 <p>…und den Typ Ihres Objektes, das heisst die R-interne Art und Weise, das Objekt abzuspeichern <span class="citation">(vgl. Kabacoff <a href="#ref-Kabacoff2015" role="doc-biblioref">2015</a>, 23ff)</span>.</p>
@@ -256,21 +260,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="wochenplan-05.html#cb135-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>(<span class="kw">dim</span>(datensatz)[<span class="dv">2</span>]<span class="op">-</span><span class="dv">1</span>)) {</span>
 <span id="cb135-2"><a href="wochenplan-05.html#cb135-2"></a>  <span class="kw">print</span>(<span class="kw">mean</span>(datensatz[,i]))</span>
 <span id="cb135-3"><a href="wochenplan-05.html#cb135-3"></a>}</span></code></pre></div>
-<pre><code>## [1] 0.49
+<pre><code>## [1] 0.53
 ## [1] 9050
 ## [1] 3.99
-## [1] 14.04</code></pre>
-<p>Einige Hinweise hierzu: Der Zusatz ‘(dim(datensatz)[2]-1))’ generiert lediglich die Zahl 4. Die for-Schleife soll ja den Mittelwerte für die vier numerischen Variablen des Datensatzes berechnen. Dies könnte man auch einfach hinschreiben (‘i in 1:4’) oder mit verschiedenen weiteren Möglichkeiten erreichen (etwa über ‘(ncol(datensatz)-1)’). Der Vorteil einer so definierten (anstatt hingeschriebenen) Variante ist, dass wir eigentlich gar nicht wissen müssten wieviele Variablen das wären – und die Anzahl variieren könnte.</p>
+## [1] 14.39</code></pre>
+<p>Einige Hinweise hierzu: Der Zusatz <code>(dim(datensatz)[2]-1))</code> generiert lediglich die Zahl 4. Die for-Schleife soll ja den Mittelwerte für die vier numerischen Variablen des Datensatzes berechnen. Dies könnte man auch einfach hinschreiben (<code>i in 1:4</code>) oder mit verschiedenen weiteren Möglichkeiten erreichen (etwa über <code>(ncol(datensatz)-1)</code>). Der Vorteil einer so definierten (anstatt hingeschriebenen) Variante ist, dass wir eigentlich gar nicht wissen müssten wieviele Variablen das wären – und die Anzahl variieren könnte.</p>
 <div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="wochenplan-05.html#cb137-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>) {</span>
 <span id="cb137-2"><a href="wochenplan-05.html#cb137-2"></a>  <span class="kw">print</span>(<span class="kw">mean</span>(datensatz[,i]))</span>
 <span id="cb137-3"><a href="wochenplan-05.html#cb137-3"></a>}</span></code></pre></div>
-<pre><code>## [1] 0.49
+<pre><code>## [1] 0.53
 ## [1] 9050
 ## [1] 3.99
-## [1] 14.04</code></pre>
+## [1] 14.39</code></pre>
 <div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="wochenplan-05.html#cb139-1"></a><span class="co">#...funktioniert auch...</span></span></code></pre></div>
 <p>Innerhalb der geschweiften Klammern wird definiert, was für jedes i wiederholt werden soll. In unserem Beispiel ist dies die Berechnung des Mittelwertes, während mit i unsere vier verschiedenen Variablen bezeichnet werden.
-Die Funktion ‘print()’ stellt sicher, dass die berechneten Werte auch ausgegeben werden.</p>
+Die Funktion <code>print()</code> stellt sicher, dass die berechneten Werte auch ausgegeben werden.</p>
 <p>Weitere tolle Lösungsvorschläge:</p>
 <div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="wochenplan-05.html#cb140-1"></a><span class="co">#...von Frau Diethelm</span></span>
 <span id="cb140-2"><a href="wochenplan-05.html#cb140-2"></a><span class="cf">for</span>(v <span class="cf">in</span> datensatz[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]) {</span>
@@ -291,13 +295,13 @@ Die Funktion ‘print()’ stellt sicher, dass die berechneten Werte auch ausgeg
 <li>Überprüfen Sie Ihre Ergebnisse, indem Sie die Berechnung des Mittelwerts “händisch” für jede Spalte einzeln durchführen (nutzen Sie dazu Indizierung/Subsetting mittels eckiger Klammern).</li>
 </ol>
 <div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="wochenplan-05.html#cb141-1"></a><span class="kw">mean</span>(datensatz[,<span class="dv">1</span>]) <span class="co">#entspricht mean(datensatz$Geschlecht)</span></span></code></pre></div>
-<pre><code>## [1] 0.49</code></pre>
+<pre><code>## [1] 0.53</code></pre>
 <div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="wochenplan-05.html#cb143-1"></a><span class="kw">mean</span>(datensatz[,<span class="dv">2</span>]) <span class="co">#... mean(datensatz$Einkommen_CHF)</span></span></code></pre></div>
 <pre><code>## [1] 9050</code></pre>
 <div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="wochenplan-05.html#cb145-1"></a><span class="kw">mean</span>(datensatz[,<span class="dv">3</span>]) <span class="co">#...</span></span></code></pre></div>
 <pre><code>## [1] 3.99</code></pre>
 <div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="wochenplan-05.html#cb147-1"></a><span class="kw">mean</span>(datensatz[,<span class="dv">4</span>])</span></code></pre></div>
-<pre><code>## [1] 14.04</code></pre>
+<pre><code>## [1] 14.39</code></pre>
 <p> </p>
 <ol start="5" style="list-style-type: decimal">
 <li>Definieren Sie als eine erste Variante eine logische Bedingung, die Ihnen erlaubt, Ihr Dataframe anhand der Character-Variable in ungefähr zwei Gruppen zu teilen. Teilen Sie dann als zweite Variante Ihren Datensatz anhand einer anderen logischen Bedingung mit einer Ihrer numerischen Variablen in zwei Gruppen.</li>
@@ -320,7 +324,7 @@ Die Funktion ‘print()’ stellt sicher, dass die berechneten Werte auch ausgeg
 <span id="cb149-7"><a href="wochenplan-05.html#cb149-7"></a>datensatz_v22 &lt;-<span class="st"> </span>datensatz[datensatz<span class="op">$</span>Einkommen_CHF<span class="op">&gt;</span><span class="dv">10000</span>,]</span></code></pre></div>
 <p>Die erste Variante generiert zwei Teildatensätze, wobei im ersten alle mit durchschnittlichem Einkommen enthalten sind und im zweiten Teildatensatz diejenigen, die entweder über ein unter- oder überdurchschnittliches Einkommen verfügen.
 Die zweite Variante generiert zwei Teildatensätze indem eine Unterscheidung getroffen wird zwischen denjenigen, die entweder mehr oder weniger als 10’000CHF pro Monat verdienen.</p>
-<p>Wieso verwendet man hierfür nun nicht einfach eine Funktion, z.Bsp. ‘subset()’ (oder auch ‘split()’)?</p>
+<p>Wieso verwendet man hierfür nun nicht einfach eine Funktion, z.Bsp. <code>subset()</code> (oder auch <code>split()</code>)?</p>
 <div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="wochenplan-05.html#cb150-1"></a><span class="kw">subset</span>(datensatz, <span class="dt">subset =</span> datensatz<span class="op">$</span>Einkommen_Kl<span class="op">==</span><span class="st">&quot;durchs&quot;</span>)</span>
 <span id="cb150-2"><a href="wochenplan-05.html#cb150-2"></a><span class="co">#das würde auch gehen</span></span></code></pre></div>
 <p>Die Überlegungen, die wir machen, sollen immer einem Objekt gelten, d.h. wir wollen ein Bewusstsein für ein Objekt schaffen – im Beispiel des data.frames hat dieses Objekt eben Zeilen und Spalten und diesen können wir indizieren. Wir brauchen keine spezifischen Funktionen sondern können immer in einem allgemeinen Sinne (gemäss den drei Varianten <strong>[]</strong>, <strong>$</strong>, <strong>which()</strong>) auf Objekte zugreifen. Dieses Zugreifen können wir immer verwenden – für Funktionen, für Argumente, für Teildatensätze (Subsetting), usw.</p>
@@ -338,34 +342,34 @@ Die zweite Variante generiert zwei Teildatensätze indem eine Unterscheidung get
 <span id="cb152-2"><a href="wochenplan-05.html#cb152-2"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>) {</span>
 <span id="cb152-3"><a href="wochenplan-05.html#cb152-3"></a>  <span class="kw">print</span>(<span class="kw">mean</span>(datensatz_v11[,i]))</span>
 <span id="cb152-4"><a href="wochenplan-05.html#cb152-4"></a>}</span></code></pre></div>
-<pre><code>## [1] 0.4146341
+<pre><code>## [1] 0.4878049
 ## [1] 8000
 ## [1] 4.731707
-## [1] 14.29268</code></pre>
+## [1] 13.82927</code></pre>
 <div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="wochenplan-05.html#cb154-1"></a><span class="co">#...für den zweiten Teildatensatz der ersten Variante</span></span>
 <span id="cb154-2"><a href="wochenplan-05.html#cb154-2"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>) {</span>
 <span id="cb154-3"><a href="wochenplan-05.html#cb154-3"></a>  <span class="kw">print</span>(<span class="kw">mean</span>(datensatz_v12[,i]))</span>
 <span id="cb154-4"><a href="wochenplan-05.html#cb154-4"></a>}</span></code></pre></div>
-<pre><code>## [1] 0.5423729
+<pre><code>## [1] 0.559322
 ## [1] 9779.661
 ## [1] 3.474576
-## [1] 13.86441</code></pre>
+## [1] 14.77966</code></pre>
 <div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="wochenplan-05.html#cb156-1"></a><span class="co">#...für den ersten Teildatensatz der zweiten Variante</span></span>
 <span id="cb156-2"><a href="wochenplan-05.html#cb156-2"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>) {</span>
 <span id="cb156-3"><a href="wochenplan-05.html#cb156-3"></a>  <span class="kw">print</span>(<span class="kw">mean</span>(datensatz_v21[,i]))</span>
 <span id="cb156-4"><a href="wochenplan-05.html#cb156-4"></a>}</span></code></pre></div>
-<pre><code>## [1] 0.4137931
+<pre><code>## [1] 0.5344828
 ## [1] 6950
 ## [1] 3.948276
-## [1] 14.01724</code></pre>
+## [1] 13.89655</code></pre>
 <div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="wochenplan-05.html#cb158-1"></a><span class="co">#...für den zweiten Teildatensatz der zweiten Variante</span></span>
 <span id="cb158-2"><a href="wochenplan-05.html#cb158-2"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>) {</span>
 <span id="cb158-3"><a href="wochenplan-05.html#cb158-3"></a>  <span class="kw">print</span>(<span class="kw">mean</span>(datensatz_v22[,i]))</span>
 <span id="cb158-4"><a href="wochenplan-05.html#cb158-4"></a>}</span></code></pre></div>
-<pre><code>## [1] 0.6
+<pre><code>## [1] 0.525
 ## [1] 12050
 ## [1] 4
-## [1] 14.125</code></pre>
+## [1] 15.025</code></pre>
 
 </div>
 </div>

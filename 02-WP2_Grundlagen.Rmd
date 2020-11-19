@@ -142,6 +142,11 @@ daten <- matrix(c(einstell, koerp_g, gndr), nrow = 5, ncol = 3, byrow = F)
 daten
 ```
 
+```{r include=FALSE}
+rm(gndr)
+```
+
+
 In der Kodezeilen, wo die Funktion matrix() enthalten ist, sind wiederum Argumente vorhanden, nämlich `nrow`, `ncol` und `byrow`. Die genaue Funktion der Argument ist ebenfalls auf der Hilfeseite der Funktion ersichtlich.
 
 &nbsp;     

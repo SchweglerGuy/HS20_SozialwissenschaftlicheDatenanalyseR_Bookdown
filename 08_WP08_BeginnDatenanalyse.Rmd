@@ -19,19 +19,149 @@ Wir können daher folgende Lernziele festhalten:
 
 ## Aufgaben WP08
 
-1. Laden Sie den Datensatz in RStudio, der 200 zufällige Fälle aus dem ganzen ESS Datensatz enthält („ESS1-8e01_HS20.csv“).[^1] Erfassen Sie den hierfür benötigten Code nicht nur im Markdown, sondern erstellen Sie dazu zusätlich ein eigenes R-Skript (z.B. unter dem Namen "ess_import.R"). Dieses Skript sollte automatisch das richtige Arbeitsverzeichnis definieren, den Datensatz laden und alle notwendigen Datenaufbereitungen vornehmen. Die Idee ist, dass dieses Skript über die kommenden Wochen umfangreicher wird, wenn wir Faktoren definieren, Variablenbezeichnungen ändern, neue Variablen berechnen etc.
+1. Laden Sie den Datensatz in RStudio, der 200 zufällige Fälle aus dem ganzen ESS Datensatz enthält („ESS1-8e01_HS20.csv“).[^1] Erfassen Sie den hierfür benötigten Code nicht nur im Markdown, sondern erstellen Sie dazu zusätlich ein eigenes R-Skript (z.B. unter dem Namen "ess_import.R"). Dieses Skript sollte automatisch das richtige Arbeitsverzeichnis definieren, den Datensatz laden und alle notwendigen Datenaufbereitungen vornehmen. Die Idee ist, dass dieses Skript über die kommenden Wochen umfangreicher wird, wenn wir Faktoren definieren, Variablenbezeichnungen ändern, neue Variablen berechnen etc. 
+
+Folgende Befehlszeilen wurden in einem Skript namens "ess_import.R" in einem Unterordner des Arbeitsverzeichnisses abgespeichert (vgl. für die Angaben zu den fehlenden Werten auch Aufgabe 4 aus dem WP07):
+```{r eval=FALSE}
+#Laden der Daten
+setwd("C:/Users/SchweglG/R_Daten/IhrArbeitsverzeichnis")
+daten_ess <- read.csv(file = "Data/ESS1-8e01_HS20.csv")
+
+#Definieren von fehlenden Werten
+daten_ess$yrbrn[daten_ess$yrbrn==7777 | 
+                  daten_ess$yrbrn==8888 |
+                  daten_ess$yrbrn==9999] <- NA
+daten_ess$agea[daten_ess$agea==999] <- NA
+daten_ess$edulvla[daten_ess$edulvla>5] <- NA
+daten_ess$eisced[daten_ess$eisced>7] <- NA
+daten_ess$eduyrs[daten_ess$eduyrs>76] <- NA
+```
+
+Das R-Skript kann nun laufend ergänzt werden, etwa mit der Definition von weiteren fehlenden Werte bei anderen Variablen oder mit der Erstellen von Faktoren (siehe nächster WP). Das hat den Vorteil, dass zu Beginn einer neuen Einheit (d.h. wenn Sie ein neues Markdown erstellen) jeweils nicht der ganze Code nochmals aufgeführt werden muss, sondern direkt dieses Skript ausgeführt werden kann. Das Ausführen eines Skriptes (oder auch einer sonstigen Textdatei) erfolgt über die Funktion `source()`.
+```{r eval=FALSE}
+#Nochmals das Arbeitsverzeichnis definieren falls nötig:
+setwd("C:/Users/SchweglG/R_Daten/IhrArbeitsverzeichnis")
+#Aufrufen des R Skripts:
+source(file = "Data/ess_import.R")
+```
+
+```{r include=FALSE}
+source(file = "Data/ess_import.R")
+```
+
+
 
 2. Erläutern Sie in eigenen Worten die Idee der Funktion `attach()`. Nutzen Sie diese Funktion für die Aufgaben 3 und 4. Wenden Sie den `detach()`-Befehl an, bevor Sie zu Aufgabe 5 übergehen. 
 
+Die `attach()`-Funktion erlaubt es uns, einen bestimmten Datensatz (d.h. ein Dataframe-Objekt) zu „aktivieren“ [@Manderscheid2017, 54].[^2] Dadurch können wir direkt auf diesen Datensatz zugreifen, ohne den Umweg des ‚$‘-Zeichens:
+```{r eval=FALSE}
+#Am Beispiel der Variable zu Geschlecht:
+##...vor dem attachen:
+table(daten_ess$gndr)
+```
+
+```{r}
+##die Funktion
+attach(daten_ess)
+
+##...nach dem attachen:
+table(gndr)
+```
+Ohne die `attach()`-Funktion würde die zweite Zeile des Code-Chunks oben zu einer Fehlermeldung führen.
+
+Mit der Funktion zu arbeiten ist vor allem dann sinnvoll, wenn die Arbeit mit nur einem Datensatz im Zentrum steht (ebd.) und wenn keine Änderungen mehr am Datensatz selber vorgenommen werden. Bei der Arbeit mit mehreren Datensatzsätzen könnte die Funktion leicht für Verwirrung sorgen (gerade auch dann wenn Ihre Codezeilen von jemand anderem interpretiert werden sollen). Und sollten Sie weiterhin Änderungen am Datensatz vornehmen kann die `attach()`-Funktion dazu führen, dass die von Ihnen gemachten Änderungen nicht sichtbar werden (beim Betrachten des Datensatzes) oder auch nicht in die weiteren Schritte/Berechnungen aufgenommen werden. Sobald also Änderungen vorgenommen werden gilt es auch den Datensatz wieder zu „detachen“.
+
+
 3. Erstellen Sie mittels der Funktion `table()` eine Kreuztabelle zwischen der Variable zu Geschlecht und derjenigen zum Interesse an Politik. Wie können Sie vorgehen, um eine Kreuztabelle mit Prozentwerten (relative statt absolute Häufigkeiten) zu erstellen, die ausserdem die Randsummen enthält? Suchen Sie eine Darstellung der Tabelle -- d.h. der Anordnung der Variablen in Zeilen und Spalten sowie der Wahl der Randsummen --, die sinnvoll das Verhältnis von abhängiger und unabhängiger Variable wiedergibt. Was fällt Ihnen inhaltlich an der Tabelle auf?
+
+Wenn wir Tabellen (bzw. Kontingenztabellen) darstellen, so ist die Konvention dass "bei gerichteten Beziehungen die Ausprägungen der unabhängigen Variablen (X) den Spalten zugeordnet werden und die Ausprägungen der abhängigen Variablen (Y) den Reihen zugeordnet werden" [@DiazBone2019, 70]. Die Aufgabenstellung spricht zwar nicht von einer gerichteten Beziehung, aber gleichzeitig macht es Sinn, Geschlecht als unabhängige Variable anzusehen (und nicht dass das Interesse an Politik das Geschlecht einer Person bestimmt). Gemäss dieser Überlegung sollen dann auch die Randsummen ausgerichtet werden, da uns die Verteilungen des Politikinteresses je nach Geschlecht interessiert. Das heisst das pro Geschlecht jeweils auf 100% summiert werden soll.
+
+Wir betrachten als ersten Schritt auch noch die Variable `polintr`:
+```{r}
+table(polintr)
+#Ählich wie die Geschlechtervariabel scheint auch polintr ebenfalls keine fehlenden Werte zu enthalten. Ansonsten können diese ebenfalls noch definiert werden:
+daten_ess$polintr[daten_ess$polintr>4] <- NA
+#Dieser Befehl könnten wir dann ebenfalls in unser Import-Skript übernehmen.
+```
+
+Anschliessend erstellen wir die benötige Tabelle. Hierbei lohnt es sich von "innen" nach "aussen" vorzugehen [vgl. auch @Manderscheid2017, 95]:
+```{r eval=FALSE}
+#als logischer Aufbau der Tabelle
+table(polintr, gndr)
+prop.table(table(polintr, gndr))
+prop.table(table(polintr, gndr),2)
+addmargins(prop.table(table(polintr, gndr),2))
+addmargins(prop.table(table(polintr, gndr),2),1)
+round(addmargins(prop.table(table(polintr, gndr),2),1),2)
+```
+
+```{r}
+#die benötige Tabelle
+round(addmargins(prop.table(table(polintr, gndr),2),1),2)
+```
+
 
 4. Die Funktion `CrossTable()` ist Teil des Paketes "gmodels" und ermöglicht die flexible und detailreiche Arbeit mit Kreuztabellen. Versuchen Sie mittels dieser Funktion die Kreuztabelle aus Aufgabe 2 nachzubauen.
 
+```{r}
+#install.packages("gmodels")
+library(gmodels)
+?CrossTable
+```
+
+Ein Blick in die Hilfeseite zeigt uns, dass wir vor allem diejenigen Argument anders definieren müssen, die wir nicht in unserer Tabelle haben wollen. Das heisst wir müssen angeben (`FALSE`), dass wir keine Spalten- und Tabellenprozente sowie keine Angaben zum Chi-Quadrat-Beiträgen haben möchten. Leider scheint aber kein Argument vorhanden zu sein, mit der wir die absoluten Zahlen entfernen und die Randverteilung auch noch gemäss der Tabelle oben darstellen könnten.
+```{r}
+CrossTable(polintr, gndr, 
+           digits = 2,
+           prop.r = F,
+           prop.t = F,
+           prop.chisq = F,
+           )
+```
+
+Anschliessend detachen wir unseren Datensatz wieder.
+```{r}
+detach(daten_ess)
+```
+
+
 5. Mittels `CrossTable()` lassen sich nicht nur Tabellen erstellen, sondern auch Chi-Quadrat Tests durchführen. 
   + Speichern Sie dazu das ganz Ergebnis Ihrer Arbeit mit der Funktion in Aufgabe 4 als ein neues Objekt `CT_Ergebnis`.
-  + Greifen Sie anschliessend auf die darin enthaltenen Angaben zum Chi-Quadrat Test zu und interpretieren Sie diese -– sowohl deskriptiv als auch inferenzstatistisch.
-  
+  + Greifen Sie anschliessend auf die darin enthaltenen Angaben zum Chi-Quadrat Test zu und interpretieren Sie diese -– sowohl deskriptiv- als auch inferenzstatistisch.
 
-Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit "Fallloesung09_NameVorname.pdf" und geben das Dokument via OLAT bis Mittwochmittag ab (18.11.2020, 12:00).
+Zuerst weisen wir *alle* Ergebnisse der Funktion einem neuen Objekt zu:  
+```{r eval=FALSE}
+CT_Ergebnis <- CrossTable(daten_ess$polintr, daten_ess$gndr, chisq = T)
+```
+
+```{r include=FALSE}
+CT_Ergebnis <- CrossTable(daten_ess$polintr, daten_ess$gndr, chisq = T)
+```
+
+
+Danach können wir auf die einzelnen Inhalte des Chi-Quadrat Tests zugreifen:
+```{r}
+str(CT_Ergebnis) #hier sehen wir, was alles in den Objekt enthalten ist.
+CT_Ergebnis$chisq
+```
+
+Anschliessend greifen wir auf die einzelnen Elemente zurück, zuerst die deskriptivstatistischen Angaben:
+```{r}
+CT_Ergebnis$chisq$method
+CT_Ergebnis$chisq$statistic
+CT_Ergebnis$chisq$parameter
+CT_Ergebnis$chisq$data.name
+```
+Wir erhalten einen Chi-Quadrat Wert gemäss Pearson von 8.82701. Das heisst dass ein Zusammenhang zwischen den beiden Variablen Geschlecht und Politikinteresse besteht. Allerdings ist die Grössenordnung dieses Wertes nicht nur durch eine Stärke des Zusammenhangs bestimmt, sondern auch durch das Tabellenformat [@DiazBone2019, 86]. Dieses Tabellenformat wird über die Freiheitsgrade (*df*) deutlich: (i-1) x (j-1). Möchte man hingegen verschiedene Zusammenhänge und deren Stärke miteinander vergleichen, so kann man auf Cramer’s V zurückgreifen (etwa über die Funktion `cramersV()` im Paket „lsr“). Der letzte Wert, der über das Unterobjekt `data.name` aufgerufen wird, gibt uns Angaben zu den verwendeten Daten. Diese Idee entstammt der eigentlichen Funktion für den einen Chi-Quadrat Test, `chisq.test()`, und würde normalerweise die Namen der Variablen angeben, die für den Test verwendeten wurden. Da hier aber der Chi-Quadrat Test im Rahmen einer anderen Funktion erfolgt, wird einfach auf „t“ verwiesen, was der Tabelle entspricht, welche die `CrossTable()` Funktion generiert generiert.
+
+```{r}
+CT_Ergebnis$chisq$p.value
+```
+Das inferenzstatistische Ergebnis unseres Chi-Quadrat Tests ist ein p-Wert von 0.03168154. Unser berechnete Prüfwert Chi-Quadrat fällt auf einem 5% Signifikanzniveau in den Ablehnungsbereich bzw. wir können auf einem 95% Signifikanzniveau die Alternativhypothese annehmen, dass auch in der Grundgesamtheit ein Zusammenhang zwischen den beiden Variablen besteht [vgl. auch @Manderscheid2017, 165f].
+
+Der p-Wert dreht hierbei die klassische Logik etwas um: Der Test bestimmt einen Signifikanzwert (oder eben eine Überschreitungswahrscheinlichkeit oder einen propability-value). Man kann sich das umgekehrt vorstellen: Ein p-Wert von 0.05 würde dann unserem Signifikanzniveau von 5% entsprechen – oder eben mit 95% Wahrscheinlichkeit würde dann die Nullhypothese nicht zutreffen. Es geht aber hier nicht mehr darum, dass Signifikanzniveau festzulegen und dann einen Testentscheid zu treffen, sondern den Testentscheid zu treffen (Nullhypothese triff zu) und dann zu schauen, wir wahrscheinlich der Testwert dann wäre (die konventionellen Grenzen für das Signifikanzniveau kann mal allerdings weiter als Referenzpunkte verwenden).
+
+Der p-Wert gibt daher an, wie wahrscheinlich das Ergebnis ist (d.h. der Chi-Quadrat-Wert) unter der Annahme der Nullhypothese. Das heisst, dass es in unserem Beispiel rund eine 3% Chance gibt, dass wir den Chi-Quadrat Wert von 8.3 zufällig erhalten, während die zwei kategoriale Variablen in der Grundgesamtheit statistisch voneinander unabhängig sind. Damit beschreibt der Wert auch gleich dem Alpha- bzw. Fehler 1.Art [@DiazBone2019, 172]: Die Chance, dass wir die Nullhypothese aufgrund unseres Test verwerfen, obwohl sie eigentlich die Grundgesamtheit richtig beschreiben würde, ist also bei rund 3%.
 
 [^1]: Siehe Aufgabe 05 der Falllösung 07.
+[^2]: Vgl. auch folgende Zusammenfassung, auf die Herr Schürmann aufmerksam gemacht hat: [https://statisticsglobe.com/attach-detach-function-in-r](https://statisticsglobe.com/attach-detach-function-in-r)

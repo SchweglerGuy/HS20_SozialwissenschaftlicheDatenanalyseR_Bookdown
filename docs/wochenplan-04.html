@@ -175,6 +175,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1" data-path="wochenplan-08.html"><a href="wochenplan-08.html#lernziele-wp08"><i class="fa fa-check"></i><b>8.1</b> Lernziele WP08</a></li>
 <li class="chapter" data-level="8.2" data-path="wochenplan-08.html"><a href="wochenplan-08.html#aufgaben-wp08"><i class="fa fa-check"></i><b>8.2</b> Aufgaben WP08</a></li>
 </ul></li>
+<li class="chapter" data-level="9" data-path="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><i class="fa fa-check"></i><b>9</b> Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 09 (19. &amp; 26.11.2020)</a><ul>
+<li class="chapter" data-level="9.1" data-path="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#lernziele-wp09"><i class="fa fa-check"></i><b>9.1</b> Lernziele WP09</a></li>
+<li class="chapter" data-level="9.2" data-path="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#aufgaben-wp09"><i class="fa fa-check"></i><b>9.2</b> Aufgaben WP09</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -215,7 +219,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="aufgaben-wp04" class="section level2">
 <h2><span class="header-section-number">4.2</span> Aufgaben WP04</h2>
 <ol style="list-style-type: decimal">
-<li>Sie sollen verschiedene Paare von Vektoren mittels der Funktionen ‘c()’, ‘rep()’ und ‘seq()’ definieren, die jeweils unterschiedlich korrelieren. Diese Vektoren – d.h. Variablen – und deren Korrelationen sollen sozialwissenschaftlichen Phänomenen entsprechen. Berechnen Sie jeweils den Korrelationskoeffizienten.</li>
+<li>Sie sollen verschiedene Paare von Vektoren mittels der Funktionen <code>c()</code>, <code>rep()</code> und <code>seq()</code> definieren, die jeweils unterschiedlich korrelieren. Diese Vektoren – d.h. Variablen – und deren Korrelationen sollen sozialwissenschaftlichen Phänomenen entsprechen. Berechnen Sie jeweils den Korrelationskoeffizienten.</li>
 </ol>
 <p>Ein Paar von Vektoren (mit je einer “Länge” von rund 100) soll eine Korrelation von ca. 0.4 aufweisen (…ein Beispiel von Frau Kurmann).</p>
 <div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="wochenplan-04.html#cb80-1"></a>x1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">seq</span>(<span class="dv">4100</span>,<span class="dv">14000</span>,<span class="dv">100</span>))</span>
@@ -238,26 +242,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb86-3"><a href="wochenplan-04.html#cb86-3"></a><span class="kw">cor</span>(x3, y3)</span></code></pre></div>
 <pre><code>## [1] -0.009064354</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>Nutzten Sie ‘plot()’ um die Verteilungen Ihrer drei Variablen-Paare darzustellen. Verweisen Sie im Titel und in den Achsenbeschriftungen auf das sozialwissenschaftliche Phänomen, das Sie darstellen.</li>
+<li>Nutzten Sie <code>plot()</code> um die Verteilungen Ihrer drei Variablen-Paare darzustellen. Verweisen Sie im Titel und in den Achsenbeschriftungen auf das sozialwissenschaftliche Phänomen, das Sie darstellen.</li>
 </ol>
-<p>Im Folgenden werden die drei Plots der Korrelationen dargestellt. Die zweite Grafik wird noch über eine Linie ergänzt, mit der die Korrelation etwas visualisiert wird. ACHTUNG: Der b0-Wert dieser Linie ist lediglich <em>geschätzt</em> (und ebenfalls müssen die Grössenordnungen der beiden Variablen ähnlich sein, damit dies hier funktioniert). Die dritte Grafik wurde über die Funktion ‘jitter()’ ergänzt. Sie visuliert die einzelne Fälle in einem Plot über eine leichte, künstliche Streuung der Werte.</p>
+<p>Im Folgenden werden die drei Plots der Korrelationen dargestellt. Die zweite Grafik wird noch über eine Linie ergänzt, mit der die Korrelation etwas visualisiert wird. ACHTUNG: Der b0-Wert dieser Linie ist lediglich <em>geschätzt</em> (und ebenfalls müssen die Grössenordnungen der beiden Variablen ähnlich sein, damit dies hier funktioniert). Die dritte Grafik wurde über die Funktion <code>jitter()</code> ergänzt. Sie visuliert die einzelne Fälle in einem Plot über eine leichte, künstliche Streuung der Werte.</p>
 <div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="wochenplan-04.html#cb88-1"></a><span class="co">#Plot der ersten beiden Vektoren</span></span>
 <span id="cb88-2"><a href="wochenplan-04.html#cb88-2"></a><span class="kw">plot</span>(x1<span class="op">/</span><span class="dv">1000</span>, y1,</span>
 <span id="cb88-3"><a href="wochenplan-04.html#cb88-3"></a>     <span class="dt">main =</span> <span class="st">&quot;Korrelation Einkommen und Anzahl Zimmer&quot;</span>,</span>
 <span id="cb88-4"><a href="wochenplan-04.html#cb88-4"></a>     <span class="dt">xlab =</span> <span class="st">&quot;Einkommen in CHF&quot;</span>,</span>
 <span id="cb88-5"><a href="wochenplan-04.html#cb88-5"></a>     <span class="dt">ylab =</span> <span class="st">&quot;Anzahl Zimmer im Haushalt&quot;</span>)</span></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
 <div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="wochenplan-04.html#cb89-1"></a><span class="co">#Plot der zweiten beiden Vektoren</span></span>
 <span id="cb89-2"><a href="wochenplan-04.html#cb89-2"></a><span class="kw">plot</span>(x2, y2, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">18</span>),</span>
 <span id="cb89-3"><a href="wochenplan-04.html#cb89-3"></a>              <span class="dt">main =</span> <span class="st">&quot;Korrelation Alters- und Schuljahre&quot;</span>, </span>
 <span id="cb89-4"><a href="wochenplan-04.html#cb89-4"></a>              <span class="dt">xlab =</span><span class="st">&quot;Alter in Jahren&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;bisherige Schulzeit in Jahren (ohne Kindergarten)&quot;</span> )</span>
 <span id="cb89-5"><a href="wochenplan-04.html#cb89-5"></a><span class="kw">abline</span>(<span class="dt">a =</span> <span class="fl">0.5</span>, <span class="dt">b =</span> <span class="kw">cor</span>(x2,y2), <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-28-2.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-29-2.png" width="672" /></p>
 <div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="wochenplan-04.html#cb90-1"></a><span class="co">#Plot der dritten beiden Vektoren</span></span>
 <span id="cb90-2"><a href="wochenplan-04.html#cb90-2"></a><span class="kw">plot</span>(<span class="kw">jitter</span>(x3), <span class="kw">jitter</span>(y3), <span class="dt">main =</span> <span class="st">&quot;Korrelation Geschlecht und Einkommen&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Geschlecht&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Einkommensklasse&quot;</span>)</span></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-28-3.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-29-3.png" width="672" /></p>
 <ol start="3" style="list-style-type: decimal">
-<li>Erstellen Sie je einen Vektor für eine Gleichverteilung mittels ‘runif()’ und für eine Normalverteilung mittels ‘rnorm()’. Diese Vektoren sollen als Variablen Körpergrössen repräsentieren. Erstellen Sie die beiden Vektoren in unterschiedlichen Längen, und zwar…</li>
+<li>Erstellen Sie je einen Vektor für eine Gleichverteilung mittels <code>runif()</code> und für eine Normalverteilung mittels <code>rnorm()</code>. Diese Vektoren sollen als Variablen Körpergrössen repräsentieren. Erstellen Sie die beiden Vektoren in unterschiedlichen Längen, und zwar…</li>
 </ol>
 <ul>
 <li>…mit je 10,</li>
@@ -266,43 +270,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Im Folgenden werden die in der Aufgabe verlangten Verteilungen als Histogramme dargestellt. Insbesondere bei grösseren Fallzahlen werden so die Eigenschaften der Verteilungen deutlicher:</p>
 <p>Bei der Gleichverteilung hat jede Ausprägung dieselbe Auftrittswahrscheinlichkeit. Das heisst, dass jede Körpergrösse zwischen Minimal- und Maximalwert mit derselben Häufigkeit vorkommt. Dies entspricht aber nicht der empirischen Realität von Körpergrössen.</p>
-<p>Bei der Normalverteilung gruppieren sich die meisten Werte um den Mittelwert von 170cm, während kleine und grosse Werte mit zunehmender Abweichung immer weniger häufig auftreten. Dies wiederum entspricht stärker der tatsächlichen, empirischen Verteilungen von Körpergrössen. Unterschieden werden die Normalverteilungen auch in der Funktion ‘rnorm()’ über die beiden expliziten Parameter des arithmetischen Mittels und der Standardabweichung <span class="citation">(Diaz-Bone <a href="#ref-DiazBone2019" role="doc-biblioref">2019</a>, 140f)</span>.</p>
+<p>Bei der Normalverteilung gruppieren sich die meisten Werte um den Mittelwert von 170cm, während kleine und grosse Werte mit zunehmender Abweichung immer weniger häufig auftreten. Dies wiederum entspricht stärker der tatsächlichen, empirischen Verteilungen von Körpergrössen. Unterschieden werden die Normalverteilungen auch in der Funktion <code>rnorm()</code> über die beiden expliziten Parameter des arithmetischen Mittels und der Standardabweichung <span class="citation">(Diaz-Bone <a href="#ref-DiazBone2019" role="doc-biblioref">2019</a>, 140f)</span>.</p>
 <div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="wochenplan-04.html#cb91-1"></a><span class="kw">hist</span>(<span class="kw">runif</span>(<span class="dv">10</span>,<span class="dv">150</span>,<span class="dv">210</span>))</span></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
 <div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="wochenplan-04.html#cb92-1"></a><span class="kw">hist</span>(<span class="kw">runif</span>(<span class="dv">30</span>,<span class="dv">150</span>,<span class="dv">210</span>))</span></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-29-2.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-30-2.png" width="672" /></p>
 <div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="wochenplan-04.html#cb93-1"></a><span class="kw">hist</span>(<span class="kw">runif</span>(<span class="dv">1000</span>,<span class="dv">150</span>,<span class="dv">210</span>))</span></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-29-3.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-30-3.png" width="672" /></p>
 <div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="wochenplan-04.html#cb94-1"></a><span class="kw">hist</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dv">170</span>,<span class="dv">10</span>))</span></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-29-4.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-30-4.png" width="672" /></p>
 <div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="wochenplan-04.html#cb95-1"></a><span class="kw">hist</span>(<span class="kw">rnorm</span>(<span class="dv">30</span>, <span class="dv">170</span>,<span class="dv">10</span>))</span></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-29-5.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-30-5.png" width="672" /></p>
 <div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="wochenplan-04.html#cb96-1"></a><span class="kw">hist</span>(<span class="kw">rnorm</span>(<span class="dv">1000</span>, <span class="dv">170</span>,<span class="dv">10</span>))</span></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-29-6.png" width="672" /></p>
-<p><em>Als Ergänzung</em>:‘runif’ und ‘rnorm()’ werden noch von der Funktion ‘rbinom()’ ergänzt, die zufällige binomiale Verteilungen erstellt. Dies sind Verteilungen die Ihnen angeben, ob ein Ereignis bei einer bestimmten Wahrscheinlichkeit eingetreten ist oder nicht. Damit kann zum Beispiel aufgezeigt werden, wie oft Sie bei zehn Münzwürfen Kopf bekommen (Beispiel I), oder auch wie oft Sie bei dreimal würfeln mit zwei Würfeln eine Sechs erzielen (Beispiel II).</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-30-6.png" width="672" /></p>
+<p><em>Als Ergänzung</em>:<code>runif</code> und <code>rnorm()</code> werden noch von der Funktion <code>rbinom()</code> ergänzt, die zufällige binomiale Verteilungen erstellt. Dies sind Verteilungen die Ihnen angeben, ob ein Ereignis bei einer bestimmten Wahrscheinlichkeit eingetreten ist oder nicht. Damit kann zum Beispiel aufgezeigt werden, wie oft Sie bei zehn Münzwürfen Kopf bekommen (Beispiel I), oder auch wie oft Sie bei dreimal würfeln mit zwei Würfeln eine Sechs erzielen (Beispiel II).</p>
 <div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="wochenplan-04.html#cb97-1"></a><span class="kw">rbinom</span>(<span class="dv">10</span>,<span class="dv">1</span>,<span class="fl">0.5</span>) <span class="co">#Beispiel I</span></span></code></pre></div>
-<pre><code>##  [1] 0 0 0 1 0 0 1 1 1 1</code></pre>
+<pre><code>##  [1] 0 1 1 1 1 1 0 0 1 0</code></pre>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="wochenplan-04.html#cb99-1"></a><span class="kw">rbinom</span>(<span class="dv">3</span>,<span class="dv">2</span>, <span class="dv">2</span><span class="op">/</span><span class="dv">6</span>) <span class="co">#Beispiel II</span></span></code></pre></div>
-<pre><code>## [1] 0 0 1</code></pre>
+<pre><code>## [1] 1 0 0</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Als nächstes sollen Sie die beiden Verteilungen aus der Aufgabe 4, die 1.000 Fälle aufweisen, grafisch darstellen.</li>
 </ol>
 <ul>
 <li>Nutzen Sie die Funktion für Histogramme, um die beiden Verteilungen darzustellen. Die beiden Histogramme sollen dieselbe Spannbreite in der x-Achsen haben und jeweils 10 Klassen aufweisen. Wählen Sie je eine Farbe für die Gleich- und Normalverteilung.</li>
-<li>Über die Funktion ‘abline()’ kann dem aktuellen Plot eine Linie hinzugefügt werden. Fügen Sie jeweils einem Histogramm den Mittelwert der anderen Verteilung als vertikale Linie hinzu (ebenfalls in der entsprechenden Farbe).</li>
-<li>Bonusaufgabe: Das Argument ‘add = TRUE’ lässt Sie eine neue Grafik über die aktuelle Grafik legen. Versuchen Sie, auf diese Art Ihre beiden Histogramme in einer Grafik darzustellen.</li>
+<li>Über die Funktion <code>abline()</code> kann dem aktuellen Plot eine Linie hinzugefügt werden. Fügen Sie jeweils einem Histogramm den Mittelwert der anderen Verteilung als vertikale Linie hinzu (ebenfalls in der entsprechenden Farbe).</li>
+<li>Bonusaufgabe: Das Argument <code>add = TRUE</code> lässt Sie eine neue Grafik über die aktuelle Grafik legen. Versuchen Sie, auf diese Art Ihre beiden Histogramme in einer Grafik darzustellen.</li>
 </ul>
-<p>Die folgenden Histogramme zeigen die beiden Verteilungen, inklusive den Mittelwerten der jeweils anderen Verteilung als horizontale Linie. Um diese Linie besser ersichtlich zu machen wurde sie mittels des Arguments ‘lwd’ breiter gemacht.</p>
+<p>Die folgenden Histogramme zeigen die beiden Verteilungen, inklusive den Mittelwerten der jeweils anderen Verteilung als horizontale Linie. Um diese Linie besser ersichtlich zu machen wurde sie mittels des Arguments <code>lwd</code> breiter gemacht.</p>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="wochenplan-04.html#cb101-1"></a><span class="kw">hist</span>(<span class="kw">runif</span>(<span class="dv">1000</span>,<span class="dv">150</span>,<span class="dv">210</span>), <span class="dt">breaks =</span> <span class="dv">10</span> , <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">140</span>,<span class="dv">220</span>), <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Körpergrösse, gleichverteilt&quot;</span>)</span>
 <span id="cb101-2"><a href="wochenplan-04.html#cb101-2"></a><span class="kw">abline</span>(<span class="dt">v =</span> <span class="kw">mean</span>(<span class="kw">rnorm</span>(<span class="dv">1000</span>, <span class="dv">170</span>,<span class="dv">10</span>)), <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>, <span class="dt">lwd =</span> <span class="dv">5</span>)</span></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
 <div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="wochenplan-04.html#cb102-1"></a><span class="kw">hist</span>(<span class="kw">rnorm</span>(<span class="dv">1000</span>, <span class="dv">170</span>,<span class="dv">10</span>), <span class="dt">breaks =</span> <span class="dv">10</span> , <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">140</span>,<span class="dv">220</span>), <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Körpergrösse, normalverteilt&quot;</span>)</span>
 <span id="cb102-2"><a href="wochenplan-04.html#cb102-2"></a><span class="kw">abline</span>(<span class="dt">v =</span> <span class="kw">mean</span>(<span class="kw">runif</span>(<span class="dv">1000</span>,<span class="dv">150</span>,<span class="dv">210</span>)), <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">lwd =</span> <span class="dv">5</span>)</span></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-31-2.png" width="672" /></p>
-<p>Der nachfolgende Code generiert nun die sich überlagernden Histogramme über das Argument ‘add = T’ in der zweiten Grafik. Zusätzlich muss noch bei der Darstellung der Gleichverteilung die y-Achse angepasst werden, da die Normalverteilung Klassen mit höheren Häufigkeiten aufweist. Weiter wurde über die ‘rgb()’ Funktion die Farbei “grün” transparent gemacht (vgl. auch <a href="https://www.dataanalytics.org.uk/make-transparent-colors-in-r/">hier</a>).</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-32-2.png" width="672" /></p>
+<p>Der nachfolgende Code generiert nun die sich überlagernden Histogramme über das Argument <code>add = T</code> in der zweiten Grafik. Zusätzlich muss noch bei der Darstellung der Gleichverteilung die y-Achse angepasst werden, da die Normalverteilung Klassen mit höheren Häufigkeiten aufweist. Weiter wurde über die <code>rgb()</code> Funktion die Farbei “grün” transparent gemacht (vgl. auch <a href="https://www.dataanalytics.org.uk/make-transparent-colors-in-r/">hier</a>).</p>
 <div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="wochenplan-04.html#cb103-1"></a><span class="kw">hist</span>(<span class="kw">runif</span>(<span class="dv">1000</span>,<span class="dv">150</span>,<span class="dv">210</span>), <span class="dt">breaks =</span> <span class="dv">10</span> , <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">140</span>,<span class="dv">220</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">200</span>), <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Körpergrösse, gleichverteilt und normalverteil&quot;</span>)</span>
 <span id="cb103-2"><a href="wochenplan-04.html#cb103-2"></a><span class="kw">hist</span>(<span class="kw">rnorm</span>(<span class="dv">1000</span>, <span class="dv">170</span>,<span class="dv">10</span>), <span class="dt">breaks =</span> <span class="dv">10</span> ,  <span class="dt">col=</span><span class="kw">rgb</span>(<span class="dv">0</span>,<span class="dv">255</span>,<span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">255</span>, <span class="dt">alpha =</span> <span class="dv">125</span>), <span class="dt">add =</span> T)</span></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
 </div>
 <div id="hinweise-für-den-wochenplan-05" class="section level2">
 <h2><span class="header-section-number">4.3</span> Hinweise für den Wochenplan 05</h2>
@@ -323,10 +327,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>$</strong>: Die zweite Möglichkeit auf Datenzuzugreifen ist der Dollar-Operator $. Damit wird ein Dataframe als Liste angesprochen und die Funktion gibt einen Vektor (bzw. eine Variable) zurück <span class="citation">(vgl. Sauer <a href="#ref-Sauer2019" role="doc-biblioref">2019</a>, 59)</span>.</p>
 <div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="wochenplan-04.html#cb112-1"></a>datensatz<span class="op">$</span>vektor1</span></code></pre></div>
 <pre><code>## [1]  1  2 10  5 13 20</code></pre>
-<p><strong>which()</strong>: Die dritte Weise um Daten zu indizieren bildet die ‘which()’-Funktion die danach fragt, welche Fälle einer bestimmten Bedingung entsprechen.</p>
+<p><strong>which()</strong>: Die dritte Weise um Daten zu indizieren bildet die <code>which()</code>-Funktion die danach fragt, welche Fälle einer bestimmten Bedingung entsprechen.</p>
 <div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="wochenplan-04.html#cb114-1"></a><span class="kw">which</span>(datensatz<span class="op">$</span>vektor1<span class="op">==</span><span class="dv">20</span>)</span></code></pre></div>
 <pre><code>## [1] 6</code></pre>
-<p>Wie bereits bei der ‘which()’-Funktion ersichtlich lassen sich diese drei Varianten natürlich kombinieren. Im folgenden Beispiel wird etwa ein Teildatensatz erstellt, in dem alle Fälle enthalten sind, die beim vektor1 einen Wert von 20 aufweisen (beachten Sie die <em>doppelten</em> Gleich-Zeichen bei der logischen Bedingung).</p>
+<p>Wie bereits bei der <code>which()</code>-Funktion ersichtlich lassen sich diese drei Varianten natürlich kombinieren. Im folgenden Beispiel wird etwa ein Teildatensatz erstellt, in dem alle Fälle enthalten sind, die beim vektor1 einen Wert von 20 aufweisen (beachten Sie die <em>doppelten</em> Gleich-Zeichen bei der logischen Bedingung).</p>
 <div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="wochenplan-04.html#cb116-1"></a>t_datensatz &lt;-<span class="st"> </span>datensatz[<span class="kw">which</span>(datensatz<span class="op">$</span>vektor1<span class="op">==</span><span class="dv">20</span>),] </span>
 <span id="cb116-2"><a href="wochenplan-04.html#cb116-2"></a>t_datensatz &lt;-<span class="st"> </span>datensatz[datensatz<span class="op">$</span>vektor1<span class="op">==</span><span class="dv">20</span>,] <span class="co">#derselbe Befehl, einfach ohne which() auszuformulieren</span></span></code></pre></div>
 <p> </p>

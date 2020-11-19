@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Sozialwissenschaftliche Datenanalyse mit R</title>
+  <title>9 Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 09 (19. &amp; 26.11.2020) | Sozialwissenschaftliche Datenanalyse mit R</title>
   <meta name="description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta property="og:title" content="9 Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 09 (19. &amp; 26.11.2020) | Sozialwissenschaftliche Datenanalyse mit R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta name="twitter:title" content="9 Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 09 (19. &amp; 26.11.2020) | Sozialwissenschaftliche Datenanalyse mit R" />
   
   <meta name="twitter:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="wocheplan-01.html"/>
+<link rel="prev" href="wochenplan-08.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -200,30 +200,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Sozialwissenschaftliche Datenanalyse mit R</h1>
-<p class="author"><em>Kenneth Horvath &amp; Guy Schwegler</em></p>
-<p class="date"><em>HS 2020</em></p>
+<div id="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19.-26.11.2020" class="section level1">
+<h1><span class="header-section-number">9</span> Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 09 (19. &amp; 26.11.2020)</h1>
+<div id="lernziele-wp09" class="section level2">
+<h2><span class="header-section-number">9.1</span> Lernziele WP09</h2>
+<p>Aufbauend auf unserer bisherigen Arbeit mit Kreuztabellen besteht das Lernziel für diese Woche darin, dass Sie sich mit einem für die tägliche Arbeit mit R wichtigen Datenformat vertraut machen: Faktoren. Faktoren sind eine geeignete Art, kategoriale – d.h. nominale und ordinale – Daten in R zu repräsentieren. Der Umgang mit dieser Art von Daten ist allerdings nicht ganz leicht und erfordert ein wenig Übung.</p>
+<p>Die folgenden konkreten Lernziele lassen sich für ein erstes Kennenlernen von Faktoren formulieren:</p>
+<ul>
+<li><p>Sie können dafür geeignete Variablen in Faktoren umwandeln.</p></li>
+<li><p>Sie verstehen den Unterschied zwischen geordneten und ungeordneten Faktoren und können beide in R erstellen.</p></li>
+<li><p>Sie verstehen die spezifische Zwei-Ebenen-Struktur von Faktoren und insbesondere die Rolle von “Levels”.</p></li>
+<li><p>Sie wissen, wie man die Levels eines Faktors definiert.</p></li>
+<li><p>Sie wissen, wie man Levels neu benennt, umsortiert, zusammenfasst und/oder nicht benötigte Levels entfernt.</p></li>
+</ul>
 </div>
-<div id="einführung" class="section level1 unnumbered">
-<h1>Einführung</h1>
-<p>Das Seminar “Sozialwissenschaftliche Datenanalyse mit R” bietet eine systematische Einführung in das Statistikpaket R. R ist eine Open Source Software, die sich unter anderem durch Flexibilität und vielfältige Möglichkeiten der grafischen und numerischen Datenanalyse auszeichnet. Das Seminar führt in inhaltlicher Abstimmung mit der Vorlesung „Grundlagen der multivariaten Statistik“ in Aufbau und Funktionsweise des Programms sowie in die Umsetzung wichtiger statistischer Verfahren (etwa lineare Regression und logistische Regression) ein. Anhand dieser Verfahren werden unter anderem Techniken des effizienten Datenmanagements, Möglichkeiten, eigenständig kleine Funktionen zu programmieren, sowie Formen der grafischen Datenanalyse und Ergebnisdarstellung besprochen.</p>
-<p>Das vorliegende Dokument ist ein sogennantes Bookdown <span class="citation">(Xie <a href="#ref-R-bookdown" role="doc-biblioref">2020</a>)</span>, siehe auch <a href="https://bookdown.org/">hier</a>, und dient der Ergebnissicherung im Seminarverlauf. Das heisst dass die im Seminar besprochene Themen hiernochmals schriftlich festgehalten, diskutiert und allenfalls Literatur ergänzt werden (siehe für allgemeine Literatur etwa <span class="citation">Diaz-Bone (<a href="#ref-DiazBone2019" role="doc-biblioref">2019</a>)</span>, <span class="citation">Kabacoff (<a href="#ref-Kabacoff2015" role="doc-biblioref">2015</a>)</span> oder <span class="citation">Manderscheid (<a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>)</span>). Das Bookdown wird laufend aktualisiert. Ebenfalls werden in diesem Bookdown die Lösungen für die im Seminar gestellten Aufgaben (Falllösungen) präsentiert.</p>
+<div id="aufgaben-wp09" class="section level2">
+<h2><span class="header-section-number">9.2</span> Aufgaben WP09</h2>
+<ol style="list-style-type: decimal">
+<li><p>Laden Sie Ihr Datenimport-Skript und fügen Sie einen Abschnitt zur Definition und Aufbereitung einzelner Variablen als Faktoren ein. Arbeiten Sie anschliessend in einem R Markdown weiter.</p></li>
+<li><p>Gehen Sie unseren Übungsdatensatz konzentriert durch und überlegen Sie, welche Variablen als geordnete oder ungeordnete Faktoren gespeichert werden sollten.</p></li>
+<li><p>Definieren Sie nun jede dieser Variablen als Faktor (die einzige Ausnahme soll die Variable “isco08” sein).</p></li>
+</ol>
+<p>Hier ein Beispiel zur Variable “polintr”</p>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#cb268-1"></a><span class="co">#Eine Übersicht</span></span>
+<span id="cb268-2"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#cb268-2"></a><span class="kw">table</span>(daten_ess<span class="op">$</span>polintr)</span>
+<span id="cb268-3"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#cb268-3"></a></span>
+<span id="cb268-4"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#cb268-4"></a><span class="co">#Definieren des Faktors</span></span>
+<span id="cb268-5"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#cb268-5"></a>daten_ess<span class="op">$</span>polintr &lt;-<span class="st"> </span><span class="kw">factor</span>(daten_ess<span class="op">$</span>polintr, <span class="dt">ordered =</span> T)</span>
+<span id="cb268-6"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#cb268-6"></a><span class="kw">levels</span>(daten_ess<span class="op">$</span>polintr) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Very interested&quot;</span>, </span>
+<span id="cb268-7"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#cb268-7"></a>                               <span class="st">&quot;Quite interested&quot;</span>, </span>
+<span id="cb268-8"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#cb268-8"></a>                               <span class="st">&quot;Hardly interested&quot;</span>, </span>
+<span id="cb268-9"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#cb268-9"></a>                               <span class="st">&quot;Not at all interested&quot;</span>)</span>
+<span id="cb268-10"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#cb268-10"></a><span class="co">#Betrachtung der Variable</span></span>
+<span id="cb268-11"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#cb268-11"></a>daten_ess<span class="op">$</span>polintr</span>
+<span id="cb268-12"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#cb268-12"></a><span class="co">#Die Reihenfolge scheint noch nicht zu stimmen...</span></span>
+<span id="cb268-13"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#cb268-13"></a></span>
+<span id="cb268-14"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#cb268-14"></a><span class="co">#Änderung der Reihenfolge der Levels</span></span>
+<span id="cb268-15"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#cb268-15"></a>daten_ess<span class="op">$</span>polintr &lt;-<span class="st"> </span><span class="kw">ordered</span>(daten_ess<span class="op">$</span>polintr, </span>
+<span id="cb268-16"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#cb268-16"></a>                             <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;Not at all interested&quot;</span>, </span>
+<span id="cb268-17"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#cb268-17"></a>                                        <span class="st">&quot;Hardly interested&quot;</span>, </span>
+<span id="cb268-18"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#cb268-18"></a>                                        <span class="st">&quot;Quite interested&quot;</span>, <span class="st">&quot;Very interested&quot;</span>))</span>
+<span id="cb268-19"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#cb268-19"></a></span>
+<span id="cb268-20"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#cb268-20"></a><span class="co">#Betrachtung der Variable, nach der Neuordnung</span></span>
+<span id="cb268-21"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#cb268-21"></a>daten_ess<span class="op">$</span>polintr</span></code></pre></div>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Überprüfen Sie mittels Kreuztabellen, ob Ihre Faktoren sinnvoll und fehlerfrei definiert sind.</p></li>
+<li><p>Inkludieren Sie die einwandfrei funktionierenden Lösungen zur Faktorendefinition in Ihr Datenimportskript. Testen Sie danach, ob das Skript funktioniert: Löschen Sie Ihre Environment (und alle Objekte), laden Sie mittels <code>source()</code> den Datensatz neu und rufen Sie dann – als Test – eine als Faktor definierte Variable auf.</p></li>
+</ol>
+<p>Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit “Fallloesung09_NameVorname.pdf” und geben das Dokument via OLAT bis Mittwochmittag ab (25.11.2020, 12:00).</p>
 
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-DiazBone2019">
-<p>Diaz-Bone, Rainer. 2019. <em>Statistik Für Soziologen</em>. Konstanz: UVK.</p>
-</div>
-<div id="ref-Kabacoff2015">
-<p>Kabacoff, Robert. 2015. <em>R in Action: Data Analysis and Graphics with R</em>. Shelter Island, NY: Manning.</p>
-</div>
-<div id="ref-Manderscheid2017">
-<p>Manderscheid, Katharina. 2017. <em>Sozialwissenschaftliche Datenanalyse Mit R. Eine Einführung</em>. Wiesbaden: Springer VS.</p>
-</div>
-<div id="ref-R-bookdown">
-<p>Xie, Yihui. 2020. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.</p>
 </div>
 </div>
             </section>
@@ -231,8 +256,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="wocheplan-01.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="wochenplan-08.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -263,7 +288,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/09_WP09_Faktoren.Rmd",
 "text": "Edit"
 },
 "history": {

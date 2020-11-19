@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="wochenplan-07.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -175,6 +175,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1" data-path="wochenplan-08.html"><a href="wochenplan-08.html#lernziele-wp08"><i class="fa fa-check"></i><b>8.1</b> Lernziele WP08</a></li>
 <li class="chapter" data-level="8.2" data-path="wochenplan-08.html"><a href="wochenplan-08.html#aufgaben-wp08"><i class="fa fa-check"></i><b>8.2</b> Aufgaben WP08</a></li>
 </ul></li>
+<li class="chapter" data-level="9" data-path="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><i class="fa fa-check"></i><b>9</b> Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 09 (19. &amp; 26.11.2020)</a><ul>
+<li class="chapter" data-level="9.1" data-path="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#lernziele-wp09"><i class="fa fa-check"></i><b>9.1</b> Lernziele WP09</a></li>
+<li class="chapter" data-level="9.2" data-path="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#aufgaben-wp09"><i class="fa fa-check"></i><b>9.2</b> Aufgaben WP09</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -204,7 +208,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Nachdem wir uns bereits einen ersten Überblick über den ESS-Datensatz verschafft haben, gehen wir in dieser Woche zur Datenanalyse in R über. Dieser Übergang ist ein fliessender: Die ersten Schritte zum Kennenlernen eines Datensatzes, die Plausibilitätsprüfung und die Suche nach Fehlern liefern häufig bereits erste Ergebnisse im Sinne einer explorativen Datenanalysen, die umgekehrt dann womöglich neue Schritte zur Aufbereitung des Datensatzes veranlassen. Der Arbeitsplan für die kommende Woche fokussiert die Rolle von Kreuztabellen in diesem Prozess, inklusive der Berechnung von Chi-Quadrat-Tests. Von hier geht es dann in den Folgewochen schrittweise weiter zu Berechnung von Regressionsanalysen.</p>
 <p>Wir können daher folgende Lernziele festhalten:</p>
 <ul>
-<li><p>Sie verstehen den Nutzen (und auch die Gefahren) der Funktion ‘attach()’.</p></li>
+<li><p>Sie verstehen den Nutzen (und auch die Gefahren) der Funktion <code>attach()</code>.</p></li>
 <li><p>Sie können Kreuztabellen auf verschiedene Weisen darstellen und inhaltlich zutreffend interpretieren.</p></li>
 <li><p>Sie verstehen, wie man das Ergebnis von Funktionen als Objekt “abspeichert”, und wissen, wie man auf die Elemente solcher “Ergebnisobjekte” zugreift.</p></li>
 <li><p>Sie entwickeln ein vertieftes Verständnis davon, wie die Phasen der Datenaufbereitung, der Datenexploration und der Datenanalyse zusammenhängen.</p></li>
@@ -213,24 +217,214 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="aufgaben-wp08" class="section level2">
 <h2><span class="header-section-number">8.2</span> Aufgaben WP08</h2>
 <ol style="list-style-type: decimal">
-<li><p>Laden Sie den Datensatz in RStudio, der 200 zufällige Fälle aus dem ganzen ESS Datensatz enthält („ESS1-8e01_HS20.csv“).<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> Erfassen Sie den hierfür benötigten Code nicht nur im Markdown, sondern erstellen Sie dazu zusätlich ein eigenes R-Skript (z.B. unter dem Namen”ess_import.R"). Dieses Skript sollte automatisch das richtige Arbeitsverzeichnis definieren, den Datensatz laden und alle notwendigen Datenaufbereitungen vornehmen. Die Idee ist, dass dieses Skript über die kommenden Wochen umfangreicher wird, wenn wir Faktoren definieren, Variablenbezeichnungen ändern, neue Variablen berechnen etc.</p></li>
-<li><p>Erläutern Sie in eigenen Worten die Idee der Funktion ‘attach()’. Nutzen Sie diese Funktion für die Aufgaben 3 und 4. Wenden Sie den ‘detach()’-Befehl an, bevor Sie zu Aufgabe 5 übergehen.</p></li>
-<li><p>Erstellen Sie mittels der Funktion ‘table()’ eine Kreuztabelle zwischen der Variable zu Geschlecht und derjenigen zum Interesse an Politik. Wie können Sie vorgehen, um eine Kreuztabelle mit Prozentwerten (relative statt absolute Häufigkeiten) zu erstellen, die ausserdem die Randsummen enthält? Suchen Sie eine Darstellung der Tabelle – d.h. der Anordnung der Variablen in Zeilen und Spalten sowie der Wahl der Randsummen –, die sinnvoll das Verhältnis von abhängiger und unabhängiger Variable wiedergibt. Was fällt Ihnen inhaltlich an der Tabelle auf?</p></li>
-<li><p>Die Funktion ‘CrossTable()’ ist Teil des Paketes “gmodels” und ermöglicht die flexible und detailreiche Arbeit mit Kreuztabellen. Versuchen Sie mittels dieser Funktion die Kreuztabelle aus Aufgabe 2 nachzubauen.</p></li>
-<li><p>Mittels ‘CrossTable()’ lassen sich nicht nur Tabellen erstellen, sondern auch Chi-Quadrat Tests durchführen.</p></li>
+<li>Laden Sie den Datensatz in RStudio, der 200 zufällige Fälle aus dem ganzen ESS Datensatz enthält („ESS1-8e01_HS20.csv“).<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> Erfassen Sie den hierfür benötigten Code nicht nur im Markdown, sondern erstellen Sie dazu zusätlich ein eigenes R-Skript (z.B. unter dem Namen”ess_import.R"). Dieses Skript sollte automatisch das richtige Arbeitsverzeichnis definieren, den Datensatz laden und alle notwendigen Datenaufbereitungen vornehmen. Die Idee ist, dass dieses Skript über die kommenden Wochen umfangreicher wird, wenn wir Faktoren definieren, Variablenbezeichnungen ändern, neue Variablen berechnen etc.</li>
+</ol>
+<p>Folgende Befehlszeilen wurden in einem Skript namens “ess_import.R” in einem Unterordner des Arbeitsverzeichnisses abgespeichert (vgl. für die Angaben zu den fehlenden Werten auch Aufgabe 4 aus dem WP07):</p>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="wochenplan-08.html#cb235-1"></a><span class="co">#Laden der Daten</span></span>
+<span id="cb235-2"><a href="wochenplan-08.html#cb235-2"></a><span class="kw">setwd</span>(<span class="st">&quot;C:/Users/SchweglG/R_Daten/IhrArbeitsverzeichnis&quot;</span>)</span>
+<span id="cb235-3"><a href="wochenplan-08.html#cb235-3"></a>daten_ess &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;Data/ESS1-8e01_HS20.csv&quot;</span>)</span>
+<span id="cb235-4"><a href="wochenplan-08.html#cb235-4"></a></span>
+<span id="cb235-5"><a href="wochenplan-08.html#cb235-5"></a><span class="co">#Definieren von fehlenden Werten</span></span>
+<span id="cb235-6"><a href="wochenplan-08.html#cb235-6"></a>daten_ess<span class="op">$</span>yrbrn[daten_ess<span class="op">$</span>yrbrn<span class="op">==</span><span class="dv">7777</span> <span class="op">|</span><span class="st"> </span></span>
+<span id="cb235-7"><a href="wochenplan-08.html#cb235-7"></a><span class="st">                  </span>daten_ess<span class="op">$</span>yrbrn<span class="op">==</span><span class="dv">8888</span> <span class="op">|</span></span>
+<span id="cb235-8"><a href="wochenplan-08.html#cb235-8"></a><span class="st">                  </span>daten_ess<span class="op">$</span>yrbrn<span class="op">==</span><span class="dv">9999</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></span>
+<span id="cb235-9"><a href="wochenplan-08.html#cb235-9"></a>daten_ess<span class="op">$</span>agea[daten_ess<span class="op">$</span>agea<span class="op">==</span><span class="dv">999</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></span>
+<span id="cb235-10"><a href="wochenplan-08.html#cb235-10"></a>daten_ess<span class="op">$</span>edulvla[daten_ess<span class="op">$</span>edulvla<span class="op">&gt;</span><span class="dv">5</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></span>
+<span id="cb235-11"><a href="wochenplan-08.html#cb235-11"></a>daten_ess<span class="op">$</span>eisced[daten_ess<span class="op">$</span>eisced<span class="op">&gt;</span><span class="dv">7</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></span>
+<span id="cb235-12"><a href="wochenplan-08.html#cb235-12"></a>daten_ess<span class="op">$</span>eduyrs[daten_ess<span class="op">$</span>eduyrs<span class="op">&gt;</span><span class="dv">76</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></span></code></pre></div>
+<p>Das R-Skript kann nun laufend ergänzt werden, etwa mit der Definition von weiteren fehlenden Werte bei anderen Variablen oder mit der Erstellen von Faktoren (siehe nächster WP). Das hat den Vorteil, dass zu Beginn einer neuen Einheit (d.h. wenn Sie ein neues Markdown erstellen) jeweils nicht der ganze Code nochmals aufgeführt werden muss, sondern direkt dieses Skript ausgeführt werden kann. Das Ausführen eines Skriptes (oder auch einer sonstigen Textdatei) erfolgt über die Funktion <code>source()</code>.</p>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="wochenplan-08.html#cb236-1"></a><span class="co">#Nochmals das Arbeitsverzeichnis definieren falls nötig:</span></span>
+<span id="cb236-2"><a href="wochenplan-08.html#cb236-2"></a><span class="kw">setwd</span>(<span class="st">&quot;C:/Users/SchweglG/R_Daten/IhrArbeitsverzeichnis&quot;</span>)</span>
+<span id="cb236-3"><a href="wochenplan-08.html#cb236-3"></a><span class="co">#Aufrufen des R Skripts:</span></span>
+<span id="cb236-4"><a href="wochenplan-08.html#cb236-4"></a><span class="kw">source</span>(<span class="dt">file =</span> <span class="st">&quot;Data/ess_import.R&quot;</span>)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Erläutern Sie in eigenen Worten die Idee der Funktion <code>attach()</code>. Nutzen Sie diese Funktion für die Aufgaben 3 und 4. Wenden Sie den <code>detach()</code>-Befehl an, bevor Sie zu Aufgabe 5 übergehen.</li>
+</ol>
+<p>Die <code>attach()</code>-Funktion erlaubt es uns, einen bestimmten Datensatz (d.h. ein Dataframe-Objekt) zu „aktivieren“ <span class="citation">(Manderscheid <a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>, 54)</span>.<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> Dadurch können wir direkt auf diesen Datensatz zugreifen, ohne den Umweg des ‚$‘-Zeichens:</p>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="wochenplan-08.html#cb237-1"></a><span class="co">#Am Beispiel der Variable zu Geschlecht:</span></span>
+<span id="cb237-2"><a href="wochenplan-08.html#cb237-2"></a><span class="co">##...vor dem attachen:</span></span>
+<span id="cb237-3"><a href="wochenplan-08.html#cb237-3"></a><span class="kw">table</span>(daten_ess<span class="op">$</span>gndr)</span></code></pre></div>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="wochenplan-08.html#cb238-1"></a><span class="co">##die Funktion</span></span>
+<span id="cb238-2"><a href="wochenplan-08.html#cb238-2"></a><span class="kw">attach</span>(daten_ess)</span>
+<span id="cb238-3"><a href="wochenplan-08.html#cb238-3"></a></span>
+<span id="cb238-4"><a href="wochenplan-08.html#cb238-4"></a><span class="co">##...nach dem attachen:</span></span>
+<span id="cb238-5"><a href="wochenplan-08.html#cb238-5"></a><span class="kw">table</span>(gndr)</span></code></pre></div>
+<pre><code>## gndr
+##   1   2 
+##  98 102</code></pre>
+<p>Ohne die <code>attach()</code>-Funktion würde die zweite Zeile des Code-Chunks oben zu einer Fehlermeldung führen.</p>
+<p>Mit der Funktion zu arbeiten ist vor allem dann sinnvoll, wenn die Arbeit mit nur einem Datensatz im Zentrum steht (ebd.) und wenn keine Änderungen mehr am Datensatz selber vorgenommen werden. Bei der Arbeit mit mehreren Datensatzsätzen könnte die Funktion leicht für Verwirrung sorgen (gerade auch dann wenn Ihre Codezeilen von jemand anderem interpretiert werden sollen). Und sollten Sie weiterhin Änderungen am Datensatz vornehmen kann die <code>attach()</code>-Funktion dazu führen, dass die von Ihnen gemachten Änderungen nicht sichtbar werden (beim Betrachten des Datensatzes) oder auch nicht in die weiteren Schritte/Berechnungen aufgenommen werden. Sobald also Änderungen vorgenommen werden gilt es auch den Datensatz wieder zu „detachen“.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Erstellen Sie mittels der Funktion <code>table()</code> eine Kreuztabelle zwischen der Variable zu Geschlecht und derjenigen zum Interesse an Politik. Wie können Sie vorgehen, um eine Kreuztabelle mit Prozentwerten (relative statt absolute Häufigkeiten) zu erstellen, die ausserdem die Randsummen enthält? Suchen Sie eine Darstellung der Tabelle – d.h. der Anordnung der Variablen in Zeilen und Spalten sowie der Wahl der Randsummen –, die sinnvoll das Verhältnis von abhängiger und unabhängiger Variable wiedergibt. Was fällt Ihnen inhaltlich an der Tabelle auf?</li>
+</ol>
+<p>Wenn wir Tabellen (bzw. Kontingenztabellen) darstellen, so ist die Konvention dass “bei gerichteten Beziehungen die Ausprägungen der unabhängigen Variablen (X) den Spalten zugeordnet werden und die Ausprägungen der abhängigen Variablen (Y) den Reihen zugeordnet werden” <span class="citation">(Diaz-Bone <a href="#ref-DiazBone2019" role="doc-biblioref">2019</a>, 70)</span>. Die Aufgabenstellung spricht zwar nicht von einer gerichteten Beziehung, aber gleichzeitig macht es Sinn, Geschlecht als unabhängige Variable anzusehen (und nicht dass das Interesse an Politik das Geschlecht einer Person bestimmt). Gemäss dieser Überlegung sollen dann auch die Randsummen ausgerichtet werden, da uns die Verteilungen des Politikinteresses je nach Geschlecht interessiert. Das heisst das pro Geschlecht jeweils auf 100% summiert werden soll.</p>
+<p>Wir betrachten als ersten Schritt auch noch die Variable <code>polintr</code>:</p>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="wochenplan-08.html#cb240-1"></a><span class="kw">table</span>(polintr)</span></code></pre></div>
+<pre><code>## polintr
+##  1  2  3  4 
+## 45 76 59 20</code></pre>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="wochenplan-08.html#cb242-1"></a><span class="co">#Ählich wie die Geschlechtervariabel scheint auch polintr ebenfalls keine fehlenden Werte zu enthalten. Ansonsten können diese ebenfalls noch definiert werden:</span></span>
+<span id="cb242-2"><a href="wochenplan-08.html#cb242-2"></a>daten_ess<span class="op">$</span>polintr[daten_ess<span class="op">$</span>polintr<span class="op">&gt;</span><span class="dv">4</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></span>
+<span id="cb242-3"><a href="wochenplan-08.html#cb242-3"></a><span class="co">#Dieser Befehl könnten wir dann ebenfalls in unser Import-Skript übernehmen.</span></span></code></pre></div>
+<p>Anschliessend erstellen wir die benötige Tabelle. Hierbei lohnt es sich von “innen” nach “aussen” vorzugehen <span class="citation">(vgl. auch Manderscheid <a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>, 95)</span>:</p>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="wochenplan-08.html#cb243-1"></a><span class="co">#als logischer Aufbau der Tabelle</span></span>
+<span id="cb243-2"><a href="wochenplan-08.html#cb243-2"></a><span class="kw">table</span>(polintr, gndr)</span>
+<span id="cb243-3"><a href="wochenplan-08.html#cb243-3"></a><span class="kw">prop.table</span>(<span class="kw">table</span>(polintr, gndr))</span>
+<span id="cb243-4"><a href="wochenplan-08.html#cb243-4"></a><span class="kw">prop.table</span>(<span class="kw">table</span>(polintr, gndr),<span class="dv">2</span>)</span>
+<span id="cb243-5"><a href="wochenplan-08.html#cb243-5"></a><span class="kw">addmargins</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(polintr, gndr),<span class="dv">2</span>))</span>
+<span id="cb243-6"><a href="wochenplan-08.html#cb243-6"></a><span class="kw">addmargins</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(polintr, gndr),<span class="dv">2</span>),<span class="dv">1</span>)</span>
+<span id="cb243-7"><a href="wochenplan-08.html#cb243-7"></a><span class="kw">round</span>(<span class="kw">addmargins</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(polintr, gndr),<span class="dv">2</span>),<span class="dv">1</span>),<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="wochenplan-08.html#cb244-1"></a><span class="co">#die benötige Tabelle</span></span>
+<span id="cb244-2"><a href="wochenplan-08.html#cb244-2"></a><span class="kw">round</span>(<span class="kw">addmargins</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(polintr, gndr),<span class="dv">2</span>),<span class="dv">1</span>),<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>##        gndr
+## polintr    1    2
+##     1   0.31 0.15
+##     2   0.38 0.38
+##     3   0.24 0.34
+##     4   0.07 0.13
+##     Sum 1.00 1.00</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Die Funktion <code>CrossTable()</code> ist Teil des Paketes “gmodels” und ermöglicht die flexible und detailreiche Arbeit mit Kreuztabellen. Versuchen Sie mittels dieser Funktion die Kreuztabelle aus Aufgabe 2 nachzubauen.</li>
+</ol>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="wochenplan-08.html#cb246-1"></a><span class="co">#install.packages(&quot;gmodels&quot;)</span></span>
+<span id="cb246-2"><a href="wochenplan-08.html#cb246-2"></a><span class="kw">library</span>(gmodels)</span></code></pre></div>
+<pre><code>## Warning: package &#39;gmodels&#39; was built under R version 4.0.3</code></pre>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="wochenplan-08.html#cb248-1"></a>?CrossTable</span></code></pre></div>
+<pre><code>## starting httpd help server ... done</code></pre>
+<p>Ein Blick in die Hilfeseite zeigt uns, dass wir vor allem diejenigen Argument anders definieren müssen, die wir nicht in unserer Tabelle haben wollen. Das heisst wir müssen angeben (<code>FALSE</code>), dass wir keine Spalten- und Tabellenprozente sowie keine Angaben zum Chi-Quadrat-Beiträgen haben möchten. Leider scheint aber kein Argument vorhanden zu sein, mit der wir die absoluten Zahlen entfernen und die Randverteilung auch noch gemäss der Tabelle oben darstellen könnten.</p>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="wochenplan-08.html#cb250-1"></a><span class="kw">CrossTable</span>(polintr, gndr, </span>
+<span id="cb250-2"><a href="wochenplan-08.html#cb250-2"></a>           <span class="dt">digits =</span> <span class="dv">2</span>,</span>
+<span id="cb250-3"><a href="wochenplan-08.html#cb250-3"></a>           <span class="dt">prop.r =</span> F,</span>
+<span id="cb250-4"><a href="wochenplan-08.html#cb250-4"></a>           <span class="dt">prop.t =</span> F,</span>
+<span id="cb250-5"><a href="wochenplan-08.html#cb250-5"></a>           <span class="dt">prop.chisq =</span> F,</span>
+<span id="cb250-6"><a href="wochenplan-08.html#cb250-6"></a>           )</span></code></pre></div>
+<pre><code>## 
+##  
+##    Cell Contents
+## |-------------------------|
+## |                       N |
+## |           N / Col Total |
+## |-------------------------|
+## 
+##  
+## Total Observations in Table:  200 
+## 
+##  
+##              | gndr 
+##      polintr |         1 |         2 | Row Total | 
+## -------------|-----------|-----------|-----------|
+##            1 |        30 |        15 |        45 | 
+##              |      0.31 |      0.15 |           | 
+## -------------|-----------|-----------|-----------|
+##            2 |        37 |        39 |        76 | 
+##              |      0.38 |      0.38 |           | 
+## -------------|-----------|-----------|-----------|
+##            3 |        24 |        35 |        59 | 
+##              |      0.24 |      0.34 |           | 
+## -------------|-----------|-----------|-----------|
+##            4 |         7 |        13 |        20 | 
+##              |      0.07 |      0.13 |           | 
+## -------------|-----------|-----------|-----------|
+## Column Total |        98 |       102 |       200 | 
+##              |      0.49 |      0.51 |           | 
+## -------------|-----------|-----------|-----------|
+## 
+## </code></pre>
+<p>Anschliessend detachen wir unseren Datensatz wieder.</p>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="wochenplan-08.html#cb252-1"></a><span class="kw">detach</span>(daten_ess)</span></code></pre></div>
+<ol start="5" style="list-style-type: decimal">
+<li>Mittels <code>CrossTable()</code> lassen sich nicht nur Tabellen erstellen, sondern auch Chi-Quadrat Tests durchführen.</li>
 </ol>
 <ul>
-<li>Speichern Sie dazu das ganz Ergebnis Ihrer Arbeit mit der Funktion in Aufgabe 4 als ein neues Objekt ‘CT_Ergebnis’.</li>
-<li>Greifen Sie anschliessend auf die darin enthaltenen Angaben zum Chi-Quadrat Test zu und interpretieren Sie diese -– sowohl deskriptiv als auch inferenzstatistisch.</li>
+<li>Speichern Sie dazu das ganz Ergebnis Ihrer Arbeit mit der Funktion in Aufgabe 4 als ein neues Objekt <code>CT_Ergebnis</code>.</li>
+<li>Greifen Sie anschliessend auf die darin enthaltenen Angaben zum Chi-Quadrat Test zu und interpretieren Sie diese -– sowohl deskriptiv- als auch inferenzstatistisch.</li>
 </ul>
-<p>Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit “Fallloesung09_NameVorname.pdf” und geben das Dokument via OLAT bis Mittwochmittag ab (18.11.2020, 12:00).</p>
+<p>Zuerst weisen wir <em>alle</em> Ergebnisse der Funktion einem neuen Objekt zu:</p>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="wochenplan-08.html#cb253-1"></a>CT_Ergebnis &lt;-<span class="st"> </span><span class="kw">CrossTable</span>(daten_ess<span class="op">$</span>polintr, daten_ess<span class="op">$</span>gndr, <span class="dt">chisq =</span> T)</span></code></pre></div>
+<p>Danach können wir auf die einzelnen Inhalte des Chi-Quadrat Tests zugreifen:</p>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="wochenplan-08.html#cb254-1"></a><span class="kw">str</span>(CT_Ergebnis) <span class="co">#hier sehen wir, was alles in den Objekt enthalten ist.</span></span></code></pre></div>
+<pre><code>## List of 5
+##  $ t       : &#39;table&#39; int [1:4, 1:2] 30 37 24 7 15 39 35 13
+##   ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. ..$ x: chr [1:4] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;
+##   .. ..$ y: chr [1:2] &quot;1&quot; &quot;2&quot;
+##  $ prop.row: &#39;table&#39; num [1:4, 1:2] 0.667 0.487 0.407 0.35 0.333 ...
+##   ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. ..$ x: chr [1:4] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;
+##   .. ..$ y: chr [1:2] &quot;1&quot; &quot;2&quot;
+##  $ prop.col: &#39;table&#39; num [1:4, 1:2] 0.3061 0.3776 0.2449 0.0714 0.1471 ...
+##   ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. ..$ x: chr [1:4] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;
+##   .. ..$ y: chr [1:2] &quot;1&quot; &quot;2&quot;
+##  $ prop.tbl: &#39;table&#39; num [1:4, 1:2] 0.15 0.185 0.12 0.035 0.075 0.195 0.175 0.065
+##   ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. ..$ x: chr [1:4] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;
+##   .. ..$ y: chr [1:2] &quot;1&quot; &quot;2&quot;
+##  $ chisq   :List of 9
+##   ..$ statistic: Named num 8.83
+##   .. ..- attr(*, &quot;names&quot;)= chr &quot;X-squared&quot;
+##   ..$ parameter: Named int 3
+##   .. ..- attr(*, &quot;names&quot;)= chr &quot;df&quot;
+##   ..$ p.value  : num 0.0317
+##   ..$ method   : chr &quot;Pearson&#39;s Chi-squared test&quot;
+##   ..$ data.name: chr &quot;t&quot;
+##   ..$ observed : &#39;table&#39; int [1:4, 1:2] 30 37 24 7 15 39 35 13
+##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. ..$ x: chr [1:4] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;
+##   .. .. ..$ y: chr [1:2] &quot;1&quot; &quot;2&quot;
+##   ..$ expected : num [1:4, 1:2] 22.1 37.2 28.9 9.8 22.9 ...
+##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. ..$ x: chr [1:4] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;
+##   .. .. ..$ y: chr [1:2] &quot;1&quot; &quot;2&quot;
+##   ..$ residuals: &#39;table&#39; num [1:4, 1:2] 1.693 -0.0393 -0.9132 -0.8944 -1.6595 ...
+##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. ..$ x: chr [1:4] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;
+##   .. .. ..$ y: chr [1:2] &quot;1&quot; &quot;2&quot;
+##   ..$ stdres   : &#39;table&#39; num [1:4, 1:2] 2.6929 -0.0699 -1.5229 -1.3202 -2.6929 ...
+##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. ..$ x: chr [1:4] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;
+##   .. .. ..$ y: chr [1:2] &quot;1&quot; &quot;2&quot;
+##   ..- attr(*, &quot;class&quot;)= chr &quot;htest&quot;</code></pre>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="wochenplan-08.html#cb256-1"></a>CT_Ergebnis<span class="op">$</span>chisq</span></code></pre></div>
+<pre><code>## 
+## 	Pearson&#39;s Chi-squared test
+## 
+## data:  t
+## X-squared = 8.827, df = 3, p-value = 0.03168</code></pre>
+<p>Anschliessend greifen wir auf die einzelnen Elemente zurück, zuerst die deskriptivstatistischen Angaben:</p>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="wochenplan-08.html#cb258-1"></a>CT_Ergebnis<span class="op">$</span>chisq<span class="op">$</span>method</span></code></pre></div>
+<pre><code>## [1] &quot;Pearson&#39;s Chi-squared test&quot;</code></pre>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="wochenplan-08.html#cb260-1"></a>CT_Ergebnis<span class="op">$</span>chisq<span class="op">$</span>statistic</span></code></pre></div>
+<pre><code>## X-squared 
+##   8.82701</code></pre>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="wochenplan-08.html#cb262-1"></a>CT_Ergebnis<span class="op">$</span>chisq<span class="op">$</span>parameter</span></code></pre></div>
+<pre><code>## df 
+##  3</code></pre>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="wochenplan-08.html#cb264-1"></a>CT_Ergebnis<span class="op">$</span>chisq<span class="op">$</span>data.name</span></code></pre></div>
+<pre><code>## [1] &quot;t&quot;</code></pre>
+<p>Wir erhalten einen Chi-Quadrat Wert gemäss Pearson von 8.82701. Das heisst dass ein Zusammenhang zwischen den beiden Variablen Geschlecht und Politikinteresse besteht. Allerdings ist die Grössenordnung dieses Wertes nicht nur durch eine Stärke des Zusammenhangs bestimmt, sondern auch durch das Tabellenformat <span class="citation">(Diaz-Bone <a href="#ref-DiazBone2019" role="doc-biblioref">2019</a>, 86)</span>. Dieses Tabellenformat wird über die Freiheitsgrade (<em>df</em>) deutlich: (i-1) x (j-1). Möchte man hingegen verschiedene Zusammenhänge und deren Stärke miteinander vergleichen, so kann man auf Cramer’s V zurückgreifen (etwa über die Funktion <code>cramersV()</code> im Paket „lsr“). Der letzte Wert, der über das Unterobjekt <code>data.name</code> aufgerufen wird, gibt uns Angaben zu den verwendeten Daten. Diese Idee entstammt der eigentlichen Funktion für den einen Chi-Quadrat Test, <code>chisq.test()</code>, und würde normalerweise die Namen der Variablen angeben, die für den Test verwendeten wurden. Da hier aber der Chi-Quadrat Test im Rahmen einer anderen Funktion erfolgt, wird einfach auf „t“ verwiesen, was der Tabelle entspricht, welche die <code>CrossTable()</code> Funktion generiert generiert.</p>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="wochenplan-08.html#cb266-1"></a>CT_Ergebnis<span class="op">$</span>chisq<span class="op">$</span>p.value</span></code></pre></div>
+<pre><code>## [1] 0.03168154</code></pre>
+<p>Das inferenzstatistische Ergebnis unseres Chi-Quadrat Tests ist ein p-Wert von 0.03168154. Unser berechnete Prüfwert Chi-Quadrat fällt auf einem 5% Signifikanzniveau in den Ablehnungsbereich bzw. wir können auf einem 95% Signifikanzniveau die Alternativhypothese annehmen, dass auch in der Grundgesamtheit ein Zusammenhang zwischen den beiden Variablen besteht <span class="citation">(vgl. auch Manderscheid <a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>, 165f)</span>.</p>
+<p>Der p-Wert dreht hierbei die klassische Logik etwas um: Der Test bestimmt einen Signifikanzwert (oder eben eine Überschreitungswahrscheinlichkeit oder einen propability-value). Man kann sich das umgekehrt vorstellen: Ein p-Wert von 0.05 würde dann unserem Signifikanzniveau von 5% entsprechen – oder eben mit 95% Wahrscheinlichkeit würde dann die Nullhypothese nicht zutreffen. Es geht aber hier nicht mehr darum, dass Signifikanzniveau festzulegen und dann einen Testentscheid zu treffen, sondern den Testentscheid zu treffen (Nullhypothese triff zu) und dann zu schauen, wir wahrscheinlich der Testwert dann wäre (die konventionellen Grenzen für das Signifikanzniveau kann mal allerdings weiter als Referenzpunkte verwenden).</p>
+<p>Der p-Wert gibt daher an, wie wahrscheinlich das Ergebnis ist (d.h. der Chi-Quadrat-Wert) unter der Annahme der Nullhypothese. Das heisst, dass es in unserem Beispiel rund eine 3% Chance gibt, dass wir den Chi-Quadrat Wert von 8.3 zufällig erhalten, während die zwei kategoriale Variablen in der Grundgesamtheit statistisch voneinander unabhängig sind. Damit beschreibt der Wert auch gleich dem Alpha- bzw. Fehler 1.Art <span class="citation">(Diaz-Bone <a href="#ref-DiazBone2019" role="doc-biblioref">2019</a>, 172)</span>: Die Chance, dass wir die Nullhypothese aufgrund unseres Test verwerfen, obwohl sie eigentlich die Grundgesamtheit richtig beschreiben würde, ist also bei rund 3%.</p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-DiazBone2019">
+<p>Diaz-Bone, Rainer. 2019. <em>Statistik Für Soziologen</em>. Konstanz: UVK.</p>
+</div>
+<div id="ref-Manderscheid2017">
+<p>Manderscheid, Katharina. 2017. <em>Sozialwissenschaftliche Datenanalyse Mit R. Eine Einführung</em>. Wiesbaden: Springer VS.</p>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="8">
 <li id="fn8"><p>Siehe Aufgabe 05 der Falllösung 07.<a href="wochenplan-08.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>Vgl. auch folgende Zusammenfassung, auf die Herr Schürmann aufmerksam gemacht hat: <a href="https://statisticsglobe.com/attach-detach-function-in-r">https://statisticsglobe.com/attach-detach-function-in-r</a><a href="wochenplan-08.html#fnref9" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -239,7 +433,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="wochenplan-07.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

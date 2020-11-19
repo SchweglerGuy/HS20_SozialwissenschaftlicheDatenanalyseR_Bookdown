@@ -175,6 +175,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1" data-path="wochenplan-08.html"><a href="wochenplan-08.html#lernziele-wp08"><i class="fa fa-check"></i><b>8.1</b> Lernziele WP08</a></li>
 <li class="chapter" data-level="8.2" data-path="wochenplan-08.html"><a href="wochenplan-08.html#aufgaben-wp08"><i class="fa fa-check"></i><b>8.2</b> Aufgaben WP08</a></li>
 </ul></li>
+<li class="chapter" data-level="9" data-path="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><i class="fa fa-check"></i><b>9</b> Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 09 (19. &amp; 26.11.2020)</a><ul>
+<li class="chapter" data-level="9.1" data-path="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#lernziele-wp09"><i class="fa fa-check"></i><b>9.1</b> Lernziele WP09</a></li>
+<li class="chapter" data-level="9.2" data-path="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#aufgaben-wp09"><i class="fa fa-check"></i><b>9.2</b> Aufgaben WP09</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -230,16 +234,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="wochenplan-03.html#cb16-1"></a>(<span class="dv">1</span><span class="op">+</span><span class="st"> </span><span class="dv">3</span><span class="op">+</span><span class="st"> </span><span class="dv">7</span><span class="op">+</span><span class="st"> </span><span class="dv">9</span><span class="op">+</span><span class="st"> </span><span class="dv">22</span><span class="op">+</span><span class="st"> </span><span class="dv">2</span><span class="op">+</span><span class="st"> </span><span class="dv">8</span><span class="op">+</span><span class="st"> </span><span class="dv">14</span><span class="op">+</span><span class="st"> </span><span class="dv">20</span><span class="op">+</span><span class="st"> </span><span class="dv">3</span><span class="op">+</span><span class="st"> </span><span class="dv">7</span><span class="op">+</span><span class="st"> </span><span class="dv">9</span><span class="op">+</span><span class="st"> </span><span class="dv">11</span><span class="op">+</span><span class="st"> </span><span class="dv">13</span>)<span class="op">/</span><span class="dv">14</span></span></code></pre></div>
 <pre><code>## [1] 9.214286</code></pre>
 <p>Diese manuelle Variante kann etwa über die “Find/Replace” Funktion von R Studio erleichtert werden, indem die Kommata durch Pluszeichen ersetzt werden.</p>
-<p>Eine zweite Möglichkeit bietet die Kombination der Funktionen ‘sum()’ und ‘lenght()’, welche die oben manuell ausgeführten Schritte umsetzen.</p>
+<p>Eine zweite Möglichkeit bietet die Kombination der Funktionen <code>sum()</code> und <code>lenght()</code>, welche die oben manuell ausgeführten Schritte umsetzen.</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="wochenplan-03.html#cb18-1"></a><span class="kw">sum</span>(v)<span class="op">/</span><span class="kw">length</span>(v)</span></code></pre></div>
 <pre><code>## [1] 9.214286</code></pre>
-<p>Die dritte Möglichkeit ist natürlich die Funktion für das arithmetische Mittel selber, ‘mean()’:</p>
+<p>Die dritte Möglichkeit ist natürlich die Funktion für das arithmetische Mittel selber, <code>mean()</code>:</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="wochenplan-03.html#cb20-1"></a><span class="kw">mean</span>(v)</span></code></pre></div>
 <pre><code>## [1] 9.214286</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>Was macht das Argument ‘trim’ für die Funktion mean()? Wozu könnten Sie dieses Argument in einem sozialwissenschaftlichen Kontext nutzen? Spezifizieren Sie das Argument auf sinnvolle Weise, um das arithmetische Mittel des in Aufgabe 1 erstellten Vektors <strong>v</strong> zu berechnen!</li>
+<li>Was macht das Argument <code>trim</code> für die Funktion mean()? Wozu könnten Sie dieses Argument in einem sozialwissenschaftlichen Kontext nutzen? Spezifizieren Sie das Argument auf sinnvolle Weise, um das arithmetische Mittel des in Aufgabe 1 erstellten Vektors <strong>v</strong> zu berechnen!</li>
 </ol>
-<p>Mittels des Arguments ‘trim’ können Sie Anteile der Elemente eines Vektors für die Berechnung entfernen, also etwa die kleinsten und grössten 10%:</p>
+<p>Mittels des Arguments <code>trim</code> können Sie Anteile der Elemente eines Vektors für die Berechnung entfernen, also etwa die kleinsten und grössten 10%:</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="wochenplan-03.html#cb22-1"></a><span class="kw">mean</span>(v, <span class="dt">trim =</span> <span class="fl">0.1</span>)</span></code></pre></div>
 <pre><code>## [1] 8.833333</code></pre>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="wochenplan-03.html#cb24-1"></a><span class="kw">sort</span>(v)</span></code></pre></div>
@@ -279,7 +283,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="wochenplan-03.html#cb38-1"></a><span class="kw">apply</span>(mb, <span class="dv">2</span>, mean)</span></code></pre></div>
 <pre><code>## [1] 5.5 6.5 6.0 5.5</code></pre>
 <p>Nachdem die vier Vektoren erstellt wurden lassen sie sich über die ‚rbind()‘ und ‚cbind()‘ Funktionen auf zwei verschiedene Weisen zu einer Matrix verbinden, entweder Zeilen- oder Spalte-weise (siehe die Objekte ma und mb).</p>
-<p>‘apply()’ als nächster Schritt wendet eine bestimmte Funktion auf ein Objekte an. Bei einem Objekt des Typs Matrix muss allerdings noch spezifiziert werden, ob die Funktion Zeilen- oder Spalte-weise angewendet wird. Zielen oder Spalten werden über die Zahlen 1 bzw. 2 definiert.</p>
+<p><code>apply()</code> als nächster Schritt wendet eine bestimmte Funktion auf ein Objekte an. Bei einem Objekt des Typs Matrix muss allerdings noch spezifiziert werden, ob die Funktion Zeilen- oder Spalte-weise angewendet wird. Zielen oder Spalten werden über die Zahlen 1 bzw. 2 definiert.</p>
 <p>So ergeben sich insgesamt vier Möglichkeiten, für die Berechnung der des Durchschnitts – allerdings generieren diese vier Möglichkeiten nur zwei unterschiedliche Ergebnisse.</p>
 <ol start="4" style="list-style-type: decimal">
 <li>Erstellen Sie je einen Vektor mit numerischen Daten, textförmigen Daten und logischen Daten. Die Funktionen as.numeric(), as.character() und as.logical() lassen Sie eine Datenarten in eine andere “zwingen” bzw. als eine andere Datenart interpretieren. Wann funktioniert dies? Und wo sind die Grenzen dieses “Zwingens”?</li>
@@ -288,7 +292,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb40-2"><a href="wochenplan-03.html#cb40-2"></a>b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;null&quot;</span>, <span class="st">&quot;eins&quot;</span>, <span class="st">&quot;zwei&quot;</span>) <span class="co">#die Anführungs- und Schlusszeichen beachten</span></span>
 <span id="cb40-3"><a href="wochenplan-03.html#cb40-3"></a>b2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;0&quot;</span>, <span class="st">&quot;1&quot;</span>, <span class="st">&quot;2&quot;</span>)</span>
 <span id="cb40-4"><a href="wochenplan-03.html#cb40-4"></a>c &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, T) <span class="co">#Die logischen Objekte können sowohl ausgeschreiben als auch lediglich als T und F aufgeführt werden</span></span></code></pre></div>
-<p>Nachdem wir die Vektoren definiert haben, können wir deren Typ bestimmen und mit den ‘as.’-Funktionen spielen:</p>
+<p>Nachdem wir die Vektoren definiert haben, können wir deren Typ bestimmen und mit den <code>as.</code>-Funktionen spielen:</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="wochenplan-03.html#cb41-1"></a><span class="kw">is.numeric</span>(a)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="wochenplan-03.html#cb43-1"></a><span class="kw">is.character</span>(b)</span></code></pre></div>
@@ -314,7 +318,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] NA NA NA</code></pre>
 <div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="wochenplan-03.html#cb64-1"></a><span class="kw">as.logical</span>(b2)</span></code></pre></div>
 <pre><code>## [1] NA NA NA</code></pre>
-<p>Die Grenzen dieses “Zwingens” der ’as.-’Funktionen finden sich auf der einen Seite bei ausgeschriebenen Zahlen in einem Charakter-Vektor. Diese ausgeschriebenen Zahlen können von R nicht in numerische oder auch logische Daten umformuliert werden. Anderseits zeigen sich die Grenzen im Zusammenhang zu den logischen Daten: Hier funktioniert das “Zwingen” nur mit numerische Daten – und alles über 1 wird als TRUE interpretiert.</p>
+<p>Die Grenzen dieses “Zwingens” der <code>as.-</code>Funktionen finden sich auf der einen Seite bei ausgeschriebenen Zahlen in einem Charakter-Vektor. Diese ausgeschriebenen Zahlen können von R nicht in numerische oder auch logische Daten umformuliert werden. Anderseits zeigen sich die Grenzen im Zusammenhang zu den logischen Daten: Hier funktioniert das “Zwingen” nur mit numerische Daten – und alles über 1 wird als TRUE interpretiert.</p>
 <ol start="5" style="list-style-type: decimal">
 <li>Definieren Sie folgende Vektoren mittels der Funktionen seq() und rep():</li>
 </ol>
