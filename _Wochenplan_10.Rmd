@@ -2,33 +2,31 @@
 
 ## Lernziele
 
-In der kommenden Woche gehen wir von der Analyse von Kreuztabellen sukzessive zur Regressionsanalyse über. Dabei behalten wir die Arbeit mit unterschiedlichen Datenformaten (inklusive Faktoren) im Auge. Wir beginnen mit bivariaten Regressionsmodellen und machen uns Schritt für Schritt mit der Definition und Interpretation dieser Modell in R vertraut. 
+Nachdem wir unsere Daten aufbereitet, ersten Analysen mittels Kreuztabellen gemacht und die Faktoren definiert haben gehen wir in der kommenden Woche sukzessive zur Regressionsanalyse über. Dabei behalten wir die Arbeit mit unterschiedlichen Datenformaten (inklusive Faktoren) im Auge. Wir beginnen mit bivariaten Regressionsmodellen und machen uns Schritt für Schritt mit der Definition und Interpretation dieser Modelle in R vertraut. 
 
-Das impliziert die folgenden konkreten Lernziele:
+Konkret lassen sich für den 10. Wochenplan folgende Lernziele definieren:
 
-- Sie sind mit der Funktion lm() in ihren Grundstrukturen vertraut.
+- Sie sind mit der Funktion `lm()` in ihrer Grundstrukturen vertraut.
 
-- Sie kennen die Notation, mit der in R Regressionsmodelle in Formeln dargestellt werden. 
+- Sie kennen die Notation, mit der in R Regressionsmodelle in Formeln dargestellt werden.
 
-- Sie haben einen ersten Eindruck von der Struktur des "Ergebnisobjekts", das lm() erzeugt.
+- Sie verstehen, wie in einem linearen Regressionsmodell sowohl metrische als auch kategoriale und binominale unabhängige Variablen einfliessen können.
 
-- Sie verstehen, wie sich numerische und kategoriale Variablen als unabhängige Variablen voneinander unterscheiden.
+- Sie haben einen ersten Eindruck von der Struktur des "Ergebnisobjekts", das `lm()` erzeugt.
 
-- Sie haben eine erste Idee davon, wie eine Anwendung von plot() auf unser Ergebnisobjekt bei der Analyse der Qualität und Aussagekraft eines Regressionsmodells helfen kann. 
+- Sie wissen, wie Sie den Modelloutput einer linearen Regression in R interpretieren müssen und die Güte eines Modells einschätzen sollten.
 
 
 ## Aufgaben
 
-1. Laden Sie Ihr Datenimport-Skript. Arbeiten Sie anschliessend in einem R-Markdown-Dokument weiter.
+1. Laden Sie Ihr Datenimport-Skript. Arbeiten Sie anschliessend in einem R Markdown-Dokument weiter.
 
-2. Formulieren Sie zwei inhaltliche Fragestellungen, die Sie anhand unserer ESS-Daten mit einem einfachen (bivariaten) Regressionsmodell beantworten können. Eine der beiden Fragestellungen soll eine kategoriale Variable als unabhängige Variable 
+2. Formulieren Sie zwei inhaltliche Fragestellungen, die Sie anhand unserer ESS-Daten mit einem einfachen (bivariaten) Regressionsmodell beantworten können. Eine der beiden Fragestellungen soll eine kategoriale Variable als unabhängige Variable enthalten. Nutzen Sie je ein Streudiagramm, um erste Hinweis zu Ihren Fragestellungen zu erhalten. 
 
-3. Formulieren und überprüfen Sie Ihre beiden Modelle mittels der Funktion lm(). Machen Sie sich dazu vorab mit dieser Funktion vertraut (Hilfeseite der Funktion, Online-Tutorials ...). Erläutern Sie lm() kurz in eigenen Worten!
+3. Formulieren und überprüfen Sie Ihre beiden Modelle mittels der Funktion `lm()`. Machen Sie sich dazu vorab mit dieser Funktion vertraut (Hilfeseite der Funktion, Online-Tutorials ...). Erläutern Sie `lm()` kurz in eigenen Worten!
 
 4. Weisen Sie Ihre Regressionsanalysen jeweils einem "Ergebnisobjekt" zu! Wie ist dieses Objekt aufgebaut? Welche Komponenten und Informationen beinhaltet es? 
 
-5. Interpretieren Sie das Ergebnis Ihrer Regressionsanalyse. Was kommt heraus? 
+5. Interpretieren Sie die Ergebnisse Ihrer beiden Regressionsanalysen.
 
-6. Wenden Sie plot() auf Ihre Ergebnisobjekte an. Was sehen Sie? Was sagen Ihnen diese Grafiken?
-
-Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit "Fallloesung09_NameVorname.pdf" und geben das Dokument via OLAT bis Mittwochmittag ab (02.12.2020, 12:00).
+Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit "Fallloesung10_NameVorname.pdf" und geben das Dokument via OLAT bis Mittwochmittag ab (02.12.2020, 12:00).
