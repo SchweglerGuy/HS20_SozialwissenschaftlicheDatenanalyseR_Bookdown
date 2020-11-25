@@ -1,4 +1,6 @@
-# Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 09 (19. & 26.11.2020)
+# Wochenplan 09
+
+...zu den Einheiten vom 19. & 26.11.2020, Einführung Faktoren
 
 ## Lernziele WP09
 
@@ -21,38 +23,98 @@ Die folgenden konkreten Lernziele lassen sich für ein erstes Kennenlernen von F
 
 1. Laden Sie Ihr Datenimport-Skript und fügen Sie einen Abschnitt zur Definition und Aufbereitung einzelner Variablen als Faktoren ein. Arbeiten Sie anschliessend in einem R Markdown weiter.
 
+Ein solcher Abschnitt wird am einfachsten über die Kommentarfunktion ausgewiesen: Das Datenimport-Skript soll also einen Abschnitt zum Dateneinlesen (`#Daten einlesen`), einen Abschnitt für die Definition der fehlende Werte bei metrischen Variablen (`#Fehlende Werte definieren`) und neu einen Abschnitt zur Definition der Faktoren enthalten (`#Faktoren definieren`).
+
 2. Gehen Sie unseren Übungsdatensatz konzentriert durch und überlegen Sie, welche Variablen als geordnete oder ungeordnete Faktoren gespeichert werden sollten. 
 
+Folgenden Variablen sollten wir als *ungeordnete* Faktoren definieren: "gndr", "chldhm", "pdwrk", "edctn" und "uemp3m".
+
+Als *geordnete* Faktoren sollten wir folgende Variablen definieren: "polintr", "edulvla" und "eisced".
+
 3. Definieren Sie nun jede dieser Variablen als Faktor (die einzige Ausnahme soll die Variable "isco08" sein).
+```{r include=FALSE}
+daten_ess <- read.csv(file = "Data/ESS1-8e01_HS20.csv")
+```
 
-Hier ein Beispiel zur Variable "polintr"
-```{r eval=FALSE}
-#Eine Übersicht
-table(daten_ess$polintr)
+Im Folgenden wird lediglich der Code zur Definition der Faktoren aufgeführt. Zuvor sollte man sicher allerdings immer eine Tabelle zu einem Vektor aufrufen.
 
-#Definieren des Faktors
+Mit diesem Code-Chunk definieren wir die ungeordneten Faktoren:
+```{r}
+#gndr
+daten_ess$gndr <- factor(daten_ess$gndr)
+levels(daten_ess$gndr) <- c("male", "female")
+
+#chldhm
+daten_ess$chldhm[daten_ess$chldhm==9] <- NA
+daten_ess$chldhm <- factor(daten_ess$chldhm)
+levels(daten_ess$chldhm) <- c("Respondent lives with children at household grid", "Does not")
+
+#pdwrk
+daten_ess$pdwrk <- factor(daten_ess$pdwrk)
+levels(daten_ess$pdwrk) <- c("not marked", "paid work (in the last 7 days)")
+
+#edctn
+daten_ess$edctn <- factor(daten_ess$edctn)
+levels(daten_ess$edctn) <- c("not marked", "education (in the last 7 days)")
+
+#uemp3m
+daten_ess$uemp3m <- factor(daten_ess$uemp3m)
+levels(daten_ess$uemp3m) <- c("Has been unemployed", "Has never been unemployed", "Refusal", "Don't know", "No answer")
+```
+
+Mit diesem Code-Chunk definieren wir die geordneten Faktoren:
+```{r}
+#polintr
 daten_ess$polintr <- factor(daten_ess$polintr, ordered = T)
 levels(daten_ess$polintr) <- c("Very interested", 
                                "Quite interested", 
                                "Hardly interested", 
                                "Not at all interested")
-#Betrachtung der Variable
-daten_ess$polintr
-#Die Reihenfolge scheint noch nicht zu stimmen...
-
-#Änderung der Reihenfolge der Levels
+##Änderung der Reihenfolge der Levels
 daten_ess$polintr <- ordered(daten_ess$polintr, 
                              levels = c("Not at all interested", 
                                         "Hardly interested", 
                                         "Quite interested", "Very interested"))
 
-#Betrachtung der Variable, nach der Neuordnung
-daten_ess$polintr
+#edulvla
+daten_ess$edulvla <- factor(daten_ess$edulvla, ordered = T)
+levels(daten_ess$edulvla) <- c("ISCED 0-1", 
+                               "ISCED 2", 
+                               "ISCED 3", 
+                               "ISCED 4",
+                               "ISCED 5-6")
+
+#eisced
+daten_ess$eisced <- factor(daten_ess$eisced, ordered = T)
+levels(daten_ess$eisced) <- c("ES-ISCED I", 
+                               "ES-ISCED II", 
+                               "ES-ISCED IIIb", 
+                               "ES-ISCED IIIa",
+                               "ES-ISCED IV",
+                               "ES-ISCED V1",
+                               "ES-ISCED V2")
 ```
 
 
-4. Überprüfen Sie mittels Kreuztabellen, ob Ihre Faktoren sinnvoll und fehlerfrei definiert sind. 
+4. Überprüfen Sie mittels Kreuztabellen, ob Ihre Faktoren sinnvoll und fehlerfrei definiert sind.
+
+Hierzu können wir die einzelen Faktoren mit noch vorhandenen numerischen Ausprägungen "hinter" den Levels vergleichen, wie zum Beispiel bei derletzten, ungeordneten Variable "uemp3m".
+```{r}
+
+table(daten_ess$uemp3m, as.numeric(daten_ess$uemp3m))
+```
+
 
 5. Inkludieren Sie die einwandfrei funktionierenden Lösungen zur Faktorendefinition in Ihr Datenimportskript. Testen Sie danach, ob das Skript funktioniert: Löschen Sie Ihre Environment (und alle Objekte), laden Sie mittels `source()` den Datensatz neu und rufen Sie dann -- als Test -- eine als Faktor definierte Variable auf.
 
-Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit "Fallloesung09_NameVorname.pdf" und geben das Dokument via OLAT bis Mittwochmittag ab (25.11.2020, 12:00).
+Eine einfache Variante, wie die gesamte Environment gelöscht werden kann, biete folgende Ergänzung der `rm()`-Funktion:
+```{r include=FALSE}
+rm(list=ls())
+```
+
+Nachdem Sie das Skript zum Datenimport (inkl. der Definition der Faktoren) ausgeführt haben können Sie anschliessend auf einen Faktor zugreifen -- z.Bsp. über `is.factor()`:
+```{r}
+source(file = "Data/ess_import.R")
+is.factor(daten_ess$eisced)
+```
+
