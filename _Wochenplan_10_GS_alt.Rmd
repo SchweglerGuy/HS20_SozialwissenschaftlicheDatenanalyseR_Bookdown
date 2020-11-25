@@ -1,0 +1,84 @@
+# Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 10 (26.11 & 03.12.2020)
+
+## Lernziele
+
+Nachdem wir unsere Daten aufbereitet, ersten Analysen mittels Kreuztabellen gemacht und die Faktoren definiert haben wollen wir in einem nächsten Schritt übergehen zur Regressionsanalyse. Als Vorbereitung dieser Analyse nutzen wir eine Korrelationstabelle und Streudiagrammen, um einen Überblick zu erhalten zu den verschiedenen Variablen. So sehen wir bereits, wie verschiedene unabhängige Variablen sich sowohl untereinander als insbesondere auch zu einer abhängigen Variable verhalten. Anschliessend rechnen wir ein erstes multiples lineares Modell und wir interpretieren wir dessen Ergebnisse deskriptiv- und inferenzstatistisch. Dieses erste Modell und dessen Interpretation ist dabei insofern vorläufig, als das wir im weiteren Verlauf (d.h. im nächsten Wochenplan) auch das Modell selber analysieren und mit Massnahmen verbessern möchten.
+
+Konkret lassen sich für den 10. Wochenplan folgende Ziele definieren:
+
+- Sie verstehen, wie Sie mittels Korrelationstabellen und Streudiagrammen erste Ideen für ein Regressionsmodell sammeln können.
+
+- Sie können multiple, lineare Modell in R korrekt rechnen.
+
+- Sie verstehen, wie in einem multiplen, linearen Modell sowohl metrischen Variablen als auch kategoriale und binominale Variablen einfliessen können.
+
+- Sie wissen, wie Sie den Modelloutput einer linearen Regression in R interpretieren müssen und die Güte eines Modells einschätzen sollten.
+
+
+## Aufgaben
+
+1. Laden Sie sich wie immer über die `source()`-Funktion den ESS Teildatensatz. Anschliessend sollen Sie mittels der `rcorr()` Funktion, die Teil des Paketes "Hmisc" ist, eine Korrelationstabelle berechen. Erstellen Sie die dazu eine Matrix aus den Variablen "wkhtot", "agae", "edulvla" und "chldhm". Interpretieren Sie anschliessend die erhaltenen Element der Korrelationstabelle. Was könnten die abhängige und was die unabhängige Variable sein? Wo sehen Sie bereits Zusammmenhänge, wo nicht?
+
+2. Erstellen Sie anschliessend zwei Streudiagramme von Ihrer abhängigen Variablen einer Variable, bei der Sie bereits einen Zusammenhang in der Korrelationstabelle entdeckt haben, und einer bei der Sie noch keinen Zusammenhang vermuten.
+
+3. Rechnen Sie anschliessend ein lineares Regressionsmodell mittels der Funktion `lm()` und den oben bereits erwähnten vier Variablen. Speichern Sie das Modell als Objekt ab und lassen Sie sich eine `summary()` ausgeben. Wie interpretieren Sie die Werte, die Sie dort erhalten?
+
+
+
+Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit "Fallloesung10_NameVorname.pdf" und geben das Dokument via OLAT bis Mittwochmittag ab (02.12.2020, 12:00).
+
+
+
+## Ideen 
+
+```{r}
+source(file = "Data/ess_import.R")
+#daten_ess <- read.csv(file = "Data/ESS1-8e01_HS20.csv")
+```
+
+```{r}
+daten_ess$wkhtot[daten_ess$wkhtot>500] <- NA
+attach(daten_ess)
+library(Hmisc)
+rcorr(cbind(wkhtot,
+            agea,
+            edulvla,
+            chldhm),
+            type = "pearson")
+
+rcorr(c(wkhtot, agea, edulvla,chldhm), type = "pearson")
+
+detach(daten_ess)
+```
+
+...dann für alles Plots anschauen...
+-->nein, nur für zwei
+1x gute Vermutung, 1x schlechte Vermutung
+```{r}
+attach(daten_ess)
+plot(jitter(wkhtot), jitter(agea))
+which(wkhtot>80)
+detach(daten_ess)
+daten_ess$wkhtot[daten_ess$wkhtot>80] <- NA
+attach(daten_ess)
+plot(jitter(wkhtot), jitter(agea))
+```
+
+
+```{r}
+modell1 <- lm(wkhtot ~ agea, data = daten_ess)
+modell1
+```
+
+...und dann ein Modell, mit as.numeric(edulvla)
+
+```{r}
+modell2 <- lm(wkhtot ~ agea + as.numeric(edulvla) + chldhm, data = daten_ess)
+modell2
+```
+
+
+```{r}
+modell2 <- lm(wkhtot ~ agea + edulvla + chldhm, data = daten_ess)
+modell2
+```

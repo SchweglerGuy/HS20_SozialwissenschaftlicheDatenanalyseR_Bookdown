@@ -1,0 +1,38 @@
+# Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 10 (26.11 & 03.12.2020)
+
+## Lernziele
+
+Nachdem wir unsere Daten aufbereitet, ersten Analysen mittels Kreuztabellen gemacht und die Faktoren definiert haben gehen wir in der kommenden Woche sukzessive zur Regressionsanalyse über. Dabei behalten wir die Arbeit mit unterschiedlichen Datenformaten (inklusive Faktoren) im Auge. Wir beginnen mit bivariaten Regressionsmodellen und machen uns Schritt für Schritt mit der Definition und Interpretation dieser Modelle in R vertraut. 
+
+Konkret lassen sich für den 10. Wochenplan folgende Lernziele definieren:
+
+- Sie sind mit der Funktion `lm()` in ihrer Grundstrukturen vertraut.
+
+- Sie kennen die Notation, mit der in R Regressionsmodelle in Formeln dargestellt werden.
+
+- Sie verstehen, wie in einem linearen Regressionsmodell sowohl metrische als auch kategoriale und binominale unabhängige Variablen einfliessen können.
+
+- Sie haben einen ersten Eindruck von der Struktur des "Ergebnisobjekts", das `lm()` erzeugt.
+
+- Sie wissen, wie Sie den Modelloutput einer linearen Regression in R interpretieren müssen und die Güte eines Modells einschätzen sollten.
+
+- Sie haben eine erste Idee davon, wie eine Anwendung von plot() auf unser Ergebnisobjekt bei der Analyse der Qualität und Aussagekraft eines Regressionsmodells helfen kann. 
+
+
+
+## Aufgaben
+
+1. Laden Sie Ihr Datenimport-Skript. Arbeiten Sie anschliessend in einem R Markdown-Dokument weiter.
+
+2. Formulieren Sie zwei inhaltliche Fragestellungen, die Sie anhand unserer ESS-Daten mit einem einfachen (bivariaten) Regressionsmodell beantworten können. Eine der beiden Fragestellungen soll eine kategoriale Variable als unabhängige Variable enthalten. Nutzen Sie je ein Streudiagramm, um erste Hinweis zu Ihren Fragestellungen zu erhalten. 
+
+3. Formulieren und überprüfen Sie Ihre beiden Modelle mittels der Funktion `lm()`. Machen Sie sich dazu vorab mit dieser Funktion vertraut (Hilfeseite der Funktion, Online-Tutorials ...). Erläutern Sie `lm()` kurz in eigenen Worten!
+
+4. Weisen Sie Ihre Regressionsanalysen jeweils einem "Ergebnisobjekt" zu! Wie ist dieses Objekt aufgebaut? Welche Komponenten und Informationen beinhaltet es? 
+
+5. Interpretieren Sie die Ergebnisse Ihrer beiden Regressionsanalysen.
+
+>6. Wenden Sie plot() auf Ihre Ergebnisobjekte an. Was sehen Sie? Was sagen Ihnen diese Grafiken?
+>> würde ich auslassen, sondern nur in der Stunde mal aufzeigen... Das könnte man z.bsp. als Gruppenarbeit dann machen lassen oder auch auf den nächsten und letzen (!) WOchenplan verschieben
+
+Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit "Fallloesung10_NameVorname.pdf" und geben das Dokument via OLAT bis Mittwochmittag ab (02.12.2020, 12:00).
