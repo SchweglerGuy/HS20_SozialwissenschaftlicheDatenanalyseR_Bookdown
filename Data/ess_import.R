@@ -4,7 +4,6 @@ daten_ess$zv <- rm()
 daten_ess$agea_l <- rm()
 daten_ess$x <- rm()
 
-
 #Definieren von fehlenden Werten
 daten_ess$yrbrn[daten_ess$yrbrn==7777 |
                   daten_ess$yrbrn==8888 |

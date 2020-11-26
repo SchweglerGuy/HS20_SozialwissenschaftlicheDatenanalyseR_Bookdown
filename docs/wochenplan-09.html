@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>9 Wochenplan 09 | Sozialwissenschaftliche Datenanalyse mit R</title>
+  <meta name="description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="9 Wochenplan 09 | Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="9 Wochenplan 09 | Sozialwissenschaftliche Datenanalyse mit R" />
+  
+  <meta name="twitter:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
+  
+
+<meta name="author" content="Kenneth Horvath &amp; Guy Schwegler" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="wochenplan-08.html"/>
+<link rel="next" href="wochenplan-10.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R - HS20</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Einführung</a></li>
+<li class="chapter" data-level="1" data-path="wocheplan-01.html"><a href="wocheplan-01.html"><i class="fa fa-check"></i><b>1</b> Wocheplan 01</a><ul>
+<li class="chapter" data-level="1.1" data-path="wocheplan-01.html"><a href="wocheplan-01.html#sozialwissenschaftliche-datenanalyse"><i class="fa fa-check"></i><b>1.1</b> Sozialwissenschaftliche Datenanalyse</a></li>
+<li class="chapter" data-level="1.2" data-path="wocheplan-01.html"><a href="wocheplan-01.html#ziel-des-kurses"><i class="fa fa-check"></i><b>1.2</b> Ziel des Kurses</a></li>
+<li class="chapter" data-level="1.3" data-path="wocheplan-01.html"><a href="wocheplan-01.html#r-als-programm-rstudio"><i class="fa fa-check"></i><b>1.3</b> R als Programm &amp; RStudio</a></li>
+<li class="chapter" data-level="1.4" data-path="wocheplan-01.html"><a href="wocheplan-01.html#lernziele-der-ersten-woche"><i class="fa fa-check"></i><b>1.4</b> Lernziele der ersten Woche</a></li>
+<li class="chapter" data-level="1.5" data-path="wocheplan-01.html"><a href="wocheplan-01.html#aufgaben-der-ersten-woche"><i class="fa fa-check"></i><b>1.5</b> Aufgaben der ersten Woche</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="wochenplan-02.html"><a href="wochenplan-02.html"><i class="fa fa-check"></i><b>2</b> Wochenplan 02</a><ul>
+<li class="chapter" data-level="2.1" data-path="wochenplan-02.html"><a href="wochenplan-02.html#lernziele-der-zweiten-woche"><i class="fa fa-check"></i><b>2.1</b> Lernziele der zweiten Woche</a></li>
+<li class="chapter" data-level="2.2" data-path="wochenplan-02.html"><a href="wochenplan-02.html#aufgaben"><i class="fa fa-check"></i><b>2.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="wochenplan-03.html"><a href="wochenplan-03.html"><i class="fa fa-check"></i><b>3</b> Wochenplan 03</a><ul>
+<li class="chapter" data-level="3.1" data-path="wochenplan-03.html"><a href="wochenplan-03.html#lernziele-wp03"><i class="fa fa-check"></i><b>3.1</b> Lernziele WP03</a></li>
+<li class="chapter" data-level="3.2" data-path="wochenplan-03.html"><a href="wochenplan-03.html#aufgaben-wp03"><i class="fa fa-check"></i><b>3.2</b> Aufgaben WP03</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="wochenplan-04.html"><a href="wochenplan-04.html"><i class="fa fa-check"></i><b>4</b> Wochenplan 04</a><ul>
+<li class="chapter" data-level="4.1" data-path="wochenplan-04.html"><a href="wochenplan-04.html#lernziele-wp04"><i class="fa fa-check"></i><b>4.1</b> Lernziele WP04</a></li>
+<li class="chapter" data-level="4.2" data-path="wochenplan-04.html"><a href="wochenplan-04.html#aufgaben-wp04"><i class="fa fa-check"></i><b>4.2</b> Aufgaben WP04</a></li>
+<li class="chapter" data-level="4.3" data-path="wochenplan-04.html"><a href="wochenplan-04.html#hinweise-für-den-wochenplan-05"><i class="fa fa-check"></i><b>4.3</b> Hinweise für den Wochenplan 05</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="wochenplan-05.html"><a href="wochenplan-05.html"><i class="fa fa-check"></i><b>5</b> Wochenplan 05</a><ul>
+<li class="chapter" data-level="5.1" data-path="wochenplan-05.html"><a href="wochenplan-05.html#lernziele-wp05"><i class="fa fa-check"></i><b>5.1</b> Lernziele WP05</a></li>
+<li class="chapter" data-level="5.2" data-path="wochenplan-05.html"><a href="wochenplan-05.html#aufgaben-wp05"><i class="fa fa-check"></i><b>5.2</b> Aufgaben WP05</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="wochenplan-06.html"><a href="wochenplan-06.html"><i class="fa fa-check"></i><b>6</b> Wochenplan 06</a><ul>
+<li class="chapter" data-level="6.1" data-path="wochenplan-06.html"><a href="wochenplan-06.html#lernziele-wp06"><i class="fa fa-check"></i><b>6.1</b> Lernziele WP06</a></li>
+<li class="chapter" data-level="6.2" data-path="wochenplan-06.html"><a href="wochenplan-06.html#aufgaben-wp06"><i class="fa fa-check"></i><b>6.2</b> Aufgaben WP06</a></li>
+<li class="chapter" data-level="6.3" data-path="wochenplan-06.html"><a href="wochenplan-06.html#besprechung-skript-standardfehler.r"><i class="fa fa-check"></i><b>6.3</b> Besprechung Skript “standardfehler.R”</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="wochenplan-06.html"><a href="wochenplan-06.html#ebene-der-grundgesamtheit"><i class="fa fa-check"></i><b>6.3.1</b> Ebene der Grundgesamtheit</a></li>
+<li class="chapter" data-level="6.3.2" data-path="wochenplan-06.html"><a href="wochenplan-06.html#ebene-der-einzelnen-stichprobe"><i class="fa fa-check"></i><b>6.3.2</b> Ebene der einzelnen Stichprobe</a></li>
+<li class="chapter" data-level="6.3.3" data-path="wochenplan-06.html"><a href="wochenplan-06.html#ebene-der-stichprobenverteilung"><i class="fa fa-check"></i><b>6.3.3</b> Ebene der Stichprobenverteilung</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="wochenplan-07.html"><a href="wochenplan-07.html"><i class="fa fa-check"></i><b>7</b> Wochenplan 07</a><ul>
+<li class="chapter" data-level="7.1" data-path="wochenplan-07.html"><a href="wochenplan-07.html#lernziele-wp07"><i class="fa fa-check"></i><b>7.1</b> Lernziele WP07</a></li>
+<li class="chapter" data-level="7.2" data-path="wochenplan-07.html"><a href="wochenplan-07.html#aufgaben-wp07"><i class="fa fa-check"></i><b>7.2</b> Aufgaben WP07</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="wochenplan-08.html"><a href="wochenplan-08.html"><i class="fa fa-check"></i><b>8</b> Wochenplan 08</a><ul>
+<li class="chapter" data-level="8.1" data-path="wochenplan-08.html"><a href="wochenplan-08.html#lernziele-wp08"><i class="fa fa-check"></i><b>8.1</b> Lernziele WP08</a></li>
+<li class="chapter" data-level="8.2" data-path="wochenplan-08.html"><a href="wochenplan-08.html#aufgaben-wp08"><i class="fa fa-check"></i><b>8.2</b> Aufgaben WP08</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="wochenplan-09.html"><a href="wochenplan-09.html"><i class="fa fa-check"></i><b>9</b> Wochenplan 09</a><ul>
+<li class="chapter" data-level="9.1" data-path="wochenplan-09.html"><a href="wochenplan-09.html#lernziele-wp09"><i class="fa fa-check"></i><b>9.1</b> Lernziele WP09</a></li>
+<li class="chapter" data-level="9.2" data-path="wochenplan-09.html"><a href="wochenplan-09.html#aufgaben-wp09"><i class="fa fa-check"></i><b>9.2</b> Aufgaben WP09</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="wochenplan-10.html"><a href="wochenplan-10.html"><i class="fa fa-check"></i><b>10</b> Wochenplan 10</a><ul>
+<li class="chapter" data-level="10.1" data-path="wochenplan-10.html"><a href="wochenplan-10.html#lernziele-wp10"><i class="fa fa-check"></i><b>10.1</b> Lernziele WP10</a></li>
+<li class="chapter" data-level="10.2" data-path="wochenplan-10.html"><a href="wochenplan-10.html#aufgaben-wp10"><i class="fa fa-check"></i><b>10.2</b> Aufgaben WP10</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Sozialwissenschaftliche Datenanalyse mit R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="wochenplan-09" class="section level1">
+<h1><span class="header-section-number">9</span> Wochenplan 09</h1>
+<p>…zu den Einheiten vom 19. &amp; 26.11.2020, Einführung Faktoren</p>
+<div id="lernziele-wp09" class="section level2">
+<h2><span class="header-section-number">9.1</span> Lernziele WP09</h2>
+<p>Aufbauend auf unserer bisherigen Arbeit mit Kreuztabellen besteht das Lernziel für diese Woche darin, dass Sie sich mit einem für die tägliche Arbeit mit R wichtigen Datenformat vertraut machen: Faktoren. Faktoren sind eine geeignete Art, kategoriale – d.h. nominale und ordinale – Daten in R zu repräsentieren. Der Umgang mit dieser Art von Daten ist allerdings nicht ganz leicht und erfordert ein wenig Übung.</p>
+<p>Die folgenden konkreten Lernziele lassen sich für ein erstes Kennenlernen von Faktoren formulieren:</p>
+<ul>
+<li><p>Sie können dafür geeignete Variablen in Faktoren umwandeln.</p></li>
+<li><p>Sie verstehen den Unterschied zwischen geordneten und ungeordneten Faktoren und können beide in R erstellen.</p></li>
+<li><p>Sie verstehen die spezifische Zwei-Ebenen-Struktur von Faktoren und insbesondere die Rolle von “Levels”.</p></li>
+<li><p>Sie wissen, wie man die Levels eines Faktors definiert.</p></li>
+<li><p>Sie wissen, wie man Levels neu benennt, umsortiert, zusammenfasst und/oder nicht benötigte Levels entfernt.</p></li>
+</ul>
+</div>
+<div id="aufgaben-wp09" class="section level2">
+<h2><span class="header-section-number">9.2</span> Aufgaben WP09</h2>
+<ol style="list-style-type: decimal">
+<li>Laden Sie Ihr Datenimport-Skript und fügen Sie einen Abschnitt zur Definition und Aufbereitung einzelner Variablen als Faktoren ein. Arbeiten Sie anschliessend in einem R Markdown weiter.</li>
+</ol>
+<p>Ein solcher Abschnitt wird am einfachsten über die Kommentarfunktion ausgewiesen: Das Datenimport-Skript soll also einen Abschnitt zum Dateneinlesen (<code>#Daten einlesen</code>), einen Abschnitt für die Definition der fehlende Werte bei metrischen Variablen (<code>#Fehlende Werte definieren</code>) und neu einen Abschnitt zur Definition der Faktoren enthalten (<code>#Faktoren definieren</code>).</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Gehen Sie unseren Übungsdatensatz konzentriert durch und überlegen Sie, welche Variablen als geordnete oder ungeordnete Faktoren gespeichert werden sollten.</li>
+</ol>
+<p>Folgenden Variablen sollten wir als <em>ungeordnete</em> Faktoren definieren: “gndr”, “chldhm”, “pdwrk”, “edctn” und “uemp3m”.</p>
+<p>Als <em>geordnete</em> Faktoren sollten wir folgende Variablen definieren: “polintr”, “edulvla” und “eisced”.</p>
+<p>Die restlichen Variablen sind entweder metrisch – wie etwa “agea” – oder wir belassen Sie bewusst als metrische Variable, obschon sie bei ganz genauer Betrachtung eigentlich ordinale Variablen wären (z.Bsp. “happy” oder “hinctnta”).</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Definieren Sie nun jede dieser Variablen als Faktor (die einzige Ausnahme soll die Variable “isco08” sein).</li>
+</ol>
+<p>Im Folgenden wird lediglich der Code zur Definition der Faktoren aufgeführt (der dann auc. Zuvor sollte man allerdings immer eine Tabelle zu einem Vektor aufrufen und überprüfen, welche Levels auch wirklich vorhanden sind.</p>
+<p>Mit diesem Code-Chunk definieren wir die ungeordneten Faktoren:</p>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="wochenplan-09.html#cb268-1"></a><span class="co">#gndr</span></span>
+<span id="cb268-2"><a href="wochenplan-09.html#cb268-2"></a>daten_ess<span class="op">$</span>gndr &lt;-<span class="st"> </span><span class="kw">factor</span>(daten_ess<span class="op">$</span>gndr)</span>
+<span id="cb268-3"><a href="wochenplan-09.html#cb268-3"></a><span class="kw">levels</span>(daten_ess<span class="op">$</span>gndr) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>)</span>
+<span id="cb268-4"><a href="wochenplan-09.html#cb268-4"></a></span>
+<span id="cb268-5"><a href="wochenplan-09.html#cb268-5"></a><span class="co">#chldhm</span></span>
+<span id="cb268-6"><a href="wochenplan-09.html#cb268-6"></a>daten_ess<span class="op">$</span>chldhm[daten_ess<span class="op">$</span>chldhm<span class="op">==</span><span class="dv">9</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></span>
+<span id="cb268-7"><a href="wochenplan-09.html#cb268-7"></a>daten_ess<span class="op">$</span>chldhm &lt;-<span class="st"> </span><span class="kw">factor</span>(daten_ess<span class="op">$</span>chldhm)</span>
+<span id="cb268-8"><a href="wochenplan-09.html#cb268-8"></a><span class="kw">levels</span>(daten_ess<span class="op">$</span>chldhm) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;lives with children&quot;</span>, <span class="st">&quot;Does not&quot;</span>)</span>
+<span id="cb268-9"><a href="wochenplan-09.html#cb268-9"></a></span>
+<span id="cb268-10"><a href="wochenplan-09.html#cb268-10"></a><span class="co">#pdwrk</span></span>
+<span id="cb268-11"><a href="wochenplan-09.html#cb268-11"></a>daten_ess<span class="op">$</span>pdwrk &lt;-<span class="st"> </span><span class="kw">factor</span>(daten_ess<span class="op">$</span>pdwrk)</span>
+<span id="cb268-12"><a href="wochenplan-09.html#cb268-12"></a><span class="kw">levels</span>(daten_ess<span class="op">$</span>pdwrk) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;not marked&quot;</span>, <span class="st">&quot;paid work (in the last 7 days)&quot;</span>)</span>
+<span id="cb268-13"><a href="wochenplan-09.html#cb268-13"></a></span>
+<span id="cb268-14"><a href="wochenplan-09.html#cb268-14"></a><span class="co">#edctn</span></span>
+<span id="cb268-15"><a href="wochenplan-09.html#cb268-15"></a>daten_ess<span class="op">$</span>edctn &lt;-<span class="st"> </span><span class="kw">factor</span>(daten_ess<span class="op">$</span>edctn)</span>
+<span id="cb268-16"><a href="wochenplan-09.html#cb268-16"></a><span class="kw">levels</span>(daten_ess<span class="op">$</span>edctn) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;not marked&quot;</span>, <span class="st">&quot;education (in the last 7 days)&quot;</span>)</span>
+<span id="cb268-17"><a href="wochenplan-09.html#cb268-17"></a></span>
+<span id="cb268-18"><a href="wochenplan-09.html#cb268-18"></a><span class="co">#uemp3m</span></span>
+<span id="cb268-19"><a href="wochenplan-09.html#cb268-19"></a>daten_ess<span class="op">$</span>uemp3m &lt;-<span class="st"> </span><span class="kw">factor</span>(daten_ess<span class="op">$</span>uemp3m)</span>
+<span id="cb268-20"><a href="wochenplan-09.html#cb268-20"></a><span class="kw">levels</span>(daten_ess<span class="op">$</span>uemp3m) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Has been unemployed&quot;</span>, <span class="st">&quot;Has never been unemployed&quot;</span>, <span class="st">&quot;Refusal&quot;</span>, <span class="st">&quot;Don&#39;t know&quot;</span>, <span class="st">&quot;No answer&quot;</span>)</span></code></pre></div>
+<p>Mit diesem Code-Chunk definieren wir die geordneten Faktoren:</p>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="wochenplan-09.html#cb269-1"></a><span class="co">#polintr</span></span>
+<span id="cb269-2"><a href="wochenplan-09.html#cb269-2"></a>daten_ess<span class="op">$</span>polintr &lt;-<span class="st"> </span><span class="kw">factor</span>(daten_ess<span class="op">$</span>polintr, <span class="dt">ordered =</span> T)</span>
+<span id="cb269-3"><a href="wochenplan-09.html#cb269-3"></a><span class="kw">levels</span>(daten_ess<span class="op">$</span>polintr) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Very interested&quot;</span>, </span>
+<span id="cb269-4"><a href="wochenplan-09.html#cb269-4"></a>                               <span class="st">&quot;Quite interested&quot;</span>, </span>
+<span id="cb269-5"><a href="wochenplan-09.html#cb269-5"></a>                               <span class="st">&quot;Hardly interested&quot;</span>, </span>
+<span id="cb269-6"><a href="wochenplan-09.html#cb269-6"></a>                               <span class="st">&quot;Not at all interested&quot;</span>)</span>
+<span id="cb269-7"><a href="wochenplan-09.html#cb269-7"></a><span class="co">##Änderung der Reihenfolge der Levels</span></span>
+<span id="cb269-8"><a href="wochenplan-09.html#cb269-8"></a>daten_ess<span class="op">$</span>polintr &lt;-<span class="st"> </span><span class="kw">ordered</span>(daten_ess<span class="op">$</span>polintr, </span>
+<span id="cb269-9"><a href="wochenplan-09.html#cb269-9"></a>                             <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;Not at all interested&quot;</span>, </span>
+<span id="cb269-10"><a href="wochenplan-09.html#cb269-10"></a>                                        <span class="st">&quot;Hardly interested&quot;</span>, </span>
+<span id="cb269-11"><a href="wochenplan-09.html#cb269-11"></a>                                        <span class="st">&quot;Quite interested&quot;</span>, <span class="st">&quot;Very interested&quot;</span>))</span>
+<span id="cb269-12"><a href="wochenplan-09.html#cb269-12"></a></span>
+<span id="cb269-13"><a href="wochenplan-09.html#cb269-13"></a><span class="co">#edulvla</span></span>
+<span id="cb269-14"><a href="wochenplan-09.html#cb269-14"></a>daten_ess<span class="op">$</span>edulvla &lt;-<span class="st"> </span><span class="kw">factor</span>(daten_ess<span class="op">$</span>edulvla, <span class="dt">ordered =</span> T)</span>
+<span id="cb269-15"><a href="wochenplan-09.html#cb269-15"></a><span class="kw">levels</span>(daten_ess<span class="op">$</span>edulvla) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;ISCED 0-1&quot;</span>, </span>
+<span id="cb269-16"><a href="wochenplan-09.html#cb269-16"></a>                               <span class="st">&quot;ISCED 2&quot;</span>, </span>
+<span id="cb269-17"><a href="wochenplan-09.html#cb269-17"></a>                               <span class="st">&quot;ISCED 3&quot;</span>, </span>
+<span id="cb269-18"><a href="wochenplan-09.html#cb269-18"></a>                               <span class="st">&quot;ISCED 4&quot;</span>,</span>
+<span id="cb269-19"><a href="wochenplan-09.html#cb269-19"></a>                               <span class="st">&quot;ISCED 5-6&quot;</span>)</span>
+<span id="cb269-20"><a href="wochenplan-09.html#cb269-20"></a></span>
+<span id="cb269-21"><a href="wochenplan-09.html#cb269-21"></a><span class="co">#eisced</span></span>
+<span id="cb269-22"><a href="wochenplan-09.html#cb269-22"></a>daten_ess<span class="op">$</span>eisced &lt;-<span class="st"> </span><span class="kw">factor</span>(daten_ess<span class="op">$</span>eisced, <span class="dt">ordered =</span> T)</span>
+<span id="cb269-23"><a href="wochenplan-09.html#cb269-23"></a><span class="kw">levels</span>(daten_ess<span class="op">$</span>eisced) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;ES-ISCED I&quot;</span>, </span>
+<span id="cb269-24"><a href="wochenplan-09.html#cb269-24"></a>                               <span class="st">&quot;ES-ISCED II&quot;</span>, </span>
+<span id="cb269-25"><a href="wochenplan-09.html#cb269-25"></a>                               <span class="st">&quot;ES-ISCED IIIb&quot;</span>, </span>
+<span id="cb269-26"><a href="wochenplan-09.html#cb269-26"></a>                               <span class="st">&quot;ES-ISCED IIIa&quot;</span>,</span>
+<span id="cb269-27"><a href="wochenplan-09.html#cb269-27"></a>                               <span class="st">&quot;ES-ISCED IV&quot;</span>,</span>
+<span id="cb269-28"><a href="wochenplan-09.html#cb269-28"></a>                               <span class="st">&quot;ES-ISCED V1&quot;</span>,</span>
+<span id="cb269-29"><a href="wochenplan-09.html#cb269-29"></a>                               <span class="st">&quot;ES-ISCED V2&quot;</span>)</span></code></pre></div>
+<ol start="4" style="list-style-type: decimal">
+<li>Überprüfen Sie mittels Kreuztabellen, ob Ihre Faktoren sinnvoll und fehlerfrei definiert sind.</li>
+</ol>
+<p>Hierzu können wir die einzelen Faktoren mit noch vorhandenen numerischen Ausprägungen “hinter” den Levels vergleichen, wie zum Beispiel bei derletzten, ungeordneten Variable “uemp3m”.</p>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="wochenplan-09.html#cb270-1"></a><span class="kw">table</span>(daten_ess<span class="op">$</span>uemp3m, <span class="kw">as.numeric</span>(daten_ess<span class="op">$</span>uemp3m))</span></code></pre></div>
+<pre><code>##                            
+##                               1   2
+##   Has been unemployed        38   0
+##   Has never been unemployed   0 162
+##   Refusal                     0   0
+##   Don&#39;t know                  0   0
+##   No answer                   0   0</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Inkludieren Sie die einwandfrei funktionierenden Lösungen zur Faktorendefinition in Ihr Datenimportskript. Testen Sie danach, ob das Skript funktioniert: Löschen Sie Ihre Environment (und alle Objekte), laden Sie mittels <code>source()</code> den Datensatz neu und rufen Sie dann – als Test – eine als Faktor definierte Variable auf.</li>
+</ol>
+<p>Eine einfache Variante, wie die gesamte Environment gelöscht werden kann, biete folgende Ergänzung der <code>rm()</code>-Funktion:</p>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="wochenplan-09.html#cb272-1"></a><span class="kw">rm</span>(<span class="dt">list=</span><span class="kw">ls</span>())</span></code></pre></div>
+<p>Nachdem Sie das Skript zum Datenimport (inkl. der Definition der Faktoren) ausgeführt haben können Sie anschliessend auf einen Faktor zugreifen – z.Bsp. über <code>is.factor()</code>:</p>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="wochenplan-09.html#cb273-1"></a><span class="kw">source</span>(<span class="dt">file =</span> <span class="st">&quot;Data/ess_import.R&quot;</span>)</span>
+<span id="cb273-2"><a href="wochenplan-09.html#cb273-2"></a><span class="kw">is.factor</span>(daten_ess<span class="op">$</span>eisced)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="wochenplan-08.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="wochenplan-10.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/09_WP09_Faktoren.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

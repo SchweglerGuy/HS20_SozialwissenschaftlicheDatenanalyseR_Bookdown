@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="wochenplan-07.html"/>
-<link rel="next" href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"/>
+<link rel="next" href="wochenplan-09.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -175,9 +175,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1" data-path="wochenplan-08.html"><a href="wochenplan-08.html#lernziele-wp08"><i class="fa fa-check"></i><b>8.1</b> Lernziele WP08</a></li>
 <li class="chapter" data-level="8.2" data-path="wochenplan-08.html"><a href="wochenplan-08.html#aufgaben-wp08"><i class="fa fa-check"></i><b>8.2</b> Aufgaben WP08</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><i class="fa fa-check"></i><b>9</b> Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 09 (19. &amp; 26.11.2020)</a><ul>
-<li class="chapter" data-level="9.1" data-path="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#lernziele-wp09"><i class="fa fa-check"></i><b>9.1</b> Lernziele WP09</a></li>
-<li class="chapter" data-level="9.2" data-path="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html"><a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html#aufgaben-wp09"><i class="fa fa-check"></i><b>9.2</b> Aufgaben WP09</a></li>
+<li class="chapter" data-level="9" data-path="wochenplan-09.html"><a href="wochenplan-09.html"><i class="fa fa-check"></i><b>9</b> Wochenplan 09</a><ul>
+<li class="chapter" data-level="9.1" data-path="wochenplan-09.html"><a href="wochenplan-09.html#lernziele-wp09"><i class="fa fa-check"></i><b>9.1</b> Lernziele WP09</a></li>
+<li class="chapter" data-level="9.2" data-path="wochenplan-09.html"><a href="wochenplan-09.html#aufgaben-wp09"><i class="fa fa-check"></i><b>9.2</b> Aufgaben WP09</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="wochenplan-10.html"><a href="wochenplan-10.html"><i class="fa fa-check"></i><b>10</b> Wochenplan 10</a><ul>
+<li class="chapter" data-level="10.1" data-path="wochenplan-10.html"><a href="wochenplan-10.html#lernziele-wp10"><i class="fa fa-check"></i><b>10.1</b> Lernziele WP10</a></li>
+<li class="chapter" data-level="10.2" data-path="wochenplan-10.html"><a href="wochenplan-10.html#aufgaben-wp10"><i class="fa fa-check"></i><b>10.2</b> Aufgaben WP10</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -250,8 +254,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb238-4"><a href="wochenplan-08.html#cb238-4"></a><span class="co">##...nach dem attachen:</span></span>
 <span id="cb238-5"><a href="wochenplan-08.html#cb238-5"></a><span class="kw">table</span>(gndr)</span></code></pre></div>
 <pre><code>## gndr
-##   1   2 
-##  98 102</code></pre>
+##   male female 
+##     98    102</code></pre>
 <p>Ohne die <code>attach()</code>-Funktion würde die zweite Zeile des Code-Chunks oben zu einer Fehlermeldung führen.</p>
 <p>Mit der Funktion zu arbeiten ist vor allem dann sinnvoll, wenn die Arbeit mit nur einem Datensatz im Zentrum steht (ebd.) und wenn keine Änderungen mehr am Datensatz selber vorgenommen werden. Bei der Arbeit mit mehreren Datensatzsätzen könnte die Funktion leicht für Verwirrung sorgen (gerade auch dann wenn Ihre Codezeilen von jemand anderem interpretiert werden sollen). Und sollten Sie weiterhin Änderungen am Datensatz vornehmen kann die <code>attach()</code>-Funktion dazu führen, dass die von Ihnen gemachten Änderungen nicht sichtbar werden (beim Betrachten des Datensatzes) oder auch nicht in die weiteren Schritte/Berechnungen aufgenommen werden. Sobald also Änderungen vorgenommen werden gilt es auch den Datensatz wieder zu „detachen“.</p>
 <ol start="3" style="list-style-type: decimal">
@@ -261,8 +265,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Wir betrachten als ersten Schritt auch noch die Variable <code>polintr</code>:</p>
 <div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="wochenplan-08.html#cb240-1"></a><span class="kw">table</span>(polintr)</span></code></pre></div>
 <pre><code>## polintr
-##  1  2  3  4 
-## 45 76 59 20</code></pre>
+## Not at all interested     Hardly interested      Quite interested 
+##                    20                    59                    76 
+##       Very interested 
+##                    45</code></pre>
 <div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="wochenplan-08.html#cb242-1"></a><span class="co">#Ählich wie die Geschlechtervariabel scheint auch polintr ebenfalls keine fehlenden Werte zu enthalten. Ansonsten können diese ebenfalls noch definiert werden:</span></span>
 <span id="cb242-2"><a href="wochenplan-08.html#cb242-2"></a>daten_ess<span class="op">$</span>polintr[daten_ess<span class="op">$</span>polintr<span class="op">&gt;</span><span class="dv">4</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></span>
 <span id="cb242-3"><a href="wochenplan-08.html#cb242-3"></a><span class="co">#Dieser Befehl könnten wir dann ebenfalls in unser Import-Skript übernehmen.</span></span></code></pre></div>
@@ -276,13 +282,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb243-7"><a href="wochenplan-08.html#cb243-7"></a><span class="kw">round</span>(<span class="kw">addmargins</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(polintr, gndr),<span class="dv">2</span>),<span class="dv">1</span>),<span class="dv">2</span>)</span></code></pre></div>
 <div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="wochenplan-08.html#cb244-1"></a><span class="co">#die benötige Tabelle</span></span>
 <span id="cb244-2"><a href="wochenplan-08.html#cb244-2"></a><span class="kw">round</span>(<span class="kw">addmargins</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(polintr, gndr),<span class="dv">2</span>),<span class="dv">1</span>),<span class="dv">2</span>)</span></code></pre></div>
-<pre><code>##        gndr
-## polintr    1    2
-##     1   0.31 0.15
-##     2   0.38 0.38
-##     3   0.24 0.34
-##     4   0.07 0.13
-##     Sum 1.00 1.00</code></pre>
+<pre><code>##                        gndr
+## polintr                 male female
+##   Not at all interested 0.07   0.13
+##   Hardly interested     0.24   0.34
+##   Quite interested      0.38   0.38
+##   Very interested       0.31   0.15
+##   Sum                   1.00   1.00</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Die Funktion <code>CrossTable()</code> ist Teil des Paketes “gmodels” und ermöglicht die flexible und detailreiche Arbeit mit Kreuztabellen. Versuchen Sie mittels dieser Funktion die Kreuztabelle aus Aufgabe 2 nachzubauen.</li>
 </ol>
@@ -310,24 +316,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Total Observations in Table:  200 
 ## 
 ##  
-##              | gndr 
-##      polintr |         1 |         2 | Row Total | 
-## -------------|-----------|-----------|-----------|
-##            1 |        30 |        15 |        45 | 
-##              |      0.31 |      0.15 |           | 
-## -------------|-----------|-----------|-----------|
-##            2 |        37 |        39 |        76 | 
-##              |      0.38 |      0.38 |           | 
-## -------------|-----------|-----------|-----------|
-##            3 |        24 |        35 |        59 | 
-##              |      0.24 |      0.34 |           | 
-## -------------|-----------|-----------|-----------|
-##            4 |         7 |        13 |        20 | 
-##              |      0.07 |      0.13 |           | 
-## -------------|-----------|-----------|-----------|
-## Column Total |        98 |       102 |       200 | 
-##              |      0.49 |      0.51 |           | 
-## -------------|-----------|-----------|-----------|
+##                       | gndr 
+##               polintr |      male |    female | Row Total | 
+## ----------------------|-----------|-----------|-----------|
+## Not at all interested |         7 |        13 |        20 | 
+##                       |      0.07 |      0.13 |           | 
+## ----------------------|-----------|-----------|-----------|
+##     Hardly interested |        24 |        35 |        59 | 
+##                       |      0.24 |      0.34 |           | 
+## ----------------------|-----------|-----------|-----------|
+##      Quite interested |        37 |        39 |        76 | 
+##                       |      0.38 |      0.38 |           | 
+## ----------------------|-----------|-----------|-----------|
+##       Very interested |        30 |        15 |        45 | 
+##                       |      0.31 |      0.15 |           | 
+## ----------------------|-----------|-----------|-----------|
+##          Column Total |        98 |       102 |       200 | 
+##                       |      0.49 |      0.51 |           | 
+## ----------------------|-----------|-----------|-----------|
 ## 
 ## </code></pre>
 <p>Anschliessend detachen wir unseren Datensatz wieder.</p>
@@ -344,22 +350,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Danach können wir auf die einzelnen Inhalte des Chi-Quadrat Tests zugreifen:</p>
 <div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="wochenplan-08.html#cb254-1"></a><span class="kw">str</span>(CT_Ergebnis) <span class="co">#hier sehen wir, was alles in den Objekt enthalten ist.</span></span></code></pre></div>
 <pre><code>## List of 5
-##  $ t       : &#39;table&#39; int [1:4, 1:2] 30 37 24 7 15 39 35 13
+##  $ t       : &#39;table&#39; int [1:4, 1:2] 7 24 37 30 13 35 39 15
 ##   ..- attr(*, &quot;dimnames&quot;)=List of 2
-##   .. ..$ x: chr [1:4] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;
-##   .. ..$ y: chr [1:2] &quot;1&quot; &quot;2&quot;
-##  $ prop.row: &#39;table&#39; num [1:4, 1:2] 0.667 0.487 0.407 0.35 0.333 ...
+##   .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
+##   .. ..$ y: chr [1:2] &quot;male&quot; &quot;female&quot;
+##  $ prop.row: &#39;table&#39; num [1:4, 1:2] 0.35 0.407 0.487 0.667 0.65 ...
 ##   ..- attr(*, &quot;dimnames&quot;)=List of 2
-##   .. ..$ x: chr [1:4] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;
-##   .. ..$ y: chr [1:2] &quot;1&quot; &quot;2&quot;
-##  $ prop.col: &#39;table&#39; num [1:4, 1:2] 0.3061 0.3776 0.2449 0.0714 0.1471 ...
+##   .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
+##   .. ..$ y: chr [1:2] &quot;male&quot; &quot;female&quot;
+##  $ prop.col: &#39;table&#39; num [1:4, 1:2] 0.0714 0.2449 0.3776 0.3061 0.1275 ...
 ##   ..- attr(*, &quot;dimnames&quot;)=List of 2
-##   .. ..$ x: chr [1:4] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;
-##   .. ..$ y: chr [1:2] &quot;1&quot; &quot;2&quot;
-##  $ prop.tbl: &#39;table&#39; num [1:4, 1:2] 0.15 0.185 0.12 0.035 0.075 0.195 0.175 0.065
+##   .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
+##   .. ..$ y: chr [1:2] &quot;male&quot; &quot;female&quot;
+##  $ prop.tbl: &#39;table&#39; num [1:4, 1:2] 0.035 0.12 0.185 0.15 0.065 0.175 0.195 0.075
 ##   ..- attr(*, &quot;dimnames&quot;)=List of 2
-##   .. ..$ x: chr [1:4] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;
-##   .. ..$ y: chr [1:2] &quot;1&quot; &quot;2&quot;
+##   .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
+##   .. ..$ y: chr [1:2] &quot;male&quot; &quot;female&quot;
 ##  $ chisq   :List of 9
 ##   ..$ statistic: Named num 8.83
 ##   .. ..- attr(*, &quot;names&quot;)= chr &quot;X-squared&quot;
@@ -368,22 +374,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   ..$ p.value  : num 0.0317
 ##   ..$ method   : chr &quot;Pearson&#39;s Chi-squared test&quot;
 ##   ..$ data.name: chr &quot;t&quot;
-##   ..$ observed : &#39;table&#39; int [1:4, 1:2] 30 37 24 7 15 39 35 13
+##   ..$ observed : &#39;table&#39; int [1:4, 1:2] 7 24 37 30 13 35 39 15
 ##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
-##   .. .. ..$ x: chr [1:4] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;
-##   .. .. ..$ y: chr [1:2] &quot;1&quot; &quot;2&quot;
-##   ..$ expected : num [1:4, 1:2] 22.1 37.2 28.9 9.8 22.9 ...
+##   .. .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
+##   .. .. ..$ y: chr [1:2] &quot;male&quot; &quot;female&quot;
+##   ..$ expected : num [1:4, 1:2] 9.8 28.9 37.2 22.1 10.2 ...
 ##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
-##   .. .. ..$ x: chr [1:4] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;
-##   .. .. ..$ y: chr [1:2] &quot;1&quot; &quot;2&quot;
-##   ..$ residuals: &#39;table&#39; num [1:4, 1:2] 1.693 -0.0393 -0.9132 -0.8944 -1.6595 ...
+##   .. .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
+##   .. .. ..$ y: chr [1:2] &quot;male&quot; &quot;female&quot;
+##   ..$ residuals: &#39;table&#39; num [1:4, 1:2] -0.8944 -0.9132 -0.0393 1.693 0.8767 ...
 ##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
-##   .. .. ..$ x: chr [1:4] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;
-##   .. .. ..$ y: chr [1:2] &quot;1&quot; &quot;2&quot;
-##   ..$ stdres   : &#39;table&#39; num [1:4, 1:2] 2.6929 -0.0699 -1.5229 -1.3202 -2.6929 ...
+##   .. .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
+##   .. .. ..$ y: chr [1:2] &quot;male&quot; &quot;female&quot;
+##   ..$ stdres   : &#39;table&#39; num [1:4, 1:2] -1.3202 -1.5229 -0.0699 2.6929 1.3202 ...
 ##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
-##   .. .. ..$ x: chr [1:4] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;
-##   .. .. ..$ y: chr [1:2] &quot;1&quot; &quot;2&quot;
+##   .. .. ..$ x: chr [1:4] &quot;Not at all interested&quot; &quot;Hardly interested&quot; &quot;Quite interested&quot; &quot;Very interested&quot;
+##   .. .. ..$ y: chr [1:2] &quot;male&quot; &quot;female&quot;
 ##   ..- attr(*, &quot;class&quot;)= chr &quot;htest&quot;</code></pre>
 <div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="wochenplan-08.html#cb256-1"></a>CT_Ergebnis<span class="op">$</span>chisq</span></code></pre></div>
 <pre><code>## 
@@ -433,7 +439,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="wochenplan-07.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sozialwissenschaftliche-datenanalyse-mit-r-wochenplan-09-19-26-11-2020.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="wochenplan-09.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

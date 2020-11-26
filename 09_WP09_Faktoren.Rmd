@@ -31,12 +31,14 @@ Folgenden Variablen sollten wir als *ungeordnete* Faktoren definieren: "gndr", "
 
 Als *geordnete* Faktoren sollten wir folgende Variablen definieren: "polintr", "edulvla" und "eisced".
 
+Die restlichen Variablen sind entweder metrisch -- wie etwa "agea" -- oder wir belassen Sie bewusst als metrische Variable, obschon sie bei ganz genauer Betrachtung eigentlich ordinale Variablen wären (z.Bsp. "happy" oder "hinctnta").
+
 3. Definieren Sie nun jede dieser Variablen als Faktor (die einzige Ausnahme soll die Variable "isco08" sein).
 ```{r include=FALSE}
 daten_ess <- read.csv(file = "Data/ESS1-8e01_HS20.csv")
 ```
 
-Im Folgenden wird lediglich der Code zur Definition der Faktoren aufgeführt. Zuvor sollte man sicher allerdings immer eine Tabelle zu einem Vektor aufrufen.
+Im Folgenden wird lediglich der Code zur Definition der Faktoren aufgeführt (der dann auc. Zuvor sollte man allerdings immer eine Tabelle zu einem Vektor aufrufen und überprüfen, welche Levels auch wirklich vorhanden sind.
 
 Mit diesem Code-Chunk definieren wir die ungeordneten Faktoren:
 ```{r}
@@ -47,7 +49,7 @@ levels(daten_ess$gndr) <- c("male", "female")
 #chldhm
 daten_ess$chldhm[daten_ess$chldhm==9] <- NA
 daten_ess$chldhm <- factor(daten_ess$chldhm)
-levels(daten_ess$chldhm) <- c("Respondent lives with children at household grid", "Does not")
+levels(daten_ess$chldhm) <- c("lives with children", "Does not")
 
 #pdwrk
 daten_ess$pdwrk <- factor(daten_ess$pdwrk)
@@ -100,7 +102,6 @@ levels(daten_ess$eisced) <- c("ES-ISCED I",
 
 Hierzu können wir die einzelen Faktoren mit noch vorhandenen numerischen Ausprägungen "hinter" den Levels vergleichen, wie zum Beispiel bei derletzten, ungeordneten Variable "uemp3m".
 ```{r}
-
 table(daten_ess$uemp3m, as.numeric(daten_ess$uemp3m))
 ```
 
@@ -108,7 +109,7 @@ table(daten_ess$uemp3m, as.numeric(daten_ess$uemp3m))
 5. Inkludieren Sie die einwandfrei funktionierenden Lösungen zur Faktorendefinition in Ihr Datenimportskript. Testen Sie danach, ob das Skript funktioniert: Löschen Sie Ihre Environment (und alle Objekte), laden Sie mittels `source()` den Datensatz neu und rufen Sie dann -- als Test -- eine als Faktor definierte Variable auf.
 
 Eine einfache Variante, wie die gesamte Environment gelöscht werden kann, biete folgende Ergänzung der `rm()`-Funktion:
-```{r include=FALSE}
+```{r}
 rm(list=ls())
 ```
 
