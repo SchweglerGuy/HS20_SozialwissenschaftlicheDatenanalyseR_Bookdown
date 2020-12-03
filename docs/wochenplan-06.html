@@ -183,6 +183,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="wochenplan-10.html"><a href="wochenplan-10.html#lernziele-wp10"><i class="fa fa-check"></i><b>10.1</b> Lernziele WP10</a></li>
 <li class="chapter" data-level="10.2" data-path="wochenplan-10.html"><a href="wochenplan-10.html#aufgaben-wp10"><i class="fa fa-check"></i><b>10.2</b> Aufgaben WP10</a></li>
 </ul></li>
+<li class="chapter" data-level="11" data-path="wochenplan-11.html"><a href="wochenplan-11.html"><i class="fa fa-check"></i><b>11</b> Wochenplan 11</a><ul>
+<li class="chapter" data-level="11.1" data-path="wochenplan-11.html"><a href="wochenplan-11.html#lernziele"><i class="fa fa-check"></i><b>11.1</b> Lernziele</a></li>
+<li class="chapter" data-level="11.2" data-path="wochenplan-02.html"><a href="wochenplan-02.html#aufgaben"><i class="fa fa-check"></i><b>11.2</b> Aufgaben</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -238,9 +242,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb160-2"><a href="wochenplan-06.html#cb160-2"></a>                             <span class="dt">min =</span> <span class="dv">0</span>,</span>
 <span id="cb160-3"><a href="wochenplan-06.html#cb160-3"></a>                             <span class="dt">max =</span> <span class="dv">20</span>)</span>
 <span id="cb160-4"><a href="wochenplan-06.html#cb160-4"></a><span class="kw">mean</span>(variable_population)</span></code></pre></div>
-<pre><code>## [1] 10.05244</code></pre>
+<pre><code>## [1] 9.927615</code></pre>
 <div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="wochenplan-06.html#cb162-1"></a><span class="kw">sd</span>(variable_population)</span></code></pre></div>
-<pre><code>## [1] 5.814763</code></pre>
+<pre><code>## [1] 5.776555</code></pre>
 <div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="wochenplan-06.html#cb164-1"></a><span class="kw">hist</span>(variable_population,</span>
 <span id="cb164-2"><a href="wochenplan-06.html#cb164-2"></a>     <span class="dt">breaks =</span> <span class="dv">30</span>,</span>
 <span id="cb164-3"><a href="wochenplan-06.html#cb164-3"></a>     <span class="dt">col=</span><span class="st">&quot;orange&quot;</span>,</span>
@@ -254,7 +258,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Als nächster Schritt wird nun eine Stichprobe gezogen mit der Funktion <code>sample()</code>, in der zufällig 100 Fälle der Grundgesamtheit landen. Von dieser Stichprobe können wir dann den Mittelwert berechnen und diesen Wert in das Histogramm der Grundgesamtheit einfügen. Der Mittelwert der Stichprobe unterscheidet sich natürlich minimal vom Mittelwert der Grundgesamt.</p>
 <div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="wochenplan-06.html#cb165-1"></a>sample1 &lt;-<span class="st"> </span><span class="kw">sample</span>(variable_population, <span class="dv">100</span>)</span>
 <span id="cb165-2"><a href="wochenplan-06.html#cb165-2"></a><span class="kw">mean</span>(sample1)</span></code></pre></div>
-<pre><code>## [1] 9.798529</code></pre>
+<pre><code>## [1] 8.950312</code></pre>
 <div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="wochenplan-06.html#cb167-1"></a><span class="kw">hist</span>(variable_population,</span>
 <span id="cb167-2"><a href="wochenplan-06.html#cb167-2"></a>     <span class="dt">breaks =</span> <span class="dv">30</span>,</span>
 <span id="cb167-3"><a href="wochenplan-06.html#cb167-3"></a>     <span class="dt">col=</span><span class="st">&quot;orange&quot;</span>,</span>
@@ -346,17 +350,17 @@ Auf der einen Seite haben wir das arithmetische Mittel der Stichprobenmittelwert
 <p>Dieser Wert entspricht (annährend) dem arithmetischen Mittelwert des metrischen Merkmals in der Grundgesamtheit:</p>
 <p><span class="math inline">\(\mu\frac{ }{ x } = \mu\)</span></p>
 <div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="wochenplan-06.html#cb172-1"></a><span class="kw">mean</span>(mittelwerte_samples)</span></code></pre></div>
-<pre><code>## [1] 10.13837</code></pre>
+<pre><code>## [1] 9.887404</code></pre>
 <div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="wochenplan-06.html#cb174-1"></a><span class="kw">mean</span>(variable_population)</span></code></pre></div>
-<pre><code>## [1] 10.05244</code></pre>
+<pre><code>## [1] 9.927615</code></pre>
 <p>Auf der anderen Seite finden wir die Standardabweichung der Stichprobenverteilung, der Standardfehler (oder Stichprobenfehler):</p>
 <p><span class="math inline">\(\sigma\frac{ }{ x } = \frac{ \sigma }{ \sqrt{ n } }\)</span></p>
 <p>Dieser Wert gibt das Ausmass der Streuung der Stichprobenmittelwerte um den Mittelwert an.</p>
 <div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="wochenplan-06.html#cb176-1"></a><span class="kw">sd</span>(variable_population)<span class="op">/</span><span class="kw">sqrt</span>(<span class="dv">30</span>)</span></code></pre></div>
-<pre><code>## [1] 1.061626</code></pre>
+<pre><code>## [1] 1.05465</code></pre>
 <p>…und entspricht natürlich einfach der Standardabweichung unserer Stichprobenverteilung:</p>
 <div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="wochenplan-06.html#cb178-1"></a><span class="kw">sd</span>(mittelwerte_samples)</span></code></pre></div>
-<pre><code>## [1] 1.090461</code></pre>
+<pre><code>## [1] 1.026049</code></pre>
 <p>Die Stichprobenmittelwerte streuen umso geringer um den Mittelwert der Stichprobenverteilung (das heisst um den Wert in der Grundgesamtheit), je grösser der Umfang der Stichprobe ist. Das heisst die Stichprobenwerte werden immer “genauer”, da deren zufällige Abweichung verkleinert wird.</p>
 <div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="wochenplan-06.html#cb180-1"></a><span class="kw">hist</span>(variable_population,</span>
 <span id="cb180-2"><a href="wochenplan-06.html#cb180-2"></a>     <span class="dt">breaks =</span> <span class="dv">30</span>,</span>
@@ -379,7 +383,7 @@ Auf der einen Seite haben wir das arithmetische Mittel der Stichprobenmittelwert
 <span id="cb180-19"><a href="wochenplan-06.html#cb180-19"></a>     <span class="dt">add =</span> T)</span></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
 <div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="wochenplan-06.html#cb181-1"></a><span class="kw">sd</span>(mittelwerte_samples) </span></code></pre></div>
-<pre><code>## [1] 0.5128675</code></pre>
+<pre><code>## [1] 0.5251565</code></pre>
 <div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="wochenplan-06.html#cb183-1"></a><span class="co">#Der Standardfehler wurde halbiert, da die Stichprobengrösse vervierfacht wurde.</span></span></code></pre></div>
 
 </div>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>11 Wochenplan 11 | Sozialwissenschaftliche Datenanalyse mit R</title>
+  <meta name="description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="11 Wochenplan 11 | Sozialwissenschaftliche Datenanalyse mit R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="11 Wochenplan 11 | Sozialwissenschaftliche Datenanalyse mit R" />
+  
+  <meta name="twitter:description" content="Dieses Dokument ist ein Bookdown für das Hauptseminar ‘Sozialwissenschaftliche Datenanalyse mit R’ im HS20 und dient als Ergebnisicherung im Seminarverlauf." />
+  
+
+<meta name="author" content="Kenneth Horvath &amp; Guy Schwegler" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="wochenplan-10.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R - HS20</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Einführung</a></li>
+<li class="chapter" data-level="1" data-path="wocheplan-01.html"><a href="wocheplan-01.html"><i class="fa fa-check"></i><b>1</b> Wocheplan 01</a><ul>
+<li class="chapter" data-level="1.1" data-path="wocheplan-01.html"><a href="wocheplan-01.html#sozialwissenschaftliche-datenanalyse"><i class="fa fa-check"></i><b>1.1</b> Sozialwissenschaftliche Datenanalyse</a></li>
+<li class="chapter" data-level="1.2" data-path="wocheplan-01.html"><a href="wocheplan-01.html#ziel-des-kurses"><i class="fa fa-check"></i><b>1.2</b> Ziel des Kurses</a></li>
+<li class="chapter" data-level="1.3" data-path="wocheplan-01.html"><a href="wocheplan-01.html#r-als-programm-rstudio"><i class="fa fa-check"></i><b>1.3</b> R als Programm &amp; RStudio</a></li>
+<li class="chapter" data-level="1.4" data-path="wocheplan-01.html"><a href="wocheplan-01.html#lernziele-der-ersten-woche"><i class="fa fa-check"></i><b>1.4</b> Lernziele der ersten Woche</a></li>
+<li class="chapter" data-level="1.5" data-path="wocheplan-01.html"><a href="wocheplan-01.html#aufgaben-der-ersten-woche"><i class="fa fa-check"></i><b>1.5</b> Aufgaben der ersten Woche</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="wochenplan-02.html"><a href="wochenplan-02.html"><i class="fa fa-check"></i><b>2</b> Wochenplan 02</a><ul>
+<li class="chapter" data-level="2.1" data-path="wochenplan-02.html"><a href="wochenplan-02.html#lernziele-der-zweiten-woche"><i class="fa fa-check"></i><b>2.1</b> Lernziele der zweiten Woche</a></li>
+<li class="chapter" data-level="2.2" data-path="wochenplan-02.html"><a href="wochenplan-02.html#aufgaben"><i class="fa fa-check"></i><b>2.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="wochenplan-03.html"><a href="wochenplan-03.html"><i class="fa fa-check"></i><b>3</b> Wochenplan 03</a><ul>
+<li class="chapter" data-level="3.1" data-path="wochenplan-03.html"><a href="wochenplan-03.html#lernziele-wp03"><i class="fa fa-check"></i><b>3.1</b> Lernziele WP03</a></li>
+<li class="chapter" data-level="3.2" data-path="wochenplan-03.html"><a href="wochenplan-03.html#aufgaben-wp03"><i class="fa fa-check"></i><b>3.2</b> Aufgaben WP03</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="wochenplan-04.html"><a href="wochenplan-04.html"><i class="fa fa-check"></i><b>4</b> Wochenplan 04</a><ul>
+<li class="chapter" data-level="4.1" data-path="wochenplan-04.html"><a href="wochenplan-04.html#lernziele-wp04"><i class="fa fa-check"></i><b>4.1</b> Lernziele WP04</a></li>
+<li class="chapter" data-level="4.2" data-path="wochenplan-04.html"><a href="wochenplan-04.html#aufgaben-wp04"><i class="fa fa-check"></i><b>4.2</b> Aufgaben WP04</a></li>
+<li class="chapter" data-level="4.3" data-path="wochenplan-04.html"><a href="wochenplan-04.html#hinweise-für-den-wochenplan-05"><i class="fa fa-check"></i><b>4.3</b> Hinweise für den Wochenplan 05</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="wochenplan-05.html"><a href="wochenplan-05.html"><i class="fa fa-check"></i><b>5</b> Wochenplan 05</a><ul>
+<li class="chapter" data-level="5.1" data-path="wochenplan-05.html"><a href="wochenplan-05.html#lernziele-wp05"><i class="fa fa-check"></i><b>5.1</b> Lernziele WP05</a></li>
+<li class="chapter" data-level="5.2" data-path="wochenplan-05.html"><a href="wochenplan-05.html#aufgaben-wp05"><i class="fa fa-check"></i><b>5.2</b> Aufgaben WP05</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="wochenplan-06.html"><a href="wochenplan-06.html"><i class="fa fa-check"></i><b>6</b> Wochenplan 06</a><ul>
+<li class="chapter" data-level="6.1" data-path="wochenplan-06.html"><a href="wochenplan-06.html#lernziele-wp06"><i class="fa fa-check"></i><b>6.1</b> Lernziele WP06</a></li>
+<li class="chapter" data-level="6.2" data-path="wochenplan-06.html"><a href="wochenplan-06.html#aufgaben-wp06"><i class="fa fa-check"></i><b>6.2</b> Aufgaben WP06</a></li>
+<li class="chapter" data-level="6.3" data-path="wochenplan-06.html"><a href="wochenplan-06.html#besprechung-skript-standardfehler.r"><i class="fa fa-check"></i><b>6.3</b> Besprechung Skript “standardfehler.R”</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="wochenplan-06.html"><a href="wochenplan-06.html#ebene-der-grundgesamtheit"><i class="fa fa-check"></i><b>6.3.1</b> Ebene der Grundgesamtheit</a></li>
+<li class="chapter" data-level="6.3.2" data-path="wochenplan-06.html"><a href="wochenplan-06.html#ebene-der-einzelnen-stichprobe"><i class="fa fa-check"></i><b>6.3.2</b> Ebene der einzelnen Stichprobe</a></li>
+<li class="chapter" data-level="6.3.3" data-path="wochenplan-06.html"><a href="wochenplan-06.html#ebene-der-stichprobenverteilung"><i class="fa fa-check"></i><b>6.3.3</b> Ebene der Stichprobenverteilung</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="wochenplan-07.html"><a href="wochenplan-07.html"><i class="fa fa-check"></i><b>7</b> Wochenplan 07</a><ul>
+<li class="chapter" data-level="7.1" data-path="wochenplan-07.html"><a href="wochenplan-07.html#lernziele-wp07"><i class="fa fa-check"></i><b>7.1</b> Lernziele WP07</a></li>
+<li class="chapter" data-level="7.2" data-path="wochenplan-07.html"><a href="wochenplan-07.html#aufgaben-wp07"><i class="fa fa-check"></i><b>7.2</b> Aufgaben WP07</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="wochenplan-08.html"><a href="wochenplan-08.html"><i class="fa fa-check"></i><b>8</b> Wochenplan 08</a><ul>
+<li class="chapter" data-level="8.1" data-path="wochenplan-08.html"><a href="wochenplan-08.html#lernziele-wp08"><i class="fa fa-check"></i><b>8.1</b> Lernziele WP08</a></li>
+<li class="chapter" data-level="8.2" data-path="wochenplan-08.html"><a href="wochenplan-08.html#aufgaben-wp08"><i class="fa fa-check"></i><b>8.2</b> Aufgaben WP08</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="wochenplan-09.html"><a href="wochenplan-09.html"><i class="fa fa-check"></i><b>9</b> Wochenplan 09</a><ul>
+<li class="chapter" data-level="9.1" data-path="wochenplan-09.html"><a href="wochenplan-09.html#lernziele-wp09"><i class="fa fa-check"></i><b>9.1</b> Lernziele WP09</a></li>
+<li class="chapter" data-level="9.2" data-path="wochenplan-09.html"><a href="wochenplan-09.html#aufgaben-wp09"><i class="fa fa-check"></i><b>9.2</b> Aufgaben WP09</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="wochenplan-10.html"><a href="wochenplan-10.html"><i class="fa fa-check"></i><b>10</b> Wochenplan 10</a><ul>
+<li class="chapter" data-level="10.1" data-path="wochenplan-10.html"><a href="wochenplan-10.html#lernziele-wp10"><i class="fa fa-check"></i><b>10.1</b> Lernziele WP10</a></li>
+<li class="chapter" data-level="10.2" data-path="wochenplan-10.html"><a href="wochenplan-10.html#aufgaben-wp10"><i class="fa fa-check"></i><b>10.2</b> Aufgaben WP10</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="wochenplan-11.html"><a href="wochenplan-11.html"><i class="fa fa-check"></i><b>11</b> Wochenplan 11</a><ul>
+<li class="chapter" data-level="11.1" data-path="wochenplan-11.html"><a href="wochenplan-11.html#lernziele"><i class="fa fa-check"></i><b>11.1</b> Lernziele</a></li>
+<li class="chapter" data-level="11.2" data-path="wochenplan-02.html"><a href="wochenplan-02.html#aufgaben"><i class="fa fa-check"></i><b>11.2</b> Aufgaben</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Sozialwissenschaftliche Datenanalyse mit R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="wochenplan-11" class="section level1">
+<h1><span class="header-section-number">11</span> Wochenplan 11</h1>
+<p>…zu den Einheiten vom 03. &amp; 10.12.2020, multiple lineare Regression und Residuenanlayse</p>
+<div id="lernziele" class="section level2">
+<h2><span class="header-section-number">11.1</span> Lernziele</h2>
+<p>Im Rahmen des 11. Wochenplans wollen wir uns einem multiplen linearen Regressionsmodell widmen. Wie immer möchten wir uns dazu als erstes einen Überblick verschaffen und eine Fragestellung formulieren, bevor dann ein Modell berechnet und interpretiert werden kann. Anschliessend gilt es über eine grafische Residuenanalyse die Anwendungsvoraussetzungen für die multiple lineare Regression zu testen sowie über den Ausschluss von gewissen Fällen das Modell zu verbessern.</p>
+<p>Konkret lassen sich folgende Ziele für diesen letzten Wochenplan festlegen:</p>
+<ul>
+<li><p>Sie verstehen, wie Sie mittels Korrelationstabellen erste Ideen für ein multiples Modell sammeln können.</p></li>
+<li><p>Sie können multiple lineare Regressionsanalysen in R korrekt modellieren, durchführen und interpretieren.</p></li>
+<li><p>Sie verstehen, wie die Anwendung von <code>plot()</code> auf unser Ergebnisobjekt bei der Analyse der Qualität und Aussagekraft eines Regressionsmodells helfen kann.</p></li>
+<li><p>Sie können Ausreisser in einem Regressionsmodell ausschliessen und die damit erreichten Veränderungen im Modell einschätzen.</p></li>
+</ul>
+</div>
+<div id="aufgaben" class="section level2">
+<h2><span class="header-section-number">11.2</span> Aufgaben</h2>
+<ol style="list-style-type: decimal">
+<li><p>Laden Sie Ihr Datenimport-Skript. Arbeiten Sie anschliessend in einem R-Markdown-Dokument weiter.</p></li>
+<li><p>Berechnen Sie mittels der Funktion <code>rcorr()</code>, die Teil des Paketes “Hmisc” ist, eine Korrelationstabelle zwischen den Variablen “wkhtot”, “agae”, “edulvla” und “chldhm”.</p></li>
+<li><p>Interpretieren Sie die Korrelationstabelle kurz: Wo sehen Sie bereits Zusammenhänge, wo nicht? Formulieren Sie anschliessend eine Fragestellung sowie eine Hypothese zu diesen Variablen für ein multiples lineares Regressionsmodell.</p></li>
+<li><p>Berechnen Sie anschliessend Ihr Regressionsmodell mittels der Funktion <code>lm()</code>. Speichern Sie das Modell wie immer als Objekt ab und interpretieren Sie es anschliessend.</p></li>
+<li><p>Prüfen Sie dann die Anwendungsvoraussetzungen mittels <code>plot()</code>. Wie beurteilen Sie die Qualität Ihres Modells?</p></li>
+<li><p><em>Bonusaufgabe</em>: Versuchen Sie, ein neues Modell zu berechnen, in dem mögliche Ausreisser fehlen, die Ihnen die grafische Residuenanalyse aufgezeigt hat. Wie verändert sich die Modellgüte bzw. die Erklärungsleistung Ihres Modells?</p></li>
+</ol>
+<p>Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit “Fallloesung11_NameVorname.pdf” und geben das Dokument via OLAT bis Mittwochmittag ab (10.12.2020, 12:00).</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="wochenplan-10.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/11_WP11_RegressionResiduen.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

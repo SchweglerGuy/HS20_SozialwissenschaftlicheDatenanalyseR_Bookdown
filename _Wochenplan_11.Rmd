@@ -1,6 +1,6 @@
 # Sozialwissenschaftliche Datenanalyse mit R – Wochenplan 11 (03. & 10.12.2020)
 
-## Lernziele
+## Lernziele WP11
 
 Im Rahmen des 11. Wochenplans wollen wir uns einem multiplen linearen Regressionsmodell widmen. Wie immer möchten wir uns dazu als erstes einen Überblick verschaffen und eine Fragestellung formulieren, bevor dann ein Modell berechnet und interpretiert werden kann. Anschliessend gilt es, über eine grafische Residuenanalyse die Anwendungsvoraussetzungen für die multiple lineare Regression zu testen sowie über den Ausschluss von gewissen Fällen das Modell verbessern.
 
@@ -15,7 +15,7 @@ Konkret lassen sich folgende Ziele für diesen letzten Wochenplan festlegen:
 - Sie können Ausreisser in einem Regressionsmodell ausschliessen und die damit erreichten Veränderungen im Modell einschätzen.
 
 
-## Aufgaben
+## Aufgaben WP11
 
 1. Laden Sie Ihr Datenimport-Skript. Arbeiten Sie anschliessend in einem R-Markdown-Dokument weiter.
 
@@ -30,4 +30,4 @@ Konkret lassen sich folgende Ziele für diesen letzten Wochenplan festlegen:
 6. *Bonusaufgabe*: Versuchen Sie, ein neues Modell zu berechnen, in dem mögliche Ausreisser fehlen, die Ihnen die grafische Residuenanalyse aufgezeigt hat. Wie verändert sich die Modellgüte bzw. die Erklärungsleistung Ihres Modells?
 
 
-Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit "Fallloesung10_NameVorname.pdf" und geben das Dokument via OLAT bis Mittwochmittag ab (10.12.2020, 12:00).
+Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit "Fallloesung11_NameVorname.pdf" und geben das Dokument via OLAT bis Mittwochmittag ab (10.12.2020, 12:00).

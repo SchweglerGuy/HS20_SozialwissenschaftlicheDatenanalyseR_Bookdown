@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="wochenplan-09.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="wochenplan-11.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -183,6 +183,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="wochenplan-10.html"><a href="wochenplan-10.html#lernziele-wp10"><i class="fa fa-check"></i><b>10.1</b> Lernziele WP10</a></li>
 <li class="chapter" data-level="10.2" data-path="wochenplan-10.html"><a href="wochenplan-10.html#aufgaben-wp10"><i class="fa fa-check"></i><b>10.2</b> Aufgaben WP10</a></li>
 </ul></li>
+<li class="chapter" data-level="11" data-path="wochenplan-11.html"><a href="wochenplan-11.html"><i class="fa fa-check"></i><b>11</b> Wochenplan 11</a><ul>
+<li class="chapter" data-level="11.1" data-path="wochenplan-11.html"><a href="wochenplan-11.html#lernziele"><i class="fa fa-check"></i><b>11.1</b> Lernziele</a></li>
+<li class="chapter" data-level="11.2" data-path="wochenplan-02.html"><a href="wochenplan-02.html#aufgaben"><i class="fa fa-check"></i><b>11.2</b> Aufgaben</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -222,15 +226,224 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="aufgaben-wp10" class="section level2">
 <h2><span class="header-section-number">10.2</span> Aufgaben WP10</h2>
 <ol style="list-style-type: decimal">
-<li><p>Laden Sie Ihr Datenimport-Skript. Arbeiten Sie anschliessend in einem R Markdown-Dokument weiter.</p></li>
-<li><p>Formulieren Sie zwei inhaltliche Fragestellungen, die Sie anhand unserer ESS-Daten mit einem einfachen (bivariaten) Regressionsmodell beantworten können. Eine der beiden Fragestellungen soll eine kategoriale Variable als unabhängige Variable enthalten. Nutzen Sie je ein Streudiagramm, um erste Hinweis zu Ihren Fragestellungen zu erhalten.</p></li>
-<li><p>Formulieren und überprüfen Sie Ihre beiden Modelle mittels der Funktion <code>lm()</code>. Machen Sie sich dazu vorab mit dieser Funktion vertraut (Hilfeseite der Funktion, Online-Tutorials …). Erläutern Sie <code>lm()</code> kurz in eigenen Worten!</p></li>
-<li><p>Weisen Sie Ihre Regressionsanalysen jeweils einem “Ergebnisobjekt” zu! Wie ist dieses Objekt aufgebaut? Welche Komponenten und Informationen beinhaltet es?</p></li>
-<li><p>Interpretieren Sie die Ergebnisse Ihrer beiden Regressionsanalysen.</p></li>
+<li>Laden Sie Ihr Datenimport-Skript. Arbeiten Sie anschliessend in einem R Markdown-Dokument weiter.</li>
 </ol>
-<p>Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit “Fallloesung10_NameVorname.pdf” und geben das Dokument via OLAT bis Mittwochmittag ab (02.12.2020, 12:00).</p>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="wochenplan-10.html#cb275-1"></a><span class="kw">setwd</span>(<span class="st">&quot;C:/Users/SchweglG/R_Daten/4_HS20/R-Seminar_HS20/Einheit12&quot;</span>)</span>
+<span id="cb275-2"><a href="wochenplan-10.html#cb275-2"></a><span class="kw">source</span>(<span class="dt">file =</span> <span class="st">&quot;ess_import.R&quot;</span>)</span></code></pre></div>
+<p>Wichtig: Der <em>Dateipfad</em>, wo Ihr Skript liegt, muss nochmals angegeben werden (z.Bsp. über den <code>setwd()</code>-Befehl) und diese beiden Befehle müssen sich <em>im selben Code-Chunk</em> des R Markdown Dokument befinden.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Formulieren Sie zwei inhaltliche Fragestellungen, die Sie anhand unserer ESS-Daten mit einem einfachen (bivariaten) Regressionsmodell beantworten können. Eine der beiden Fragestellungen soll eine kategoriale Variable als unabhängige Variable enthalten. Nutzen Sie je ein Streudiagramm, um erste Hinweis zu Ihren Fragestellungen zu erhalten.</li>
+</ol>
+<p>Die bivariate Regressionsanalyse berechnet die gerichtete (asymmetrische) Beziehung zwischen zwei metrischen Variablen, in der einfachsten Form einer abhängigen Variablen Y auf nur eine unabhängige Variable X. Dabei repräsentiert Y die Wirkung und X die Ursache <span class="citation">(Diaz-Bone <a href="#ref-DiazBone2019" role="doc-biblioref">2019</a>, 96f)</span>. Im Rahmen einer solchen Regressionsanalyse können auch kategoriale Variablen als unabhängige Variablen hinzugezogen werden. Bei kategorialen Variablen mit mehreren Ausprägungen wird allerdings ein multiples Modell generiert, das für die jeweiligen Ausprägungen einmal eine Referenzkategorie und für den Rest eine Dummy-Variable erstellt.</p>
+<p>Hier werden nun sieben Beispiele für bivariate Regressionsmodelle und Forschungsfragen von Studierenden aufgelistet:</p>
+<p><em>Bsp 1</em>: Inwiefern sind die Ausprägungen der Variable zum Einkommen des gesamten Haushalts auf die Anzahl der Ausbildungsjahre zurückzuführen bzw. lassen sich anhand von dieser Variable erklären? Wie gross ist der Einfluss von Ausbildungsjahren der befragten Person auf das Einkommen
+ihres gesamten Haushalts? (Diethelm)</p>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="wochenplan-10.html#cb276-1"></a><span class="kw">plot</span>(daten_ess<span class="op">$</span>eduyrs, daten_ess<span class="op">$</span>hinctnta)</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-110-1.png" width="672" /></p>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="wochenplan-10.html#cb277-1"></a><span class="kw">plot</span>(daten_ess<span class="op">$</span>eduyrs[daten_ess<span class="op">$</span>hinctnta<span class="op">&lt;</span><span class="dv">60</span>],</span>
+<span id="cb277-2"><a href="wochenplan-10.html#cb277-2"></a>     daten_ess<span class="op">$</span>hinctnta[daten_ess<span class="op">$</span>hinctnta<span class="op">&lt;</span><span class="dv">60</span>])</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-110-2.png" width="672" /></p>
+<p>Anhand des ersten Streudiagramms wird nicht wirklich klar, ob der Zusammenhang nur schlecht sichtbar ist, oder ob dieser nicht wirklich vorhanden ist. Deshalb werden im darauffolgenden Plot die Extremwerte ausgeschlossen.</p>
+<p><em>Bsp 2</em>: Welchen Einfluss hat das Alter auf die Glückseligkeit? (Fäs) …oder auch: Welchen Einfluss hat das Alter (agea) auf die Zufriedenheit (happy)? (Ineichen) …oder auch: Wie hängt Glücklichsein vom Alter ab? (Balakrishnan)</p>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="wochenplan-10.html#cb278-1"></a><span class="kw">plot</span>(daten_ess<span class="op">$</span>agea, daten_ess<span class="op">$</span>happy)</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-111-1.png" width="672" /></p>
+<p>Im Rahmen dieses Beispiel zeigt sich nun vor allem ein kaum vorhandenere Zusammenhang, der aber noch nicht die Linearitätsannahme verletzten würde.</p>
+<p><em>Bsp 3</em>: Hat das Geschlecht einen Einfluss auf die Glücklichkeit? (Nguyen)</p>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="wochenplan-10.html#cb279-1"></a><span class="kw">plot</span>(daten_ess<span class="op">$</span>gndr, daten_ess<span class="op">$</span>happy)</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-112-1.png" width="672" /></p>
+<p>Da wir die Variable “gndr” als Faktor definiert haben zeigt uns R nun die Verteilung der abhängigen Variable (“happy”) in zwei Bloxplots gemäss den Ausprägungen der unabhängigen Variable an.<br />
+Wichitg: Die Variable “gndr” kann direkt im Modell integriert werden als Faktor, und muss <em>nicht</em> zuerst noch als numerische Variable definiert werden (etwa <code>as.numeric()</code>).</p>
+<p><em>Bsp 4</em>: Wie hängt Glücklichsein (Y, die Wirkung) vom politischen Interesse (X, die Ursache) ab? (Schürmann)</p>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="wochenplan-10.html#cb280-1"></a><span class="kw">plot</span>(daten_ess<span class="op">$</span>polintr, daten_ess<span class="op">$</span>happy)</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-113-1.png" width="672" /></p>
+<p>Auch in diesem Beispiel gibt uns R wieder verschiedenen Boxplots aus – und wir sehen, dass anscheinend ein Politikinteresse (oder eine Politikverdrossenheit) auf das Glücksein einwirkt.</p>
+<p><em>Bsp 5</em>: Wie stark beeinflusst das Ausbildungsniveau einer Person deren Grad an Glücklichkeit? (Tomaschett)</p>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="wochenplan-10.html#cb281-1"></a><span class="kw">plot</span>(daten_ess<span class="op">$</span>edulvla, daten_ess<span class="op">$</span>happy)</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-114-1.png" width="672" /></p>
+<p>Hier ist nun nicht nur ein Hinweis auf einen eher geringeren Zusammenhang drin, sondern die verschiedenen Boxplots zeigen auch auf, dass womöglich <em>kein</em> linearer Zusammenhang vorhanden ist.</p>
+<p><em>Bsp 6 &amp; 7</em>: Die letzten beiden Beispiele sind <em>keine</em> linearen Regressionen. Ersteres hat nämlich eine binominale Variablen als abhängige Variable (und wäre somit eine logistische Regression), und letzteres eine kategoriale Variable als abhängige Variable (dies kann nicht über eine Regression gerechet werden).</p>
+<p>Welchen Einfluss hat das Bildungsniveau darauf, dass Kinder im Haushalt leben oder nicht? (Roth)</p>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="wochenplan-10.html#cb282-1"></a><span class="kw">plot</span>(daten_ess<span class="op">$</span>edulvla, daten_ess<span class="op">$</span>chldhm)</span></code></pre></div>
+<p>Ich möchte untersuchen, inwiefern die Variable “polintr” durch das Geschlecht beeinflusst wird. (Kurmann)</p>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="wochenplan-10.html#cb283-1"></a><span class="kw">plot</span>(daten_ess<span class="op">$</span>gndr, daten_ess<span class="op">$</span>polintr)</span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Formulieren und überprüfen Sie Ihre beiden Modelle mittels der Funktion <code>lm()</code>. Machen Sie sich dazu vorab mit dieser Funktion vertraut (Hilfeseite der Funktion, Online-Tutorials …). Erläutern Sie <code>lm()</code> kurz in eigenen Worten!</li>
+</ol>
+<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="wochenplan-10.html#cb284-1"></a>?lm</span></code></pre></div>
+<p>Die Funktion <code>lm()</code> ist der Befehl in R zur Berechnung von linearen Modellen allgemein <span class="citation">(Manderscheid <a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>, 109f)</span>. Sie “übersetzt” die normale Regressionsgleichung "y = b0 + b1*x + e" zu “y ~ x” oder eben <code>response ~ term</code>.
+Mit der Formel können dann auch multiple, lineare Regressionen dargestellt werden, <code>response ~ term + term</code>, oder um Interaktionsterme ergänzt werden, <code>response ~ term + term * term</code>.</p>
+<p>Die weiteren Argumente (neben der eigentlichen Formel sowie der Angabe des Datensatzes) erlauben etwa die Daten zu unterteilen, Gewichtungen einzubauen, den Umgang mit fehlenden Werten genauer zu bestimmen, usw. Im Folgenden brauchen wir die Funktion und ihre Argumente aber nicht weiter zu spezifizieren, sondern die Standardeinstellungen der Argumente reichen aus.</p>
+<p>Nachfolgend werden wir mit den Beispielen 2 und 4 weiterarbeiten:</p>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="wochenplan-10.html#cb285-1"></a><span class="kw">lm</span>(<span class="dt">formula =</span> happy <span class="op">~</span><span class="st"> </span>agea, <span class="dt">data =</span> daten_ess)</span>
+<span id="cb285-2"><a href="wochenplan-10.html#cb285-2"></a><span class="kw">lm</span>(happy <span class="op">~</span><span class="st"> </span>polintr, daten_ess)</span></code></pre></div>
+<ol start="4" style="list-style-type: decimal">
+<li>Weisen Sie Ihre Regressionsanalysen jeweils einem “Ergebnisobjekt” zu! Wie ist dieses Objekt aufgebaut? Welche Komponenten und Informationen beinhaltet es?</li>
+</ol>
+<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="wochenplan-10.html#cb286-1"></a>modell1 &lt;-<span class="st"> </span><span class="kw">lm</span>(happy <span class="op">~</span><span class="st"> </span>agea, <span class="dt">data =</span> daten_ess)</span>
+<span id="cb286-2"><a href="wochenplan-10.html#cb286-2"></a>modell2 &lt;-<span class="st"> </span><span class="kw">lm</span>(happy <span class="op">~</span><span class="st"> </span>polintr, <span class="dt">data =</span> daten_ess)</span>
+<span id="cb286-3"><a href="wochenplan-10.html#cb286-3"></a></span>
+<span id="cb286-4"><a href="wochenplan-10.html#cb286-4"></a><span class="co">#Am Beispiel des ersten Modells:</span></span>
+<span id="cb286-5"><a href="wochenplan-10.html#cb286-5"></a><span class="kw">str</span>(modell1)</span></code></pre></div>
+<pre><code>## List of 12
+##  $ coefficients : Named num [1:2] 7.94763 0.00502
+##   ..- attr(*, &quot;names&quot;)= chr [1:2] &quot;(Intercept)&quot; &quot;agea&quot;
+##  $ residuals    : Named num [1:200] -0.209 0.676 1.746 -0.169 0.701 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:200] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##  $ effects      : Named num [1:200] -115.895 -1.271 1.731 -0.141 0.664 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:200] &quot;(Intercept)&quot; &quot;agea&quot; &quot;&quot; &quot;&quot; ...
+##  $ rank         : int 2
+##  $ fitted.values: Named num [1:200] 8.21 8.32 8.25 8.17 8.3 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:200] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##  $ assign       : int [1:2] 0 1
+##  $ qr           :List of 5
+##   ..$ qr   : num [1:200, 1:2] -14.1421 0.0707 0.0707 0.0707 0.0707 ...
+##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. ..$ : chr [1:200] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##   .. .. ..$ : chr [1:2] &quot;(Intercept)&quot; &quot;agea&quot;
+##   .. ..- attr(*, &quot;assign&quot;)= int [1:2] 0 1
+##   ..$ qraux: num [1:2] 1.07 1.1
+##   ..$ pivot: int [1:2] 1 2
+##   ..$ tol  : num 1e-07
+##   ..$ rank : int 2
+##   ..- attr(*, &quot;class&quot;)= chr &quot;qr&quot;
+##  $ df.residual  : int 198
+##  $ xlevels      : Named list()
+##  $ call         : language lm(formula = happy ~ agea, data = daten_ess)
+##  $ terms        :Classes &#39;terms&#39;, &#39;formula&#39;  language happy ~ agea
+##   .. ..- attr(*, &quot;variables&quot;)= language list(happy, agea)
+##   .. ..- attr(*, &quot;factors&quot;)= int [1:2, 1] 0 1
+##   .. .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. .. ..$ : chr [1:2] &quot;happy&quot; &quot;agea&quot;
+##   .. .. .. ..$ : chr &quot;agea&quot;
+##   .. ..- attr(*, &quot;term.labels&quot;)= chr &quot;agea&quot;
+##   .. ..- attr(*, &quot;order&quot;)= int 1
+##   .. ..- attr(*, &quot;intercept&quot;)= int 1
+##   .. ..- attr(*, &quot;response&quot;)= int 1
+##   .. ..- attr(*, &quot;.Environment&quot;)=&lt;environment: R_GlobalEnv&gt; 
+##   .. ..- attr(*, &quot;predvars&quot;)= language list(happy, agea)
+##   .. ..- attr(*, &quot;dataClasses&quot;)= Named chr [1:2] &quot;numeric&quot; &quot;numeric&quot;
+##   .. .. ..- attr(*, &quot;names&quot;)= chr [1:2] &quot;happy&quot; &quot;agea&quot;
+##  $ model        :&#39;data.frame&#39;:	200 obs. of  2 variables:
+##   ..$ happy: int [1:200] 8 9 10 8 9 9 10 10 8 7 ...
+##   ..$ agea : int [1:200] 52 75 61 44 70 52 36 29 74 72 ...
+##   ..- attr(*, &quot;terms&quot;)=Classes &#39;terms&#39;, &#39;formula&#39;  language happy ~ agea
+##   .. .. ..- attr(*, &quot;variables&quot;)= language list(happy, agea)
+##   .. .. ..- attr(*, &quot;factors&quot;)= int [1:2, 1] 0 1
+##   .. .. .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. .. .. ..$ : chr [1:2] &quot;happy&quot; &quot;agea&quot;
+##   .. .. .. .. ..$ : chr &quot;agea&quot;
+##   .. .. ..- attr(*, &quot;term.labels&quot;)= chr &quot;agea&quot;
+##   .. .. ..- attr(*, &quot;order&quot;)= int 1
+##   .. .. ..- attr(*, &quot;intercept&quot;)= int 1
+##   .. .. ..- attr(*, &quot;response&quot;)= int 1
+##   .. .. ..- attr(*, &quot;.Environment&quot;)=&lt;environment: R_GlobalEnv&gt; 
+##   .. .. ..- attr(*, &quot;predvars&quot;)= language list(happy, agea)
+##   .. .. ..- attr(*, &quot;dataClasses&quot;)= Named chr [1:2] &quot;numeric&quot; &quot;numeric&quot;
+##   .. .. .. ..- attr(*, &quot;names&quot;)= chr [1:2] &quot;happy&quot; &quot;agea&quot;
+##  - attr(*, &quot;class&quot;)= chr &quot;lm&quot;</code></pre>
+<p>Die Funktion <code>lm()</code> generiert uns eine Listenobjekt mit 12 bzw. 13 weiteren Unterobjekten. Die genauen Details, was in diesen Ergebnisobjekten zu finden ist, können wir der Hilfeseite der unter <em>Value</em> entnehmen.</p>
+<blockquote>
+<p>“An object of class ‘lm’ is a list containing at least the following components:<br />
+coefficients: a named vector of coefficients<br />
+residuals: the residuals, that is response minus fitted values.<br />
+fitted.values: the fitted mean values.<br />
+rank: the numeric rank of the fitted linear model.<br />
+weights: (only for weighted fits) the specified weights.<br />
+df.residual: the residual degrees of freedom.<br />
+call: the matched call.<br />
+terms: the terms object used.<br />
+contrasts: (only where relevant) the contrasts used.<br />
+xlevels: (only where relevant) a record of the levels of the factors used in fitting.<br />
+offset: the offset used (missing if none were used).<br />
+y: if requested, the response used.<br />
+x: if requested, the model matrix used.<br />
+model: if requested (the default), the model frame used.<br />
+na.action: (where relevant) information returned by model.frame on the special handling of NAs.”</p>
+</blockquote>
+<p>Wie immer können wir auf diese Elemente zugreifen, z.Bsp. um uns ein Streudiagramm der Residuen ausgeben zu lassen:</p>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="wochenplan-10.html#cb288-1"></a><span class="kw">plot</span>(modell1<span class="op">$</span>model<span class="op">$</span>happy, modell1<span class="op">$</span>residuals)</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-120-1.png" width="672" /></p>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="wochenplan-10.html#cb289-1"></a><span class="kw">hist</span>(modell1<span class="op">$</span>residuals)</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-120-2.png" width="672" /></p>
+<p>Beim Ergebnisobjekt des zweiten Modells sehen wir nun eine Veränderung, nämliche dass als weiteres Element der Liste “contrasts” hinzugekommen (als Hinweis auf die “Kontrastierung” bei der kategorialen, unabhängigen Variable, siehe auch unten).</p>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="wochenplan-10.html#cb290-1"></a>modell1<span class="op">$</span>constrats</span></code></pre></div>
+<pre><code>## NULL</code></pre>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="wochenplan-10.html#cb292-1"></a>modell2<span class="op">$</span>contrasts</span></code></pre></div>
+<pre><code>## $polintr
+## [1] &quot;contr.poly&quot;</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Interpretieren Sie die Ergebnisse Ihrer beiden Regressionsanalysen.</li>
+</ol>
+<p>Für die Interpretation des Modells bzw. des Objektes verwenden wir die <code>summary()</code>-Funktion:</p>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="wochenplan-10.html#cb294-1"></a><span class="kw">summary</span>(modell1)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = happy ~ agea, data = daten_ess)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -5.2540 -1.0305 -0.0983  0.8577  1.9670 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 7.947628   0.289850  27.420   &lt;2e-16 ***
+## agea        0.005023   0.005532   0.908    0.365    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.399 on 198 degrees of freedom
+## Multiple R-squared:  0.004147,	Adjusted R-squared:  -0.0008828 
+## F-statistic: 0.8245 on 1 and 198 DF,  p-value: 0.365</code></pre>
+<p>Die Funktion gibt uns anschliessend verschiedenste Kennzahlen aus. Die Auflistung beginnt mit der Formel (<em>Call</em>), geht über zu einer kurzen Beschreibung der Verteilung der Residuen (<em>Residuals</em>), bevor dann die Koeffizienten und anschliessend eine Übersicht zum gesammten Modell folgen.</p>
+<p>Bei den Koeffizienten (<em>Coefficients</em>) finden wir vier Kennzahlen und eine Ergänzung:</p>
+<p>Zuerst sind es die eigentlichen Werte der Koeffizienten (<em>Estimate</em>), d.h. der b0-Wert (<em>Intercept</em>) und der Koeffizient der unabhängigen Variable. Ersterer gibt den Vorhersagewert an, wenn die unabhängige Variable 0 wäre (7.947628), während letzterer die Zunahme des Vorhersagewertes bei einer Zunahme der unabhängigen Variable um 1 angibt (0.005023).</p>
+<p>Die zweite Kennzahl ist der Standardfehler (<em>Std.Error</em>), also die durchschnittliche Abweichung der Koeffizienten, da diese ja auf Stichprobendaten beruhen. Das heisst wir würden einen neuen Wert bekommen, wenn wir eine neue Stichprobe ziehen würden und dieser Wert würde im Durchschnitt um 0.005532 abweichen. <em>Daumenregel</em>: Das Ergebnis von Regressionskoeffizient – (2*SE) sollte nicht 0 überschreiten bzw. im Vergleich zum Koeffizienten das Vorzeichen wechseln. Sonst wäre das ein Hinweis, dass kein Einfluss der unabhängigen Variable besteht (da jeweils rund +2x &amp; -2x Standardfehler rund 95% der Ausprägungen einer Normalverteilung repräsentieren). Es gilt also den Standardfehler im Zusammenhang zum Regressionskoeffizient zu betrachten.</p>
+<p>Die dritte Kennzahl ist der T-Wert (<em>t value</em>), was der eigentlichen Testwerte für die t-Verteilung repräsentiert <span class="citation">(Diaz-Bone <a href="#ref-DiazBone2019" role="doc-biblioref">2019</a>, 224)</span>. Als <em>Daumenregel</em>: T Wert, die grösser als 2 sind, werden meistens signifikant sein.</p>
+<p>Der p-Wert (<em>Pr(&gt;|t|)</em>) ist der Signifikanzwert für einzelne Regressionskoeffizienten. Wiederum: Die Kennzahl gibt uns an, wie wahrscheinlich es ist, einen solchen (oder grösseren) Wert für den Regressionskoeffizienten zu erhalten unter der Annahme, dass die Nullhypothese in der Grundgesamtheit zutreffen würde.<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a></p>
+<p>Zusätzlich findet sich auch jeweils noch der Hinweis zu den Sternchen als Signifikanzcodes.</p>
+<p>Anschliessend folgen weitere Kennwerte zum gesamten Modell:<br />
+Die Standardabweichung der Residuen wird ausgegeben (<em>Residual standard error</em>) sowie die Freiheitsgrade (<em>degrees of freedom</em>), d.h. N - J - 1, wobei J die Anzahl unabhängiger Variablen ist.<br />
+Danach folgen das multiple R-Quadrart (<em>Multiple R-squared</em>) sowie (<em>Adjusted R-squared</em>). Ersteres gibt uns die Erklärungsleistung des Modells sowie zugleich die Stärke des gerichteten, statistischen Zusammenhangs zwischen X und Y an. Letzteres ist ein Gütemass, dass die Erklärungsleistung im Bezug zu den Anzahl Variablen betrachtet und den Wert für Stichprobendaten etwas anpasst <span class="citation">(Diaz-Bone <a href="#ref-DiazBone2019" role="doc-biblioref">2019</a>, 223)</span>.</p>
+<p>Schliesslich finden sich noch die Angaben zum F-Test (<em>F-statistic</em>). Dieser Wert weisst aus, ob das Modell auch über eine Erklärungsleistung in der Grundgesamtheit verfügt. Hier wird global getestet, ob der Regressionsansatz insgesamt etwas aussagt <span class="citation">(Diaz-Bone <a href="#ref-DiazBone2019" role="doc-biblioref">2019</a>, 221)</span>. Dazu gibt uns das Modell sowohl den konkreten F-Test-Wert (und wiederum die Freiheitsgrade der Verteilung) als auch den p-Wert an. Dieser sagt uns nun aus, ob das Modell auch in der Grundgesamtheit eine Erklärungsleistung besitzt (wiederum im Sinne wie wahrscheinlich es ist, einen solchen oder grösseren R-Quadrat Wert zu erhalten unter der Annahme, dass das die Nullhypothese zutrifft).</p>
+<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="wochenplan-10.html#cb296-1"></a><span class="kw">summary</span>(modell2)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = happy ~ polintr, data = daten_ess)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -5.0169 -0.8500 -0.0169  0.7895  2.1500 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  8.15826    0.11125  73.334   &lt;2e-16 ***
+## polintr.L    0.51659    0.25652   2.014   0.0454 *  
+## polintr.Q    0.08904    0.22249   0.400   0.6895    
+## polintr.C    0.02791    0.18222   0.153   0.8784    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.391 on 196 degrees of freedom
+## Multiple R-squared:  0.02599,	Adjusted R-squared:  0.01108 
+## F-statistic: 1.743 on 3 and 196 DF,  p-value: 0.1595</code></pre>
+<p>Im Unterschied zum ersten Modell sehen wir beim zweiten Modell, dass die einzelnen Ausprägungen der kategorialen Variable eigene Koeffizienten und zugehörige Kennwerte erhalten. R wandelt kategoriale, unabhängige Variablen automatisch in Dummy-Variablen um, die jeweils mit 0 und 1 kodiert sind <span class="citation">(Manderscheid <a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>, 197)</span>. Jeder dieser Koeffizienten der Dummy-Variablen gibt die Veränderung gegenüber der Referenzkategorie an (“Not at all interested”), die wäre jetzt auch b0 entspricht. Im Umgang mit kategorialen Variablen mit mehreren Variablen wird so ein multiples lineares Modell erstellt.</p>
 
 </div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-DiazBone2019">
+<p>Diaz-Bone, Rainer. 2019. <em>Statistik Für Soziologen</em>. Konstanz: UVK.</p>
+</div>
+<div id="ref-Manderscheid2017">
+<p>Manderscheid, Katharina. 2017. <em>Sozialwissenschaftliche Datenanalyse Mit R. Eine Einführung</em>. Wiesbaden: Springer VS.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="10">
+<li id="fn10"><p>Siehe für weitere Hinweise zum P-Wert auch die Ergebnissicherung der Falllösung 08, <a href="https://schweglerguy.github.io/HS20_SozialwissenschaftlicheDatenanalyseR_Bookdown/wochenplan-08.html#aufgaben-wp08">hier</a>.<a href="wochenplan-10.html#fnref10" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
@@ -238,7 +451,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="wochenplan-09.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="wochenplan-11.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
