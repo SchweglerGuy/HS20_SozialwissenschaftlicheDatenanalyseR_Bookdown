@@ -2,7 +2,7 @@
 
 ...zu den Einheiten vom 03. & 10.12.2020, multiple lineare Regression und Residuenanlayse
 
-## Lernziele
+## Lernziele WP11
 
 Im Rahmen des 11. Wochenplans wollen wir uns einem multiplen linearen Regressionsmodell widmen. Wie immer möchten wir uns dazu als erstes einen Überblick verschaffen und eine Fragestellung formulieren, bevor dann ein Modell berechnet und interpretiert werden kann. Anschliessend gilt es über eine grafische Residuenanalyse die Anwendungsvoraussetzungen für die multiple lineare Regression zu testen sowie über den Ausschluss von gewissen Fällen das Modell zu verbessern.
 
@@ -17,19 +17,130 @@ Konkret lassen sich folgende Ziele für diesen letzten Wochenplan festlegen:
 - Sie können Ausreisser in einem Regressionsmodell ausschliessen und die damit erreichten Veränderungen im Modell einschätzen.
 
 
-## Aufgaben
+## Aufgaben WP11
 
 1. Laden Sie Ihr Datenimport-Skript. Arbeiten Sie anschliessend in einem R-Markdown-Dokument weiter.
+```{r include=FALSE}
+source(file = "Data/ess_import.R")
+```
+```{r eval=FALSE}
+setwd("C:/IhrDateiPfad/IhrArbeitsordner")
+source(file = "ess_import.R")
+```
 
-2. Berechnen Sie mittels der Funktion `rcorr()`, die Teil des Paketes "Hmisc" ist, eine Korrelationstabelle zwischen den Variablen "wkhtot", "agae", "edulvla" und "chldhm".
+
+2. Berechnen Sie mittels der Funktion `rcorr()`, die Teil des Paketes "Hmisc" ist, eine Korrelationstabelle zwischen den Variablen "wkhtot", "agea", "edulvla" und "chldhm".
+```{r}
+attach(daten_ess)
+summary(wkhtot)
+summary(agea)
+summary(edulvla)
+summary(chldhm)
+detach(daten_ess)
+```
+Über den `summary()`-Befehl wird deutlich, dass die Variable "wkhtot" noch fehlende Werte enthält. Diese gilt es zuerst noch auszuschliessenn -- die erste der beiden folgenden Code-Zeile kann dann wiederum im R-Skript integriert werden:
+```{r}
+daten_ess$wkhtot[daten_ess$wkhtot>100] <- NA
+summary(daten_ess$wkhtot)
+```
+
+Anschliessend können wir die Korrelationstabelle berechnen. Da `rcorr()` eine Tabelle als Input benötigt erstellen wir diese in der Funktion selber über `cbind()`.
+```{r}
+attach(daten_ess)
+library(Hmisc)
+rcorr(cbind(wkhtot,
+            agea,
+            edulvla,
+            chldhm),
+            type = "pearson")
+detach(daten_ess)
+```
+Die Funktion gibt uns nun drei verschiedene Tabellen aus: Zuerst die eigentlichen Korrelationswerte (1), dann die Fallzahlen (2), wo die 14 fehlende Werte der Variable "wkhtot" nun einen Unterschied ausmachen und schliesslich die p-Werte für die einzelnen Korrelationen. Schnell wird auch deutlich dass die Tabelle redundante Informationen besitzt, da sie über die diagonale Achse gespiegelt ist (d.h. der jeweilige Wert von „edulvla“ und „agea“ ist natürlich derselbe Werte wie derjenige von „agea“ und „edulvla“).
+
 
 3. Interpretieren Sie die Korrelationstabelle kurz: Wo sehen Sie bereits Zusammenhänge, wo nicht? Formulieren Sie anschliessend eine Fragestellung sowie eine Hypothese zu diesen Variablen für ein multiples lineares Regressionsmodell.
 
+In der Tabelle finden wir vier von sechs Zusammenhängen, die uns von ihrer Stärke her interessieren sollten. Dies sind die Werte zwischen den Variablen „wkhtot“ und „edulvla“, „edulvla“ und „chldhm“, „agea“ und „chldhm“ sowie „wkhtot“ und „chldhm“. Letzterer Wert ist ebenfalls auch signifikant. Die weiteren Werte weisen keine beachtenswerten R-Quadrat-Wert aus (und sind auch nicht signifikant).
+
+Fragestellungen könnten dann wie folgt formuliert werden...
+
+...ein Beispiel von Frau Stöckli: Welchen Einfluss haben das Alter, das Bildungsniveau und die Tatsache, ob eine Person mit Kindern zusammenwohnt oder nicht, auf die wöchentliche Anzahl Arbeitsstunden? Und als These: Es wird vermutet, dass der Wechsel von der Gruppe, die mit Kindern zusammenleben, zu der Gruppe, die ohne Kinder leben, zu einem höheren Vorhersagewert für die Anzahl wöchentlicher Arbeitsstunden ("wkhtot") führt. Es wird vermutet, dass je höher das Bildungsniveau ("edulvla") desto höher die Anzahl wöchentlicher Arbeitsstunden. Es wird vermutet, dass das Alter ein geringer, positiver Einfluss auf die Anzahl wöchentlicher Arbeitsstunden hat.
+
+...ein Beispiel von Herr Ineichen: Wie wirkt sich die Tatsache ob Kinder im eigenen Haushalt leben und das Ausbildungsniveau auf die Anzahl gearbeiteter Wochenstunden aus? Kontrollvariable: Alter. Hypothese: Menschen mit höherem Bildugnsniveau und ohne Kinder haben arbeiten mehr Stunden pro Woche als Menschen mit tiefem Bildungsniveau und ohne Kinder.
+
+...ein Beispiel von Herr Schürmann: Wirken die unabhängigen Variablen "agea", "edulvla" und "chldhm" einzeln Betrachtet auch inder GG auf die abhängige Variable "wkhtot" ein? Nullhypothese: Alter, Bildungsniveau und Kinder zu Hause beeinflussen positiv die Arbeitsstunden pro Woche. Alternativhypothese: Alter, Bildungsniveau und Kinder zu Hause haben keinen Effekt auf die Arbeitsstunden pro Woche.
+
+Bei drei  Beispielen wird deutlich, dass uns die Variable zu den Arbeitsstunden als abhängige Variable interessiert, und wir die Effekte darauf von den anderen, unabhängigen Variablen beschreiben möchten.
+
 4. Berechnen Sie anschliessend Ihr Regressionsmodell mittels der Funktion `lm()`. Speichern Sie das Modell wie immer als Objekt ab und interpretieren Sie es anschliessend.
 
-5. Prüfen Sie dann die Anwendungsvoraussetzungen mittels `plot()`. Wie beurteilen Sie die Qualität Ihres Modells?
+```{r}
+Modellm_1 <- lm(wkhtot ~ agea + edulvla + chldhm, data = daten_ess)
+summary(Modellm_1)
+```
+Die Koeffizienten unseres Modells lassen sich wie folgt interpretieren: Wenn jemand 0 Jahre alt ist, auf dem „ISCED 0-1“ Bildungsniveau ist und Kinder zuhause hat, dann würde diese Person rund 31h pro Woche arbeiten  (*Intercept*). Mit jeden zusätzlichen Altersjahr arbeitet eine Person gemäss dem Modell 0.02h mehr. Wechselt man hingegen vom ersten auf das zweite Bildungsniveau so arbeitet man 1.7h weniger, beim Wechsel auf das dritte Bildungsniveau wiederum 9h mehr, usw. Keine Kinder im Haushalt zu haben führt wiederum dazu, dass man fast 8h mehr Arbeitet pro Woche.
+
+Von den Koeffizienten ist lediglich derjenige für die Variable zu Kinder im Haushalt signifikant. Alle anderen Koeffizienten haben hingegen hohe Wahrscheinlichkeiten zufällig aufzutreten, wenn sie keinen Effekte hätten in der Grundgesamtheit (etwa der Koeffizient von „agea“ hat eine Wahrscheinlichkeit von über 80%, völlig zufällig aufgetreten zu sein). Dies sieht man auch anhand der Standardfehler, die alle sehr grosse zufällige Streuung der Koeffizienten ausweisen. Über die Tabelle wird weiter auch nochmals die Berechnung der Werte für die t-Tests der Regressionskoeffizienten deutlich [@DiazBone2019, 223]. Der jeweilige *t value* ergibt sich nämlich dadurch, dass ein Koeffizient durch den Standardfehler geteilt wird, also etwa 0.01657 / 0.06952 = 0.238. Dieser Werte fällt wiederum bei einer t-Verteilung von 179 Freiheitsgraden und einem 95% Signifikanzniveau in den Annahmebereich der 0-Hypothese.   
+
+Unser Modell bzw. unsere unabhängigen Variablen erklären rund 8% bzw. 5% der Varianz von der Variable „wkhtot“. Dieser Wert selber ist aber leicht signifikant – oder umgekehrt formuliert: Es gibt lediglich eine Chance von etwas mehr als 2% dass wir diesen R-Quadrat Wert erhalten würden, obschon das Modell in der Grundgesamtheit keine Erklärungsleistung besitzt. 
+
+
+
+5. Prüfen Sie dann die Anwendungsvoraussetzungen [vgl. @DiazBone2019, 202f] mittels `plot()`. Wie beurteilen Sie die Qualität Ihres Modells?
+
+Die `plot()`-Funktion weisst uns fünf verschiedenen Plots zur grafisch gestützten Residuenanalyse aus:
+
+```{r}
+plot(Modellm_1)
+```
+
+Die erste Grafik ist ein Streudiagramm der Residuen und der Vorhersagwerte. Da hier der Vorhersagwerte (und nicht die abhängige Variable) lassen sich hier alle unabhängigen Variablen überprüfen, und zwar auf die Frage der *Linearität* hin.[^1] Ein spezifisches Muster im Plot würde auf fehlende Linearität hinweisen oder auch darauf, dass es weitere erklärende Variablen gibt, die noch nicht im Modell eingeschlossen sind [@Manderscheid2017, 194]. In unserem Fall scheint die Linearitätsannahme nicht verletzt zu sein und es zeigt sich auch kein (starkes) spezifisches Muster zu zeigen.
+
+Die zweite Grafik, der Normal-Q-Q Plot, gibt uns Hinweise zu der *Normalverteilung* der Residuen. Dazu werden die empirischen Verteilungen der Residuen (die Standardabweichungen der Werte) gegen die Quantile geplottet, die bei einer Normalverteilung zu erwarten wären. Quantile sind hier die Wahrscheinlichkeiten: In der theoretischen Normalverteilung liegen links und rechts von 0 je 50%. Je weiter die Werte von Null abweichen, desto weniger Fälle liegen dort (links von -1 wären noch rund 13% der Fälle). Die theoretische Normalverteilung -- die gerade, gestrichelte Linie -- wird dann mit der empirischen Verteilung verglichen -- die über Kreise gebildete, “wackelige” Linie. Ziel sollte es sei, dass eben im mindestens im Bereich + 1 x Standardabweichung und - 1 x Standardabweichung (68% der Fälle) die beiden Linien ziemlich deckungsgleich wären. Bei grösseren Stichproben werden die Abweichungen immer weniger problematisch (vgl. auch Diaz-Bone 2019:231).[^2]
+
+Die dritte Grafik der Scale-Location prüft die *Homoskedaszität* in dem die Vorhersagwerte gegen die standardisierten Residuen geplottet werden.  Die Punkte sollten hier horizontal in einheitlicher Breite variieren [@Manderscheid2017, 194]. Wie bereits bei der ersten Grafik findet sich hier eine rote Linie, ein sogenannter Smoother, ist eine immer aufs neue geschätzte Line, die im optimalfall gerade verlaufen sollte. Hier sehen wir nun, dass das wir vor allem bei grösseren Vorhersagewerte auch grössere Residuen haben (unabhängig davon ob diese positiv oder negativ sind). Hier scheint also eine gewisse Heteroskedaszität vorzuliegen.
+
+Die vierte und letzte Grafik stellt die Residuen dem sogenannten Leverage Wert gegenüber. Dieser Wert gibt an, wie stark ein jeweiliger Punkt auf das Modell wirkt (dessen Hebelwirkung). Je stärker ein solcher Leverage-Wert eines Punktes ist – je weiter rechts er ist – desto geringer sollte die Residue sein. Insbesondere die Werte ausserhalb der Cook’s Distance sollten wir ausschliessen.
+
+Die Anwendungsvoraussetzung der *geringen Multikollinearität* konnten wir bereits in der Korrelationstabelle oben überprüfen.[^3]
 
 6. *Bonusaufgabe*: Versuchen Sie, ein neues Modell zu berechnen, in dem mögliche Ausreisser fehlen, die Ihnen die grafische Residuenanalyse aufgezeigt hat. Wie verändert sich die Modellgüte bzw. die Erklärungsleistung Ihres Modells?
 
+In allen vier Grafiken, welche die Funktion `plot()`von unserem Modell erzeugt hat, wurden immer wieder bestimmte Fälle ausgewiesen, die das Modell womöglich stark beeinflussen. Diese Fälle -- insbesondere diejenige im letzten Plot -- können wir versuchsweise ausschliessen und ein neues Modell rechnen.
+```{r}
+Modellm_2 <- lm(wkhtot ~ agea + edulvla + chldhm, 
+                data = daten_ess[-c(15, 50, 57, 77, 80, 172),])
+summary(Modellm_2)
+```
+Der Auschluss dieser Fälle hat dazu geführt, das die Erkläungsleitung unseres neuen Modells gegenüber dem alten um ein halbes Prozent gestiegen ist.
 
-Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit "Fallloesung11_NameVorname.pdf" und geben das Dokument via OLAT bis Mittwochmittag ab (10.12.2020, 12:00).
+
+## Ergänzung: ein schlechtes Beispiel
+
+Als Ergänzung zum Inhalt in der Einheit wird hier noch ein künstliches, besonders negatives Beispiel konstruiert. Dieses verletzt besonders stark die die Anwendungsvoraussetzungen, also die Linearitätsannahme, die Varianzhomogenität und die Normalverteilung der Residuen.
+
+Dazu ordnen wir zuerst den Datensatz nach der Grösse der Variable „wkhtot“ und konstruieren uns eine Variable, die ein bestimmtes, extremes Muster aufweist:
+```{r}
+daten_ess <- daten_ess[order(daten_ess$wkhtot),]
+daten_ess$testV <- 10
+daten_ess$testV[1] <- 400
+daten_ess$testV[25:74] <- 20
+daten_ess$testV[75:99] <- 2000
+daten_ess$testV[100:123] <- 90
+daten_ess$testV[124] <- 2
+daten_ess$testV[125:75] <- 100
+daten_ess$testV[150:200] <- 3
+```
+
+Anschliessend berechnen wir ein neues Modell und betrachten die Grafiken, die uns `plot()`generiert, und wie sich hier dieses extreme Muster auswirk:
+```{r}
+Modellm_t <- lm(wkhtot ~ testV, data = daten_ess)
+plot(Modellm_t)
+```
+
+
+[^1]: Die genauere Prüfung der Linearität von einzelnen Variablen kann beispielsweise über die Funktion `leveragePlots()` des Paketes „car“ erfolgen.
+
+[^2]:  Siehe für Details auch S.42ff in Schnell, Rainer (2015): *Graphisch gestützte Datenanalyse*. Berlin, Boston: De Gruyter
+
+[^3]: Eine genauere Möglichkeit um die Multikollinearität zwischen den unbahängigen Variablen zu qualifizieren [@DiazBone2019, 206] bietet die Funktion `vif()`, die ebenfalls Teil des Paketes "car" ist [@Manderscheid2017, 196].

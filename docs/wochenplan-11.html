@@ -184,8 +184,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.2" data-path="wochenplan-10.html"><a href="wochenplan-10.html#aufgaben-wp10"><i class="fa fa-check"></i><b>10.2</b> Aufgaben WP10</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="wochenplan-11.html"><a href="wochenplan-11.html"><i class="fa fa-check"></i><b>11</b> Wochenplan 11</a><ul>
-<li class="chapter" data-level="11.1" data-path="wochenplan-11.html"><a href="wochenplan-11.html#lernziele"><i class="fa fa-check"></i><b>11.1</b> Lernziele</a></li>
-<li class="chapter" data-level="11.2" data-path="wochenplan-02.html"><a href="wochenplan-02.html#aufgaben"><i class="fa fa-check"></i><b>11.2</b> Aufgaben</a></li>
+<li class="chapter" data-level="11.1" data-path="wochenplan-11.html"><a href="wochenplan-11.html#lernziele-wp11"><i class="fa fa-check"></i><b>11.1</b> Lernziele WP11</a></li>
+<li class="chapter" data-level="11.2" data-path="wochenplan-11.html"><a href="wochenplan-11.html#aufgaben-wp11"><i class="fa fa-check"></i><b>11.2</b> Aufgaben WP11</a></li>
+<li class="chapter" data-level="11.3" data-path="wochenplan-11.html"><a href="wochenplan-11.html#ergänzung-ein-schlechtes-beispiel"><i class="fa fa-check"></i><b>11.3</b> Ergänzung: ein schlechtes Beispiel</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -211,8 +212,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="wochenplan-11" class="section level1">
 <h1><span class="header-section-number">11</span> Wochenplan 11</h1>
 <p>…zu den Einheiten vom 03. &amp; 10.12.2020, multiple lineare Regression und Residuenanlayse</p>
-<div id="lernziele" class="section level2">
-<h2><span class="header-section-number">11.1</span> Lernziele</h2>
+<div id="lernziele-wp11" class="section level2">
+<h2><span class="header-section-number">11.1</span> Lernziele WP11</h2>
 <p>Im Rahmen des 11. Wochenplans wollen wir uns einem multiplen linearen Regressionsmodell widmen. Wie immer möchten wir uns dazu als erstes einen Überblick verschaffen und eine Fragestellung formulieren, bevor dann ein Modell berechnet und interpretiert werden kann. Anschliessend gilt es über eine grafische Residuenanalyse die Anwendungsvoraussetzungen für die multiple lineare Regression zu testen sowie über den Ausschluss von gewissen Fällen das Modell zu verbessern.</p>
 <p>Konkret lassen sich folgende Ziele für diesen letzten Wochenplan festlegen:</p>
 <ul>
@@ -222,19 +223,200 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Sie können Ausreisser in einem Regressionsmodell ausschliessen und die damit erreichten Veränderungen im Modell einschätzen.</p></li>
 </ul>
 </div>
-<div id="aufgaben" class="section level2">
-<h2><span class="header-section-number">11.2</span> Aufgaben</h2>
+<div id="aufgaben-wp11" class="section level2">
+<h2><span class="header-section-number">11.2</span> Aufgaben WP11</h2>
 <ol style="list-style-type: decimal">
-<li><p>Laden Sie Ihr Datenimport-Skript. Arbeiten Sie anschliessend in einem R-Markdown-Dokument weiter.</p></li>
-<li><p>Berechnen Sie mittels der Funktion <code>rcorr()</code>, die Teil des Paketes “Hmisc” ist, eine Korrelationstabelle zwischen den Variablen “wkhtot”, “agae”, “edulvla” und “chldhm”.</p></li>
-<li><p>Interpretieren Sie die Korrelationstabelle kurz: Wo sehen Sie bereits Zusammenhänge, wo nicht? Formulieren Sie anschliessend eine Fragestellung sowie eine Hypothese zu diesen Variablen für ein multiples lineares Regressionsmodell.</p></li>
-<li><p>Berechnen Sie anschliessend Ihr Regressionsmodell mittels der Funktion <code>lm()</code>. Speichern Sie das Modell wie immer als Objekt ab und interpretieren Sie es anschliessend.</p></li>
-<li><p>Prüfen Sie dann die Anwendungsvoraussetzungen mittels <code>plot()</code>. Wie beurteilen Sie die Qualität Ihres Modells?</p></li>
-<li><p><em>Bonusaufgabe</em>: Versuchen Sie, ein neues Modell zu berechnen, in dem mögliche Ausreisser fehlen, die Ihnen die grafische Residuenanalyse aufgezeigt hat. Wie verändert sich die Modellgüte bzw. die Erklärungsleistung Ihres Modells?</p></li>
+<li>Laden Sie Ihr Datenimport-Skript. Arbeiten Sie anschliessend in einem R-Markdown-Dokument weiter.</li>
 </ol>
-<p>Arbeiten Sie für die Falllösung wie immer mit R Markdown und generieren Sie sich ein PDF Ihrer Lösungen. Beschriften Sie Ihr Dokument mit “Fallloesung11_NameVorname.pdf” und geben das Dokument via OLAT bis Mittwochmittag ab (10.12.2020, 12:00).</p>
+<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="wochenplan-11.html#cb298-1"></a><span class="kw">setwd</span>(<span class="st">&quot;C:/IhrDateiPfad/IhrArbeitsordner&quot;</span>)</span>
+<span id="cb298-2"><a href="wochenplan-11.html#cb298-2"></a><span class="kw">source</span>(<span class="dt">file =</span> <span class="st">&quot;ess_import.R&quot;</span>)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Berechnen Sie mittels der Funktion <code>rcorr()</code>, die Teil des Paketes “Hmisc” ist, eine Korrelationstabelle zwischen den Variablen “wkhtot”, “agea”, “edulvla” und “chldhm”.</li>
+</ol>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="wochenplan-11.html#cb299-1"></a><span class="kw">attach</span>(daten_ess)</span>
+<span id="cb299-2"><a href="wochenplan-11.html#cb299-2"></a><span class="kw">summary</span>(wkhtot)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    0.00   30.00   42.00   88.31   49.25  888.00</code></pre>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="wochenplan-11.html#cb301-1"></a><span class="kw">summary</span>(agea)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   16.00   33.75   50.00   49.24   62.00   91.00</code></pre>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="wochenplan-11.html#cb303-1"></a><span class="kw">summary</span>(edulvla)</span></code></pre></div>
+<pre><code>## ISCED 0-1   ISCED 2   ISCED 3   ISCED 4 ISCED 5-6 
+##         3        29        83         8        77</code></pre>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="wochenplan-11.html#cb305-1"></a><span class="kw">summary</span>(chldhm)</span></code></pre></div>
+<pre><code>## Respondent lives with children at household grid 
+##                                               65 
+##                                         Does not 
+##                                              135</code></pre>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="wochenplan-11.html#cb307-1"></a><span class="kw">detach</span>(daten_ess)</span></code></pre></div>
+<p>Über den <code>summary()</code>-Befehl wird deutlich, dass die Variable “wkhtot” noch fehlende Werte enthält. Diese gilt es zuerst noch auszuschliessenn – die erste der beiden folgenden Code-Zeile kann dann wiederum im R-Skript integriert werden:</p>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="wochenplan-11.html#cb308-1"></a>daten_ess<span class="op">$</span>wkhtot[daten_ess<span class="op">$</span>wkhtot<span class="op">&gt;</span><span class="dv">100</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></span>
+<span id="cb308-2"><a href="wochenplan-11.html#cb308-2"></a><span class="kw">summary</span>(daten_ess<span class="op">$</span>wkhtot)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##    0.00   26.25   42.00   36.47   45.00   90.00      14</code></pre>
+<p>Anschliessend können wir die Korrelationstabelle berechnen. Da <code>rcorr()</code> eine Tabelle als Input benötigt erstellen wir diese in der Funktion selber über <code>cbind()</code>.</p>
+<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="wochenplan-11.html#cb310-1"></a><span class="kw">attach</span>(daten_ess)</span>
+<span id="cb310-2"><a href="wochenplan-11.html#cb310-2"></a><span class="kw">library</span>(Hmisc)</span></code></pre></div>
+<pre><code>## Warning: package &#39;Hmisc&#39; was built under R version 4.0.3</code></pre>
+<pre><code>## Loading required package: lattice</code></pre>
+<pre><code>## Loading required package: survival</code></pre>
+<pre><code>## Loading required package: Formula</code></pre>
+<pre><code>## Warning: package &#39;Formula&#39; was built under R version 4.0.3</code></pre>
+<pre><code>## Loading required package: ggplot2</code></pre>
+<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.0.3</code></pre>
+<pre><code>## 
+## Attaching package: &#39;Hmisc&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     format.pval, units</code></pre>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="wochenplan-11.html#cb320-1"></a><span class="kw">rcorr</span>(<span class="kw">cbind</span>(wkhtot,</span>
+<span id="cb320-2"><a href="wochenplan-11.html#cb320-2"></a>            agea,</span>
+<span id="cb320-3"><a href="wochenplan-11.html#cb320-3"></a>            edulvla,</span>
+<span id="cb320-4"><a href="wochenplan-11.html#cb320-4"></a>            chldhm),</span>
+<span id="cb320-5"><a href="wochenplan-11.html#cb320-5"></a>            <span class="dt">type =</span> <span class="st">&quot;pearson&quot;</span>)</span></code></pre></div>
+<pre><code>##         wkhtot agea edulvla chldhm
+## wkhtot    1.00 0.05    0.14   0.20
+## agea      0.05 1.00    0.06   0.12
+## edulvla   0.14 0.06    1.00  -0.10
+## chldhm    0.20 0.12   -0.10   1.00
+## 
+## n
+##         wkhtot agea edulvla chldhm
+## wkhtot     186  186     186    186
+## agea       186  200     200    200
+## edulvla    186  200     200    200
+## chldhm     186  200     200    200
+## 
+## P
+##         wkhtot agea   edulvla chldhm
+## wkhtot         0.5362 0.0561  0.0074
+## agea    0.5362        0.4033  0.0974
+## edulvla 0.0561 0.4033         0.1700
+## chldhm  0.0074 0.0974 0.1700</code></pre>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="wochenplan-11.html#cb322-1"></a><span class="kw">detach</span>(daten_ess)</span></code></pre></div>
+<p>Die Funktion gibt uns nun drei verschiedene Tabellen aus: Zuerst die eigentlichen Korrelationswerte (1), dann die Fallzahlen (2), wo die 14 fehlende Werte der Variable “wkhtot” nun einen Unterschied ausmachen und schliesslich die p-Werte für die einzelnen Korrelationen. Schnell wird auch deutlich dass die Tabelle redundante Informationen besitzt, da sie über die diagonale Achse gespiegelt ist (d.h. der jeweilige Wert von „edulvla“ und „agea“ ist natürlich derselbe Werte wie derjenige von „agea“ und „edulvla“).</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Interpretieren Sie die Korrelationstabelle kurz: Wo sehen Sie bereits Zusammenhänge, wo nicht? Formulieren Sie anschliessend eine Fragestellung sowie eine Hypothese zu diesen Variablen für ein multiples lineares Regressionsmodell.</li>
+</ol>
+<p>In der Tabelle finden wir vier von sechs Zusammenhängen, die uns von ihrer Stärke her interessieren sollten. Dies sind die Werte zwischen den Variablen „wkhtot“ und „edulvla“, „edulvla“ und „chldhm“, „agea“ und „chldhm“ sowie „wkhtot“ und „chldhm“. Letzterer Wert ist ebenfalls auch signifikant. Die weiteren Werte weisen keine beachtenswerten R-Quadrat-Wert aus (und sind auch nicht signifikant).</p>
+<p>Fragestellungen könnten dann wie folgt formuliert werden…</p>
+<p>…ein Beispiel von Frau Stöckli: Welchen Einfluss haben das Alter, das Bildungsniveau und die Tatsache, ob eine Person mit Kindern zusammenwohnt oder nicht, auf die wöchentliche Anzahl Arbeitsstunden? Und als These: Es wird vermutet, dass der Wechsel von der Gruppe, die mit Kindern zusammenleben, zu der Gruppe, die ohne Kinder leben, zu einem höheren Vorhersagewert für die Anzahl wöchentlicher Arbeitsstunden (“wkhtot”) führt. Es wird vermutet, dass je höher das Bildungsniveau (“edulvla”) desto höher die Anzahl wöchentlicher Arbeitsstunden. Es wird vermutet, dass das Alter ein geringer, positiver Einfluss auf die Anzahl wöchentlicher Arbeitsstunden hat.</p>
+<p>…ein Beispiel von Herr Ineichen: Wie wirkt sich die Tatsache ob Kinder im eigenen Haushalt leben und das Ausbildungsniveau auf die Anzahl gearbeiteter Wochenstunden aus? Kontrollvariable: Alter. Hypothese: Menschen mit höherem Bildugnsniveau und ohne Kinder haben arbeiten mehr Stunden pro Woche als Menschen mit tiefem Bildungsniveau und ohne Kinder.</p>
+<p>…ein Beispiel von Herr Schürmann: Wirken die unabhängigen Variablen “agea”, “edulvla” und “chldhm” einzeln Betrachtet auch inder GG auf die abhängige Variable “wkhtot” ein? Nullhypothese: Alter, Bildungsniveau und Kinder zu Hause beeinflussen positiv die Arbeitsstunden pro Woche. Alternativhypothese: Alter, Bildungsniveau und Kinder zu Hause haben keinen Effekt auf die Arbeitsstunden pro Woche.</p>
+<p>Bei drei Beispielen wird deutlich, dass uns die Variable zu den Arbeitsstunden als abhängige Variable interessiert, und wir die Effekte darauf von den anderen, unabhängigen Variablen beschreiben möchten.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Berechnen Sie anschliessend Ihr Regressionsmodell mittels der Funktion <code>lm()</code>. Speichern Sie das Modell wie immer als Objekt ab und interpretieren Sie es anschliessend.</li>
+</ol>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="wochenplan-11.html#cb323-1"></a>Modellm_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">lm</span>(wkhtot <span class="op">~</span><span class="st"> </span>agea <span class="op">+</span><span class="st"> </span>edulvla <span class="op">+</span><span class="st"> </span>chldhm, <span class="dt">data =</span> daten_ess)</span>
+<span id="cb323-2"><a href="wochenplan-11.html#cb323-2"></a><span class="kw">summary</span>(Modellm_<span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = wkhtot ~ agea + edulvla + chldhm, data = daten_ess)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -41.742  -9.298   4.363  10.367  47.374 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    31.11304    4.17227   7.457 3.67e-12 ***
+## agea            0.01657    0.06952   0.238  0.81184    
+## edulvla.L      -1.72936    6.37703  -0.271  0.78656    
+## edulvla.Q       9.06236    5.48903   1.651  0.10049    
+## edulvla.C      -4.07729    5.33272  -0.765  0.44553    
+## edulvla^4       3.21044    3.63580   0.883  0.37842    
+## chldhmDoes not  7.69041    2.61913   2.936  0.00376 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 16.15 on 179 degrees of freedom
+##   (14 observations deleted due to missingness)
+## Multiple R-squared:  0.07828,	Adjusted R-squared:  0.04738 
+## F-statistic: 2.534 on 6 and 179 DF,  p-value: 0.02228</code></pre>
+<p>Die Koeffizienten unseres Modells lassen sich wie folgt interpretieren: Wenn jemand 0 Jahre alt ist, auf dem „ISCED 0-1“ Bildungsniveau ist und Kinder zuhause hat, dann würde diese Person rund 31h pro Woche arbeiten (<em>Intercept</em>). Mit jeden zusätzlichen Altersjahr arbeitet eine Person gemäss dem Modell 0.02h mehr. Wechselt man hingegen vom ersten auf das zweite Bildungsniveau so arbeitet man 1.7h weniger, beim Wechsel auf das dritte Bildungsniveau wiederum 9h mehr, usw. Keine Kinder im Haushalt zu haben führt wiederum dazu, dass man fast 8h mehr Arbeitet pro Woche.</p>
+<p>Von den Koeffizienten ist lediglich derjenige für die Variable zu Kinder im Haushalt signifikant. Alle anderen Koeffizienten haben hingegen hohe Wahrscheinlichkeiten zufällig aufzutreten, wenn sie keinen Effekte hätten in der Grundgesamtheit (etwa der Koeffizient von „agea“ hat eine Wahrscheinlichkeit von über 80%, völlig zufällig aufgetreten zu sein). Dies sieht man auch anhand der Standardfehler, die alle sehr grosse zufällige Streuung der Koeffizienten ausweisen. Über die Tabelle wird weiter auch nochmals die Berechnung der Werte für die t-Tests der Regressionskoeffizienten deutlich <span class="citation">(Diaz-Bone <a href="#ref-DiazBone2019" role="doc-biblioref">2019</a>, 223)</span>. Der jeweilige <em>t value</em> ergibt sich nämlich dadurch, dass ein Koeffizient durch den Standardfehler geteilt wird, also etwa 0.01657 / 0.06952 = 0.238. Dieser Werte fällt wiederum bei einer t-Verteilung von 179 Freiheitsgraden und einem 95% Signifikanzniveau in den Annahmebereich der 0-Hypothese.</p>
+<p>Unser Modell bzw. unsere unabhängigen Variablen erklären rund 8% bzw. 5% der Varianz von der Variable „wkhtot“. Dieser Wert selber ist aber leicht signifikant – oder umgekehrt formuliert: Es gibt lediglich eine Chance von etwas mehr als 2% dass wir diesen R-Quadrat Wert erhalten würden, obschon das Modell in der Grundgesamtheit keine Erklärungsleistung besitzt.</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Prüfen Sie dann die Anwendungsvoraussetzungen <span class="citation">(vgl. Diaz-Bone <a href="#ref-DiazBone2019" role="doc-biblioref">2019</a>, 202f)</span> mittels <code>plot()</code>. Wie beurteilen Sie die Qualität Ihres Modells?</li>
+</ol>
+<p>Die <code>plot()</code>-Funktion weisst uns fünf verschiedenen Plots zur grafisch gestützten Residuenanalyse aus:</p>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="wochenplan-11.html#cb325-1"></a><span class="kw">plot</span>(Modellm_<span class="dv">1</span>)</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-130-1.png" width="672" /><img src="bookdown-demo_files/figure-html/unnamed-chunk-130-2.png" width="672" /><img src="bookdown-demo_files/figure-html/unnamed-chunk-130-3.png" width="672" /><img src="bookdown-demo_files/figure-html/unnamed-chunk-130-4.png" width="672" /></p>
+<p>Die erste Grafik ist ein Streudiagramm der Residuen und der Vorhersagwerte. Da hier der Vorhersagwerte (und nicht die abhängige Variable) lassen sich hier alle unabhängigen Variablen überprüfen, und zwar auf die Frage der <em>Linearität</em> hin.<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> Ein spezifisches Muster im Plot würde auf fehlende Linearität hinweisen oder auch darauf, dass es weitere erklärende Variablen gibt, die noch nicht im Modell eingeschlossen sind <span class="citation">(Manderscheid <a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>, 194)</span>. In unserem Fall scheint die Linearitätsannahme nicht verletzt zu sein und es zeigt sich auch kein (starkes) spezifisches Muster zu zeigen.</p>
+<p>Die zweite Grafik, der Normal-Q-Q Plot, gibt uns Hinweise zu der <em>Normalverteilung</em> der Residuen. Dazu werden die empirischen Verteilungen der Residuen (die Standardabweichungen der Werte) gegen die Quantile geplottet, die bei einer Normalverteilung zu erwarten wären. Quantile sind hier die Wahrscheinlichkeiten: In der theoretischen Normalverteilung liegen links und rechts von 0 je 50%. Je weiter die Werte von Null abweichen, desto weniger Fälle liegen dort (links von -1 wären noch rund 13% der Fälle). Die theoretische Normalverteilung – die gerade, gestrichelte Linie – wird dann mit der empirischen Verteilung verglichen – die über Kreise gebildete, “wackelige” Linie. Ziel sollte es sei, dass eben im mindestens im Bereich + 1 x Standardabweichung und - 1 x Standardabweichung (68% der Fälle) die beiden Linien ziemlich deckungsgleich wären. Bei grösseren Stichproben werden die Abweichungen immer weniger problematisch (vgl. auch Diaz-Bone 2019:231).<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a></p>
+<p>Die dritte Grafik der Scale-Location prüft die <em>Homoskedaszität</em> in dem die Vorhersagwerte gegen die standardisierten Residuen geplottet werden. Die Punkte sollten hier horizontal in einheitlicher Breite variieren <span class="citation">(Manderscheid <a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>, 194)</span>. Wie bereits bei der ersten Grafik findet sich hier eine rote Linie, ein sogenannter Smoother, ist eine immer aufs neue geschätzte Line, die im optimalfall gerade verlaufen sollte. Hier sehen wir nun, dass das wir vor allem bei grösseren Vorhersagewerte auch grössere Residuen haben (unabhängig davon ob diese positiv oder negativ sind). Hier scheint also eine gewisse Heteroskedaszität vorzuliegen.</p>
+<p>Die vierte und letzte Grafik stellt die Residuen dem sogenannten Leverage Wert gegenüber. Dieser Wert gibt an, wie stark ein jeweiliger Punkt auf das Modell wirkt (dessen Hebelwirkung). Je stärker ein solcher Leverage-Wert eines Punktes ist – je weiter rechts er ist – desto geringer sollte die Residue sein. Insbesondere die Werte ausserhalb der Cook’s Distance sollten wir ausschliessen.</p>
+<p>Die Anwendungsvoraussetzung der <em>geringen Multikollinearität</em> konnten wir bereits in der Korrelationstabelle oben überprüfen.<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a></p>
+<ol start="6" style="list-style-type: decimal">
+<li><em>Bonusaufgabe</em>: Versuchen Sie, ein neues Modell zu berechnen, in dem mögliche Ausreisser fehlen, die Ihnen die grafische Residuenanalyse aufgezeigt hat. Wie verändert sich die Modellgüte bzw. die Erklärungsleistung Ihres Modells?</li>
+</ol>
+<p>In allen vier Grafiken, welche die Funktion <code>plot()</code>von unserem Modell erzeugt hat, wurden immer wieder bestimmte Fälle ausgewiesen, die das Modell womöglich stark beeinflussen. Diese Fälle – insbesondere diejenige im letzten Plot – können wir versuchsweise ausschliessen und ein neues Modell rechnen.</p>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="wochenplan-11.html#cb326-1"></a>Modellm_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">lm</span>(wkhtot <span class="op">~</span><span class="st"> </span>agea <span class="op">+</span><span class="st"> </span>edulvla <span class="op">+</span><span class="st"> </span>chldhm, </span>
+<span id="cb326-2"><a href="wochenplan-11.html#cb326-2"></a>                <span class="dt">data =</span> daten_ess[<span class="op">-</span><span class="kw">c</span>(<span class="dv">15</span>, <span class="dv">50</span>, <span class="dv">57</span>, <span class="dv">77</span>, <span class="dv">80</span>, <span class="dv">172</span>),])</span>
+<span id="cb326-3"><a href="wochenplan-11.html#cb326-3"></a><span class="kw">summary</span>(Modellm_<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = wkhtot ~ agea + edulvla + chldhm, data = daten_ess[-c(15, 
+##     50, 57, 77, 80, 172), ])
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -37.328  -7.769   3.694   9.830  35.360 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    31.09923    4.04704   7.684  1.1e-12 ***
+## agea            0.02215    0.06632   0.334  0.73882    
+## edulvla.L      -2.19703    6.04937  -0.363  0.71691    
+## edulvla.Q       8.35237    5.21162   1.603  0.11084    
+## edulvla.C      -3.47810    5.34504  -0.651  0.51609    
+## edulvla^4       2.67714    3.72067   0.720  0.47278    
+## chldhmDoes not  8.02351    2.46417   3.256  0.00136 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 15.1 on 173 degrees of freedom
+##   (14 observations deleted due to missingness)
+## Multiple R-squared:  0.0841,	Adjusted R-squared:  0.05234 
+## F-statistic: 2.648 on 6 and 173 DF,  p-value: 0.01755</code></pre>
+<p>Der Auschluss dieser Fälle hat dazu geführt, das die Erkläungsleitung unseres neuen Modells gegenüber dem alten um ein halbes Prozent gestiegen ist.</p>
+</div>
+<div id="ergänzung-ein-schlechtes-beispiel" class="section level2">
+<h2><span class="header-section-number">11.3</span> Ergänzung: ein schlechtes Beispiel</h2>
+<p>Als Ergänzung zum Inhalt in der Einheit wird hier noch ein künstliches, besonders negatives Beispiel konstruiert. Dieses verletzt besonders stark die die Anwendungsvoraussetzungen, also die Linearitätsannahme, die Varianzhomogenität und die Normalverteilung der Residuen.</p>
+<p>Dazu ordnen wir zuerst den Datensatz nach der Grösse der Variable „wkhtot“ und konstruieren uns eine Variable, die ein bestimmtes, extremes Muster aufweist:</p>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="wochenplan-11.html#cb328-1"></a>daten_ess &lt;-<span class="st"> </span>daten_ess[<span class="kw">order</span>(daten_ess<span class="op">$</span>wkhtot),]</span>
+<span id="cb328-2"><a href="wochenplan-11.html#cb328-2"></a>daten_ess<span class="op">$</span>testV &lt;-<span class="st"> </span><span class="dv">10</span></span>
+<span id="cb328-3"><a href="wochenplan-11.html#cb328-3"></a>daten_ess<span class="op">$</span>testV[<span class="dv">1</span>] &lt;-<span class="st"> </span><span class="dv">400</span></span>
+<span id="cb328-4"><a href="wochenplan-11.html#cb328-4"></a>daten_ess<span class="op">$</span>testV[<span class="dv">25</span><span class="op">:</span><span class="dv">74</span>] &lt;-<span class="st"> </span><span class="dv">20</span></span>
+<span id="cb328-5"><a href="wochenplan-11.html#cb328-5"></a>daten_ess<span class="op">$</span>testV[<span class="dv">75</span><span class="op">:</span><span class="dv">99</span>] &lt;-<span class="st"> </span><span class="dv">2000</span></span>
+<span id="cb328-6"><a href="wochenplan-11.html#cb328-6"></a>daten_ess<span class="op">$</span>testV[<span class="dv">100</span><span class="op">:</span><span class="dv">123</span>] &lt;-<span class="st"> </span><span class="dv">90</span></span>
+<span id="cb328-7"><a href="wochenplan-11.html#cb328-7"></a>daten_ess<span class="op">$</span>testV[<span class="dv">124</span>] &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb328-8"><a href="wochenplan-11.html#cb328-8"></a>daten_ess<span class="op">$</span>testV[<span class="dv">125</span><span class="op">:</span><span class="dv">75</span>] &lt;-<span class="st"> </span><span class="dv">100</span></span>
+<span id="cb328-9"><a href="wochenplan-11.html#cb328-9"></a>daten_ess<span class="op">$</span>testV[<span class="dv">150</span><span class="op">:</span><span class="dv">200</span>] &lt;-<span class="st"> </span><span class="dv">3</span></span></code></pre></div>
+<p>Anschliessend berechnen wir ein neues Modell und betrachten die Grafiken, die uns <code>plot()</code>generiert, und wie sich hier dieses extreme Muster auswirk:</p>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="wochenplan-11.html#cb329-1"></a>Modellm_t &lt;-<span class="st"> </span><span class="kw">lm</span>(wkhtot <span class="op">~</span><span class="st"> </span>testV, <span class="dt">data =</span> daten_ess)</span>
+<span id="cb329-2"><a href="wochenplan-11.html#cb329-2"></a><span class="kw">plot</span>(Modellm_t)</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-133-1.png" width="672" /><img src="bookdown-demo_files/figure-html/unnamed-chunk-133-2.png" width="672" /><img src="bookdown-demo_files/figure-html/unnamed-chunk-133-3.png" width="672" /><img src="bookdown-demo_files/figure-html/unnamed-chunk-133-4.png" width="672" /></p>
 
 </div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-DiazBone2019">
+<p>Diaz-Bone, Rainer. 2019. <em>Statistik Für Soziologen</em>. Konstanz: UVK.</p>
+</div>
+<div id="ref-Manderscheid2017">
+<p>Manderscheid, Katharina. 2017. <em>Sozialwissenschaftliche Datenanalyse Mit R. Eine Einführung</em>. Wiesbaden: Springer VS.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="11">
+<li id="fn11"><p>Die genauere Prüfung der Linearität von einzelnen Variablen kann beispielsweise über die Funktion <code>leveragePlots()</code> des Paketes „car“ erfolgen.<a href="wochenplan-11.html#fnref11" class="footnote-back">↩︎</a></p></li>
+<li id="fn12"><p>Siehe für Details auch S.42ff in Schnell, Rainer (2015): <em>Graphisch gestützte Datenanalyse</em>. Berlin, Boston: De Gruyter<a href="wochenplan-11.html#fnref12" class="footnote-back">↩︎</a></p></li>
+<li id="fn13"><p>Eine genauere Möglichkeit um die Multikollinearität zwischen den unbahängigen Variablen zu qualifizieren <span class="citation">(Diaz-Bone <a href="#ref-DiazBone2019" role="doc-biblioref">2019</a>, 206)</span> bietet die Funktion <code>vif()</code>, die ebenfalls Teil des Paketes “car” ist <span class="citation">(Manderscheid <a href="#ref-Manderscheid2017" role="doc-biblioref">2017</a>, 196)</span>.<a href="wochenplan-11.html#fnref13" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
